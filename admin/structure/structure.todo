@@ -1,0 +1,133 @@
+BFH Struktur:
+    Home:
+        ☐ Titel
+        ☐ Lead
+        ☐ Content1 => Navigation
+        ☐ Content2 => Link zu Veranstaltungen
+        ☐ VideoBotschafter
+    Partnergemeinde:
+        ☐ Titel
+        ☐ Lead
+        ☐ Content => Text
+        ☐ VideoBotschafter 1 
+        ☐ VideoBotschafter 2
+    Dencity:
+        ☐ Titel
+        ☐ Lead
+        ☐ Content => Text & Bild
+        ☐ VideoBotschafter
+        ☐ Gallery
+    Feldstudien:
+        ☐ Titel
+        ☐ Lead
+        ☐ Content => Text
+        ☐ Gallery
+    Themenpfade:
+        ☐ Titel 
+        ☐ Lead
+        ☐ Content => Text
+        ☐ VideoBotschafter
+        ☐ Nav zu Themenpfaden
+        Zentralität:
+            ☐ Titel 
+            ☐ Lead
+            ☐ Content => Text & Bild
+            ☐ Atelier 1
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 2
+                ☐ Untertitel   
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 3
+                ☐ Untertitel
+                ☐ Content 
+                ☐ Gallery
+                ☐ Youtube Video
+            ☐ Atelier 4
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 5
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+                ☐ Links zu PDFs
+        Wohnformen:
+            ☐ Titel 
+            ☐ Lead
+            ☐ Content => Text & Bild
+            ☐ Atelier 6
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 7
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 8
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+        Ressourcen:
+            ☐ Titel 
+            ☐ Lead
+            ☐ Content => Text & Bild
+            ☐ Atelier 9
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 10
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+            ☐ Atelier 11
+                ☐ Untertitel
+                ☐ Content => Text
+                ☐ Gallery
+    Projekte:
+        ☐ Index
+        ☐ Filtersystem (nach ateliers, themenpfaden)
+        ProjektEinzeln:
+            ☐ Titel
+            ☐ Lead
+            ☐ Gallery
+    Veranstaltungen:
+        ☐ Link
+
+Entitäten:
+    Projekte:
+        ✔ Titel @done(20-12-29 12:00)
+        ✔ Atelier (ref) @done(20-12-29 12:00)
+        ✔ Betreuer (text, ref) @done(20-12-29 13:40)
+        ✔ Student (text, ref) @done(20-12-29 13:40)
+        ✔ Lead (content) @done(20-12-29 13:45)
+        ☐ Gallery (bild, bildunterschrift, link)
+        ✔ Referenzbild @done(20-12-29 13:48)
+    Ateliers:
+        ☐ Untertitel (text)
+        ☐ Content
+        ☐ Project-Gallery (bild, bildunterschrift, links zu Projects (ref))
+        ☐ Links zu Pdfs (wo gehosted?)
+        ☐ Link zu Youtube Videos (allg. video hosting?)
+    Themenpfade:
+        ☐ Titel 
+        ☐ Lead
+        ☐ Content => Text & Bild
+        ☐ Ateliers
+    SpecialPages (home, partnergemeinde, dencity, feldstudien, impressum, ...):
+        ☐ Titel
+        ☐ Lead
+        ☐ Content => Text & Bild
+        ☐ VideoBotschafter (0-many) 
+        ☐ Gallery
+        ☐ Links
+    Menschen:
+        ✔ Name @done(20-12-29 13:40)
+        ✔ Bild @done(20-12-29 13:40)
+        ✔ Info @done(20-12-29 13:45)
+        ✔ Kontakt @done(20-12-29 13:40)
+        ✔ Rolle @done(20-12-29 14:05)
+    Rollen: 
+        ✔ Rollendef (text) @done(20-12-29 14:06)
