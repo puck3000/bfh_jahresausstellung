@@ -103,19 +103,21 @@ Entitäten:
         ✔ Betreuer (text, ref) @done(20-12-29 13:40)
         ✔ Student (text, ref) @done(20-12-29 13:40)
         ✔ Lead (content) @done(20-12-29 13:45)
-        ☐ Gallery (bild, bildunterschrift, link)
+        ✔ Gallery (bild, bildunterschrift, link) @done(20-12-29 14:16)
         ✔ Referenzbild @done(20-12-29 13:48)
+        ✔ slug @done(20-12-29 15:06)
     Ateliers:
-        ☐ Untertitel (text)
-        ☐ Content
+        ✔ Untertitel (text) @done(20-12-29 15:06)
+        ✔ slug @done(20-12-29 15:06)
+        ✔ Content @done(20-12-29 15:10)
+        ✔ themenpfad @done(20-12-29 15:17)
         ☐ Project-Gallery (bild, bildunterschrift, links zu Projects (ref))
         ☐ Links zu Pdfs (wo gehosted?)
         ☐ Link zu Youtube Videos (allg. video hosting?)
     Themenpfade:
-        ☐ Titel 
-        ☐ Lead
-        ☐ Content => Text & Bild
-        ☐ Ateliers
+        ✔ Titel @done(20-12-29 15:15)
+        ✔ Lead @done(20-12-29 15:25)
+        ✔ Content => Text & Bild @done(20-12-29 15:18)
     SpecialPages (home, partnergemeinde, dencity, feldstudien, impressum, ...):
         ☐ Titel
         ☐ Lead

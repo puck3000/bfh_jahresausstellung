@@ -11,7 +11,11 @@ export default {
             type: 'array',
             of: [
                 { type: 'linkedpic'}
-            ]
+            ],
+            options: {
+                layout: 'grid'
+            }
         }
-    ]
+    ],
+    
 }

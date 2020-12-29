@@ -1,6 +1,6 @@
 export default {
-    title: 'Atelier',
-    name: 'atelier',
+    title: 'Themenpfad',
+    name: 'themenpfad',
     type: 'document',
     fields: [
         {
@@ -9,7 +9,12 @@ export default {
             type: 'string',
         },
         {
-            title: 'Kurzbeschrieb',
+            title: 'Lead',
+            name: 'lead',
+            type: 'content'
+          },
+        {
+            title: 'Inhalt',
             name: 'content',
             type: 'content'
           },
@@ -23,15 +28,6 @@ export default {
                 source: 'title',
                 auto: true
             }
-        },
-        {
-            title: 'Themenpfad',
-            name: 'themenpfad',
-            type: 'reference',
-            to: [
-              {type: 'themenpfad'}
-            ]  
         }
-
     ]
 }

@@ -6,11 +6,13 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import linkedpic from './objects/linkedpic'
 import gallery from './objects/gallery'
+import content from './objects/content'
 
 import projekt from './documents/projekt'
 import atelier from './documents/atelier'
 import role from './documents/role'
 import person from './documents/person'
+import themenpfad from './documents/themenpfad'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,11 +22,13 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    person,
     projekt,
     atelier,
-    person,
+    themenpfad,
     role,
     linkedpic,
-    gallery
+    gallery,
+    content,
   ]),
 })

@@ -33,6 +33,14 @@ export default {
             of: [{type: 'block'}]
         },
         {
+            title: 'Projekt',
+            name: 'projekt',
+            type: 'reference',
+            to: [
+              {type: 'projekt'}
+            ]  
+        },
+        {
             title: 'Rolle',
             name: 'role',
             type: 'array',

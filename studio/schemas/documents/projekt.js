@@ -19,11 +19,16 @@ export default {
         description: 'Das Referenzbild wird auf Index Seiten zum Verlinken, in Gallerien und auf Social Media verwendet.'
       },
       {
-        title: 'Infos', 
-        name: 'text',
-        type: 'array', 
-        of: [{type: 'block'}]
+        title: 'Inhalt',
+        name: 'content',
+        type: 'content'
       },
+      // {
+      //   title: 'Content', 
+      //   name: 'text',
+      //   type: 'array', 
+      //   of: [{type: 'block'}]
+      // },
       {
         title: 'Gallerie',
         name: 'gallery',
@@ -36,6 +41,7 @@ export default {
         type: 'slug',
         options: {
           source: 'title',
+          auto: true
         }
       },
       {
@@ -44,9 +50,7 @@ export default {
           type: 'reference',
           to: [
             {type: 'atelier'}
-          ]
-              
-          
+          ]  
       }
     ]
   }
