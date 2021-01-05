@@ -133,3 +133,36 @@ Entitäten:
         ✔ Rolle @done(20-12-29 14:05)
     Rollen: 
         ✔ Rollendef (text) @done(20-12-29 14:06)
+    Meta:
+        Header:
+            Navigation:
+                ☐ Main Punkte
+                ☐ Subnav
+            ☐ Titel
+            ☐ MapIcon
+        BottomNav Feature:
+            ☐ Special Bottom Nav
+        Footer:
+            ☐ Logos (3)
+            ☐ Disclaimer
+    Map Feature:
+        ☐ Alles im Feb
+
+Nach Seiten:
+    Home:
+        ☐ Header
+        ☐ Map Feature
+        ☐ Footer
+    Page Template:
+        ☐ Header
+        ☐ Main:
+            ☐ Section (1toMany)
+                ☐ Tag / Anchor
+                ☐ FeatPic (linkable)
+                ☐ Content
+                    - Title
+                    - Text
+                    - More img?
+                    - Buttons
+        
+
