@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "content-model-graph"
+    "content-model-graph",
+    "tabs"
   ],
   "env": {
     "development": {

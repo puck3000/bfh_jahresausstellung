@@ -7,6 +7,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import linkedpic from './objects/linkedpic'
 import gallery from './objects/gallery'
 import content from './objects/content'
+import textandimage from './objects/textandimage'
+import section from './objects/section'
+import lauftext from './objects/lauftext'
 
 import projekt from './documents/projekt'
 import atelier from './documents/atelier'
@@ -30,5 +33,8 @@ export default createSchema({
     linkedpic,
     gallery,
     content,
+    lauftext,
+    textandimage,
+    section
   ]),
 })
