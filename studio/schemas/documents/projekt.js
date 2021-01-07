@@ -1,17 +1,17 @@
+import {RiFocusLine} from 'react-icons/ri'
 import Tabs from "sanity-plugin-tabs"
 
 export default {
-    title: 'Projekte',  // The human-readable label. Used in the studio.
-    name: 'projekt',   // Required. The field name, and key in the data record.
-    type: 'document',  // Required. The name of any valid schema type.
-    // Input fields below, as many as you need.  preview: {
-      preview: {
-        select: {
-          title: 'content.titel',
-        }
-      },
-    
-  
+    title: 'Projekte', 
+    name: 'projekt',  
+    type: 'document',  
+    icon: RiFocusLine,
+    preview: {
+      select: {
+        title: 'content.titel',
+        media: 'content.referencepic'
+      }
+    },
     fields: [
       {
         type: 'object',
@@ -49,10 +49,20 @@ export default {
             },
             {
               name: 'people',
-              title: 'Menschen',
+              title: 'Verfasser*in',
               type: 'array',
               of:[ 
                 {type: 'string'}
+              ],
+              fieldset: 'main'
+            },
+            {
+              name: 'download',
+              title: 'Download',
+              type: 'file',
+              options: { collapsible: true, collapsed: true,},
+              fields: [
+                {name: 'label', type: 'string', title: 'label'}
               ],
               fieldset: 'main'
             },
@@ -71,7 +81,7 @@ export default {
               name: 'referencepic',
               type: 'image',
               options: {
-                  hotspot: true // <-- Defaults to false
+                  hotspot: true 
               },
               description: 'Das Referenzbild wird auf Index Seiten zum Verlinken, in Gallerien und auf Social Media verwendet.',
               fieldset: 'meta'

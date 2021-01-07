@@ -3,4 +3,5 @@ export default {
     name: 'content',
     type: 'array', 
     of: [{type: 'block'}]
+    
 }

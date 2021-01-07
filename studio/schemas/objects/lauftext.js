@@ -1,26 +1,21 @@
+import {AiOutlineFileText} from 'react-icons/ai'
 export default {
     name: 'lauftext',
-    title: 'Text',
+    title: 'Lauftext',
     type: 'object',
+    icon: AiOutlineFileText,
     fields: [
         {
             name: 'inhalt',
             title: 'Inhalt',
-            type: 'content',
+            type: 'array', 
+            of: [{type: 'block'}],
         },
         {
             name: 'laufweite',
-            title: 'Laufweite',
-            type: 'array',
-            of: [{type: 'string'}],
-            options: {
-                list: [
-                    {value: 'compact', title: 'Kompakt'},
-                    {value: 'fullwidth', title: 'Grosszügig'}
-                ],
-                layout: 'radio'
-            },
-
+            title: 'Kompakt',
+            type: 'boolean',
+            decription: 'hier kann die kompakte Darstellung des Textblocks aktiviert werden.'
         },
     ],
 }

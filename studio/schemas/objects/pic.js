@@ -2,6 +2,11 @@ export default {
     title: 'Bild',
     name: 'pic',
     type: 'object',
+    preview: {
+        select: {
+          media: 'pic' // Use the userPortait image field as thumbnail
+        }
+      },
     fields: [
         {
             title: 'Bilddatei',
@@ -15,6 +20,11 @@ export default {
             title: 'Bildunterschrift',
             name: 'caption',
             type: 'content', 
+        },
+        {
+            title: 'Alt-Titel',
+            name: 'alt',
+            type: 'string', 
         },
     ]
 }

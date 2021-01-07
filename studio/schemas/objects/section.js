@@ -20,13 +20,14 @@ export default {
             type: 'array',
             title: 'Section Content',
             description: 'Hier können die Inhalte der Sektion erstellt werden.',
-            of: [
-              { type: 'lauftext' },
-              { type: 'textandimage' },
-              { type: 'linkedpic' },
-              { type: 'gallery' },
+            of: [{type: 'block'}]
+            // of: [
+            //   { type: 'lauftext' },
+            //   { type: 'textandimage' },
+            //   { type: 'linkedpic' },
+            //   { type: 'gallery' },
             //   { type: 'embeddedvideo' },
-              ]
+            //  ]
           }
     ],
 }

@@ -1,22 +1,24 @@
-import linkedpic from "./linkedpic";
+import {BiImages} from 'react-icons/bi'
 
 export default {
     title: 'Gallerie',
     name: 'gallery',
-    type: 'object',
     description: 'Hier können Bilder für die Gallerie bestimmt werden.',
+    icon: BiImages,
+    type: 'object',
     fields: [
-        {
-            title: 'Bild',
-            name: 'slide',
-            type: 'array',
-            of: [
-                { type: 'pic'}
-            ],
-            options: {
-                layout: 'grid'
-            }
-        }
+        { name: 'slide', title: 'Slides', type: 'images'}
     ],
-    
+    preview: {
+        select: {
+            title: 'title',
+        },
+        prepare({ title }) {
+            return {
+                title: `Gallerie`,
+                
+            };
+        },
+    },
+
 }

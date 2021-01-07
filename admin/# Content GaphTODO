@@ -1,0 +1,38 @@
+# Content Gaph
+
+Home:
+    ☐ Map
+    ☐ Themenpfade index
+    ☐ ...
+Themenpfade:
+    ☐ TP-Home
+    ☐ TP-Index
+    ☐ TP1
+        ☐ Tp desc
+        ☐ Ateliers
+    ☐ TP2
+        ☐ Tp desc
+        ☐ Ateliers
+    ☐ TP3
+        ☐ Tp desc
+        ☐ Ateliers
+Ateliers:
+    ☐ Atelier desc
+    ☐ Projekte
+Projekte:
+    ☐ Titel
+    ☐ Name(n)
+    ☐ Bildgallerie
+    ☐ Download(s)
+Veranstaltungen:
+    ☐ Übersicht
+
+Allg:
+    Header:
+        ☐ Main Nav
+        ☐ Sub Nav
+        ☐ Bottom Nav
+    Footer:
+        ☐ Nach Vorgaben
+    Alert:
+        ☐ Möglichkeiten Def
