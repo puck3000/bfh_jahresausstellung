@@ -17,8 +17,9 @@ export default function Layout({children}) {
             <meta name="og:title" content="BFH Jahresausstellung 2021" />
             <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            {/* Todo: Create Header Component */}
-            <div className="wrapper">
+           
+           {/* Todo: Create Header Component */}
+            <div className="m-1">
                 <header>
                     <h1>
                         BFH Jahresausstellung 2021

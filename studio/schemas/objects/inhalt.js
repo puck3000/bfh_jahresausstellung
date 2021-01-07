@@ -3,6 +3,9 @@ export default {
     title: 'inhalt',
     type: 'array',
     description: 'Hier können die Inhalte erfasst werden.',
+    options: {
+        editModal: 'fullscreen',
+    },
     of: [
         { type: 'anchor'},
         { type: 'lauftext' },
