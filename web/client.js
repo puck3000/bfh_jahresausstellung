@@ -2,6 +2,6 @@ import sanityClient from '@sanity/client'
 
 export default sanityClient({
   projectId: 'i59olcvl', // you can find this in sanity.json
-  dataset: 'production', // or the name you chose in step 1
+  dataset: 'dev', // or the name you chose in step 1
   useCdn: true // `false` if you want to ensure fresh data
 })

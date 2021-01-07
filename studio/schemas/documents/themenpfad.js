@@ -1,7 +1,7 @@
 // import {GrMapLocation} from 'react-icons/gr'
 import {GiPathDistance} from 'react-icons/gi'
-
 import Tabs from "sanity-plugin-tabs"
+
 export default {
     title: 'Themenpfade',
     name: 'themenpfad',
