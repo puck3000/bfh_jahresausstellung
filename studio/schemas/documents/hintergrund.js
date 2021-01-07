@@ -1,9 +1,10 @@
-import {AiOutlineHome} from 'react-icons/ai'
+import {BiLayer} from 'react-icons/bi'
+
 export default {
-    name: 'home',
-    title: 'Home',
+    name: 'hintergrund',
+    title: 'Hintergrund',
     type: 'document',
-    icon: AiOutlineHome,
+    icon: BiLayer,
     fields: [
         {
             name: 'title',

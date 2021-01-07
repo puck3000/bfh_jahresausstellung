@@ -1,9 +1,9 @@
-import {AiOutlineHome} from 'react-icons/ai'
+import {RiPagesLine} from 'react-icons/ri'
 export default {
-    name: 'home',
-    title: 'Home',
+    name: 'pages',
+    title: 'Einzelseiten',
     type: 'document',
-    icon: AiOutlineHome,
+    icon: RiPagesLine,
     fields: [
         {
             name: 'title',

@@ -1,11 +1,11 @@
-import {RiFocusLine} from 'react-icons/ri'
+import {BiMapPin} from 'react-icons/bi'
 import Tabs from "sanity-plugin-tabs"
 
 export default {
     title: 'Projekte', 
     name: 'projekt',  
     type: 'document',  
-    icon: RiFocusLine,
+    icon: BiMapPin,
     preview: {
       select: {
         title: 'content.titel',

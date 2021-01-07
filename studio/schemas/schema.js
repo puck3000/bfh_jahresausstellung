@@ -20,6 +20,9 @@ import inhalt from './objects/inhalt'
 import anchor from './objects/anchor'
 import horzline from './objects/horzline'
 import images from './objects/images'
+import pages from './documents/pages'
+import hintergrund from './documents/hintergrund'
+import settings from './documents/settings'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -29,9 +32,11 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    projekt,
-    atelier,
+    home,
+    hintergrund,
     themenpfad,
+    atelier,
+    projekt,
     linkedpic,
     gallery,
     content,
@@ -43,6 +48,7 @@ export default createSchema({
     anchor,
     horzline,
     images,
-    home,
+    pages,
+    settings
   ]),
 })

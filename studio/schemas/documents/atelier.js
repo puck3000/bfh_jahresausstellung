@@ -1,10 +1,10 @@
-import {MdFilterCenterFocus} from 'react-icons/md'
+import {GiMultipleTargets} from 'react-icons/gi'
 import Tabs from "sanity-plugin-tabs"
 export default {
     title: 'Ateliers',
     name: 'atelier',
     type: 'document',
-    icon: MdFilterCenterFocus,
+    icon: GiMultipleTargets,
     preview: {
         select: {
           title: 'content.titel',
