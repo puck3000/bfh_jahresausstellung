@@ -1,7 +1,7 @@
 import groq from 'groq'
 import BlockContent from '@sanity/block-content-to-react' 
 import imageUrlBuilder from '@sanity/image-url'
-import client from '../../client'
+import client from 'client'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)

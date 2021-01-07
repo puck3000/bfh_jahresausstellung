@@ -1,8 +1,9 @@
 import groq from 'groq'
-import client from '../../client'
+import client from 'client'
 import BlockContent from '@sanity/block-content-to-react' 
 import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
+import Layout from 'components/Layout'
 
 
 function urlFor (source) {
@@ -16,26 +17,31 @@ const Themenpfad = (props) => {
         referencepic
       } = props
         return (
-          <>
+          <Layout>
           <Head>
             <title>Themenpfad | {title}</title>
           </Head>
           <div>
             <pre>The Title of this Themenpfad is:</pre>
             <h2>{title}</h2>
-            <pre>The Lead is:</pre>
-            <BlockContent 
-              blocks={lead}
-              {...client.config()}
-            />
+            {
+              lead.length > 0 && 
+              <>
+                <pre>The Lead is:</pre>
+                <BlockContent 
+                  blocks={lead}
+                  {...client.config()}
+                />
+              </>          
+            }
+            
             <pre>The Referencepic is:</pre>
             <img
               src={urlFor(referencepic)
-              .width(500)
               .url()}
             />
           </div>
-          </>
+          </Layout>
         )
 }
 
