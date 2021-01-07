@@ -90,7 +90,7 @@ export default {
                     name: 'slug',
                     type: 'slug',
                     options: {
-                        source: 'title',
+                        source: 'content.title',
                         auto: true
                     },
                     fieldset: 'meta'

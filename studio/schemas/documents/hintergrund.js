@@ -11,5 +11,14 @@ export default {
             title: 'Title',
             type: 'string',
         },
+        {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            options: {
+              source: 'title',
+              auto: true
+            },
+        }
     ],
 }
