@@ -13,6 +13,15 @@ export default {
           media: 'content.referencepic'
         }
       },
+    orderings: [
+      {
+          title: 'Alphabetisch',
+          name: 'alpha',
+          by: [
+            {field: 'content.title', direction: 'asc'}
+          ]
+      }  
+    ],
     fields: [
         {
             type: 'object',
