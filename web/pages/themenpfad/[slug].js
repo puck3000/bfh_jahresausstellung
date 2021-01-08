@@ -4,6 +4,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
 import Layout from 'components/Layout'
+import Inhalt from 'components/Inhalt'
 
 
 function urlFor (source) {
@@ -15,11 +16,7 @@ const Themenpfad = (props) => {
         title = 'Missing Title',
         lead,
         referencepic,
-        anchor,
-        lauftext,
-        textandimage,
-        linkedpic,
-        gallery
+        inhalt
       } = props
     
         return (
@@ -41,76 +38,8 @@ const Themenpfad = (props) => {
                 />
               </>          
             }
-{/* INHALT */}
-
-  {/* ANKER */}
-            {
-              anchor && 
-              <button>
-                {anchor.anchorTag}
-              </button>
-            }
-  {/* LAUFTEXT */}
-            {
-              lauftext && 
-              <>
-                <pre>The Lauftext is:</pre>
-                <BlockContent 
-                  blocks={lauftext.inhalt}
-                  {...client.config()}
-                />
-              </>  
-              
-            }
-  {/* LINKEDPIC */}
-            {
-              linkedpic &&
-              <figure>
-                <img
-                  src={urlFor(linkedpic.image)
-                  .url()}
-                />   
-                <figcaption>
-                  <BlockContent 
-                    blocks={linkedpic.caption}
-                    {...client.config()}
-                  />
-                </figcaption>  
-              </figure>
-            }
-  {/* TEXTANDIMAGE */}
-            {
-              textandimage &&
-              <>
-                 <img
-                  src={urlFor(textandimage.image)
-                  .url()}
-                />  
-                <BlockContent 
-                    blocks={textandimage.text}
-                    {...client.config()}
-                  />
-              </>
-            }
-  {/* GALLERY */}
-            {
-              gallery &&
-              gallery.slide.map((slide) => (
-                <figure>
-                <img
-                  src={urlFor(slide.pic)
-                  .url()}
-                />   
-                <figcaption>
-                  <BlockContent 
-                    blocks={slide.caption}
-                    {...client.config()}
-                  />
-                </figcaption>  
-              </figure>
-                )
-              )
-            }
+            { inhalt && <Inhalt inhalt={inhalt}/> }
+            
 {/* REFERENCEPIC */}
             {
               referencepic && 
@@ -135,11 +64,7 @@ const query = groq `
     title,
     referencepic,
     lead,
-    'anchor': content[_type == 'anchor'][0],
-    'lauftext': content[_type == 'lauftext'][0],
-    'textandimage': content[_type == 'textandimage' ][0],
-    'linkedpic': content[_type == 'linkedpic'][0],
-    'gallery': content[_type == 'gallery'][0]
+    'inhalt': content
   }
 `
 
