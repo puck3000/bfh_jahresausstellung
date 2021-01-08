@@ -9,7 +9,7 @@ function urlFor (source) {
 export default function Gallery({gallery}) {
 
     const slides = gallery.slide.map((slide) => (
-        <figure key={slide._key}>
+        <figure key={slide._key} className="mb-2">
         <img
           src={urlFor(slide.pic)
           .url()}

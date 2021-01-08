@@ -1,10 +1,11 @@
 import groq from 'groq'
 import client from 'client'
-import BlockContent from '@sanity/block-content-to-react' 
+// import BlockContent from '@sanity/block-content-to-react' 
 import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
 import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
+import Ateliers from 'components/Ateliers'
 
 
 function urlFor (source) {
@@ -14,9 +15,9 @@ function urlFor (source) {
 const Themenpfad = (props) => {
     const {
         title = 'Missing Title',
-        lead,
         referencepic,
-        inhalt
+        inhalt,
+        indexOfAteliers
       } = props
     
         return (
@@ -25,33 +26,21 @@ const Themenpfad = (props) => {
             <title>Themenpfad | {title}</title>
           </Head>
           <div>
-            <pre>The Title of this Themenpfad is:</pre>
-            <h2>{title}</h2>
-{/* LEAD */}
-            {
-              lead && 
-              <>
-                <pre>The Lead is:</pre>
-                <BlockContent 
-                  blocks={lead}
-                  {...client.config()}
-                />
-              </>          
-            }
-            { inhalt && <Inhalt inhalt={inhalt}/> }
-            
+            <h2 className="mb-2">{title}</h2>
 {/* REFERENCEPIC */}
             {
               referencepic && 
-              <>
-                <pre>The Referencepic is:</pre>
                 <img
+                  className="mb-2"
                   src={urlFor(referencepic)
                   .url()}
                 />              
-              </>
             }
-          
+
+{/* INHALT */}
+            { inhalt && <Inhalt inhalt={inhalt}/> }
+{/* ATELIERS */}
+            { indexOfAteliers && <Ateliers ateliers={indexOfAteliers}/> }
             
           </div>
           </Layout>
@@ -63,8 +52,8 @@ const query = groq `
   *[_type == "themenpfad"&& content.slug.current == $slug][0].content{
     title,
     referencepic,
-    lead,
-    'inhalt': content
+    'inhalt': content,
+    'indexOfAteliers': ateliers[]->content{titel, referencepic, excerpt, slug}
   }
 `
 

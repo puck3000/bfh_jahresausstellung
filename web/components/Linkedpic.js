@@ -8,7 +8,7 @@ function urlFor (source) {
 
 export default function Linkedpic({linkedpic}) {
     return (
-        <figure>
+        <figure className="mb-2">
                 <img
                   src={urlFor(linkedpic.image)
                   .url()}

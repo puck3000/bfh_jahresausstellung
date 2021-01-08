@@ -10,10 +10,12 @@ export default function TextAndImage({textandimage}) {
     return (
         <>
             <img
+            className="mb-2"
                 src={urlFor(textandimage.image)
             .url()}
             />  
             <BlockContent 
+                className="mb-2"
                 blocks={textandimage.text}
                 {...client.config()}
             />
