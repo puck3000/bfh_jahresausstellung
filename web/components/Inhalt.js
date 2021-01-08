@@ -24,38 +24,6 @@ export default function Inhalt({inhalt}) {
             default:
                 break;
         }
-    }
-    
-    
-    )
+    })
     return inhalte
 }
-
-
-
-// switch (content._type) {
-//     case 'anchor':
-//         <Anchor anchor={content}/>
-//         break;
-//     case 'lauftext':
-//         <Lauftext lauftext={content} />
-//         break;
-//     case 'textandimage':
-//         <TextAndImage textandimage={content} />
-//         break;
-//     case 'linkedpic':
-//         <Linkedpic linkedpic={content} />
-//         break;
-//     case 'gallery':
-//         <Gallery gallery={content} />
-//     default:
-//         break;
-// }
-
-
-
-// { anchor && <Anchor anchor={anchor} /> }
-// { lauftext && <Lauftext lauftext={lauftext} /> }
-// { linkedpic && <Linkedpic linkedpic={linkedpic}/> }
-// { textandimage && <TextAndImage textandimage={textandimage} /> }
-// { gallery && <Gallery gallery={gallery} /> }

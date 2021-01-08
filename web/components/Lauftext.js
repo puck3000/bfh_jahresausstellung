@@ -3,11 +3,14 @@ import client from 'client'
 
 
 export default function Lauftext({lauftext}) {
+    const laufweite = lauftext.laufweite ? 'kompakt' : 'normal'
     return (    
-        <BlockContent 
-            blocks={lauftext.inhalt}
-            {...client.config()}
-        />
-              
+        <div className={`prose ${laufweite}`}>
+            <BlockContent 
+                blocks={lauftext.inhalt}
+                {...client.config()}
+            />
+        </div>
+          
     )
 }

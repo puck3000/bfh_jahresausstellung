@@ -20,7 +20,13 @@ export default {
             type: 'array',
             title: 'Section Content',
             description: 'Hier können die Inhalte der Sektion erstellt werden.',
-            of: [{type: 'block'}]
+            of: [{type: 'block',styles: [
+                { title: 'Normal', value: 'normal' },
+                { title: 'Titel', value: 'h2' },
+                { title: 'Untertitel', value: 'h3' },
+                { title: 'Lead', value: 'blockquote' },
+                
+            ]}]
             // of: [
             //   { type: 'lauftext' },
             //   { type: 'textandimage' },
