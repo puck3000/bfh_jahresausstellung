@@ -14,8 +14,14 @@ const Themenpfad = (props) => {
     const {
         title = 'Missing Title',
         lead = [],
-        referencepic
+        referencepic,
+        anchor,
+        lauftext,
+        textandimage,
+        linkedpic,
+        gallery
       } = props
+    
         return (
           <Layout>
           <Head>
@@ -24,6 +30,7 @@ const Themenpfad = (props) => {
           <div>
             <pre>The Title of this Themenpfad is:</pre>
             <h2>{title}</h2>
+{/* LEAD */}
             {
               lead.length > 0 && 
               <>
@@ -34,12 +41,81 @@ const Themenpfad = (props) => {
                 />
               </>          
             }
+{/* INHALT */}
+
+  {/* ANKER */}
+            {
+              anchor && 
+              <button>
+                {anchor.anchorTag}
+              </button>
+            }
+  {/* LAUFTEXT */}
+            {
+              lauftext && 
+              <>
+                <pre>The Lauftext is:</pre>
+                <BlockContent 
+                  blocks={lauftext.inhalt}
+                  {...client.config()}
+                />
+              </>  
+              
+            }
+  {/* LINKEDPIC */}
+            {
+              linkedpic &&
+              <figure>
+                <img
+                  src={urlFor(linkedpic.image)
+                  .url()}
+                />   
+                <figcaption>
+                  <BlockContent 
+                    blocks={linkedpic.caption}
+                    {...client.config()}
+                  />
+                </figcaption>  
+              </figure>
+            }
+  {/* TEXTANDIMAGE */}
+            {
+              textandimage &&
+              <>
+                 <img
+                  src={urlFor(textandimage.image)
+                  .url()}
+                />  
+                <BlockContent 
+                    blocks={textandimage.text}
+                    {...client.config()}
+                  />
+              </>
+            }
+  {/* GALLERY */}
+            {
+              gallery &&
+              gallery.slide.map((slide) => (
+                <img
+                  src={urlFor(slide)
+                  .url()}
+                />  
+                )
+              )
+            }
+{/* REFERENCEPIC */}
+            {
+              referencepic && 
+              <>
+                <pre>The Referencepic is:</pre>
+                <img
+                  src={urlFor(referencepic)
+                  .url()}
+                />              
+              </>
+            }
+          
             
-            <pre>The Referencepic is:</pre>
-            <img
-              src={urlFor(referencepic)
-              .url()}
-            />
           </div>
           </Layout>
         )
@@ -47,8 +123,17 @@ const Themenpfad = (props) => {
 
 
 const query = groq `
-        *[_type == "themenpfad"&& content.slug.current == $slug][0].content
-    `
+  *[_type == "themenpfad"&& content.slug.current == $slug][0].content{
+    title,
+    referencepic,
+    lead,
+    'anchor': content[_type == 'anchor'][0],
+    'lauftext': content[_type == 'lauftext'][0],
+    'textandimage': content[_type == 'textandimage' ][0],
+    'linkedpic': content[_type == 'linkedpic'][0],
+    'gallery': content[_type == 'gallery'][0]
+  }
+`
 
 
 Themenpfad.getInitialProps = async function(context) {
