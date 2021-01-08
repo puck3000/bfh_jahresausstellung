@@ -6,7 +6,7 @@ export default {
         {
             name: 'slide',
             title: 'Slide',
-            type: 'image',
+            type: 'pic',
         }
     ],
     options: { layout: 'grid'}

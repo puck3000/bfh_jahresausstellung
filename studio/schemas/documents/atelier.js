@@ -40,11 +40,11 @@ export default {
                     fieldset: 'main'
                 },
                 {
-                    name: 'sectionBuilder',
-                    title: 'Inhalte',
+                    title: 'Inhalt',
+                    name: 'content',
                     type: 'inhalt',
                     fieldset: 'main'
-                },
+                  },
                 {
                     name: 'projects',
                     title: 'Projekt Index',
@@ -71,7 +71,7 @@ export default {
                 },
                 {
                     title: 'Kurzbeschrieb',
-                    name: 'content',
+                    name: 'excerpt',
                     type: 'content',
                     fieldset: 'meta'
                 },

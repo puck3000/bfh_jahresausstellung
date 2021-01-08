@@ -13,7 +13,7 @@ function urlFor (source) {
 const Themenpfad = (props) => {
     const {
         title = 'Missing Title',
-        lead = [],
+        lead,
         referencepic,
         anchor,
         lauftext,
@@ -32,7 +32,7 @@ const Themenpfad = (props) => {
             <h2>{title}</h2>
 {/* LEAD */}
             {
-              lead.length > 0 && 
+              lead && 
               <>
                 <pre>The Lead is:</pre>
                 <BlockContent 
@@ -96,10 +96,18 @@ const Themenpfad = (props) => {
             {
               gallery &&
               gallery.slide.map((slide) => (
+                <figure>
                 <img
-                  src={urlFor(slide)
+                  src={urlFor(slide.pic)
                   .url()}
-                />  
+                />   
+                <figcaption>
+                  <BlockContent 
+                    blocks={slide.caption}
+                    {...client.config()}
+                  />
+                </figcaption>  
+              </figure>
                 )
               )
             }
