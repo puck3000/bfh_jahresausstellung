@@ -1,10 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/themenpfad/[slug]": "pages/themenpfad/[slug].js",
-  "/atelier/[slug]": "pages/atelier/[slug].js",
-  "/projekt/[slug]": "pages/projekt/[slug].js"
+  "/_document": "pages/_document.js"
 }

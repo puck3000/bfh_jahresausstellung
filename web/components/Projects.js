@@ -1,5 +1,4 @@
 import client from 'client'
-import BlockContent from '@sanity/block-content-to-react' 
 import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
 
@@ -14,19 +13,22 @@ const peopleMap = (people) => {
 }
  
 export default function Projects({projects}) {
-    const projs = projects.map((project) => (
-        <Link className="project mb-2" href={`/projekt/${project.slug.current}`}>
-        <div>
-            <h3>{project.titel}</h3>
-            <img
-                src={urlFor(project.referencepic)
-                .url()}
-            />
-            {project.people && peopleMap(project.people)} 
-        </div>
-        </Link>
-        
-
-    ))
-    return projs
+    return (
+        projects.map((project) => (
+            <Link className="project mb-2" href={`/projekt/${project.slug.current}`}>
+                <div>
+                    <h3>{project.titel}</h3>
+                    <img
+                        src={urlFor(project.referencepic)
+                        .url()}
+                    />
+                    { project.people && (
+                        <ul>
+                        { project.people.map((person) => <li>{person}</li>) }
+                        </ul>
+                    )}
+                </div>                  
+            </Link>
+        ))
+    )
 }
