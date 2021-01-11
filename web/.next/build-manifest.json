@@ -28,6 +28,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/styleguide.js"
+    ],
+    "/themenpfad/[slug]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/themenpfad/[slug].js"
     ]
   },
   "ampFirstPages": []
