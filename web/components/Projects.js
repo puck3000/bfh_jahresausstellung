@@ -17,7 +17,7 @@ export default function Projects({projects}) {
         projects.map((project) => (
             <Link className="project mb-2" href={`/projekt/${project.slug.current}`}>
                 <div>
-                    <h3>{project.titel}</h3>
+                    <h2>{project.titel}</h2>
                     <img
                         src={urlFor(project.referencepic)
                         .url()}

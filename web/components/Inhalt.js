@@ -8,7 +8,12 @@ export default function Inhalt({inhalt}) {
     const inhalte = inhalt.map((content) => {
         switch (content._type) {
             case 'anchor':
-                return <Anchor anchor={content} key={content._key}/>
+                return (
+                    <>
+                        <Anchor anchor={content} key={content._key}/>
+                        <hr className="mb-4 text-black"></hr>
+                    </>
+                    )
                 break;
             case 'lauftext':
                 return <Lauftext lauftext={content} key={content._key} />
@@ -21,6 +26,10 @@ export default function Inhalt({inhalt}) {
                 break;
             case 'gallery':
                 return <Gallery gallery={content} key={content._key} />
+                break;
+            case 'metatext':
+                return <Lauftext lauftext={content} key={content._key} />
+                break;
             default:
                 break;
         }
