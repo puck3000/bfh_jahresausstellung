@@ -23,6 +23,11 @@ import images from './objects/images'
 import pages from './documents/pages'
 import hintergrund from './documents/hintergrund'
 import settings from './documents/settings'
+import themenpfadeIndex from './documents/themenpfadeIndex'
+import projekteIndex from './documents/projekteIndex'
+import veranstaltungen from './documents/veranstaltungen'
+import styleGuide from './documents/styleGuide'
+import metatext from './objects/metatext'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,6 +54,11 @@ export default createSchema({
     horzline,
     images,
     pages,
-    settings
+    settings,
+    themenpfadeIndex,
+    projekteIndex,
+    veranstaltungen,
+    styleGuide,
+    metatext
   ]),
 })

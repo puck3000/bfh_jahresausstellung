@@ -12,6 +12,7 @@ export default {
         { type: 'textandimage' },
         { type: 'linkedpic' },
         { type: 'gallery' },
+        { type: 'metatext'}
     //   { type: 'embeddedvideo' },
         ],
 }
