@@ -2,5 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/projekt": "pages/projekt.js"
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/themenpfade": "pages/themenpfade.js",
+  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
+  "/atelier/[slug]": "pages/atelier/[slug].js"
 }

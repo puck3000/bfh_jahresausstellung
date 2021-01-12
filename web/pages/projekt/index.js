@@ -24,8 +24,8 @@ const ProjektIndex = (props) => {
 {/* Projektindex */}
             {    
                 projekte.map((projekt) => (
-                  <Link key={projekt._id}  href={`/projekt/${projekt.slug}`}>
-                    <div className={`link projekt ${projekt.titel} mb-2`}>
+                  <Link key={projekt._id} href="/projekt/[slug]" as={`/projekt/${projekt.slug}`}>
+                    <div className={`link projekt ${projekt.slug} mb-2`}>
                       <hr></hr>
                       <h2 className="mt-1 mb-2">{projekt.titel}</h2>
                       <img 
