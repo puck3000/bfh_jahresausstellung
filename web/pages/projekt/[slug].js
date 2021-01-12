@@ -1,26 +1,22 @@
 import groq from 'groq'
-import BlockContent from '@sanity/block-content-to-react' 
-import imageUrlBuilder from '@sanity/image-url'
 import client from 'client'
 import Layout from 'components/Layout'
 import Head from 'next/head'
 import Gallery from 'components/Gallery'
+import Link from 'next/link'
 
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
-}
 
 const Project = (props) => {
   const { 
     titel = 'Missing title', 
     people,
     gallery,
-  } = props
+  } = props.projekt
     
   return (
     <Layout>
       <Head>
-        <title>Projekte | {titel}</title>
+        <title>{titel} | BFH Projekte </title>
       </Head>
       <h2 className="mb-2">{titel}</h2>
 {/* People */}
@@ -31,6 +27,9 @@ const Project = (props) => {
       )}
 {/* GALLERY */}
       { gallery && <Gallery gallery={gallery} /> }
+      <Link href="/projekt/">
+        <a>Zurück zur Projektübersicht</a>
+      </Link>
     </Layout>
   )
 }
@@ -44,11 +43,28 @@ const query = groq `*[_type == "projekt" && content.slug.current == $slug][0].co
     }
   `
 
-
-Project.getInitialProps = async function(context) {
-    // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = "" } = context.query
-    return await client.fetch(query, { slug })
+export async function getStaticProps({params}) {
+    const projekt = await client.fetch(query, {
+      slug: params.slug,
+    })
+  
+    return {
+      props: {
+        projekt,
+      },
+    }
   }
+
+
+export async function getStaticPaths() {
+  const paths = await client.fetch(
+    groq`*[_type == "projekt" && defined(content.slug.current)][].content.slug.current`
+  )
+
+  return {
+    paths: paths.map((slug) => ({params: {slug}})),
+    fallback: true,
+  }
+}
 
 export default Project

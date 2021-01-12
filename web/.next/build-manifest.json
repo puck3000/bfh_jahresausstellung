@@ -24,15 +24,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/styleguide": [
+    "/projekt": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/styleguide.js"
-    ],
-    "/themenpfad/[slug]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/themenpfad/[slug].js"
+      "static/chunks/pages/projekt.js"
     ]
   },
   "ampFirstPages": []
