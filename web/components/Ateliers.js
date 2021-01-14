@@ -10,20 +10,24 @@ function urlFor (source) {
 
 export default function Ateliers({ateliers}) {
     const attis = ateliers.map((atelier) => (
-        <Link className="atelier mb-2" href={`/atelier/${atelier.slug.current}`}>
-            <div>
+            <li>
                 <h2>{atelier.titel}</h2>
-                <img
-                src={urlFor(atelier.referencepic)
-                .url()}
-                />  
                 <BlockContent 
-                blocks={atelier.excerpt}
+                blocks={atelier?.excerpt}
                 {...client.config()}
                 />
-            </div>
-        </Link>
+                <img
+                src={urlFor(atelier?.referencepic)
+                .url()}
+                />  
+            </li>
 
     ))
-    return attis
+    return (
+        <ul className="grid grid-cols-2 gap-4">
+            {
+                attis
+            }
+        </ul>
+    )
 }

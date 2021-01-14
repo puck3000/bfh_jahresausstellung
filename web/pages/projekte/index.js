@@ -19,42 +19,25 @@ const ProjektIndex = (props) => {
         <Layout>
             <Head>Projektübersicht</Head>
 {/* Projektübersicht */}
-            <h1>{title}</h1>
+            <h1 className="mb-4">{title}</h1>
             { inhalt && <Inhalt inhalt={inhalt}/> }
 {/* Projektindex */}
-            {   
-              projekte.map((projekt) => (
-                projekt.gallery ? 
-                  <ProjLightBox projekt={projekt}/>
-                  :
-                  <ProjIndexView projekt={projekt}/>
-                
-              )
-               )
-              // projekte.map((projekt) => (
-              //   <Link key={projekt._id} href="/projekte/[slug]" as={`/projekte/${projekt.slug}`} passHref>
-              //     <a className={`link projekt ${projekt.slug}`}>
-              //       <hr></hr>
-              //       <h2 className="mt-1 mb-2">{projekt.titel}</h2>
-              //       <img 
-              //         src={urlFor(projekt.referencepic)}
-              //         alt={`Referenzbild zu ${projekt.titel}`}
-              //         className="mb-1"
-              //       />
-              //       { projekt.people && (
-              //         <ul className="mb-4">
-              //           {
-              //             projekt.people?.map((person, i) => (
-              //               <li key={i}>{person}</li>
-              //             ))
-              //           }
-              //         </ul>
-              //       ) 
-              //       }
-              //     </a>
-              //   </Link>
-              // ))   
-            }
+            { projekte && (
+              <ul className="grid grid-cols-2 gap-4">
+                {
+                  projekte.map((projekt) => (
+                    <li>
+                      {
+                        projekt.gallery ? 
+                          <ProjLightBox projekt={projekt}/>
+                          :
+                          <ProjIndexView projekt={projekt}/>
+                      }
+                    </li> 
+                  ))
+                }
+              </ul>
+            )}
             <Link href="/themenpfade" passHref>
               <a>zurück zu den Themenpfaden</a>
             </Link>

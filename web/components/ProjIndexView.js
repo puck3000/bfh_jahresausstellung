@@ -11,7 +11,25 @@ export default function ProjIndexView({projekt}) {
         <div className="mb-4">
             <hr className="mb-2"></hr>
             <img 
-                src={urlFor(projekt.referencepic)}
+                src={urlFor(projekt.referencepic)
+                  .width(2000)
+                  .height(1600)
+                  .format('webp')
+                  .url()}
+                srcSet={
+                  `
+                  ${urlFor(projekt.referencepic)
+                    .width(1024)
+                    .height(819)
+                    .format('webp')
+                    .url()} 1024w, 
+                  ${urlFor(projekt.referencepic)
+                      .width(2000)
+                      .height(1600)
+                      .format('webp')
+                      .url()} 2000w,
+                  `
+                  }
                 alt={`Referenzbild zu ${projekt.titel}`}
                 className="mb-2"
             />
