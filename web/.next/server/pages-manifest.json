@@ -3,5 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/projekte": "pages/projekte.js"
+  "/projekte": "pages/projekte.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/hintergrund/[slug]": "pages/hintergrund/[slug].js"
 }
