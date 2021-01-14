@@ -26,7 +26,7 @@ hr {
 }
 
 body {
-  background-color: burlywood;
+  background-color: DarkSlateGrey;
 }
 
 
@@ -34,8 +34,24 @@ body {
 /   FONTS
 /******************************************************/
 
+@font-face {
+  font-family: "MonumentGrotesk";
+  src: url("/fonts/MonumentGrotesk/ABCMonumentGrotesk-Regular.woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MonumentGrotesk";
+  src: url("/fonts/MonumentGrotesk/ABCMonumentGrotesk-RegularItalic.woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+
 html {
-  font-family: 'Helvetica', sans;
+  font-family: 'MonumentGrotesk', 'Helvetica', sans;
   line-height: 1.05;  
 }
 
