@@ -47,18 +47,14 @@ const ProjektIndex = (props) => {
 
 const query = groq `*[_type == 'projekteIndex'][0]{title, 'inhalt': content, 'projektlist': projlist[]->{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier, 'gallery': content.gallery, 'download': content.download}}`
 
-// const getAllProjekte = groq `*[_type == 'projekt'][]{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier}`
-
-
 export async function getStaticProps({params}) {
     const projektIndex = await client.fetch(query)
-    // const projekte = await client.fetch(getAllProjekte)
   
     return {
       props: {
         projektIndex,
-        // projekte
       },
+      revalidate: 1
     }
   }
 
