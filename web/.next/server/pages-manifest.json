@@ -3,10 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/styleguide": "pages/styleguide.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/themenpfade": "pages/themenpfade.js",
-  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
   "/projekte": "pages/projekte.js"
 }
