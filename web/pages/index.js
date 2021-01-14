@@ -33,13 +33,4 @@ export async function getStaticProps({params}) {
   }
 }
 
-export  function getStaticPaths() {
-  return {
-    paths: [{params: {'slug': ''}}],
-    fallback: false
-  }
-}
-
-
-
 export default Home;
