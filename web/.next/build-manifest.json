@@ -24,25 +24,15 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/atelier/[slug]": [
+    "/projekte": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/atelier/[slug].js"
+      "static/chunks/pages/projekte.js"
     ],
-    "/next/dist/pages/_error": [
+    "/projekte/[slug]": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/next/dist/pages/_error.js"
-    ],
-    "/themenpfade": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/themenpfade.js"
-    ],
-    "/themenpfade/[slug]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/themenpfade/[slug].js"
+      "static/chunks/pages/projekte/[slug].js"
     ]
   },
   "ampFirstPages": []

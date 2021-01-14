@@ -20,11 +20,28 @@ export default function Projects({projects}) {
                     <h2>{project.titel}</h2>
                     <img
                         src={urlFor(project.referencepic)
-                        .url()}
-                    />
+                            .width(2000)
+                            .height(1600)
+                            .format('webp')
+                            .url()
+                        }
+                        srcSet={
+                            `${urlFor(project.referencepic)
+                            .width(1024)
+                            .height(819)
+                            .format('webp')
+                            .url()} 1024w, ${urlFor(project.referencepic)
+                                .width(2000)
+                                .height(1600)
+                                .format('webp')
+                                .url()} 2000w,`
+                        }
+                        sizes="(max-width:1024px) 100vw, 50vw"
+                    /> 
+                    
                     { project.people && (
                         <ul>
-                        { project.people.map((person) => <li>{person}</li>) }
+                        { project.people.map((person) => <li key={person._id}>{person}</li>) }
                         </ul>
                     )}
                 </div>                  

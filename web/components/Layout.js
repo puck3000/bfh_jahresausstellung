@@ -20,7 +20,7 @@ export default function Layout({children}) {
            
            {/* Todo: Create Header Component */}
             <div className="m-1">
-                <header>
+                <header className="mb-4">
                     <h1>
                         BFH Jahresausstellung 2021
                     </h1>

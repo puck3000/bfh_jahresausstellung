@@ -14,5 +14,18 @@ export default {
             name: 'content',
             type: 'inhalt',
         },
+        {
+            title: 'Projekt Liste',
+            name: 'projlist',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference',
+                    to: [
+                        {type: 'projekt'}
+                    ]
+                }
+            ],
+        }
     ],
 }

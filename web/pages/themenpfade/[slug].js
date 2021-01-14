@@ -40,7 +40,7 @@ const Themenpfad = (props) => {
 {/* INHALT */}
             { inhalt && <Inhalt inhalt={inhalt}/> }
 {/* ATELIERS */}
-            { indexOfAteliers && <Ateliers ateliers={indexOfAteliers}/> }
+            {/* { indexOfAteliers && <Ateliers ateliers={indexOfAteliers}/> } */}
             
           </div>
           </Layout>

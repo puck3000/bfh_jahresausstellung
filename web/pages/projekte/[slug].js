@@ -1,57 +1,75 @@
-// pages/posts/[slug].js
-import ErrorPage from 'next/error'
-import {useRouter} from 'next/router'
-import {groq} from 'next-sanity'
-import {
-  getClient,
-  usePreviewSubscription,
-  urlFor,
-  PortableText
-  } from '../../lib/sanity'
+import groq from 'groq'
+import client from 'client'
+import Layout from 'components/Layout'
+import Head from 'next/head'
+import Gallery from 'components/Gallery'
+import Link from 'next/link'
 
-const query = groq`
-  *[_type == "projekt" && content.slug.current == $slug][0].content{
-  titel,
-  'slug': slug.current
-}
-`
 
-export default function Projekt({data, preview}) {
-  const router = useRouter()
-  if (!router.isFallback && !data.projekt?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
-
-  const {data: projekt} = usePreviewSubscription(query, {
-    params: {slug: data.projekt.slug},
-    initialData: data,
-    enabled: preview,
-  })
-
-  const {titel} = data.projekt
-
+const Project = (props) => {
+  const { 
+    titel = 'Missing title', 
+    people,
+    gallery,
+    download
+  } = props.projekt
+    
   return (
-    <article>
-      <h2>{titel}</h2>
-    </article>
+    <Layout>
+      <Head>
+        <title>{titel} | BFH Projekte </title>
+      </Head>
+      <h2 className="mb-2">{titel}</h2>
+{/* People */}
+      {people && (
+        <ul>
+          { people.map((person) => <li>{person}</li>) }
+        </ul>
+      )}
+{/* GALLERY */}
+      { gallery && <Gallery gallery={gallery} /> }
+      {
+        download && (
+          <div className="mb-2">
+            <a href={`${download}?dl=`}>{download.label}</a>
+          </div>
+        )
+        }
+      <Link href="/projekte" passHref>
+        <a >Zurück zur Projektübersicht</a>
+      </Link>
+    </Layout>
   )
 }
 
-export async function getStaticProps({params, preview = false}) {
-  const projekt = await getClient(preview).fetch(query, {
-    slug: params.slug,
-  })
+const query = groq `*[_type == "projekt" && content.slug.current == $slug][0].content
+    {
+      titel, 
+      people,
+      gallery,
+      slug,
+      'download': {
+        'url': download.asset->url,
+        'label': download.label
+        }
+    }
+  `
 
-  return {
-    props: {
-      preview,
-      data: {projekt},
-    },
+export async function getStaticProps({params}) {
+    const projekt = await client.fetch(query, {
+      slug: params.slug,
+    })
+  
+    return {
+      props: {
+        projekt,
+      },
+    }
   }
-}
+
 
 export async function getStaticPaths() {
-  const paths = await getClient().fetch(
+  const paths = await client.fetch(
     groq`*[_type == "projekt" && defined(content.slug.current)][].content.slug.current`
   )
 
@@ -60,3 +78,5 @@ export async function getStaticPaths() {
     fallback: true,
   }
 }
+
+export default Project
