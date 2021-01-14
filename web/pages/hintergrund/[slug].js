@@ -52,6 +52,7 @@ export async function getStaticProps({params}) {
     props: {
       hintergrund,
     },
+    revalidate: 1
   }
 }
 
