@@ -4,13 +4,13 @@ BFH:
     ✔ Carousel reinpacken @30m 2 @done(21-01-14 10:41)
     ✔ Mobile Begrenzung @20m 3 @done(21-01-14 10:51)
     ✔ Deployment @1h 4 @done(21-01-14 11:52)
-    ☐ Prerender all paths: @30m 7
+    ✔ Prerender all paths: @30m 7 @done(21-01-14 12:41)
         ✔ Home @done(21-01-14 11:53)
-        ☐ Themenpfade Slug
-        ☐ Hintergrund Slug
+        ✔ Themenpfade Slug @done(21-01-14 12:41)
+        ✔ Hintergrund Slug @done(21-01-14 12:41)
         ✔ Projekte Slug @done(21-01-14 11:53)
     ☐ Create Home Content (navi) @30m 8
-    ☐ Create Hintergrund Pages @30m 9
+    ✔ Create Hintergrund Pages @30m 9 @done(21-01-14 12:41)
     ☐ Download Button fixen @15m
 
 ZHAW:
