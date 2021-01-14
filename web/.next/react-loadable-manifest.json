@@ -1,24 +1,8 @@
 {
-  "@sanity/groq-store": [
+  "./dev/noop": [
     {
-      "id": "GBvF",
-      "file": "static/chunks/20.ca0f81d3f2c215be76b6.js"
-    },
-    {
-      "id": "MFIo",
-      "file": "static/chunks/20.ca0f81d3f2c215be76b6.js"
-    },
-    {
-      "id": "aUsF",
-      "file": "static/chunks/20.ca0f81d3f2c215be76b6.js"
-    },
-    {
-      "id": "nTIL",
-      "file": "static/chunks/20.ca0f81d3f2c215be76b6.js"
-    },
-    {
-      "id": "y4Ef",
-      "file": "static/chunks/20.ca0f81d3f2c215be76b6.js"
+      "id": "./node_modules/next/dist/client/dev/noop.js",
+      "file": "static/chunks/0.js"
     }
   ]
 }

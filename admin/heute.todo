@@ -1,15 +1,23 @@
 BFH:
-    ☐ Fonts einrichten @20m 8
+    ☐ Fonts einrichten @15m 8
     ✔ Inhalte-Workflow durchdenken @15m 1 @done(21-01-14 10:25)
     ✔ Carousel reinpacken @30m 2 @done(21-01-14 10:41)
     ✔ Mobile Begrenzung @20m 3 @done(21-01-14 10:51)
-    ☐ Deployment @1h 4
+    ✔ Deployment @1h 4 @done(21-01-14 11:52)
+    ☐ Prerender all paths: @30m 7
+        ✔ Home @done(21-01-14 11:53)
+        ☐ Themenpfade Slug
+        ☐ Hintergrund Slug
+        ✔ Projekte Slug @done(21-01-14 11:53)
+    ☐ Create Home Content (navi) @30m 8
+    ☐ Create Hintergrund Pages @30m 9
+    ☐ Download Button fixen @15m
 
 ZHAW:
     SCAD:
         ☐ Lernen @2h 6
     Plan:
-        ☐ schmieden @15m 7
+        ☐ schmieden @15m 8
 
 Zühlke: 
     ☐ Daily @30m 5

@@ -18,7 +18,7 @@ const Themenpfad = (props) => {
         referencepic,
         inhalt,
         indexOfAteliers
-      } = props
+      } = props.themenpfad
     
         return (
           <Layout>
@@ -57,11 +57,33 @@ const query = groq `
   }
 `
 
+export async function getStaticProps({params}) {
+  const themenpfad = await client.fetch(query, {
+    slug: params.slug,
+  })
 
-Themenpfad.getInitialProps = async function(context) {
-    // It's important to default the slug so that it doesn't return "undefined"
-    const { slug = "" } = context.query
-    return await client.fetch(query, { slug })
+  return {
+    props: {
+      themenpfad,
+    },
   }
+}
+
+export async function getStaticPaths() {
+  const paths = await client.fetch(
+      groq`*[_type == "themenpfad" && defined(content.slug.current)][].content.slug.current`
+    )
+    return {
+      paths: paths.map((slug) => ({params: {'slug': slug}})),
+      fallback: false,
+    }
+}
+
+
+// Themenpfad.getInitialProps = async function(context) {
+//     // It's important to default the slug so that it doesn't return "undefined"
+//     const { slug = "" } = context.query
+//     return await client.fetch(query, { slug })
+//   }
 
 export default Themenpfad

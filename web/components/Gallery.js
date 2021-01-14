@@ -30,31 +30,14 @@ export default function Gallery({gallery}) {
             }
           sizes="(max-width:1024px) 100vw, 50vw"
         />   
-        {/* <img 
-            srcSet={`${url
-              .width(1024)
-              .height(819)
-              .format('webp')
-              .url()} 1024,
-              ${url
-                .width(2000)
-              .height(1600)
-              .format('webp')
-              .url()} 2000
-              `}
-            sizes="(max-width:1024px) 1000px, 50vw"
-              src={url
-                .width(1024)
-                .height(819)
-                .url()}
-            
-              /> */}
-        <figcaption>
-          <BlockContent 
-            blocks={slide.caption}
-            {...client.config()}
-          />
-        </figcaption>  
+        { slide.caption && (
+          <figcaption>
+              <BlockContent 
+              blocks={slide.caption}
+              {...client.config()}
+            />
+          </figcaption>  
+        )}
       </figure>
         )
       )

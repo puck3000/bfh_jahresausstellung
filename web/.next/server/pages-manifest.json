@@ -1,14 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/atelier/[slug]": "pages/atelier/[slug].js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/": "pages/index.js",
-  "/projekte/[slug]": "pages/projekte/[slug].js",
-  "/projekte": "pages/projekte.js",
-  "/styleguide": "pages/styleguide.js",
-  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
-  "/themenpfade": "pages/themenpfade.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
