@@ -30,7 +30,8 @@ export async function getStaticProps({params}) {
   return {
     props: {
       home
-    }
+    },
+    revalidate: 1,
   }
 }
 
