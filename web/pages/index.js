@@ -1,16 +1,18 @@
 import groq from 'groq'
 import client from 'client'
-// import BlockContent from '@sanity/block-content-to-react' 
-// import imageUrlBuilder from '@sanity/image-url'
+import MainNav from 'components/MainNav'
+import Layout from 'components/Layout'
 
 const Home = (props) => {
   const {
     title = 'Missing Title'
   } = props
     return (
-      <div>
-        <p>The Title of this page is {title}</p>
-      </div>
+      <Layout>
+        <h1>Welcome to the homepage</h1>
+        <hr/>
+        <MainNav/>
+      </Layout>
     )
 }
 
