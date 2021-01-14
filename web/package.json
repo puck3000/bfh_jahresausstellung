@@ -18,10 +18,13 @@
     "@tailwindcss/typography": "^0.3.1",
     "groq": "^2.0.9",
     "next": "^10.0.4",
+    "next-sanity": "^0.1.8",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-image-lightbox": "^5.1.1",
     "tailwindcss": "^2.0.2"
   }
 }

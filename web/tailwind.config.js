@@ -6,7 +6,14 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+      fontFamily:  {
+        'sans': ['Helvetica', 'Arial', 'sans-serif'],
+        'serif': ['serif'],
+        'mono': ['mono']
+      },
+        extend: {
+          
+        },
     },
     variants: {
         extend: {},

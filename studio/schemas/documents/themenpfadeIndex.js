@@ -13,6 +13,19 @@ export default {
             title: 'Inhalt',
             name: 'content',
             type: 'inhalt',
+        },
+        {
+            title: 'Themenpfade Liste',
+            name: 'tpflist',
+            type: 'array',
+            of: [
+                {
+                    type: 'reference',
+                    to: [
+                        {type: 'themenpfad'}
+                    ]
+                }
+            ],
         }
     ],
 }

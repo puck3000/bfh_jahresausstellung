@@ -11,8 +11,23 @@ export default function Linkedpic({linkedpic}) {
         <figure className="mb-2">
                 <img
                   src={urlFor(linkedpic.image)
-                  .url()}
-                />   
+                    .width(2000)
+                    .height(1600)
+                    .format('webp')
+                    .url()}
+                  srcSet={
+                    `${urlFor(linkedpic.image)
+                      .width(1024)
+                      .height(819)
+                      .format('webp')
+                      .url()} 1024w, ${urlFor(linkedpic.image)
+                        .width(2000)
+                        .height(1600)
+                        .format('webp')
+                        .url()} 2000w,`
+                    }
+                  sizes="(max-width:1024px) 100vw, 50vw"
+                />    
                 <figcaption>
                   <BlockContent 
                     blocks={linkedpic.caption}
