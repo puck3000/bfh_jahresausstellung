@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Layout({children}) {
     return (
@@ -28,7 +29,11 @@ export default function Layout({children}) {
                         </h1>
                     </header>
                     <main>{children}</main>
-                    <footer>Footer</footer>
+                    <footer className="h-6">
+                        <Link href="/">
+                            <a >back home</a>
+                        </Link>
+                    </footer>
                 </div>
             </div>
         </>

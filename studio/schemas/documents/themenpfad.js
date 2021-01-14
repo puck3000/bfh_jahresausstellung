@@ -49,12 +49,12 @@ export default {
                     type: 'string',
                     fieldset: 'main'
                 },
-                {
-                    title: 'Lead',
-                    name: 'lead',
-                    type: 'content',
-                    fieldset: 'main'
-                  },
+                // {
+                //     title: 'Lead',
+                //     name: 'lead',
+                //     type: 'content',
+                //     fieldset: 'main'
+                //   },
                 {
                     title: 'Inhalt',
                     name: 'content',

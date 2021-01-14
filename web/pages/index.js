@@ -9,8 +9,9 @@ const Home = (props) => {
   } = props.home
     return (
       <Layout>
-        <h1>Welcome to {title}</h1>
-        <hr/>
+        <h1 className="mb-2">{title}</h1>
+        <hr className="mb-4"/>
+        <p className="mb-8">Hier kommt ab Februar eine coole Map Navigation hin. Bis jetzt aber mal noch dies:</p>
         <MainNav/>
       </Layout>
     )

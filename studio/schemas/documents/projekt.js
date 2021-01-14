@@ -57,6 +57,15 @@ export default {
               fieldset: 'main'
             },
             {
+              name: 'teacher',
+              title: 'Betreuer*in',
+              type: 'array',
+              of:[ 
+                {type: 'string'}
+              ],
+              fieldset: 'main'
+            },
+            {
               name: 'download',
               title: 'Download',
               type: 'file',
