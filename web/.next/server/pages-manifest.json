@@ -3,6 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/projekte": "pages/projekte.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/projekte/[slug]": "pages/projekte/[slug].js"
+  "/projekte/[slug]": "pages/projekte/[slug].js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

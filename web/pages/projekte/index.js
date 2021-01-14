@@ -13,12 +13,8 @@ const ProjektIndex = (props) => {
     title = 'Missing Title',
     inhalt,
     projektlist: projekte,
-    gallery
   
   } = props.projektIndex
-  // const 
-  //   projekte
-  //  = props.projekte
     return (
         <Layout>
             <Head>Projektübersicht</Head>
@@ -66,7 +62,7 @@ const ProjektIndex = (props) => {
     )
 }
 
-const query = groq `*[_type == 'projekteIndex'][0]{title, 'inhalt': content, 'projektlist': projlist[]->{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier, 'gallery': content.gallery}}`
+const query = groq `*[_type == 'projekteIndex'][0]{title, 'inhalt': content, 'projektlist': projlist[]->{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier, 'gallery': content.gallery, 'download': content.download}}`
 
 // const getAllProjekte = groq `*[_type == 'projekt'][]{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier}`
 

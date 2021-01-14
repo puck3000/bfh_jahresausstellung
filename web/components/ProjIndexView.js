@@ -8,16 +8,16 @@ function urlFor (source) {
 
 export default function ProjIndexView({projekt}) {
     return (
-        <>
-            <hr></hr>
-            <h2 className="mt-1 mb-2">{projekt.titel}</h2>
+        <div className="mb-4">
+            <hr className="mb-2"></hr>
             <img 
                 src={urlFor(projekt.referencepic)}
                 alt={`Referenzbild zu ${projekt.titel}`}
-                className="mb-1"
+                className="mb-2"
             />
+            <h2 className="mb-2">{projekt.titel}</h2>
             { projekt.people && (
-                <ul className="mb-4">
+                <ul className="mb-2">
                 {
                     projekt.people?.map((person, i) => (
                     <li key={i}>{person}</li>
@@ -25,29 +25,13 @@ export default function ProjIndexView({projekt}) {
                 }
                 </ul>
             )}
-        </>
+            {
+            projekt.download && (
+              <div className="mb-2">
+                <a href={`${projekt.download}?dl=`}>{projekt.download.label}</a>
+              </div>
+            )
+          }
+        </div>
     )
 }
-
-
-//   <Link key={projekt._id} href="/projekte/[slug]" as={`/projekte/${projekt.slug}`} passHref>
-//     <a className={`link projekt ${projekt.slug}`}>
-//       <hr></hr>
-//       <h2 className="mt-1 mb-2">{projekt.titel}</h2>
-//       <img 
-//         src={urlFor(projekt.referencepic)}
-//         alt={`Referenzbild zu ${projekt.titel}`}
-//         className="mb-1"
-//       />
-//       { projekt.people && (
-//         <ul className="mb-4">
-//           {
-//             projekt.people?.map((person, i) => (
-//               <li key={i}>{person}</li>
-//             ))
-//           }
-//         </ul>
-//       ) 
-//       }
-//     </a>
-//   </Link>

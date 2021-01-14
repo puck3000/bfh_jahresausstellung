@@ -31,7 +31,7 @@ export default class ProjLightBox extends Component {
     ))
     
     return (
-      <div>
+      <div className="mb-4">
         <hr className="mb-2"></hr>
         <button 
           className="relative"
@@ -58,17 +58,18 @@ export default class ProjLightBox extends Component {
               `
               }
             alt={`Referenzbild zu ${projekt.titel}`}
-            className="mb-1"
+            className="mb-2"
           />
           <BiExpand 
-            className="absolute top-2 right-2"
-            color="blue"
+            className="absolute top-2 right-2 bg-white"
+            size="2rem"
+            title="open project gallery"
           />
         </button>
         <div className="text-left">
-          <h2 className="mt-1 mb-2">{projekt.titel}</h2>
+          <h2 className="mb-2">{projekt.titel}</h2>
           { projekt.people && (
-            <ul className="mb-4">
+            <ul className="mb-2">
               {
                 projekt.people?.map((person, i) => (
                   <li key={i}>{person}</li>
@@ -76,6 +77,13 @@ export default class ProjLightBox extends Component {
               }
             </ul>
           )}
+          {
+            projekt.download && (
+              <div className="mb-2">
+                <a href={`${projekt.download}?dl=`}>{projekt.download.label}</a>
+              </div>
+            )
+          }
         </div>
 
         {isOpen && (
