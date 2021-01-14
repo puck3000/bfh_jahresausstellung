@@ -128,4 +128,9 @@ h2, h3, .lead, .counter, .anchor, blockquote {
   @apply mt-2 mb-2 px-2 py-1 anchor border border-current;
 }
 
+/******************************************************
+/   SlideShow
+/******************************************************/
+/* @import "react-alice-carousel/lib/alice-carousel.css"; */
+
 }

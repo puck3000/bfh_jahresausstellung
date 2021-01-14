@@ -4,14 +4,6 @@ import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
 import {BiExpand} from 'react-icons/bi'
 
-// const slides = [
-//   '//placekitten.com/1500/500',
-//   '//placekitten.com/4000/3000',
-//   '//placekitten.com/800/1200',
-//   '//placekitten.com/1500/1500',
-// ];
-
-
 export default class ProjLightBox extends Component {
   constructor(props) {
     super(props);
