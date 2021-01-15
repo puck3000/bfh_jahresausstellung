@@ -12,11 +12,12 @@ BFH:
     ✔ Create Home Content (navi) @30m 8 @done(21-01-14 13:34)
     ✔ Create Hintergrund Pages @30m 9 @done(21-01-14 12:41)
     ☐ Download Button fixen @15m
-    ☐ incremental static uppys @1h
+    ✔ incremental static uppys @1h @done(21-01-15 08:40)
     ✔ durchdacht @1h @done(21-01-14 14:13)
     ☐ hr in block einfügen @15m
-    ☐ gallery einfügen @30m
-    ☐ ateliers unter einzelne Themenpfade
+    ✔ gallery einfügen @30m @done(21-01-15 08:40)
+    ✔ ateliers unter einzelne Themenpfade @done(21-01-15 08:40)
+    
 
 ZHAW:
     SCAD:
@@ -26,3 +27,25 @@ ZHAW:
 
 Zühlke: 
     ☐ Daily @30m 5
+
+
+Zeitplan:
+
+bis 9:00
+    ✔ Tagesplan  @15m @done(21-01-15 08:47)
+9:00 - 9:30
+    ✔ Daily | Zühlke @30m @done(21-01-15 09:18)
+9:30 - 11:30
+    ☐ Downloads fixen | BFH @15m
+    ☐ Workflow testen | BFH @45m
+    ☐ Übergabe vorbereiten | BFH @30m   
+    ☐ Design anpacken | BFH @1h
+11:30 - 12:00
+    ☐ Kasper Besprechung @30m
+12:00 - 13:00
+    ☐ Nutting
+13:00 - 15:00
+    ☐ Schulung CMS | BFH @1.5h
+15:00 - 17:00
+    ☐ lernen | ZHAW @2h
+    ☐ Puffer | allg @1h
