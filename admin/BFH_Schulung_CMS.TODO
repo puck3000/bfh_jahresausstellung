@@ -1,0 +1,52 @@
+BFH Schulung CMS:
+    1. Login:
+        ☐ Login für Jonas erstellen (Charles über's gleiche?)
+            User/Email:
+                bfh@daniellerch.ch
+            PWD für email:
+                JaaJaaJaa!
+            PWD für Sanity:
+                Jaa2021Jaa!
+    2. Separation of Concerns:
+        ☐ Datengrundlage und Darstellung sind von einander Losgelöst. 
+        ☐ DH: Wir können unabhängig weiter arbeiten, Sie fokus auf Daten, Kasper und ich Fokus auf Darstellung
+    3. Backend-Mockup:
+        ☐ Nur zum prüfen, ob was ankommt. Grundsätzlich in Arbeit. Kann mal ausfallen, kann mal merkwürdig daher kommen. Bei Fragen fragen.
+        ☐ Damit Darstellung nicht stört, erstmal auf Mobile beschränkt (kann aber sein, dass es eine Zeitlang nur desktop läuft... usw)
+        Link:
+            ☐ https://bfh-jahresausstellung.vercel.app/
+            ☐ Refresht alle paar Sekunden, müssen nichts dazu tun, ausser page reload. 
+        3. Bilder, Lightboxen und Slideshows:
+            ☐ Bilder grundsätzlich hochladen wie auch immer
+            WICHTIG:  
+                ☐ Benamsung festlegen (zB BFH_JAA2021_PROJEKT_PERSON)
+                ☐ immer Alt-Namen hinzufügen (was ist zu sehen?) zB: "Portrait Katrin Büsser"
+            ☐ System wandelt in webfreundliches Format um (.webp), einmal 1024*819px, einmal 2000*1600px => auf dieser Ebene alle Bilder immer 5:4
+            ☐ Fokus kann über edit button definiert werden. 
+            ☐ Dort wo sinnvoll, kann Lightbox angebracht werden, siehe ProjektIndex als Beispiel
+            ☐ Verschiedene Gallerie-Arten am Testen, kann aber unabhängig vom erfassen der Daten erfolgen
+            => Diskussion
+        4. Workflow durchgehen:
+            ☐ Videos vorerst bitte noch über mich
+            ☐ Downloads mal über System, wenn Bandbreite zu hoch, würde ich ändern. So oder so gerne mal alle zippen und mit gutem Namen ablegen
+            1. Projekte:
+                ☐ Maske durchgehen
+            2. Projekt Übersicht:
+                ☐ Inhalt vorerst mal lassen, ProjListe führen
+            3. Ateliers:
+                ☐ Maske wie von Charles gewünscht, ist nicht ganz so wie im Excel...
+                ☐ Standort definieren
+            4. Themenpfade:
+                ☐ kurz durchgehen
+            5. Themenpfad Übersicht:
+                ☐ kurz durchgehen
+            6. Hintergrund:
+                ☐ kurz durchgehen
+            7. Home und Veranstaltungen:
+                ☐ noch ignorieren
+            8. Styleguide
+                ☐ für mich, sein lassen bitte.
+                
+                
+
+        
