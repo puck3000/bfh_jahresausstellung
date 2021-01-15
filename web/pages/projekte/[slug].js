@@ -4,16 +4,9 @@ import Layout from 'components/Layout'
 import Head from 'next/head'
 import Gallery from 'components/Gallery'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import ErrorPage from 'next/error'
 
 
 const Project = (props) => {
-  const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
-
   const { 
     titel = 'Missing title', 
     people,
@@ -24,34 +17,27 @@ const Project = (props) => {
     
   return (
     <Layout>
-    {router.isFallback ? (
-      <h2>loading...</h2>
-      ) : (
-        <>
-          <Head>
-            <title>{titel} | BFH Projekte </title>
-          </Head>
-          <h2 className="mb-2">{titel}</h2>
-    {/* People */}
-          {people && (
-            <ul>
-              { people.map((person) => <li>{person}</li>) }
-            </ul>
-          )}
-    {/* GALLERY */}
-          { gallery && <Gallery gallery={gallery} /> }
-          {
-            download && (
-              <div className="mb-2">
-                <a href={`${download}?dl=`}>{download.label}</a>
-              </div>
-            )
-            }
-          <Link href="/projekte" passHref>
-            <a >Zurück zur Projektübersicht</a>
-          </Link>
-        </>
+        <Head>
+          <title>{titel} | BFH Projekte </title>
+        </Head>
+        <h2 className="mb-2">{titel}</h2>
+  {/* People */}
+        {people && (
+          <ul>
+            { people.map((person) => <li>{person}</li>) }
+          </ul>
         )}
+  {/* GALLERY */}
+        { gallery && <Gallery gallery={gallery} /> }
+        {
+          download && (
+            <div className="mb-2">
+              <a href={`${download}?dl=`}>{download.label}</a>
+            </div>
+          )}
+        <Link href="/projekte" passHref>
+          <a >Zurück zur Projektübersicht</a>
+        </Link>
     </Layout>
   )
 }
@@ -90,7 +76,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({params: {'slug': slug}})),
-    fallback: true,
+    fallback: false,
   }
 }
 

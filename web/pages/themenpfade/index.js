@@ -86,6 +86,7 @@ export async function getStaticProps({params}) {
         themenpfadIndex,
         // themenpfade
       },
+      revalidate: 1
     }
   }
 
