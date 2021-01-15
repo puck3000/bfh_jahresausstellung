@@ -11,7 +11,8 @@ const Project = (props) => {
     titel = 'Missing title', 
     people,
     gallery,
-    download
+    downloadURL,
+    downloadLABEL
   } = props.projekt
 
     
@@ -30,9 +31,9 @@ const Project = (props) => {
   {/* GALLERY */}
         { gallery && <Gallery gallery={gallery} /> }
         {
-          download && (
+          downloadURL && (
             <div className="mb-2">
-              <a href={`${download}?dl=`}>{download.label}</a>
+              <a href={`${downloadURL}?dl=`}>{downloadLABEL}</a>
             </div>
           )}
         <Link href="/projekte" passHref>
@@ -48,10 +49,8 @@ const query = groq `*[_type == "projekt" && content.slug.current == $slug][0].co
       people,
       gallery,
       slug,
-      'download': {
-        'url': download.asset->url,
-        'label': download.label
-        }
+      'downloadURL': download.asset->url,
+      'downloadLABEL': download.label
     }
   `
 

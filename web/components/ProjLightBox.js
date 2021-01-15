@@ -70,9 +70,10 @@ export default class ProjLightBox extends Component {
             </ul>
           )}
           {
-            projekt.download && (
+            projekt.downloadURL && (
+
               <div className="mb-2">
-                <a href={`${projekt.download}?dl=`}>{projekt.download.label}</a>
+                <a href={`${projekt.downloadURL}?dl=`}>{projekt.downloadLABEL || 'Download'}</a>
               </div>
             )
           }

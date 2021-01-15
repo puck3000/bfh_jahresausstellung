@@ -69,7 +69,6 @@ export default {
               name: 'download',
               title: 'Download',
               type: 'file',
-              options: { collapsible: true, collapsed: true,},
               fields: [
                 {name: 'label', type: 'string', title: 'label'}
               ],
