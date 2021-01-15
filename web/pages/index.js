@@ -9,9 +9,16 @@ const Home = (props) => {
   } = props.home
     return (
       <Layout>
-        <h1 className="mb-2">{title}</h1>
-        <hr className="mb-4"/>
-        <p className="mb-8">Hier kommt ab Februar eine coole Map Navigation hin. Bis jetzt aber mal noch dies:</p>
+        <h1 className="base mb-4">
+            BFH Architektur 
+            <br/>
+            Jahresausstellung 2021
+            <hr className="my-1"/>
+            Neue Räume. 
+            <br/> 
+            Stadt und Land in Huttwil. 
+        </h1>
+        <p className="mb-8">Hier kommt ab Februar eine coole (Map) Navigation hin. Bis jetzt aber mal noch dies:</p>
         <MainNav/>
       </Layout>
     )

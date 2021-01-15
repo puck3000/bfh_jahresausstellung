@@ -21,6 +21,7 @@ hr {
 
 .mobile-only {
   max-width: 375px;
+  min-height: 812px;
   margin: auto;
   background-color: white;
 }
@@ -55,7 +56,7 @@ html {
   line-height: 1.05;  
 }
 
-body {
+body, .base {
   font-size: 13.5px;
   font-size: 0.844rem;
 }
