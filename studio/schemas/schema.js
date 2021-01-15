@@ -29,6 +29,7 @@ import veranstaltungen from './documents/veranstaltungen'
 import styleGuide from './documents/styleGuide'
 import metatext from './objects/metatext'
 import slideshow from './objects/slideshow'
+import teammitglied from './objects/teammitglied'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -61,6 +62,7 @@ export default createSchema({
     veranstaltungen,
     styleGuide,
     metatext,
-    slideshow
+    slideshow,
+    teammitglied
   ]),
 })

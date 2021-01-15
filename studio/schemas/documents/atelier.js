@@ -40,9 +40,18 @@ export default {
                     fieldset: 'main'
                 },
                 {
-                    title: 'Kurzbeschrieb',
-                    type: 'lauftext',
-                    name: 'exzerpt',
+                    title: 'Team',
+                    name: 'team',
+                    type: 'array',
+                    of: [
+                        { type: 'teammitglied' }
+                    ],
+                    fieldset: 'main'
+                },
+                {
+                    title: 'Vorgehen',
+                    name: 'vorgehen',
+                    type: 'inhalt',
                     fieldset: 'main'
                 },
                 {
@@ -51,33 +60,6 @@ export default {
                     name: 'slideshow',
                     fieldset: 'main'
                 },
-                {
-                    title: 'Links',
-                    type: 'string',
-                    name: 'stringlink',
-                    fieldset: 'main'
-                },
-                // {
-                //     title: 'Inhalt',
-                //     name: 'content',
-                //     type: 'inhalt',
-                //     fieldset: 'main'
-                //   },
-                
-                // {
-                //     name: 'projects',
-                //     title: 'Projekt Index',
-                //     type: 'array',
-                //     of: [
-                //         {
-                //             type: 'reference',
-                //             to: [
-                //                 {type: 'projekt'}
-                //             ]
-                //         }
-                //     ],
-                //     fieldset: 'main'
-                // },
                 {
                     title: 'Referenzbild',
                     name: 'referencepic',
@@ -88,12 +70,6 @@ export default {
                     description: 'Das Referenzbild wird auf Index Seiten zum Verlinken, in Gallerien und auf Social Media verwendet.',
                     fieldset: 'meta'
                 },
-                // {
-                //     title: 'Kurzbeschrieb',
-                //     name: 'excerpt',
-                //     type: 'content',
-                //     fieldset: 'meta'
-                // },
                 {
                     title: 'Standort',
                     name: 'standort',
@@ -109,16 +85,6 @@ export default {
                     ],
                     fieldset: 'meta'
                   },
-                // {
-                //     title: 'Slug',
-                //     name: 'slug',
-                //     type: 'slug',
-                //     options: {
-                //       source: 'content.titel',
-                //       auto: true
-                //     },
-                //     fieldset: 'meta'
-                // }
             ]
         }
     ],

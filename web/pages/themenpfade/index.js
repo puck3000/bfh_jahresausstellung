@@ -25,7 +25,7 @@ const ThemenpfadIndex = (props) => {
             { inhalt && <Inhalt inhalt={inhalt}/> }
 {/* Themenpfade Index */}
             { themenpfade && (
-              <ul className="grid grid-cols-2 gap-4">
+              <ul className="grid grid-cols-2 gap-1">
                 {
                   themenpfade.map((themenpfad ) => (
                     <li>

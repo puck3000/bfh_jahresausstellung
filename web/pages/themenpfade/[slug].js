@@ -71,7 +71,7 @@ const query = groq `
     title,
     referencepic,
     'inhalt': content,
-    'indexOfAteliers': ateliers[]->content{titel, referencepic, excerpt, slug, slideshow}
+    'indexOfAteliers': ateliers[]->content{titel, referencepic, standort, team, vorgehen, slideshow}
   }
 `
 

@@ -2,7 +2,6 @@ export default {
     name: 'inhalt',
     title: 'inhalt',
     type: 'array',
-    description: 'Hier können die Inhalte erfasst werden.',
     options: {
         editModal: 'fullscreen',
     },

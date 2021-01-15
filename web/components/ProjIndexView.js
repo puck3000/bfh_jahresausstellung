@@ -9,7 +9,7 @@ function urlFor (source) {
 export default function ProjIndexView({projekt}) {
     return (
         <div className="mb-4">
-            <hr className="mb-2"></hr>
+            <hr className="mb-1"></hr>
             <img 
                 src={urlFor(projekt.referencepic)
                   .width(2000)

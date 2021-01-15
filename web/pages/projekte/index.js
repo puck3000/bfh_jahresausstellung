@@ -23,7 +23,7 @@ const ProjektIndex = (props) => {
             { inhalt && <Inhalt inhalt={inhalt}/> }
 {/* Projektindex */}
             { projekte && (
-              <ul className="grid grid-cols-2 gap-4">
+              <ul className="grid grid-cols-2 gap-1">
                 {
                   projekte.map((projekt) => (
                     <li>

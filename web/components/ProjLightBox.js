@@ -19,12 +19,12 @@ export default class ProjLightBox extends Component {
     const { photoIndex, isOpen, projekt } = this.state;
 
     const slides = projekt?.gallery?.slide?.map((slide) => (
-      urlFor(slide.pic)
+      urlFor(slide.pic).format('webp').url()
     ))
     
     return (
       <div className="mb-4">
-        <hr className="mb-2"></hr>
+        <hr className="mb-1"></hr>
         <button 
           className="relative"
           type="button" 

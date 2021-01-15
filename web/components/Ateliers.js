@@ -3,6 +3,8 @@ import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
 import Slideshow from './Slideshow'
 import Link from 'next/link'
+import Inhalt from 'components/Inhalt'
+import Team from 'components/Team'
 
 
 function urlFor (source) {
@@ -13,11 +15,14 @@ export default function Ateliers({ateliers}) {
     const attis = ateliers.map((atelier, index) => (
             <li key={index}>
                 <hr className="mb-2"/>
-                <h2>{atelier.titel}</h2>
-                <BlockContent 
-                blocks={atelier?.excerpt}
-                {...client.config()}
-                />
+                <h2 className="my-2">{atelier.titel}</h2>
+{/* Team */}
+                { atelier.team && <Team team={atelier.team}/> }
+{/* Vorgehen */}
+                { atelier.vorgehen && <Inhalt inhalt={atelier.vorgehen}/> }
+{/* Standort */}
+                { atelier.standort && <p className="mb-2">{atelier.standort}</p> }
+{/* Projekte Slideshow */}
                 {
                     atelier.slideshow.slide.length > 0 ? 
                         <Slideshow slides={atelier.slideshow}></Slideshow> 
