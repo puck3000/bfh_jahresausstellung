@@ -3,6 +3,7 @@ import client from 'client'
 import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
 import Head from 'next/head'
+import Box from 'components/Box'
 
 
 const Hintergrund = (props) => {
@@ -16,7 +17,9 @@ const Hintergrund = (props) => {
           <title>{title} | Hintergrund</title>
         </Head>
         <div>
-          <h2 className="mb-2">{title}</h2>
+{/*  Box */}
+    <Box><h1 className="base inline">{title}</h1></Box>
+    <hr className="my-2"/>
 {/* INHALT */}
           { inhalt && <Inhalt inhalt={inhalt}/> }
         </div>

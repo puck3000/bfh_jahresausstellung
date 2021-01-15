@@ -24,7 +24,7 @@ export default function Layout({children}) {
             <div className="mobile-only">
             {/* Todo: Create Header Component */}
                 <div className="m-1">
-                    <header className="mb-4">
+                    <header className="mb-8">
                         <Link href="/">
                             <a className="inline-block mt-2">
                                 <Box>Menu</Box>

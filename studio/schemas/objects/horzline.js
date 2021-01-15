@@ -1,3 +1,4 @@
+import { string } from "prop-types";
 import {AiOutlineLine} from "react-icons/ai"
 export default {
     name: 'horzline',
@@ -8,7 +9,11 @@ export default {
         {
             name: 'marginBottom',
             title: 'Vertikaler Abstand',
-            type: 'boolean'
+            type: 'string',
+            options: {
+                list: ['kleiner Abstand', 'grosser Abstand'],
+                layout: 'radio'
+            }
         },
     ],
     preview: {

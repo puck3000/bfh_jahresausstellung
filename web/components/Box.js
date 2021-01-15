@@ -1,5 +1,5 @@
 export default function Box({children}) {
     return (
-        <div className="px-1 border border-current">{children}</div>
+        <div className="inline-block py-1 px-2 border border-current">{children}</div>
     )
 }

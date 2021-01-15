@@ -2,8 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/projekte/[slug]": "pages/projekte/[slug].js",
-  "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/themenpfade": "pages/themenpfade.js",
   "/hintergrund/[slug]": "pages/hintergrund/[slug].js"
 }
