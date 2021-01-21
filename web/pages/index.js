@@ -9,7 +9,7 @@ const Home = (props) => {
   } = props.home
     return (
       <Layout>
-        <h1 className="base mb-4">
+        <h1 className="base mb-8">
             BFH Architektur 
             <br/>
             Jahresausstellung 2021

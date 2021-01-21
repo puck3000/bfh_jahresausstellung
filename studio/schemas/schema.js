@@ -4,7 +4,6 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-
 import home from './documents/home'
 import projekt from './documents/projekt'
 import atelier from './documents/atelier'
@@ -63,6 +62,6 @@ export default createSchema({
     styleGuide,
     metatext,
     slideshow,
-    teammitglied
+    teammitglied,
   ]),
 })

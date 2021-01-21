@@ -5,38 +5,33 @@ import Inhalt from 'components/Inhalt'
 import Head from 'next/head'
 import Box from 'components/Box'
 
-
 const Hintergrund = (props) => {
-    const {
-        title = 'Missing Title',
-        inhalt
-      } = props.hintergrund
-    return (
-      <Layout>
-        <Head>
-          <title>{title} | Hintergrund</title>
-        </Head>
-        <div>
-{/*  Box */}
-    <Box><h1 className="base inline">{title}</h1></Box>
-    <hr className="my-2"/>
-{/* INHALT */}
-          { inhalt && <Inhalt inhalt={inhalt}/> }
-        </div>
-      </Layout>
-    )
+  const { title = 'Missing Title', inhalt } = props.hintergrund
+  return (
+    <Layout>
+      <Head>
+        <title>{title} | Hintergrund</title>
+      </Head>
+      <div>
+        {/*  Box */}
+        <Box>
+          <h1 className='base inline'>{title}</h1>
+        </Box>
+        <hr className='my-2' />
+        {/* INHALT */}
+        {inhalt && <Inhalt inhalt={inhalt} />}
+      </div>
+    </Layout>
+  )
 }
 
-
-const query = groq `
+const query = groq`
     *[_type == "hintergrund" && slug.current == $slug][0]
         {
         title,
         'inhalt' : content
         }
 `
-
-
 
 // Hintergrund.getInitialProps = async function(context) {
 //     // It's important to default the slug so that it doesn't return "undefined"
@@ -45,8 +40,7 @@ const query = groq `
 //     return data
 //   }
 
-
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
   const hintergrund = await client.fetch(query, {
     slug: params.slug,
   })
@@ -55,18 +49,18 @@ export async function getStaticProps({params}) {
     props: {
       hintergrund,
     },
-    revalidate: 1
+    revalidate: 1,
   }
 }
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-      groq`*[_type == "hintergrund" && defined(slug.current)][].slug.current`
-    )
-    return {
-      paths: paths.map((slug) => ({params: {'slug': slug}})),
-      fallback: false,
-    }
+    groq`*[_type == "hintergrund" && defined(slug.current)][].slug.current`
+  )
+  return {
+    paths: paths.map((slug) => ({ params: { slug: slug } })),
+    fallback: false,
+  }
 }
 
 export default Hintergrund

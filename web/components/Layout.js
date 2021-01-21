@@ -26,7 +26,7 @@ export default function Layout({children}) {
                 <div className="m-1">
                     <header className="mb-8">
                         <Link href="/">
-                            <a className="inline-block mt-2">
+                            <a className="inline-block mt-1">
                                 <Box>Menu</Box>
                             </a>
                         </Link>

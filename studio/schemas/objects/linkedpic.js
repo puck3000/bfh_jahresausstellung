@@ -1,4 +1,4 @@
-import {BiImage} from 'react-icons/bi'
+import { BiImage } from 'react-icons/bi'
 export default {
   name: 'linkedpic',
   title: 'Einzelbild',
@@ -10,25 +10,24 @@ export default {
       title: 'Bild',
       type: 'image',
       options: {
-        hotspot: true // <-- Defaults to false
+        hotspot: true, // <-- Defaults to false
       },
-      fields: [
-          { name: 'alt', title: 'Alt-Text', type: 'string'}
-      ]
+      fields: [{ name: 'alt', title: 'Alt-Text', type: 'string' }],
     },
     {
       name: 'caption',
       title: 'Bildlegende',
       type: 'array',
       of: [
-        {type: 'block',
-        styles: [
-          { title: 'Normal', value: 'normal' },
-          { title: 'Titel', value: 'h1' },
-          { title: 'Untertitel', value: 'h2' },
-          { title: 'Lead', value: 'blockquote' },
-          
-      ]}
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'Titel', value: 'h1' },
+            { title: 'Untertitel', value: 'h2' },
+            { title: 'Lead', value: 'blockquote' },
+          ],
+        },
       ],
     },
   ],
