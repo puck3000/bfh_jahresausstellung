@@ -1,92 +1,94 @@
-import {GiMultipleTargets} from 'react-icons/gi'
-import Tabs from "sanity-plugin-tabs"
+import { GiMultipleTargets } from 'react-icons/gi'
+import Tabs from 'sanity-plugin-tabs'
 export default {
-    title: 'Ateliers',
-    name: 'atelier',
-    type: 'document',
-    icon: GiMultipleTargets,
-    preview: {
-        select: {
-          title: 'content.titel',
-          media: 'content.referencepic'
-        }
-      },
-    fields: [
+  title: 'Ateliers',
+  name: 'atelier',
+  type: 'document',
+  icon: GiMultipleTargets,
+  preview: {
+    select: {
+      title: 'content.titel',
+      media: 'content.referencepic',
+    },
+  },
+  fields: [
+    {
+      type: 'object',
+      name: 'content',
+      inputComponent: Tabs,
+      fieldsets: [
         {
-            type: 'object',
-            name: 'content',
-            inputComponent: Tabs,
-            fieldsets: [
-                {
-                    name: 'main',
-                    title: 'Main',
-                    options: {sortOrder: 10}
-                },
-                {
-                    name: 'meta',
-                    title: 'Meta',
-                    options: {sortOrder: 20}
-                },
-            ],
-            options: {
-                laoyut: 'object'
-            },
-            fields: [
-            // MAIN TAB
-                {
-                    title: 'Titel',
-                    name: 'titel',
-                    type: 'string',
-                    fieldset: 'main'
-                },
-                {
-                    title: 'Team',
-                    name: 'team',
-                    type: 'array',
-                    of: [
-                        { type: 'teammitglied' }
-                    ],
-                    fieldset: 'main'
-                },
-                {
-                    title: 'Vorgehen',
-                    name: 'vorgehen',
-                    type: 'inhalt',
-                    fieldset: 'main'
-                },
-                {
-                    title: 'Projekt Gallerie',
-                    type: 'slideshow',
-                    name: 'slideshow',
-                    fieldset: 'main'
-                },
-                {
-                    title: 'Referenzbild',
-                    name: 'referencepic',
-                    type: 'image',
-                    options: {
-                        hotspot: true // <-- Defaults to false
-                    },
-                    description: 'Das Referenzbild wird auf Index Seiten zum Verlinken, in Gallerien und auf Social Media verwendet.',
-                    fieldset: 'meta'
-                },
-                {
-                    title: 'Standort',
-                    name: 'standort',
-                    type: 'string',
-                    fieldset: 'meta'
-                },
-                {
-                    title: 'Themenpfad',
-                    name: 'themenpfad',
-                    type: 'reference',
-                    to: [
-                      {type: 'themenpfad'}
-                    ],
-                    fieldset: 'meta'
-                  },
-            ]
-        }
-    ],
-    
-}   
+          name: 'main',
+          title: 'Main',
+          options: { sortOrder: 10 },
+        },
+        {
+          name: 'meta',
+          title: 'Meta',
+          options: { sortOrder: 20 },
+        },
+      ],
+      options: {
+        laoyut: 'object',
+      },
+      fields: [
+        // MAIN TAB
+        {
+          title: 'Titel',
+          name: 'titel',
+          type: 'string',
+          fieldset: 'main',
+        },
+        {
+          title: 'Untertitel',
+          name: 'untertitel',
+          type: 'string',
+          fieldset: 'main',
+        },
+        {
+          title: 'Team',
+          name: 'team',
+          type: 'array',
+          of: [{ type: 'teammitglied' }],
+          fieldset: 'main',
+        },
+        {
+          title: 'Vorgehen',
+          name: 'vorgehen',
+          type: 'inhalt',
+          fieldset: 'main',
+        },
+        {
+          title: 'Projekt Gallerie',
+          type: 'slideshow',
+          name: 'slideshow',
+          fieldset: 'main',
+        },
+        {
+          title: 'Referenzbild',
+          name: 'referencepic',
+          type: 'image',
+          options: {
+            hotspot: true, // <-- Defaults to false
+          },
+          description:
+            'Das Referenzbild wird auf Index Seiten zum Verlinken, in Gallerien und auf Social Media verwendet.',
+          fieldset: 'meta',
+        },
+        {
+          title: 'Standort',
+          name: 'standort',
+          type: 'string',
+          fieldset: 'meta',
+        },
+        {
+          title: 'Themenpfad',
+          name: 'themenpfad',
+          type: 'reference',
+          to: [{ type: 'themenpfad' }],
+          fieldset: 'meta',
+        },
+      ],
+    },
+  ],
+}
