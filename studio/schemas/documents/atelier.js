@@ -88,6 +88,16 @@ export default {
           to: [{ type: 'themenpfad' }],
           fieldset: 'meta',
         },
+        {
+          title: 'Slug',
+          name: 'slug',
+          type: 'slug',
+          options: {
+            source: 'title',
+            auto: true,
+          },
+          fieldset: 'meta',
+        },
       ],
     },
   ],
