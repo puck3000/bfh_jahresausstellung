@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
 import Ateliers from 'components/Ateliers'
+import Link from 'next/link'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -53,7 +54,44 @@ const Themenpfad = (props) => {
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
         {/* ATELIERS */}
-        {indexOfAteliers && <Ateliers ateliers={indexOfAteliers} />}
+        {/* {indexOfAteliers && <Ateliers ateliers={indexOfAteliers} />} */}
+        {indexOfAteliers && (
+          <ul className='grid grid-cols-2 gap-1'>
+            {indexOfAteliers.map((atelier) => (
+              <li>
+                <Link
+                  key={atelier.id}
+                  href='/ateliers/[slug]'
+                  as={`/ateliers/${atelier.slug}`}
+                >
+                  <a className={`link projekt ${atelier.slug} mb-2`}>
+                    <hr></hr>
+                    <h2 className='mt-1 mb-1'>{atelier.titel}</h2>
+                    <img
+                      src={urlFor(atelier.referencepic)
+                        .width(2000)
+                        .height(1600)
+                        .url()}
+                      srcSet={`${urlFor(atelier.referencepic)
+                        .width(1024)
+                        .height(819)
+                        .format('webp')
+                        .url()} 1024w, ${urlFor(atelier.referencepic)
+                        .width(2000)
+                        .height(1600)
+                        .format('webp')
+                        .url()} 2000w,`}
+                      sizes='(max-width:1024px) 100vw, 50vw'
+                      alt={`Referenzbild zu $ {atelier.title}`}
+                      className='mb-1'
+                    />
+                    <p className='mb-1'>{atelier.untertitel}</p>
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </Layout>
   )
@@ -64,7 +102,8 @@ const query = groq`
     title,
     referencepic,
     'inhalt': content,
-    'indexOfAteliers': ateliers[]->content{titel, referencepic, standort, team, vorgehen, slideshow}
+    //'indexOfAteliers': ateliers[]->content{titel, untertitel, referencepic, standort, team, vorgehen, slideshow}
+    'indexOfAteliers': ateliers[]->content{_id, 'slug': slug.current, titel, untertitel, referencepic}
   }
 `
 

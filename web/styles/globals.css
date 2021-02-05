@@ -4,104 +4,108 @@
 @tailwind utilities;
 
 @layer base {
-
-/******************************************************
+  /******************************************************
 /   GENERAL STUFF
 /******************************************************/
 
-img {
-  @apply max-w-full;
-}
+  img {
+    @apply max-w-full;
+  }
 
-hr {
-  @apply border-black;
-}
+  hr {
+    @apply border-black;
+  }
 
+  .mobile-only {
+    max-width: 375px;
+    min-height: 812px;
+    margin: auto;
+    background-color: white;
+  }
 
+  body {
+    background-color: DarkSlateGrey;
+  }
 
-.mobile-only {
-  max-width: 375px;
-  min-height: 812px;
-  margin: auto;
-  background-color: white;
-}
-
-body {
-  background-color: DarkSlateGrey;
-}
-
-
-/******************************************************
+  /******************************************************
 /   FONTS
 /******************************************************/
 
-@font-face {
-  font-family: "MonumentGrotesk";
-  src: url("/fonts/MonumentGrotesk/ABCMonumentGrotesk-Regular.woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "MonumentGrotesk";
-  src: url("/fonts/MonumentGrotesk/ABCMonumentGrotesk-RegularItalic.woff2");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
+  @font-face {
+    font-family: 'MonumentGrotesk';
+    src: url('/fonts/MonumentGrotesk/ABCMonumentGrotesk-Regular.woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'MonumentGrotesk';
+    src: url('/fonts/MonumentGrotesk/ABCMonumentGrotesk-RegularItalic.woff2');
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+  }
 
+  html {
+    font-family: 'MonumentGrotesk', 'Helvetica', sans;
+    line-height: 1.05;
+  }
 
-html {
-  font-family: 'MonumentGrotesk', 'Helvetica', sans;
-  line-height: 1.05;  
-}
+  body,
+  .base {
+    font-size: 13.5px;
+    font-size: 0.844rem;
+  }
+  h1 {
+    font-size: 26px;
+    font-size: 1.625rem;
+    hyphens: auto;
+  }
 
-body, .base {
-  font-size: 13.5px;
-  font-size: 0.844rem;
-}
-h1 {
-  font-size: 26px;
-  font-size: 1.625rem;
-}
+  h2,
+  h3,
+  .lead,
+  .counter,
+  .anchor,
+  blockquote {
+    font-size: 19.5px;
+    font-size: 1.219rem;
+    hyphens: auto;
+  }
 
-h2, h3, .lead, .counter, .anchor, blockquote {
-  font-size: 19.5px;
-  font-size: 1.219rem;
-}
+  .text ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
 
-.text ol { 
-  list-style-type: decimal; 
-  list-style-position: inside; 
-}
+  .text ul {
+    list-style-type: none;
+  }
 
-.text ul { 
-  list-style-type: none; 
-}
+  .text ul > li {
+    margin-left: 1rem;
+  }
 
-.text ul > li {
-  margin-left: 1rem;  
-}
+  /* Prevent nested li's from getting messed up */
+  .text ul > li::before {
+    display: inline-block;
+    content: '-';
+    width: 1em;
+    margin-left: -1em;
+  }
 
-/* Prevent nested li's from getting messed up */
-.text ul > li::before {
-  display: inline-block;
-  content: "-";
-  width: 1em;
-  margin-left: -1em;
-}
+  .text ul ul,
+  .text ol ol {
+    margin-left: 1rem;
+  }
 
-.text ul ul, .text ol ol {
-  margin-left: 1rem;
-}
+  .text a {
+    text-decoration: underline;
+    font-style: italic;
+  }
 
-.text a {
-  text-decoration: underline;
-  font-style: italic;
-}
-
-/* turned off because of sneak prev */
-/* @media screen and (min-width: 1024px) {
+  /* turned off because of sneak prev */
+  /* @media screen and (min-width: 1024px) {
   body {
     font-size: 18px;
     font-size: 1.125rem;
@@ -115,23 +119,19 @@ h2, h3, .lead, .counter, .anchor, blockquote {
     font-size: 1.625rem;
   }
 } */
-
 }
 
-
 @layer components {
-
-/******************************************************
+  /******************************************************
 /   MainNav
 /******************************************************/
 
-#mainNav li a {
-  @apply mt-2 mb-2 px-2 py-1 anchor border border-current;
-}
+  #mainNav li a {
+    @apply mt-2 mb-2 px-2 py-1 anchor border border-current;
+  }
 
-/******************************************************
+  /******************************************************
 /   SlideShow
 /******************************************************/
-/* @import "react-alice-carousel/lib/alice-carousel.css"; */
-
+  /* @import "react-alice-carousel/lib/alice-carousel.css"; */
 }
