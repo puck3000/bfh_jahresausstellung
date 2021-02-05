@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Box from 'components/Box'
+import MainNavigation from './MainNavigation'
 
 export default function Layout({ children }) {
   return (
@@ -27,12 +26,10 @@ export default function Layout({ children }) {
       <div className=''>
         {/* Todo: Create Header Component */}
         <div className='m-1'>
-          <header className='mb-two'>
-            <Link href='/'>
-              <a className='anker'>Menu</a>
-            </Link>
+          <header className='fixed'>
+            <MainNavigation />
           </header>
-          <main>{children}</main>
+          <main className='pt-12'>{children}</main>
           <footer className='h-6'></footer>
         </div>
       </div>

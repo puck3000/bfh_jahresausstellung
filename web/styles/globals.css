@@ -111,19 +111,19 @@
 
 @layer components {
   /******************************************************
-/   MainNav
-/******************************************************/
-
-  #mainNav li a {
-    @apply mt-2 mb-2 px-2 py-1 anchor border border-current;
-  }
-
-  /******************************************************
 /   Anker
 /******************************************************/
 
   .anker {
-    @apply inline-block py-1 px-2 border border-current text-medium lg:text-medium;
+    @apply inline-block py-1 px-2 border border-current bg-white text-medium lg:text-medium-dt;
+  }
+
+  /******************************************************
+/   MainNav
+/******************************************************/
+
+  .active.anker {
+    @apply text-white bg-black;
   }
 
   /******************************************************
@@ -132,13 +132,15 @@
 
   /* Counter: resetting the stiles */
   .inhalt .alice-carousel__slide-info {
-    position: relative;
-    top: auto;
-    right: auto;
-    padding: 0;
+    @apply text-medium lg:text-medium-dt;
     color: inherit;
     border-radius: initial;
     background-color: initial;
-    text-align: right;
+  }
+
+  .inhalt .alice-carousel__prev-btn,
+  .inhalt .alice-carousel__next-btn {
+    @apply text-medium lg:text-medium-dt;
+    padding: 0;
   }
 }
