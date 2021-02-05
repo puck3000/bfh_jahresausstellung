@@ -3,7 +3,7 @@ import { urlFor } from 'lib/sanity'
 export default function Team({ team }) {
   const teammitglieder = team.map((teammitglied) => (
     <li>
-      <img
+      {/* <img
         src={urlFor(teammitglied.avatar)
           .width(2000)
           .height(1600)
@@ -20,9 +20,9 @@ export default function Team({ team }) {
           .url()} 2000w,`}
         sizes='(max-width:1024px) 100vw, 50vw'
         alt={`Portrait von ${teammitglied.person}`}
-      />
+      /> */}
       <p>{teammitglied.person}</p>
     </li>
   ))
-  return <ul className='grid grid-cols-2 gap-1 mb-2'>{teammitglieder}</ul>
+  return <ul className='text mb-one'>{teammitglieder}</ul>
 }

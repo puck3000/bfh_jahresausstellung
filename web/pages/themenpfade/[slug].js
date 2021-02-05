@@ -26,16 +26,13 @@ const Themenpfad = (props) => {
         <title>Themenpfad | {title}</title>
       </Head>
       <div>
-        <h2 className='mb-2'>{title}</h2>
+        <h2 className='anker mb-one'>Themenpfad</h2>
+        <hr className='mb-one' />
         {/* REFERENCEPIC */}
-        {referencepic && (
+        {/* {referencepic && (
           <img
-            className='mb-2'
-            src={urlFor(referencepic)
-              .width(2000)
-              .height(1600)
-              .format('webp')
-              .url()}
+            className='mb-one'
+            src={urlFor(referencepic).width(2000).height(1600).url()}
             srcSet={`${urlFor(referencepic)
               .width(1024)
               .height(819)
@@ -47,50 +44,52 @@ const Themenpfad = (props) => {
               .url()} 2000w,`}
             sizes='(max-width:1024px) 100vw, 50vw'
             alt={`Referenzbild zu $ {title}`}
-            className='mb-1'
           />
-        )}
+        )} */}
 
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
         {/* ATELIERS */}
         {/* {indexOfAteliers && <Ateliers ateliers={indexOfAteliers} />} */}
         {indexOfAteliers && (
-          <ul className='grid grid-cols-2 gap-1'>
-            {indexOfAteliers.map((atelier) => (
-              <li>
-                <Link
-                  key={atelier.id}
-                  href='/ateliers/[slug]'
-                  as={`/ateliers/${atelier.slug}`}
-                >
-                  <a className={`link projekt ${atelier.slug} mb-2`}>
-                    <hr></hr>
-                    <h2 className='mt-1 mb-1'>{atelier.titel}</h2>
-                    <img
-                      src={urlFor(atelier.referencepic)
-                        .width(2000)
-                        .height(1600)
-                        .url()}
-                      srcSet={`${urlFor(atelier.referencepic)
-                        .width(1024)
-                        .height(819)
-                        .format('webp')
-                        .url()} 1024w, ${urlFor(atelier.referencepic)
-                        .width(2000)
-                        .height(1600)
-                        .format('webp')
-                        .url()} 2000w,`}
-                      sizes='(max-width:1024px) 100vw, 50vw'
-                      alt={`Referenzbild zu $ {atelier.title}`}
-                      className='mb-1'
-                    />
-                    <p className='mb-1'>{atelier.untertitel}</p>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <>
+            <h2 className='anker mb-one'>Ateliers</h2>
+            <hr className='mb-one' />
+            <ul className='grid grid-cols-2 gap-1'>
+              {indexOfAteliers.map((atelier) => (
+                <li>
+                  <Link
+                    key={atelier.id}
+                    href='/ateliers/[slug]'
+                    as={`/ateliers/${atelier.slug}`}
+                  >
+                    <a className={`link projekt ${atelier.slug} mb-2`}>
+                      <img
+                        src={urlFor(atelier.referencepic)
+                          .width(2000)
+                          .height(1600)
+                          .url()}
+                        srcSet={`${urlFor(atelier.referencepic)
+                          .width(1024)
+                          .height(819)
+                          .format('webp')
+                          .url()} 1024w, ${urlFor(atelier.referencepic)
+                          .width(2000)
+                          .height(1600)
+                          .format('webp')
+                          .url()} 2000w,`}
+                        sizes='(max-width:1024px) 100vw, 50vw'
+                        alt={`Referenzbild zu $ {atelier.title}`}
+                        className='mb-1'
+                      />
+                      <h2 className=''>{atelier.titel}</h2>
+                      <p className=''>{atelier.untertitel}</p>
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
     </Layout>

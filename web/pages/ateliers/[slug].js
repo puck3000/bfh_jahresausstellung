@@ -14,6 +14,7 @@ function urlFor(source) {
 const Atelier = (props) => {
   const {
     titel = 'Missing Title',
+    untertitel,
     team,
     vorgehen,
     standort,
@@ -27,7 +28,29 @@ const Atelier = (props) => {
         <title>Atelier | {titel}</title>
       </Head>
       <div>
-        <h2 className='my-2'>{titel}</h2>
+        <div className=''>
+          <div>
+            <h2 className='anker mb-one'>Atelier</h2>
+            <hr className='mb-one' />
+            <h1 className='mb-one'>{titel}</h1>
+            <p className='mb-one'>{untertitel}</p>
+          </div>
+          <figure className='mb-one'>
+            <img
+              src={urlFor(referencepic).width(2000).height(1600).url()}
+              srcSet={`${urlFor(referencepic)
+                .width(1024)
+                .height(819)
+                .format('webp')
+                .url()} 1024w, ${urlFor(referencepic)
+                .width(2000)
+                .height(1600)
+                .format('webp')
+                .url()} 2000w,`}
+              sizes='(max-width:1024px) 100vw, 50vw'
+            />
+          </figure>
+        </div>
         {/* Team */}
         {team && <Team team={team} />}
         {/* Vorgehen */}
@@ -40,11 +63,7 @@ const Atelier = (props) => {
         ) : (
           <figure className='mb-2'>
             <img
-              src={urlFor(referencepic)
-                .width(2000)
-                .height(1600)
-                .format('webp')
-                .url()}
+              src={urlFor(referencepic).width(2000).height(1600).url()}
               srcSet={`${urlFor(referencepic)
                 .width(1024)
                 .height(819)
@@ -69,6 +88,7 @@ const Atelier = (props) => {
 const query = groq`
   *[_type == "atelier" && content.slug.current == $slug][0].content{
     titel,
+    untertitel,
     referencepic,
     standort,
     team, 

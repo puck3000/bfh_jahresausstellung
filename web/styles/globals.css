@@ -16,17 +16,6 @@
     @apply border-black;
   }
 
-  .mobile-only {
-    max-width: 375px;
-    min-height: 812px;
-    margin: auto;
-    background-color: white;
-  }
-
-  body {
-    background-color: DarkSlateGrey;
-  }
-
   /******************************************************
 /   FONTS
 /******************************************************/
@@ -51,15 +40,18 @@
     line-height: 1.05;
   }
 
-  body,
-  .base {
-    font-size: 13.5px;
-    font-size: 0.844rem;
+  body {
+    @apply text-small;
   }
   h1 {
-    font-size: 26px;
-    font-size: 1.625rem;
-    hyphens: auto;
+    @apply text-big;
+  }
+
+  section.inhalt h1,
+  section.inhalt h2,
+  section.inhalt blockquote,
+  section.inhalt p {
+    @apply mb-one;
   }
 
   h2,
@@ -68,9 +60,7 @@
   .counter,
   .anchor,
   blockquote {
-    font-size: 19.5px;
-    font-size: 1.219rem;
-    hyphens: auto;
+    @apply text-medium;
   }
 
   .text ol {
@@ -104,21 +94,19 @@
     font-style: italic;
   }
 
-  /* turned off because of sneak prev */
-  /* @media screen and (min-width: 1024px) {
-  body {
-    font-size: 18px;
-    font-size: 1.125rem;
+  @media screen and (min-width: 1024px) {
+    body {
+      @apply text-small-dt;
+    }
+    h1 {
+      @apply text-big-dt;
+    }
+    h2,
+    h3,
+    blockquote {
+      @apply text-medium-dt;
+    }
   }
-  h1 {
-    font-size: 42px;
-    font-size: 2.625rem;
-  }
-  h2, h3, blockquote {
-    font-size: 26px;
-    font-size: 1.625rem;
-  }
-} */
 }
 
 @layer components {
@@ -131,7 +119,26 @@
   }
 
   /******************************************************
+/   Anker
+/******************************************************/
+
+  .anker {
+    @apply inline-block py-1 px-2 border border-current text-medium lg:text-medium;
+  }
+
+  /******************************************************
 /   SlideShow
 /******************************************************/
-  /* @import "react-alice-carousel/lib/alice-carousel.css"; */
+
+  /* Counter: resetting the stiles */
+  .inhalt .alice-carousel__slide-info {
+    position: relative;
+    top: auto;
+    right: auto;
+    padding: 0;
+    color: inherit;
+    border-radius: initial;
+    background-color: initial;
+    text-align: right;
+  }
 }

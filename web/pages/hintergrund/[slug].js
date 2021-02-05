@@ -13,11 +13,9 @@ const Hintergrund = (props) => {
         <title>{title} | Hintergrund</title>
       </Head>
       <div>
-        {/*  Box */}
-        <Box>
-          <h1 className='base inline'>{title}</h1>
-        </Box>
-        <hr className='my-2' />
+        <h1 className='anker mb-one'>{title}</h1>
+        <hr className='mb-one' />
+
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
       </div>

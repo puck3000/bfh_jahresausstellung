@@ -1,0 +1,85 @@
+Grössen BFH:
+
+(zur Info: REM wird berechnet mit PX / 16, weil 16px = 1rem die default einstellung bei allen Browsern ist.)
+
+- generell: 
+line-height: 1.05;
+
+- anker / MenuButtons / ...
+font-size: 19.5px;
+font-size: 1.219rem;
+// big:
+font-size: 26px;
+font-size: 1.625rem;
+
+- h1 Titel
+font-size: 26px;
+font-size: 1.625rem;
+// big
+font-size: 42px;
+font-size: 2.625rem;
+
+- h2 Titel / h3 lead
+font-size: 19.5px;
+font-size: 1.219rem;
+// big: 
+font-size: 26px;
+font-size: 1.625rem;
+
+- p text und legenden
+font-size: 13.5px;
+font-size: 0.844rem;
+// big: 
+font-size: 18px;
+font-size: 1.125rem;
+
+- 1x-Spacing vertikal
+margin-bottom: 18px;
+margin-bottom: 1.125rem ;
+(m-one)
+
+- 2x-Spacing vertikal
+margin-bottom: 32px;
+margin-bottom: 2rem;
+(m-8)
+
+- Big-Spacing vertikal
+margin-bottom: 90px;
+margin-bottom: 5.625rem;
+(m-big)
+
+
+
+Tailwind Utilities:
+
+font-sizes:
+
+- small:
+font-size: 0.844rem;
+text-small
+font-size: 1.125rem;
+text-small-dt
+- medium:
+font-size: 1.219rem;
+text-medium
+font-size: 1.625rem;
+text-medium-dt
+
+- big: 
+font-size: 1.625rem;
+text-big
+font-size: 2.625rem;
+text-big-dt
+
+- 1x-Spacing vertikal
+margin-bottom: 1.125rem ;
+m-one
+
+- 2x-Spacing vertikal
+margin-bottom: 2rem;
+m-8
+
+
+- Big-Spacing vertikal
+margin-bottom: 5.625rem;
+m-big
