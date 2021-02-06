@@ -57,29 +57,7 @@ const Atelier = (props) => {
         {vorgehen && <Inhalt inhalt={vorgehen} />}
         {/* Standort */}
         {standort && <p className='mb-2'>{standort}</p>}
-        {/* Projekte Slideshow */}
-        {slideshow?.slide.length > 0 ? (
-          <Slideshow slides={slideshow}></Slideshow>
-        ) : (
-          <figure className='mb-2'>
-            <img
-              src={urlFor(referencepic).width(2000).height(1600).url()}
-              srcSet={`${urlFor(referencepic)
-                .width(1024)
-                .height(819)
-                .format('webp')
-                .url()} 1024w, ${urlFor(referencepic)
-                .width(2000)
-                .height(1600)
-                .format('webp')
-                .url()} 2000w,`}
-              sizes='(max-width:1024px) 100vw, 50vw'
-            />
-          </figure>
-        )}
-        <Link href='/projekte'>
-          <a> zu den Projekten</a>
-        </Link>
+        {/* Projekte  */}
       </div>
     </Layout>
   )

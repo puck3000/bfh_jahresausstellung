@@ -58,10 +58,22 @@ export default {
           type: 'inhalt',
           fieldset: 'main',
         },
+        // {
+        //   title: 'Projekt Gallerie',
+        //   type: 'slideshow',
+        //   name: 'slideshow',
+        //   fieldset: 'main',
+        // },
         {
-          title: 'Projekt Gallerie',
-          type: 'slideshow',
-          name: 'slideshow',
+          name: 'projekte',
+          title: 'Projekt Index',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{ type: 'projekt' }],
+            },
+          ],
           fieldset: 'main',
         },
         {
