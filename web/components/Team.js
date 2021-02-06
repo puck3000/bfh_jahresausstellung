@@ -2,7 +2,7 @@ import { urlFor } from 'lib/sanity'
 
 export default function Team({ team }) {
   const teammitglieder = team.map((teammitglied) => (
-    <li>
+    <li key={teammitglied._key}>
       {/* <img
         src={urlFor(teammitglied.avatar)
           .width(2000)

@@ -27,11 +27,11 @@ const Atelier = (props) => {
       <Head>
         <title>Atelier | {titel}</title>
       </Head>
-      <div>
-        <div className=''>
-          <div>
-            <h2 className='anker mb-one'>Atelier</h2>
-            <hr className='mb-one' />
+      <div className='intro'>
+        <h2 className='anker mb-one'>Atelier</h2>
+        <hr className='mb-one' />
+        <div className='lg:grid lg:grid-cols-2 gap-1'>
+          <div className=''>
             <h1 className='mb-one'>{titel}</h1>
             <p className='mb-one'>{untertitel}</p>
           </div>

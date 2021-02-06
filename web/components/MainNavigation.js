@@ -21,27 +21,57 @@ export default function MainNavigation() {
       >
         <ul>
           <li>
-            <ActiveLink activeClassName='active' href='/'>
+            <ActiveLink
+              activeClassName='active'
+              href='/'
+              onClick={() => {
+                toggle()
+              }}
+            >
               <a className='inline-block anker mb-one z-10'>Home</a>
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink activeClassName='active' href='/hintergrund/huttwil'>
+            <ActiveLink
+              activeClassName='active'
+              href='/hintergrund/huttwil'
+              onClick={() => {
+                toggle()
+              }}
+            >
               <a className='inline-block anker mb-one z-10'>Partnergemeinde</a>
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink activeClassName='active' href='/hintergrund/dencity'>
+            <ActiveLink
+              activeClassName='active'
+              href='/hintergrund/dencity'
+              onClick={() => {
+                toggle()
+              }}
+            >
               <a className='inline-block anker mb-one z-10'>Dencity</a>
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink activeClassName='active' href='/themenpfade'>
+            <ActiveLink
+              activeClassName='active'
+              href='/themenpfade'
+              onClick={() => {
+                toggle()
+              }}
+            >
               <a className='inline-block anker mb-one z-10'>Themenpfade</a>
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink activeClassName='active' href='/projekte'>
+            <ActiveLink
+              activeClassName='active'
+              href='/projekte'
+              onClick={() => {
+                toggle()
+              }}
+            >
               <a className='inline-block anker mb-one z-10'>Projektübersicht</a>
             </ActiveLink>
           </li>

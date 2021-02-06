@@ -10,25 +10,25 @@ export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
     switch (content._type) {
       case 'anchor':
-        return <Anchor anchor={content} />
+        return <Anchor anchor={content} key={content._key} />
         break
       case 'lauftext':
-        return <Lauftext lauftext={content} />
+        return <Lauftext lauftext={content} key={content._key} />
         break
       case 'textandimage':
-        return <TextAndImage textandimage={content} />
+        return <TextAndImage textandimage={content} key={content._key} />
         break
       case 'linkedpic':
-        return <Linkedpic linkedpic={content} />
+        return <Linkedpic linkedpic={content} key={content._key} />
         break
       case 'gallery':
-        return <Gallery gallery={content} />
+        return <Gallery gallery={content} key={content._key} />
         break
       case 'metatext':
-        return <Lauftext lauftext={content} />
+        return <Lauftext lauftext={content} key={content._key} />
         break
       case 'horzline':
-        return <Horzline mb={content} key={content._key} />
+        return <Horzline mb={content} key={content._key} key={content._key} />
         break
       default:
         break

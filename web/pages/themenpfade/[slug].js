@@ -28,24 +28,6 @@ const Themenpfad = (props) => {
       <div>
         <h2 className='anker mb-one'>Themenpfad</h2>
         <hr className='mb-one' />
-        {/* REFERENCEPIC */}
-        {/* {referencepic && (
-          <img
-            className='mb-one'
-            src={urlFor(referencepic).width(2000).height(1600).url()}
-            srcSet={`${urlFor(referencepic)
-              .width(1024)
-              .height(819)
-              .format('webp')
-              .url()} 1024w, ${urlFor(referencepic)
-              .width(2000)
-              .height(1600)
-              .format('webp')
-              .url()} 2000w,`}
-            sizes='(max-width:1024px) 100vw, 50vw'
-            alt={`Referenzbild zu $ {title}`}
-          />
-        )} */}
 
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
@@ -54,16 +36,15 @@ const Themenpfad = (props) => {
         {indexOfAteliers && (
           <>
             <h2 className='anker mb-one'>Ateliers</h2>
-            <hr className='mb-one' />
-            <ul className='grid grid-cols-2 gap-1'>
+            <ul className='grid grid-cols-2 2xl:grid-cols-4 gap-1'>
               {indexOfAteliers.map((atelier) => (
-                <li>
+                <li key={atelier.slug} className='lg:px-1'>
+                  <hr className='mb-one' />
                   <Link
-                    key={atelier.id}
                     href='/ateliers/[slug]'
                     as={`/ateliers/${atelier.slug}`}
                   >
-                    <a className={`link projekt ${atelier.slug} mb-2`}>
+                    <a className={`link projekt ${atelier.slug} `}>
                       <img
                         src={urlFor(atelier.referencepic)
                           .width(2000)
@@ -80,10 +61,12 @@ const Themenpfad = (props) => {
                           .url()} 2000w,`}
                         sizes='(max-width:1024px) 100vw, 50vw'
                         alt={`Referenzbild zu $ {atelier.title}`}
-                        className='mb-1'
+                        className='mb-one'
                       />
-                      <h2 className=''>{atelier.titel}</h2>
-                      <p className=''>{atelier.untertitel}</p>
+                      <div className=' mb-one'>
+                        <h2 className='mb-one'>{atelier.titel}</h2>
+                        <p className='mb-one'>{atelier.untertitel}</p>
+                      </div>
                     </a>
                   </Link>
                 </li>

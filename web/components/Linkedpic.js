@@ -8,23 +8,27 @@ function urlFor(source) {
 
 export default function Linkedpic({ linkedpic }) {
   return (
-    <figure key={linkedpic._key} className='mb-2'>
-      <img
-        src={urlFor(linkedpic.image).width(2000).height(1600).url()}
-        srcSet={`${urlFor(linkedpic.image)
-          .width(1024)
-          .height(819)
-          .format('webp')
-          .url()} 1024w, ${urlFor(linkedpic.image)
-          .width(2000)
-          .height(1600)
-          .format('webp')
-          .url()} 2000w,`}
-        sizes='(max-width:1024px) 100vw, 50vw'
-      />
-      <figcaption>
-        <BlockContent blocks={linkedpic.caption} {...client.config()} />
-      </figcaption>
-    </figure>
+    <div className='linkedpic '>
+      <figure key={linkedpic._key} className='mb-one lg:grid lg:grid-cols-4'>
+        <img
+          src={urlFor(linkedpic.image).width(2000).height(1600).url()}
+          srcSet={`${urlFor(linkedpic.image)
+            .width(1024)
+            .height(819)
+            .url()} 1024w, ${urlFor(linkedpic.image)
+            .width(2000)
+            .height(1600)
+            .format('webp')
+            .url()} 2000w,`}
+          sizes='(max-width:1024px) 100vw, 75vw'
+          className='mb-one lg:col-span-3  lg:col-start-2'
+        />
+        {linkedpic.caption && (
+          <figcaption className='lg:col-span-2 lg:col-start-2'>
+            <BlockContent blocks={linkedpic.caption} {...client.config()} />
+          </figcaption>
+        )}
+      </figure>
+    </div>
   )
 }

@@ -27,10 +27,10 @@ const ThemenpfadIndex = (props) => {
       {themenpfade && (
         <>
           <h2 className='anker mb-one'>Themenpfade</h2>
-          <hr className='mb-one' />
-          <ul className='grid grid-cols-2 gap-1'>
-            {themenpfade.map((themenpfad) => (
-              <li>
+          <ul className='grid grid-cols-2 2xl:grid-cols-4 gap-1'>
+            {themenpfade.map((themenpfad, idx) => (
+              <li key={`themenpfad${idx}`}>
+                <hr className='mb-1' />
                 <Link
                   key={themenpfad._id}
                   href='/themenpfade/[slug]'
