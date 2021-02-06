@@ -6,6 +6,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import Inhalt from 'components/Inhalt'
 import Team from 'components/Team'
 import Link from 'next/link'
+import ProjekteIndex from 'components/ProjekteIndex'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -18,7 +19,7 @@ const Atelier = (props) => {
     team,
     vorgehen,
     standort,
-    slideshow,
+    projekteIndex,
     referencepic,
   } = props.atelier
 
@@ -58,6 +59,7 @@ const Atelier = (props) => {
         {/* Standort */}
         {standort && <p className='mb-2'>{standort}</p>}
         {/* Projekte  */}
+        {projekteIndex && <ProjekteIndex projekte={projekteIndex} />}
       </div>
     </Layout>
   )
@@ -71,7 +73,8 @@ const query = groq`
     standort,
     team, 
     vorgehen,
-    slideshow
+    'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}}
+    
   }
 `
 
