@@ -53,6 +53,20 @@ export default {
           fieldset: 'main',
         },
         {
+          title: 'Themen',
+          name: 'themen',
+          type: 'array',
+          of: [{ type: 'string' }],
+          fieldset: 'main',
+        },
+        {
+          title: 'Standort/e',
+          name: 'standorte',
+          type: 'array',
+          of: [{ type: 'string' }],
+          fieldset: 'main',
+        },
+        {
           title: 'Vorgehen',
           name: 'vorgehen',
           type: 'inhalt',
