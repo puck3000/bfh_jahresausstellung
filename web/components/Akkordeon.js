@@ -18,9 +18,9 @@ const Akkordeon = ({ content, title }) => {
       onClick={() => {
         setisOpen(!isOpen)
       }}
-      className='w-full cursor-pointer flex flex-row justify-between items-center '
+      className='w-full lg:w-1/2 cursor-pointer flex flex-row justify-between lg:justify-start items-center focus:outline-none'
     >
-      <h3 className='inline-block'>{title}</h3>
+      <h3 className='inline-block lg:mr-one'>{title}</h3>
       <motion.svg
         xmlns='http://www.w3.org/2000/svg'
         height='24'
@@ -40,13 +40,13 @@ const Akkordeon = ({ content, title }) => {
       {content.length &&
         content.map((akkItem, idx) => (
           <li key={idx}>
-            <p>{akkItem.person}</p>
+            <p>{akkItem}</p>
           </li>
         ))}
     </ul>
   )
   const akkkordeon = (
-    <motion.div className='lg:w-1/2 mb-one'>
+    <motion.div className='lg:w-1/2 mb-one pr-2'>
       {akkHeader}
       {akkContent}
     </motion.div>

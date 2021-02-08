@@ -61,17 +61,21 @@ export default function Gallery({ gallery }) {
     </figure>
   ))
   return (
-    <AliceCarousel
-      mouseTracking
-      disableDotsControls
-      infinite
-      autoHeight
-      disableSlideInfo={false}
-      renderSlideInfo={renderSlideInfo}
-      renderPrevButton={renderPrevButton}
-      renderNextButton={renderNextButton}
-      items={slides}
-    />
+    <div className='lg:grid lg:grid-cols-4'>
+      <div className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '>
+        <AliceCarousel
+          mouseTracking
+          disableDotsControls
+          infinite
+          autoHeight
+          disableSlideInfo={false}
+          renderSlideInfo={renderSlideInfo}
+          renderPrevButton={renderPrevButton}
+          renderNextButton={renderNextButton}
+          items={slides}
+        />
+      </div>
+    </div>
   )
 
   {
