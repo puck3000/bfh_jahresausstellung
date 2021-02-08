@@ -26,7 +26,7 @@ export default function Layout({ children }) {
       <div className=''>
         {/* Todo: Create Header Component */}
         <div className='m-1'>
-          <header className='fixed'>
+          <header className='fixed z-50'>
             <MainNavigation />
           </header>
           <main className='pt-12'>{children}</main>

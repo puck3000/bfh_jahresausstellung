@@ -7,6 +7,7 @@ import Inhalt from 'components/Inhalt'
 import Ateliers from 'components/Ateliers'
 import PinchMap from 'components/map/PinchMap'
 import Map from 'components/map/Map'
+import BottomNav from 'components/BottomNav'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -21,8 +22,9 @@ const StyleGuide = (props) => {
         <title>{title} | BFH</title>
       </Head>
       <div>
-        <h2 className='mb-2'>{title}</h2>
-        <PinchMap />
+        <BottomNav />
+        {/* <h2 className='mb-2'>{title}</h2>
+        <PinchMap /> */}
         {/* INHALT */}
         {/* { inhalt && <Inhalt inhalt={inhalt}/> } */}
       </div>
