@@ -2,6 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
-  "/themenpfade": "pages/themenpfade.js"
+  "/styleguide": "pages/styleguide.js"
 }

@@ -1,0 +1,118 @@
+// import Cat from '../svgs/cat.svg'
+import BaseMap from './BaseMap.jsx'
+import { themenpfade, ateliers, projects } from './data'
+import { useState } from 'react'
+
+export default function Map() {
+  const [dataPoints, setdataPoints] = useState({
+    themenpfade: themenpfade,
+    ateliers: ateliers,
+    projects: projects,
+    message: '',
+  })
+
+  const displayInfo = (name) => {
+    // update state
+  }
+
+  return (
+    <div className='w-full alleThemenpfade bg-black'>
+      {dataPoints.message.length > 0 && (
+        <div className='absolute inset-0'>
+          <h2 className='text-white'>{dataPoints.message}</h2>
+        </div>
+      )}
+      <svg version='1.2' viewBox='0 0 3507 2480'>
+        <BaseMap></BaseMap>
+        {/* Themenpfade */}
+        <g>
+          {dataPoints.themenpfade.map((themenpfad) => (
+            <rect
+              x={themenpfad.x}
+              y={themenpfad.y}
+              height='300'
+              width='300'
+              className={`opacity-70 hover:opacity-100 ${themenpfad.color}`}
+              onClick={() => {
+                displayInfo(themenpfad.name)
+              }}
+              key={themenpfad.id}
+            />
+          ))}
+        </g>
+        {/* Ateliers */}
+        <g>
+          {dataPoints.ateliers.map((atelier) => (
+            <circle
+              cx={atelier.cx}
+              cy={atelier.cy}
+              r='50'
+              className={`opacity-70 hover:opacity-100 ${atelier.themenpfad}`}
+              onClick={displayInfo.bind(null, atelier.name)}
+              key={atelier.id}
+            />
+          ))}
+        </g>
+        {/* Projekte */}
+        <g>
+          {dataPoints.projects.map((project) => (
+            <svg
+              x={project.x}
+              y={project.y}
+              className={`opacity-70 hover:opacity-100 ${project.themenpfad} ${project.atelier}`}
+              onClick={displayInfo.bind(null, project.name)}
+              key={project.id}
+            >
+              <polygon points='0,100 50,0 100,100' />
+            </svg>
+          ))}
+        </g>
+      </svg>
+      <style jsx>{`
+        rect {
+          stroke: #0000ff;
+          fill: #0000ff;
+          display: none;
+        }
+        circle {
+          stroke: #006600;
+          fill: #00cc00;
+          display: none;
+        }
+        .triangle {
+          margin: 0 auto;
+          width: 100px;
+          height: 100px;
+        }
+        polygon {
+          stroke: #660000;
+          fill: #cc3333;
+          display: none;
+        }
+        .alleThemenpfade rect {
+          display: initial;
+        }
+
+        .alleAteliers circle {
+          display: initial;
+        }
+
+        .alleProjects polygon {
+          display: initial;
+        }
+
+        .at1 circle.t1,
+        .at2 circle.t2,
+        .at3 circle.t3 {
+          display: initial;
+        }
+
+        .pa1 svg.a1 > polygon,
+        .pa2 svg.a2 > polygon,
+        .pa3 svg.a3 > polygon {
+          display: initial;
+        }
+      `}</style>
+    </div>
+  )
+}
