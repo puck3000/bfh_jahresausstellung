@@ -25,7 +25,7 @@ const Atelier = (props) => {
     referencepic,
   } = props.atelier
 
-  const persons = team.map((person) => person.person)
+  const persons = team?.map((person) => person.person)
 
   return (
     <Layout>
@@ -57,11 +57,13 @@ const Atelier = (props) => {
           </figure>
         </div>
         {/* Team */}
-        {team && <Akkordeon content={persons} title='Team' />}
+        {team?.lenght && <Akkordeon content={persons} title='Team' />}
         {/* Themen */}
-        {themen && <Akkordeon content={themen} title='Themen' />}
+        {themen?.lenght && <Akkordeon content={themen} title='Themen' />}
         {/* Standort */}
-        {standorte && <Akkordeon content={standorte} title='Standort' />}
+        {standorte?.lenght && (
+          <Akkordeon content={standorte} title='Standort' />
+        )}
         {/* Vorgehen */}
         {vorgehen && <Inhalt inhalt={vorgehen} />}
         {/* Projekte  */}

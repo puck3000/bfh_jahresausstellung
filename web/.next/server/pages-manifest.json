@@ -3,5 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/ateliers/[slug]": "pages/ateliers/[slug].js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js"
+  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
+  "/themenpfade": "pages/themenpfade.js",
+  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
