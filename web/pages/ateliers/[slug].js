@@ -19,10 +19,13 @@ const Atelier = (props) => {
     untertitel,
     team,
     vorgehen,
-    standort,
+    standorte,
+    themen,
     projekteIndex,
     referencepic,
   } = props.atelier
+
+  const persons = team.map((person) => person.person)
 
   return (
     <Layout>
@@ -54,11 +57,13 @@ const Atelier = (props) => {
           </figure>
         </div>
         {/* Team */}
-        {team && <Akkordeon content={team} title='Team' />}
+        {team && <Akkordeon content={persons} title='Team' />}
+        {/* Themen */}
+        {themen && <Akkordeon content={themen} title='Themen' />}
+        {/* Standort */}
+        {standorte && <Akkordeon content={standorte} title='Standort' />}
         {/* Vorgehen */}
         {vorgehen && <Inhalt inhalt={vorgehen} />}
-        {/* Standort */}
-        {standort && <p className='mb-2'>{standort}</p>}
         {/* Projekte  */}
         {projekteIndex && <ProjekteIndex projekte={projekteIndex} />}
       </div>
@@ -71,8 +76,9 @@ const query = groq`
     titel,
     untertitel,
     referencepic,
-    standort,
+    standorte,
     team, 
+    themen,
     vorgehen,
     'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}}
     
