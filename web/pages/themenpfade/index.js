@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Inhalt from 'components/Inhalt'
 import Link from 'next/link'
 import { urlFor } from 'lib/sanity'
-import SanityBlockContent from '@sanity/block-content-to-react'
+import { MdMap } from 'react-icons/md'
 
 const ThemenpfadIndex = (props) => {
   const {
@@ -21,12 +21,22 @@ const ThemenpfadIndex = (props) => {
       <Head>Themenpfade</Head>
       {/* Themenpfad Übersicht */}
       <h1 className='anker first mb-1 lg:mb-2'>{title}</h1>
+
       <hr className='mb-1 lg:mb-2' />
       {inhalt && <Inhalt inhalt={inhalt} />}
+
       {/* Themenpfade Index */}
       {themenpfade && (
         <>
-          <h2 className='anker mb-1 lg:mb-2'>Themenpfade</h2>
+          <div className='flex flex-row justify-between mt-two lg:mt-big'>
+            <h2 className='anker first mb-1 lg:mb-2'>Themenpfade</h2>
+            <button className='h-8 focus:outline-none'>
+              <p className='hidden lg:inline mr-3 '>
+                Themenpfade in der Kartenansicht öffnen:
+              </p>
+              <MdMap size='2rem' className='inline' />
+            </button>
+          </div>
           <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
             {themenpfade.map((themenpfad, idx) => (
               <li key={`themenpfad${idx}`}>
