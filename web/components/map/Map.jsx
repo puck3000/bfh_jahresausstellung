@@ -1,41 +1,26 @@
 // import Cat from '../svgs/cat.svg'
 import BaseMap from './BaseMap.jsx'
-import { themenpfade, ateliers, projects } from './data'
-import { useState } from 'react'
 
-export default function Map() {
-  const [dataPoints, setdataPoints] = useState({
-    themenpfade: themenpfade,
-    ateliers: ateliers,
-    projects: projects,
-    message: '',
-  })
-
-  const displayInfo = (name) => {
-    // update state
-  }
-
+export default function Map({ dataPoints }) {
   return (
-    <div className='w-full alleThemenpfade bg-black'>
-      {dataPoints.message.length > 0 && (
-        <div className='absolute inset-0'>
-          <h2 className='text-white'>{dataPoints.message}</h2>
-        </div>
-      )}
-      <svg version='1.2' viewBox='0 0 3507 2480'>
+    <div className='alleProjects'>
+      <svg
+        version='1.2'
+        viewBox='0 0 3507 2480'
+        height='209.973mm'
+        width='296.926mm'
+        className='bg-black w-full h-full'
+      >
         <BaseMap></BaseMap>
         {/* Themenpfade */}
         <g>
-          {dataPoints.themenpfade.map((themenpfad) => (
+          {dataPoints?.themenpfade.map((themenpfad) => (
             <rect
               x={themenpfad.x}
               y={themenpfad.y}
               height='300'
               width='300'
               className={`opacity-70 hover:opacity-100 ${themenpfad.color}`}
-              onClick={() => {
-                displayInfo(themenpfad.name)
-              }}
               key={themenpfad.id}
             />
           ))}
@@ -48,7 +33,6 @@ export default function Map() {
               cy={atelier.cy}
               r='50'
               className={`opacity-70 hover:opacity-100 ${atelier.themenpfad}`}
-              onClick={displayInfo.bind(null, atelier.name)}
               key={atelier.id}
             />
           ))}
@@ -60,7 +44,6 @@ export default function Map() {
               x={project.x}
               y={project.y}
               className={`opacity-70 hover:opacity-100 ${project.themenpfad} ${project.atelier}`}
-              onClick={displayInfo.bind(null, project.name)}
               key={project.id}
             >
               <polygon points='0,100 50,0 100,100' />

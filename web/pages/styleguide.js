@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
 import Ateliers from 'components/Ateliers'
+import PinchMap from 'components/map/PinchMap'
 import Map from 'components/map/Map'
 
 function urlFor(source) {
@@ -21,7 +22,7 @@ const StyleGuide = (props) => {
       </Head>
       <div>
         <h2 className='mb-2'>{title}</h2>
-        <Map />
+        <PinchMap />
         {/* INHALT */}
         {/* { inhalt && <Inhalt inhalt={inhalt}/> } */}
       </div>

@@ -172,3 +172,11 @@ export const projects = [
     y: 1610,
   },
 ]
+
+const data = {
+  themenpfade: themenpfade,
+  ateliers: ateliers,
+  projects: projects,
+}
+
+export default data
