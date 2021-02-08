@@ -18,7 +18,7 @@ const ProjektIndex = (props) => {
     <Layout>
       <Head>Projektübersicht</Head>
       {/* Projektübersicht */}
-      <h1 className='mb-4'>{title}</h1>
+      <h1 className='anker first'>{title}</h1>
       {inhalt && <Inhalt inhalt={inhalt} />}
       {/* Projektindex */}
       {projekte && (

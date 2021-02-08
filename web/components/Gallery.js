@@ -5,7 +5,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
 
-import { useState } from 'react'
+// import { useState } from 'react'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -39,7 +39,7 @@ const renderNextButton = ({ isDisabled }) => {
 
 export default function Gallery({ gallery }) {
   const slides = gallery.slide.map((slide) => (
-    <figure key={slide._key} className='mb-one'>
+    <figure key={slide._key} className='mb-1'>
       <img
         src={urlFor(slide.pic).width(2000).height(1600).format('webp').url()}
         srcSet={`${urlFor(slide.pic)
@@ -52,6 +52,7 @@ export default function Gallery({ gallery }) {
           .format('webp')
           .url()} 2000w,`}
         sizes='(max-width:1024px) 100vw, 50vw'
+        className='mb-1 lg:mb-2'
       />
       {slide.caption && (
         <figcaption>

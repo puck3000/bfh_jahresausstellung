@@ -13,8 +13,8 @@ const Hintergrund = (props) => {
         <title>{title} | Hintergrund</title>
       </Head>
       <div>
-        <h1 className='anker mb-one'>{title}</h1>
-        <hr className='mb-one' />
+        <h1 className='anker first mb-1'>{title}</h1>
+        <hr className='mb-1' />
 
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}

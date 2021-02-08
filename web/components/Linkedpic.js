@@ -9,7 +9,10 @@ function urlFor(source) {
 export default function Linkedpic({ linkedpic }) {
   return (
     <div className='linkedpic '>
-      <figure key={linkedpic._key} className='mb-one lg:grid lg:grid-cols-4'>
+      <figure
+        key={linkedpic._key}
+        className='mb-1 lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8'
+      >
         <img
           src={urlFor(linkedpic.image).width(2000).height(1600).url()}
           srcSet={`${urlFor(linkedpic.image)
@@ -21,10 +24,10 @@ export default function Linkedpic({ linkedpic }) {
             .format('webp')
             .url()} 2000w,`}
           sizes='(max-width:1024px) 100vw, 75vw'
-          className='mb-one lg:col-span-3  lg:col-start-2'
+          className='mb-1 lg:mb-2 lg:col-span-3 lg:col-start-2 2xl:col-start-3 2xl:col-span-4'
         />
         {linkedpic.caption && (
-          <figcaption className='lg:col-span-2 lg:col-start-2'>
+          <figcaption className='lg:col-span-2 lg:col-start-2 2xl:col-start-3 2xl:col-span-3'>
             <BlockContent blocks={linkedpic.caption} {...client.config()} />
           </figcaption>
         )}

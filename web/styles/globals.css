@@ -51,7 +51,7 @@
   section.inhalt h2,
   section.inhalt blockquote,
   section.inhalt p {
-    @apply mb-one;
+    @apply mb-1;
   }
 
   h2,
@@ -115,7 +115,11 @@
 /******************************************************/
 
   .anker {
-    @apply inline-block py-1 px-2 border border-current bg-white text-medium lg:text-medium-dt;
+    @apply inline-block py-1 px-2 border border-current mt-two lg:mt-big bg-white text-medium lg:text-medium-dt;
+  }
+
+  .anker.first {
+    @apply mt-0;
   }
 
   /******************************************************

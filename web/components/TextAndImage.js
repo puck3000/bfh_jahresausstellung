@@ -10,11 +10,11 @@ export default function TextAndImage({ textandimage }) {
   return (
     <div
       key={textandimage._key}
-      className='textAndImage mb-one lg:grid lg:grid-cols-4 2xl:grid-cols-8'
+      className='textAndImage mb-1 lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8'
     >
       <BlockContent blocks={textandimage.text} {...client.config()} />
       <img
-        className='lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'
+        className='mb-1 lg:mb-2 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'
         src={urlFor(textandimage.image).width(2000).height(1600).url()}
         srcSet={`${urlFor(textandimage.image)
           .width(1024)

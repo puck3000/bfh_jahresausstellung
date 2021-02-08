@@ -24,5 +24,5 @@ export default function Team({ team }) {
       <p>{teammitglied.person}</p>
     </li>
   ))
-  return <ul className='text mb-one'>{teammitglieder}</ul>
+  return <ul className='text mb-1'>{teammitglieder}</ul>
 }

@@ -26,8 +26,8 @@ const Themenpfad = (props) => {
         <title>Themenpfad | {title}</title>
       </Head>
       <div>
-        <h2 className='anker mb-one'>Themenpfad</h2>
-        <hr className='mb-one' />
+        <h2 className='anker first mb-1 lg:mb-2'>Themenpfad</h2>
+        <hr className='mb-1 lg:mb-2' />
 
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
@@ -35,11 +35,11 @@ const Themenpfad = (props) => {
         {/* {indexOfAteliers && <Ateliers ateliers={indexOfAteliers} />} */}
         {indexOfAteliers && (
           <>
-            <h2 className='anker mb-one'>Ateliers</h2>
+            <h2 className='anker mb-1 lg:mb-2'>Ateliers</h2>
             <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
               {indexOfAteliers.map((atelier) => (
                 <li key={atelier.slug} className='lg:px-1'>
-                  <hr className='mb-one' />
+                  <hr className='mb-1 lg:mb-2' />
                   <Link
                     href='/ateliers/[slug]'
                     as={`/ateliers/${atelier.slug}`}
@@ -61,11 +61,11 @@ const Themenpfad = (props) => {
                           .url()} 2000w,`}
                         sizes='(max-width:1024px) 100vw, 50vw'
                         alt={`Referenzbild zu $ {atelier.title}`}
-                        className='mb-one'
+                        className='mb-1 lg:mb-2'
                       />
-                      <div className=' mb-one'>
-                        <h2 className='mb-one'>{atelier.titel}</h2>
-                        <p className='mb-one'>{atelier.untertitel}</p>
+                      <div className=' mb-1 lg:mb-2'>
+                        <h2 className='mb-1 lg:mb-2'>{atelier.titel}</h2>
+                        <p className='mb-1 lg:mb-2'>{atelier.untertitel}</p>
                       </div>
                     </a>
                   </Link>

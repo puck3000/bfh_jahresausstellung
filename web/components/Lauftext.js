@@ -6,9 +6,11 @@ export default function Lauftext({ lauftext }) {
   return (
     <div
       key={lauftext._key}
-      className={`lauftext mb-two lg:grid lg:grid-cols-4 2xl:grid-cols-8`}
+      className={`lauftext mb-1 lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8`}
     >
-      <article className={`${laufweite} lg:col-start-2 2xl:col-start-3 `}>
+      <article
+        className={`${laufweite} lg:col-start-2 2xl:col-start-3 2xl:col-span-4 `}
+      >
         <BlockContent blocks={lauftext.inhalt} {...client.config()} />
       </article>
     </div>

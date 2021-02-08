@@ -46,7 +46,7 @@ const Akkordeon = ({ content, title }) => {
     </ul>
   )
   const akkkordeon = (
-    <motion.div className='lg:w-1/2 mb-one pr-2'>
+    <motion.div className='lg:w-1/2 mb-1 pr-2'>
       {akkHeader}
       {akkContent}
     </motion.div>

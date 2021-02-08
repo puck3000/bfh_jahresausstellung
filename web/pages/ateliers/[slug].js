@@ -33,14 +33,14 @@ const Atelier = (props) => {
         <title>Atelier | {titel}</title>
       </Head>
       <div className='intro'>
-        <h2 className='anker mb-one'>Atelier</h2>
-        <hr className='mb-one' />
+        <h2 className='anker first mb-1'>Atelier</h2>
+        <hr className='mb-1' />
         <div className='lg:grid lg:grid-cols-2 gap-1'>
           <div className=''>
-            <h1 className='mb-one'>{titel}</h1>
-            <p className='mb-one'>{untertitel}</p>
+            <h1 className='mb-1'>{titel}</h1>
+            <p className='mb-1'>{untertitel}</p>
           </div>
-          <figure className='mb-one'>
+          <figure className='mb-1'>
             <img
               src={urlFor(referencepic).width(2000).height(1600).url()}
               srcSet={`${urlFor(referencepic)
@@ -57,11 +57,11 @@ const Atelier = (props) => {
           </figure>
         </div>
         {/* Team */}
-        {team?.lenght && <Akkordeon content={persons} title='Team' />}
+        {team?.length && <Akkordeon content={persons} title='Team' />}
         {/* Themen */}
-        {themen?.lenght && <Akkordeon content={themen} title='Themen' />}
+        {themen?.length && <Akkordeon content={themen} title='Themen' />}
         {/* Standort */}
-        {standorte?.lenght && (
+        {standorte?.length && (
           <Akkordeon content={standorte} title='Standort' />
         )}
         {/* Vorgehen */}

@@ -20,17 +20,17 @@ const ThemenpfadIndex = (props) => {
     <Layout>
       <Head>Themenpfade</Head>
       {/* Themenpfad Übersicht */}
-      <h1 className='anker mb-one'>{title}</h1>
-      <hr className='mb-one' />
+      <h1 className='anker first mb-1 lg:mb-2'>{title}</h1>
+      <hr className='mb-1 lg:mb-2' />
       {inhalt && <Inhalt inhalt={inhalt} />}
       {/* Themenpfade Index */}
       {themenpfade && (
         <>
-          <h2 className='anker mb-one'>Themenpfade</h2>
+          <h2 className='anker mb-1 lg:mb-2'>Themenpfade</h2>
           <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
             {themenpfade.map((themenpfad, idx) => (
               <li key={`themenpfad${idx}`}>
-                <hr className='mb-1' />
+                <hr className='mb-1 lg:mb-2' />
                 <Link
                   key={themenpfad._id}
                   href='/themenpfade/[slug]'
@@ -55,7 +55,7 @@ const ThemenpfadIndex = (props) => {
                         .url()} 2000w,`}
                       sizes='(max-width:1024px) 100vw, 50vw'
                       alt={`Referenzbild zu $ {themenpfad.inhalt.title}`}
-                      className='mb-1'
+                      className='mb-1 lg:mb-2'
                     />
                   </a>
                 </Link>

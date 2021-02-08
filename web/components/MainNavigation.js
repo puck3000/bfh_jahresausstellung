@@ -8,7 +8,7 @@ export default function MainNavigation() {
   return (
     <>
       <button
-        className='anker mb-two focus:outline-none'
+        className='anker first mb-two focus:outline-none'
         onClick={() => {
           toggle()
         }}
@@ -28,7 +28,7 @@ export default function MainNavigation() {
                 toggle()
               }}
             >
-              <a className='inline-block anker mb-one z-10'>Home</a>
+              <a className='inline-block anker first mb-1 lg:mb-2 z-10'>Home</a>
             </ActiveLink>
           </li>
           <li>
@@ -39,7 +39,9 @@ export default function MainNavigation() {
                 toggle()
               }}
             >
-              <a className='inline-block anker mb-one z-10'>Partnergemeinde</a>
+              <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
+                Partnergemeinde
+              </a>
             </ActiveLink>
           </li>
           <li>
@@ -50,7 +52,9 @@ export default function MainNavigation() {
                 toggle()
               }}
             >
-              <a className='inline-block anker mb-one z-10'>Dencity</a>
+              <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
+                Dencity
+              </a>
             </ActiveLink>
           </li>
           <li>
@@ -61,7 +65,9 @@ export default function MainNavigation() {
                 toggle()
               }}
             >
-              <a className='inline-block anker mb-one z-10'>Themenpfade</a>
+              <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
+                Themenpfade
+              </a>
             </ActiveLink>
           </li>
           <li>
@@ -72,7 +78,9 @@ export default function MainNavigation() {
                 toggle()
               }}
             >
-              <a className='inline-block anker mb-one z-10'>Projektübersicht</a>
+              <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
+                Projektübersicht
+              </a>
             </ActiveLink>
           </li>
         </ul>
