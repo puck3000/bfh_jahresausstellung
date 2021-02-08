@@ -7,6 +7,7 @@ import Inhalt from 'components/Inhalt'
 import Team from 'components/Team'
 import Link from 'next/link'
 import ProjekteIndex from 'components/ProjekteIndex'
+import Akkordeon from 'components/Akkordeon'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -53,7 +54,7 @@ const Atelier = (props) => {
           </figure>
         </div>
         {/* Team */}
-        {team && <Team team={team} />}
+        {team && <Akkordeon content={team} title='Team' />}
         {/* Vorgehen */}
         {vorgehen && <Inhalt inhalt={vorgehen} />}
         {/* Standort */}
