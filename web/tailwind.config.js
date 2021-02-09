@@ -3,6 +3,7 @@ module.exports = {
     // Use *.tsx if using TypeScript
     './pages/**/*.js',
     './components/**/*.js',
+    './components/**/*.jsx',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
