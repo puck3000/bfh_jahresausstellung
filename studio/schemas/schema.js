@@ -30,6 +30,7 @@ import metatext from './objects/metatext'
 import slideshow from './objects/slideshow'
 import teammitglied from './objects/teammitglied'
 import coordinates from './objects/coordinates'
+import youtube from './objects/youtube'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -65,5 +66,6 @@ export default createSchema({
     slideshow,
     teammitglied,
     coordinates,
+    youtube,
   ]),
 })

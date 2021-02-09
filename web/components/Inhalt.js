@@ -5,6 +5,7 @@ import Linkedpic from './Linkedpic'
 import TextAndImage from './TextAndImage'
 import Horzline from './Horzline'
 import Slideshow from './Slideshow'
+import Youtube from './Youtube'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -28,7 +29,10 @@ export default function Inhalt({ inhalt }) {
         return <Lauftext lauftext={content} key={content._key} />
         break
       case 'horzline':
-        return <Horzline mb={content} key={content._key} key={content._key} />
+        return <Horzline mb={content} key={content._key} />
+        break
+      case 'youtube':
+        return <Youtube url={content} key={content._key} />
         break
       default:
         break

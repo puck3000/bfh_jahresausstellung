@@ -13,6 +13,7 @@ export default {
     { type: 'gallery' },
     { type: 'metatext' },
     { type: 'horzline' },
+    { type: 'youtube' },
     //   { type: 'embeddedvideo' },
   ],
 }
