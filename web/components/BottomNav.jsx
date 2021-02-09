@@ -25,9 +25,9 @@ export default function BottomNav({ links }) {
         </li>
 
         {links?.length &&
-          links.map((link) => {
+          links.map((link, idx) => {
             return (
-              <li className='mb-1 lg:mb-2'>
+              <li key={idx} className='mb-1 lg:mb-2'>
                 <hr className='mb-1 lg:mb-2'></hr>
                 <Link href={link?.url}>
                   <div className='cursor-pointer flex flex-row items-center lg:w-full lg:grid lg:grid-cols-4'>

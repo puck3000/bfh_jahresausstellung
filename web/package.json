@@ -19,6 +19,7 @@
     "framer-motion": "^3.3.0",
     "groq": "^2.0.9",
     "next": "^10.0.4",
+    "next-images": "^1.7.0",
     "next-sanity": "^0.1.8",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
