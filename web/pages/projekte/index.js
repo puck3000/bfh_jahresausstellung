@@ -19,10 +19,10 @@ const ProjektIndex = (props) => {
       <Head>Projektübersicht</Head>
       {/* Projektübersicht */}
       <h1 className='mb-4'>{title}</h1>
-      {inhalt && <Inhalt inhalt={inhalt} />}
+      {/* {inhalt && <Inhalt inhalt={inhalt} />} */}
       {/* Projektindex */}
       {projekte && (
-        <ul className='grid grid-cols-2 gap-1'>
+        <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
           {projekte.map((projekt) => (
             <li>
               {projekt.gallery ? (
