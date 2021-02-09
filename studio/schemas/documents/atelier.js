@@ -124,6 +124,12 @@ export default {
           },
           fieldset: 'meta',
         },
+        {
+          title: 'Koordinaten',
+          name: 'coordinates',
+          type: 'coordinates',
+          fieldset: 'meta',
+        },
       ],
     },
   ],
