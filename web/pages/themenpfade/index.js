@@ -6,6 +6,7 @@ import Inhalt from 'components/Inhalt'
 import Link from 'next/link'
 import { urlFor } from 'lib/sanity'
 import { MdMap } from 'react-icons/md'
+import BottomNav from 'components/BottomNav'
 
 const ThemenpfadIndex = (props) => {
   const {
@@ -14,7 +15,7 @@ const ThemenpfadIndex = (props) => {
     tpflist: themenpfade,
   } = props.themenpfadIndex
 
-  // const themenpfade = props.themenpfade
+  const links = [{ title: 'home', url: '/' }]
 
   return (
     <Layout>
@@ -25,12 +26,18 @@ const ThemenpfadIndex = (props) => {
       <hr className='mb-1 lg:mb-2' />
       {inhalt && <Inhalt inhalt={inhalt} />}
 
+      <BottomNav links={links} />
+
       {/* Themenpfade Index */}
       {themenpfade && (
         <>
-          <div className='flex flex-row justify-between mt-two lg:mt-big'>
-            <h2 className='anker first mb-1 lg:mb-2'>Themenpfade</h2>
-            <button className='h-8 focus:outline-none'>
+          <div className='flex flex-row justify-between mt-two lg:mt-big lg:grid lg:grid-cols-4'>
+            <div>
+              <h2 className='anker first mb-1 lg:mb-2 lg:inline-block'>
+                Themenpfade
+              </h2>
+            </div>
+            <button className='h-8 focus:outline-none lg:col-start-2 lg:col-span-3 lg:justify-self-start '>
               <p className='hidden lg:inline mr-3 '>
                 Themenpfade in der Kartenansicht öffnen:
               </p>

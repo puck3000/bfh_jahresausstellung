@@ -7,6 +7,8 @@ import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
 import Ateliers from 'components/Ateliers'
 import Link from 'next/link'
+import BottomNav from 'components/BottomNav'
+import { MdMap } from 'react-icons/md'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -20,6 +22,11 @@ const Themenpfad = (props) => {
     indexOfAteliers,
   } = props.themenpfad
 
+  const links = [
+    { title: 'themenpfade übersicht', url: '/themenpfade' },
+    { title: 'home', url: '/' },
+  ]
+
   return (
     <Layout>
       <Head>
@@ -31,11 +38,24 @@ const Themenpfad = (props) => {
 
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
+        <BottomNav links={links} />
         {/* ATELIERS */}
         {/* {indexOfAteliers && <Ateliers ateliers={indexOfAteliers} />} */}
         {indexOfAteliers && (
           <>
-            <h2 className='anker mb-1 lg:mb-2'>Ateliers</h2>
+            <div className='flex flex-row justify-between mt-two lg:mt-big lg:grid lg:grid-cols-4'>
+              <div>
+                <h2 className='anker first mb-1 lg:mb-2 lg:inline-block'>
+                  Ateliers
+                </h2>
+              </div>
+              <button className='h-8 focus:outline-none lg:col-start-2 lg:col-span-3 lg:justify-self-start '>
+                <p className='hidden lg:inline mr-3 '>
+                  Ateliers in der Kartenansicht öffnen:
+                </p>
+                <MdMap size='2rem' className='inline' />
+              </button>
+            </div>
             <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
               {indexOfAteliers.map((atelier) => (
                 <li key={atelier.slug} className='lg:px-1'>

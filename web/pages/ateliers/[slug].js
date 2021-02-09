@@ -8,6 +8,7 @@ import Team from 'components/Team'
 import Link from 'next/link'
 import ProjekteIndex from 'components/ProjekteIndex'
 import Akkordeon from 'components/Akkordeon'
+import BottomNav from 'components/BottomNav'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -23,9 +24,19 @@ const Atelier = (props) => {
     themen,
     projekteIndex,
     referencepic,
+    themenpfad,
   } = props.atelier
 
   const persons = team?.map((person) => person.person)
+
+  const links = [{ title: 'home', url: '/' }]
+
+  if (themenpfad) {
+    links.unshift({
+      title: `themenpfad ${themenpfad?.title.toLowerCase()}`,
+      url: `../themenpfade/${themenpfad?.slug}`,
+    })
+  }
 
   return (
     <Layout>
@@ -66,6 +77,8 @@ const Atelier = (props) => {
         )}
         {/* Vorgehen */}
         {vorgehen && <Inhalt inhalt={vorgehen} />}
+        {/* Bottom Nav */}
+        <BottomNav links={links} />
         {/* Projekte  */}
         {projekteIndex && <ProjekteIndex projekte={projekteIndex} />}
       </div>
@@ -82,6 +95,7 @@ const query = groq`
     team, 
     themen,
     vorgehen,
+    'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
     'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}}
     
   }

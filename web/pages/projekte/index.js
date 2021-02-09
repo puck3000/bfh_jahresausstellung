@@ -18,11 +18,11 @@ const ProjektIndex = (props) => {
     <Layout>
       <Head>Projektübersicht</Head>
       {/* Projektübersicht */}
-      <h1 className='anker first'>{title}</h1>
+      <h1 className='mb-4'>{title}</h1>
       {inhalt && <Inhalt inhalt={inhalt} />}
       {/* Projektindex */}
       {projekte && (
-        <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
+        <ul className='grid grid-cols-2 gap-1'>
           {projekte.map((projekt) => (
             <li>
               {projekt.gallery ? (
@@ -34,6 +34,9 @@ const ProjektIndex = (props) => {
           ))}
         </ul>
       )}
+      <Link href='/themenpfade' passHref>
+        <a>zurück zu den Themenpfaden</a>
+      </Link>
     </Layout>
   )
 }

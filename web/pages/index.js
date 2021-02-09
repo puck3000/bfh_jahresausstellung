@@ -1,6 +1,5 @@
 import groq from 'groq'
 import client from 'client'
-import MainNav from 'components/MainNav'
 import Layout from 'components/Layout'
 
 const Home = (props) => {
