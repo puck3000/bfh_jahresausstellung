@@ -26,7 +26,7 @@ export default function Layout({ children }) {
       {/* "mobile-only" Force Mobile Only view, for Client-Sneak-Peaks */}
       <div className=''>
         {/* Todo: Create Header Component */}
-        <div className='m-1'>
+        <div className='m-1 min-h-screen grid grid-rows-bottomFooter '>
           <header className='fixed z-50'>
             <MainNavigation />
           </header>

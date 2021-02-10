@@ -25,6 +25,9 @@ module.exports = {
         big: '1.625rem',
         'big-dt': '2.2625rem',
       },
+      gridTemplateRows: {
+        bottomFooter: '1fr auto',
+      },
     },
   },
   variants: {
