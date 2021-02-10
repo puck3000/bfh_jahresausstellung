@@ -1,14 +1,14 @@
 // import Cat from '../svgs/cat.svg'
-import BaseMap from './BaseMap.jsx'
+import BaseMap from './BaseMap.js'
 
 export default function Map({ dataPoints }) {
   return (
-    <div className='alleProjects'>
+    <div className='alleProjects w-full'>
       <svg
         version='1.2'
         viewBox='0 0 3507 2480'
-        height='209.973mm'
-        width='296.926mm'
+        // height='209.973mm'
+        // width='296.926mm'
         className='bg-black w-full h-full'
       >
         <BaseMap></BaseMap>

@@ -23,8 +23,8 @@ const StyleGuide = (props) => {
       </Head>
       <div>
         <BottomNav />
-        {/* <h2 className='mb-2'>{title}</h2>
-        <PinchMap /> */}
+        <h2 className='mb-2'>{title}</h2>
+        <PinchMap />
         {/* INHALT */}
         {/* { inhalt && <Inhalt inhalt={inhalt}/> } */}
       </div>

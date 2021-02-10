@@ -5,8 +5,8 @@ import Head from 'next/head'
 import Inhalt from 'components/Inhalt'
 import Link from 'next/link'
 import { urlFor } from 'lib/sanity'
-import { MdMap } from 'react-icons/md'
 import BottomNav from 'components/BottomNav'
+import MapModal from 'components/map/MapModal'
 
 const ThemenpfadIndex = (props) => {
   const {
@@ -37,12 +37,8 @@ const ThemenpfadIndex = (props) => {
                 Themenpfade
               </h2>
             </div>
-            <button className='h-8 focus:outline-none lg:col-start-2 lg:col-span-3 lg:justify-self-start '>
-              <p className='hidden lg:inline mr-3 '>
-                Themenpfade in der Kartenansicht öffnen:
-              </p>
-              <MdMap size='2rem' className='inline' />
-            </button>
+            {/* Map Modal */}
+            <MapModal />
           </div>
           <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
             {themenpfade.map((themenpfad, idx) => (
