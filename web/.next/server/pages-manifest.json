@@ -3,6 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/themenpfade": "pages/themenpfade.js"
+  "/themenpfade": "pages/themenpfade.js",
+  "/hintergrund/[slug]": "pages/hintergrund/[slug].js"
 }
