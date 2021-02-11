@@ -1,21 +1,21 @@
 export const themenpfade = [
   {
-    id: 1,
-    name: 'Themenpfad 1',
+    id: 'a40e903d-bc01-4241-9e9d-da6a5fed7dde',
+    name: 'Themenpfad Ressourcen',
     color: 'tp1',
     x: 838,
     y: 838,
   },
   {
-    id: 2,
-    name: 'Themenpfad 2',
+    id: 'ecc9f8eb-6ef7-4271-a9dc-39237814caae',
+    name: 'Themenpfad Zentralität',
     color: 'tp2',
     x: 2619,
     y: 1164,
   },
   {
-    id: 3,
-    name: 'Themenpfad 3',
+    id: 'fa1974cf-9a98-4331-9c19-d7d44479135d',
+    name: 'Themenpfad Wohnformen',
     color: 'tp3',
     x: 1868,
     y: 1110,

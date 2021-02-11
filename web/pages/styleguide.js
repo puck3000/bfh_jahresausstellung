@@ -22,7 +22,6 @@ const StyleGuide = (props) => {
         <title>{title} | BFH</title>
       </Head>
       <div>
-        <BottomNav />
         <h2 className='mb-2'>{title}</h2>
         <PinchMap />
         {/* INHALT */}

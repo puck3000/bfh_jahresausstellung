@@ -1,14 +1,39 @@
-// import Cat from '../svgs/cat.svg'
+import {
+  getAteliersInfosById,
+  getProjectInfosById,
+  getThemenpfadInfosById,
+} from 'lib/api'
 import BaseMap from './BaseMap.js'
 
-export default function Map({ dataPoints }) {
+export default function Map({
+  dataPoints,
+  onSidebarToggle,
+  onMapPointSelected,
+}) {
+  const clickHandler = (bereich, refId) => {
+    // things to do on click: 1. fetch relevant data 2. show sidebar with data
+    switch (bereich) {
+      case 'themenpfad':
+        getThemenpfadInfosById(refId).then((res) => onMapPointSelected(res[0]))
+
+        break
+      case 'atelier':
+        getAteliersInfosById(refId).then((res) => onMapPointSelected(res[0]))
+        break
+      case 'projekt':
+        getProjectInfosById(refId).then((res) => onMapPointSelected(res[0]))
+        break
+      default:
+        break
+    }
+    onSidebarToggle(true)
+  }
+
   return (
-    <div className='alleProjects w-full'>
+    <div className={`w-full ${dataPoints.currentLayer}`}>
       <svg
         version='1.2'
         viewBox='0 0 3507 2480'
-        // height='209.973mm'
-        // width='296.926mm'
         className='bg-black w-full h-full'
       >
         <BaseMap></BaseMap>
@@ -20,8 +45,11 @@ export default function Map({ dataPoints }) {
               y={themenpfad.y}
               height='300'
               width='300'
-              className={`opacity-70 hover:opacity-100 ${themenpfad.color}`}
+              className={`opacity-70 hover:opacity-90 ${themenpfad.color}`}
               key={themenpfad.id}
+              onClick={() => {
+                clickHandler('themenpfad', themenpfad.id)
+              }}
             />
           ))}
         </g>
@@ -32,8 +60,11 @@ export default function Map({ dataPoints }) {
               cx={atelier.cx}
               cy={atelier.cy}
               r='50'
-              className={`opacity-70 hover:opacity-100 ${atelier.themenpfad}`}
+              className={`opacity-70 hover:opacity-90 ${atelier.themenpfad}`}
               key={atelier.id}
+              onClick={() => {
+                clickHandler('atelier', atelier.id)
+              }}
             />
           ))}
         </g>
@@ -43,10 +74,15 @@ export default function Map({ dataPoints }) {
             <svg
               x={project.x}
               y={project.y}
-              className={`opacity-70 hover:opacity-100 ${project.themenpfad} ${project.atelier}`}
+              className={`opacity-70 hover:opacity-90 ${project.themenpfad} ${project.atelier}`}
               key={project.id}
             >
-              <polygon points='0,100 50,0 100,100' />
+              <polygon
+                points='0,100 50,0 100,100'
+                onClick={() => {
+                  clickHandler('project', project.id)
+                }}
+              />
             </svg>
           ))}
         </g>
@@ -72,15 +108,15 @@ export default function Map({ dataPoints }) {
           fill: #cc3333;
           display: none;
         }
-        .alleThemenpfade rect {
+        .themenpfade rect {
           display: initial;
         }
 
-        .alleAteliers circle {
+        .ateliers circle {
           display: initial;
         }
 
-        .alleProjects polygon {
+        .projekte polygon {
           display: initial;
         }
 
