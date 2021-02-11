@@ -21,7 +21,7 @@ const ThemenpfadIndex = (props) => {
     <Layout>
       <Head>Themenpfade</Head>
       {/* Themenpfad Übersicht */}
-      <h1 className='anker first mb-1 lg:mb-2'>{title}</h1>
+      <div className='anker first mb-1 lg:mb-2'>{title}</div>
 
       <hr className='mb-1 lg:mb-2' />
       {inhalt && <Inhalt inhalt={inhalt} />}
