@@ -30,7 +30,7 @@ export default function Map({
   }
 
   return (
-    <div className={`w-full ${dataPoints.currentLayer}`}>
+    <div className={`w-full  ${dataPoints.currentLayer}`} id='karte'>
       <svg
         version='1.2'
         viewBox='0 0 3507 2480'
@@ -88,6 +88,9 @@ export default function Map({
         </g>
       </svg>
       <style jsx>{`
+        #karte {
+          max-height: 70vh;
+        }
         rect {
           stroke: #0000ff;
           fill: #0000ff;

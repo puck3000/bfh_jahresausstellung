@@ -24,6 +24,7 @@ import hintergrund from './documents/hintergrund'
 import settings from './documents/settings'
 import themenpfadeIndex from './documents/themenpfadeIndex'
 import projekteIndex from './documents/projekteIndex'
+import map from './documents/map'
 import veranstaltungen from './documents/veranstaltungen'
 import styleGuide from './documents/styleGuide'
 import metatext from './objects/metatext'
@@ -67,5 +68,6 @@ export default createSchema({
     teammitglied,
     coordinates,
     youtube,
+    map,
   ]),
 })
