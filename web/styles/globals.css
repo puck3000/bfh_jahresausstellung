@@ -42,26 +42,32 @@
   }
 
   body {
-    @apply text-small;
+    @apply text-medium lg:text-medium-dt;
   }
   h1 {
-    @apply text-big;
+    @apply text-medium lg:text-medium-dt;
   }
 
   section.inhalt h1,
   section.inhalt h2,
-  section.inhalt blockquote,
+  section.inhalt blockquote {
+    @apply mb-two;
+  }
+
   section.inhalt p {
-    @apply mb-1;
+    @apply mb-2;
   }
 
   h2,
   h3,
   .lead,
   .counter,
-  .anchor,
+  .anchor {
+    @apply text-medium lg:text-medium-dt;
+  }
+
   blockquote {
-    @apply text-medium;
+    @apply text-big lg:text-big-dt;
   }
 
   .text ol {

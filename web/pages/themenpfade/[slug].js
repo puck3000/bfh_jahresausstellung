@@ -83,7 +83,7 @@ const Themenpfad = (props) => {
                         alt={`Referenzbild zu $ {atelier.title}`}
                         className='mb-1 lg:mb-2'
                       />
-                      <div className=' mb-1 lg:mb-2'>
+                      <div className=' mb-1 lg:mb-2 text-small lg:text-small-dt'>
                         <h2 className='mb-1 lg:mb-2'>{atelier.titel}</h2>
                         <p className='mb-1 lg:mb-2'>{atelier.untertitel}</p>
                       </div>
