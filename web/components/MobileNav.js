@@ -25,7 +25,7 @@ export default function MobileNav() {
         className='relative'
         style={{ display: mainNavVisibility ? 'initial' : 'none' }}
       >
-        <ul>
+        <ul className='mx-1 lg:mx-4'>
           <li>
             <ActiveLink
               activeClassName='active'
