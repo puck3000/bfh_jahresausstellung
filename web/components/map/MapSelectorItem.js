@@ -46,9 +46,7 @@ export default function MapSelectorItem({ text, active }) {
       }`}
     >
       {icon(text)}
-      <p className='hidden lg:visible inline-block   px-4 lg:text-small-dt'>
-        {text}
-      </p>
+      <p className='hidden lg:inline-block   px-4 lg:text-small-dt'>{text}</p>
     </div>
   )
 }

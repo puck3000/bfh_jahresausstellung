@@ -47,7 +47,7 @@ class PinchMap extends Component {
                 />
               </TransformComponent>
               {/* Tools */}
-              <div className='tools absolute flex flex-col top-2 right-2 lg:top-6 lg:right-6'>
+              <div className='tools absolute flex flex-col top-2 right-2 lg:top-6 lg:right-6 z-40'>
                 <button onClick={resetTransform}>
                   <MdClose className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-2 lg:mb-4' />
                 </button>
