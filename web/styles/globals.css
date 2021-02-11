@@ -101,7 +101,7 @@
     font-style: italic;
   }
 
-  @media screen and (min-width: 1024px) {
+  /* @media screen and (min-width: 1024px) {
     body {
       @apply text-small-dt;
     }
@@ -113,7 +113,7 @@
     blockquote {
       @apply text-medium-dt;
     }
-  }
+  } */
 }
 
 @layer components {
