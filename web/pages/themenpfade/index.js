@@ -37,8 +37,6 @@ const ThemenpfadIndex = (props) => {
                 Themenpfade
               </h2>
             </div>
-            {/* Map Modal */}
-            <MapModal />
           </div>
           <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
             {themenpfade.map((themenpfad, idx) => (

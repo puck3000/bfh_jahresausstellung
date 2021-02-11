@@ -25,7 +25,7 @@ export default function Layout({ children }) {
 
       <div className=''>
         <div className='m-1 lg:m-4 min-h-screen grid grid-rows-bottomFooter '>
-          <header className='fixed z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
+          <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
           <main className='pt-four 2xl:pt-tooBig'>{children}</main>

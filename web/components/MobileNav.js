@@ -1,19 +1,26 @@
 import ActiveLink from './ActiveLink'
 import { useState } from 'react'
+import { MdMap } from 'react-icons/md'
+import Link from 'next/link'
 
 export default function MobileNav() {
   const [mainNavVisibility, setMainNavVisibility] = useState(false)
   const toggle = () => setMainNavVisibility(!mainNavVisibility)
   return (
     <>
-      <button
-        className='anker first mb-two focus:outline-none'
-        onClick={() => {
-          toggle()
-        }}
-      >
-        Menu
-      </button>
+      <div className='mx-1 lg:mx-4 flex justify-between '>
+        <button
+          className='anker first mb-two focus:outline-none'
+          onClick={() => {
+            toggle()
+          }}
+        >
+          Menu
+        </button>
+        <Link href='../map'>
+          <MdMap size='1.5em' />
+        </Link>
+      </div>
       <nav
         className='relative'
         style={{ display: mainNavVisibility ? 'initial' : 'none' }}

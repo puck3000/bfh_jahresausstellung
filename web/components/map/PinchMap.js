@@ -46,7 +46,7 @@ class PinchMap extends Component {
                   onMapPointSelected={this.handleCurrentMapPoint}
                 />
               </TransformComponent>
-              <div className='flex flex-row-reverse justify-between'>
+              <div className='flex flex-row-reverse justify-between  lg:inline'>
                 {/* Tools */}
                 <div className='tools lg:absolute flex flex-col lg:top-0 lg:right-0 z-40'>
                   <button onClick={resetTransform}>
