@@ -22,7 +22,7 @@ const Karte = (props) => {
         <title>{title} | BFH</title>
       </Head>
       <div>
-        <h2 className='mb-2'>{title}</h2>
+        <h2 className='mb-2 text-white'>{title}</h2>
         <PinchMap />
         {/* INHALT */}
         {/* { inhalt && <Inhalt inhalt={inhalt}/> } */}
@@ -40,7 +40,7 @@ const query = groq`
     *[_type == 'map'][0]{'inhalt': content, title}
 `
 
-Map.getInitialProps = async function (context) {
+Karte.getInitialProps = async function (context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.query
   return await client.fetch(query, { slug })
