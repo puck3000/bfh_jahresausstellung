@@ -49,18 +49,18 @@ class PinchMap extends Component {
               {/* Tools */}
               <div className='tools absolute flex flex-col top-2 right-2 lg:top-6 lg:right-6'>
                 <button onClick={resetTransform}>
-                  <MdClose className='bg-white h-6 w-6 mb-2 lg:h-12 lg:w-12 lg:mb-4' />
+                  <MdClose className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-2 lg:mb-4' />
                 </button>
                 <button onClick={zoomIn}>
-                  <MdAdd className='bg-white h-6 w-6 mb-1 lg:h-12 lg:w-12 lg:mb-0 lg:border-b-2 lg:border-black' />
+                  <MdAdd className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-1 lg:mb-0 lg:border-b-2 lg:border-black' />
                 </button>
                 <button onClick={zoomOut}>
-                  <MdRemove className='bg-white h-6 w-6 mb-1 lg:h-12 lg:w-12 lg:mb-2' />
+                  <MdRemove className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-0 lg:mb-2' />
                 </button>
               </div>
               {/* Selectors */}
-              <ul className='absolute top-0 m-6'>
-                <li className='lg:mb-2'>
+              <ul className='absolute top-0 m-3 lg:m-6'>
+                <li className='mb-1 lg:mb-2'>
                   <button
                     onClick={() =>
                       this.setState({ currentLayer: 'themenpfade' })
@@ -75,7 +75,7 @@ class PinchMap extends Component {
                     />
                   </button>
                 </li>
-                <li className='lg:mb-2'>
+                <li className='mb-1 lg:mb-2'>
                   <button
                     onClick={() => this.setState({ currentLayer: 'ateliers' })}
                     className='focus:outline-none'
@@ -88,7 +88,7 @@ class PinchMap extends Component {
                     />
                   </button>
                 </li>
-                <li className='lg:mb-2'>
+                <li className='mb-1 lg:mb-2'>
                   <button
                     onClick={() => this.setState({ currentLayer: 'projekte' })}
                     className='focus:outline-none'

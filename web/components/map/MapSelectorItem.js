@@ -7,7 +7,7 @@ export default function MapSelectorItem({ text, active }) {
       case 'Themenpfade':
         return (
           <MdDirectionsWalk
-            className={`inline-block h-12 w-12 p-2 border-r-2 ${
+            className={`inline-block h-10 lg:h-12 w-10 lg:w-12 p-2 lg:border-r-2 ${
               active ? 'border-white' : 'border-black'
             } `}
           />
@@ -16,7 +16,7 @@ export default function MapSelectorItem({ text, active }) {
       case 'Ateliers':
         return (
           <MdFlag
-            className={`inline-block h-12 w-12 p-2 border-r-2 ${
+            className={`inline-block h-10 lg:h-12 w-10 lg:w-12 p-2 lg:border-r-2 ${
               active ? 'border-white' : 'border-black'
             } `}
           />
@@ -25,7 +25,7 @@ export default function MapSelectorItem({ text, active }) {
       case 'Projekte':
         return (
           <IoMdPin
-            className={`inline-block h-12 w-12 p-2 border-r-2 ${
+            className={`inline-block h-10 lg:h-12 w-10 lg:w-12 p-2 lg:border-r-2 ${
               active ? 'border-white' : 'border-black'
             } `}
           />
@@ -39,14 +39,16 @@ export default function MapSelectorItem({ text, active }) {
 
   return (
     <div
-      className={`flex items-center w-52 ${
+      className={`flex items-center lg:w-52 ${
         active
           ? 'bg-black text-white border-white border-2'
           : 'bg-white text-black border-black border-2'
       }`}
     >
       {icon(text)}
-      <p className=' inline-block   px-4 lg:text-small-dt'>{text}</p>
+      <p className='hidden lg:visible inline-block   px-4 lg:text-small-dt'>
+        {text}
+      </p>
     </div>
   )
 }
