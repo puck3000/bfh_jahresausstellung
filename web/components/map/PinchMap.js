@@ -84,7 +84,10 @@ class PinchMap extends Component {
                 </li>
               </ul>
               {this.state.sideBarVisible && (
-                <MapSideBar mappoint={this.state.currentMapPoint} />
+                <MapSideBar
+                  mappoint={this.state.currentMapPoint}
+                  onSidebarToggle={this.handleSideBarVisibility}
+                />
               )}
             </React.Fragment>
           )}
