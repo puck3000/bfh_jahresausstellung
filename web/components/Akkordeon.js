@@ -36,7 +36,7 @@ const Akkordeon = ({ content, title }) => {
     </button>
   )
   const akkContent = (
-    <ul className={`${isOpen ? 'visible' : 'hidden'}`}>
+    <ul className={`${isOpen ? 'block' : 'hidden'} my-two`}>
       {content.length &&
         content.map((akkItem, idx) => (
           <li key={idx}>
@@ -49,6 +49,7 @@ const Akkordeon = ({ content, title }) => {
     <motion.div className='lg:w-1/2 mb-1 pr-2'>
       {akkHeader}
       {akkContent}
+      <hr></hr>
     </motion.div>
   )
 

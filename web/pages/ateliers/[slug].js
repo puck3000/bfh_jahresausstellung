@@ -67,6 +67,7 @@ const Atelier = (props) => {
             />
           </figure>
         </div>
+        <hr></hr>
         {/* Team */}
         {team?.length && <Akkordeon content={persons} title='Team' />}
         {/* Themen */}
