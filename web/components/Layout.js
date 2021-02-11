@@ -23,14 +23,12 @@ export default function Layout({ children }) {
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
 
-      {/* "mobile-only" Force Mobile Only view, for Client-Sneak-Peaks */}
       <div className=''>
-        {/* Todo: Create Header Component */}
-        <div className='m-1 min-h-screen grid grid-rows-bottomFooter '>
+        <div className='m-1 lg:m-4 min-h-screen grid grid-rows-bottomFooter '>
           <header className='fixed z-50 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
-          <main className='pt-12 2xl:pt-28'>{children}</main>
+          <main className='pt-four 2xl:pt-tooBig'>{children}</main>
           <FooterComponent />
         </div>
       </div>

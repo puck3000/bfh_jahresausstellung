@@ -17,6 +17,13 @@ module.exports = {
         two: '36px',
         big: '90px',
       },
+      padding: {
+        one: '18px',
+        two: '36px',
+        big: '90px',
+        four: '72px',
+        tooBig: '180px',
+      },
       fontSize: {
         small: '0.844rem',
         'small-dt': '1.125rem',

@@ -2,7 +2,7 @@ import ActiveLink from './ActiveLink'
 
 export default function DesktopNav() {
   return (
-    <nav className='relative m-1 grid grid-cols-6'>
+    <nav className='relative m-1 lg:m-4 grid grid-cols-6'>
       <ul className='col-span-2'>
         <li className='inline-block mr-4'>
           <ActiveLink activeClassName='active' href='/'>
