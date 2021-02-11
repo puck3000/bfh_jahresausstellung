@@ -39,7 +39,7 @@ export default function MapSelectorItem({ text, active }) {
 
   return (
     <div
-      className={`flex items-center w-52  ${
+      className={`flex items-center w-52 ${
         active
           ? 'bg-black text-white border-white border-2'
           : 'bg-white text-black border-black border-2'

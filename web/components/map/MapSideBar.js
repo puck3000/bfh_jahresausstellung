@@ -1,22 +1,52 @@
 import Link from 'next/link'
 import client from 'client'
 import imageUrlBuilder from '@sanity/image-url'
-import { MdClose, MdArrowForward } from 'react-icons/md'
+import {
+  MdClose,
+  MdArrowForward,
+  MdFlag,
+  MdDirectionsWalk,
+} from 'react-icons/md'
+import { IoMdPin } from 'react-icons/io'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
-export default function MapSideBar({ mappoint, onSidebarToggle }) {
+export default function MapSideBar({ mappoint, onSidebarToggle, layer }) {
+  const icon = (layer) => {
+    switch (layer) {
+      case 'themenpfade':
+        return <MdDirectionsWalk className='lg:h-12' size='1.2em' />
+        break
+      case 'ateliers':
+        return <MdFlag />
+        break
+      case 'projekte':
+        return <IoMdPin />
+        break
+      default:
+        break
+    }
+  }
+
   return (
-    <aside className='p-1 mt-two lg:mt-0 lg:p-4 lg:absolute bg-white lg:h-full lg:right-0 lg:top-0'>
+    <aside className='p-1 mt-two lg:mt-0 lg:p-4 lg:fixed bg-white lg:h-full lg:right-0 lg:top-0 shadow-left lg:w-1/4 z-40'>
       <div className='flex justify-between'>
-        <h2>{mappoint.title}</h2>
+        <h2 className='text-small lg:text-small-dt pt-1'>{layer}</h2>
         <MdClose
-          className='h-6 w-6 mb-2 lg:h-8 lg:w-8 lg:mb-4'
+          className='h-6 w-6 lg:h-12 lg:w-12'
           onClick={() => onSidebarToggle(false)}
         />
       </div>
+      <div>
+        {icon(layer)}
+        <p className='text-small lg:text-small-dt'>
+          Kurzer Beschrieb Netur aut eiur, con culla consed quasper ionseri ut
+          volest verum volo- rep eritis dus.
+        </p>
+      </div>
+      <h2 className='mt-two lg:mt-big'>{mappoint.title}</h2>
       <img
         src={urlFor(mappoint.referencepic).width(2000).height(1600).url()}
         srcSet={`${urlFor(mappoint.referencepic)
@@ -38,6 +68,7 @@ export default function MapSideBar({ mappoint, onSidebarToggle }) {
           </p>
         </div>
       </Link>
+      <hr className='mt-2'></hr>
     </aside>
   )
 }

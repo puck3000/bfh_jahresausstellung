@@ -35,6 +35,9 @@ module.exports = {
       gridTemplateRows: {
         bottomFooter: '1fr auto',
       },
+      boxShadow: {
+        left: '0 0 50px 0 rgba(0, 0, 0, 0.5)',
+      },
     },
   },
   variants: {
