@@ -2,13 +2,11 @@ import groq from 'groq'
 import client from 'client'
 import Layout from 'components/Layout'
 import Head from 'next/head'
-import Inhalt from 'components/Inhalt'
 import ProjLightBox from 'components/ProjLightBox'
 import Link from 'next/link'
-import { urlFor } from 'lib/sanity'
 import ProjIndexView from 'components/ProjIndexView'
 import { useEffect, useState } from 'react'
-import { projects } from 'components/map/data'
+import { MdSearch } from 'react-icons/md'
 
 const ProjektIndex = (props) => {
   const {
@@ -43,12 +41,16 @@ const ProjektIndex = (props) => {
       {/* Projektindex */}
       {projekte && (
         <>
-          <input
-            type='text'
-            placeholder='Suche'
-            value={searchTerm}
-            onChange={handleChange}
-          />
+          <div className='flex mb-two border-b-2 border-black h-10'>
+            <MdSearch size='1.5em' />
+            <input
+              type='text'
+              placeholder='Suche'
+              value={searchTerm}
+              onChange={handleChange}
+              className='w-full inline-block'
+            />
+          </div>
           <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
             {searchResults.map((projekt) => (
               <li key={projekt._id}>
