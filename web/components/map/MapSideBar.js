@@ -63,7 +63,7 @@ export default function MapSideBar({ mappoint, onSidebarToggle, layer }) {
         className='mb-1 lg:mb-2 lg:col-span-3 lg:col-start-2 2xl:col-start-3 2xl:col-span-4'
       />
       <Link href={`../themenpfade/${mappoint.slug}`}>
-        <div className='flex items-center'>
+        <div className='flex items-center cursor-pointer'>
           <MdArrowForward className='h-4 w-4 lg:h-6 lg:w-8' />
           <p className='text-small lg:text-small-dt'>
             zum Themenpfad {mappoint.title}

@@ -60,15 +60,20 @@ export default class ProjLightBox extends Component {
         <div className='text-left'>
           <h2 className='mb-2'>{projekt.titel}</h2>
           {projekt.people && (
-            <ul className='mb-2'>
+            <ul className=''>
               {projekt.people?.map((person, i) => (
-                <li key={i}>{person}</li>
+                <li key={i} className='mb-2 text-small lg:text-small-dt'>
+                  {person}
+                </li>
               ))}
             </ul>
           )}
           {projekt.downloadURL && (
             <div className='mb-2'>
-              <a href={`${projekt.downloadURL}?dl=`}>
+              <a
+                href={`${projekt.downloadURL}?dl=`}
+                className='anker first text-small lg:text-small-dt'
+              >
                 {projekt.downloadLABEL || 'Download'}
               </a>
             </div>

@@ -42,7 +42,7 @@ export default function Gallery({ gallery }) {
   const [initReload, setinitReload] = useState(0)
 
   const onInit = () => {
-    setTimeout(setinitReload(1), 500)
+    setTimeout(setinitReload(1), 1000)
   }
 
   const slides = gallery.slide.map((slide) => (

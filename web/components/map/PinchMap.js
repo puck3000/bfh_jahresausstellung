@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import Map from './Map'
 import { themenpfade, ateliers, projects } from './data'
-import { MdAdd, MdClose, MdDirectionsWalk, MdRemove } from 'react-icons/md'
+import { AiOutlineFullscreenExit } from 'react-icons/ai'
+import { MdAdd, MdDirectionsWalk, MdRemove } from 'react-icons/md'
 import MapSideBar from './MapSideBar.js'
 import MapSelectorItem from './MapSelectorItem'
 
@@ -50,7 +51,7 @@ class PinchMap extends Component {
                 {/* Tools */}
                 <div className='tools lg:absolute flex flex-col lg:top-0 lg:right-0 z-40'>
                   <button onClick={resetTransform}>
-                    <MdClose className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-2 lg:mb-4 ' />
+                    <AiOutlineFullscreenExit className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-2 lg:mb-4 ' />
                   </button>
                   <button onClick={zoomIn}>
                     <MdAdd

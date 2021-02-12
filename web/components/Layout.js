@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import BackToTop from './BackToTop'
 import FooterComponent from './FooterComponent'
 import MainNavigation from './MainNavigation'
 
@@ -29,6 +30,7 @@ export default function Layout({ children }) {
             <MainNavigation />
           </header>
           <main className='pt-four 2xl:pt-tooBig'>{children}</main>
+          <BackToTop />
           <FooterComponent />
         </div>
       </div>
