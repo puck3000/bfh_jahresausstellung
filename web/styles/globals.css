@@ -141,7 +141,7 @@
 /   SlideShow
 /******************************************************/
 
-  /* Counter: resetting the stiles */
+  /* purgecss ignore */
   .inhalt .alice-carousel__slide-info {
     @apply text-medium lg:text-medium-dt;
     color: inherit;
@@ -149,6 +149,7 @@
     background-color: initial;
   }
 
+  /* purgecss ignore */
   .inhalt .alice-carousel__prev-btn,
   .inhalt .alice-carousel__next-btn {
     @apply text-medium lg:text-medium-dt;
