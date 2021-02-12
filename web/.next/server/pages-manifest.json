@@ -4,5 +4,6 @@
   "/_document": "pages/_document.js",
   "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
   "/map": "pages/map.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }
