@@ -49,12 +49,6 @@ const Themenpfad = (props) => {
                   Ateliers
                 </h2>
               </div>
-              <button className='h-8 focus:outline-none lg:col-start-2 lg:col-span-3 lg:justify-self-start '>
-                <p className='hidden lg:inline mr-3 '>
-                  Ateliers in der Kartenansicht öffnen:
-                </p>
-                <MdMap size='2rem' className='inline' />
-              </button>
             </div>
             <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
               {indexOfAteliers.map((atelier) => (
