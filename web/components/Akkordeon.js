@@ -18,25 +18,35 @@ const Akkordeon = ({ content, title }) => {
       onClick={() => {
         setisOpen(!isOpen)
       }}
-      className='w-full lg:w-1/2 cursor-pointer flex flex-row justify-between lg:justify-start items-center focus:outline-none'
+      className='w-full cursor-pointer  lg:col-span-2 focus:outline-none'
     >
-      <h3 className='inline-block lg:mr-one'>{title}</h3>
-      <motion.svg
-        xmlns='http://www.w3.org/2000/svg'
-        height='24'
-        width='24'
-        viewBox='0 0 24 24'
-        initial={false}
-        animate={isOpen ? 'opened' : 'closed'}
-        variants={toggleVariants}
-      >
-        <path d='M0 0h24v24H0z' fill='none' />
-        <path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z' />
-      </motion.svg>
+      <div className='w-full flex flex-row justify-between items-center  lg:grid lg:grid-cols-2'>
+        <h3 className='inline-block lg:mr-one lg:order-2 lg:justify-self-start'>
+          {title}
+        </h3>
+        <div className='lg:order-1 lg:justify-self-end lg:mr-4 '>
+          <motion.svg
+            xmlns='http://www.w3.org/2000/svg'
+            height='24'
+            width='24'
+            viewBox='0 0 24 24'
+            initial={false}
+            animate={isOpen ? 'opened' : 'closed'}
+            variants={toggleVariants}
+          >
+            <path d='M0 0h24v24H0z' fill='none' />
+            <path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z' />
+          </motion.svg>
+        </div>
+      </div>
     </button>
   )
   const akkContent = (
-    <ul className={`${isOpen ? 'block' : 'hidden'} my-two`}>
+    <ul
+      className={`${
+        isOpen ? 'block' : 'hidden'
+      } my-two lg:col-span-3 lg:col-start-2`}
+    >
       {content.length &&
         content.map((akkItem, idx) => (
           <li key={idx}>
@@ -46,10 +56,10 @@ const Akkordeon = ({ content, title }) => {
     </ul>
   )
   const akkkordeon = (
-    <motion.div className='lg:w-1/2 mb-1 pr-2'>
+    <motion.div className='mb-1 pr-2 lg:grid lg:grid-cols-4'>
       {akkHeader}
       {akkContent}
-      <hr></hr>
+      <hr className='lg:col-span-4'></hr>
     </motion.div>
   )
 
