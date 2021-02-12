@@ -7,6 +7,8 @@ import ProjLightBox from 'components/ProjLightBox'
 import Link from 'next/link'
 import { urlFor } from 'lib/sanity'
 import ProjIndexView from 'components/ProjIndexView'
+import { useEffect, useState } from 'react'
+import { projects } from 'components/map/data'
 
 const ProjektIndex = (props) => {
   const {
@@ -14,6 +16,24 @@ const ProjektIndex = (props) => {
     inhalt,
     projektlist: projekte,
   } = props.projektIndex
+
+  const [searchTerm, setsearchTerm] = useState('')
+  const [searchResults, setsearchResults] = useState([])
+
+  const handleChange = (event) => {
+    setsearchTerm(event.target.value.toLowerCase())
+  }
+
+  useEffect(() => {
+    const results = projekte.filter(
+      (projekt) =>
+        projekt.titel.toLowerCase().includes(searchTerm) ||
+        projekt.atelier.toLowerCase().includes(searchTerm) ||
+        projekt.people.some((peep) => peep.toLowerCase().includes(searchTerm))
+    )
+    setsearchResults(results)
+  }, [searchTerm])
+
   return (
     <Layout>
       <Head>Projektübersicht</Head>
@@ -22,17 +42,25 @@ const ProjektIndex = (props) => {
       {/* {inhalt && <Inhalt inhalt={inhalt} />} */}
       {/* Projektindex */}
       {projekte && (
-        <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
-          {projekte.map((projekt) => (
-            <li key={projekt._id}>
-              {projekt.gallery ? (
-                <ProjLightBox projekt={projekt} />
-              ) : (
-                <ProjIndexView projekt={projekt} />
-              )}
-            </li>
-          ))}
-        </ul>
+        <>
+          <input
+            type='text'
+            placeholder='Suche'
+            value={searchTerm}
+            onChange={handleChange}
+          />
+          <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
+            {searchResults.map((projekt) => (
+              <li key={projekt._id}>
+                {projekt.gallery ? (
+                  <ProjLightBox projekt={projekt} />
+                ) : (
+                  <ProjIndexView projekt={projekt} />
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
       )}
       <Link href='/themenpfade' passHref>
         <a>zurück zu den Themenpfaden</a>
