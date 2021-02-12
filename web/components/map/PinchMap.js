@@ -32,8 +32,8 @@ class PinchMap extends Component {
       <div className='w-full relative'>
         <TransformWrapper
           defaultScale={1}
-          defaultPositionX={200}
-          defaultPositionY={100}
+          // defaultPositionX={200}
+          // defaultPositionY={100}
         >
           {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
             <React.Fragment>

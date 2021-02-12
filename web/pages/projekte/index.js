@@ -26,7 +26,7 @@ const ProjektIndex = (props) => {
     const results = projekte.filter(
       (projekt) =>
         projekt.titel.toLowerCase().includes(searchTerm) ||
-        projekt.atelier.toLowerCase().includes(searchTerm) ||
+        // projekt.atelier.toLowerCase().includes(searchTerm) ||
         projekt.people.some((peep) => peep.toLowerCase().includes(searchTerm))
     )
     setsearchResults(results)
@@ -64,9 +64,6 @@ const ProjektIndex = (props) => {
           </ul>
         </>
       )}
-      <Link href='/themenpfade' passHref>
-        <a>zurück zu den Themenpfaden</a>
-      </Link>
     </Layout>
   )
 }
