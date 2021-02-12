@@ -49,7 +49,7 @@ const Atelier = (props) => {
         <div className='lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8'>
           <div className='lg:col-span-1 2xl:col-span-2'>
             <h1 className='mb-1'>{titel}</h1>
-            <p className='mb-1'>{untertitel}</p>
+            <p className='mb-1 text-small lg:text-small-dt'>{untertitel}</p>
           </div>
           <figure className='mb-1 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'>
             <img
