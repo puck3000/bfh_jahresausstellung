@@ -188,5 +188,26 @@
 
   /* fix chrome issues */
 
+  /* purgecss ignore */
+  .react-transform-component {
+    width: unset !important;
+    height: unset !important;
+  }
+  /* purgecss ignore */
+  .react-transform-element {
+    width: unset !important;
+    height: unset !important;
+  }
+  /* purgecss ignore */
+  .react-transform-component.my-wrapper-class {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  /* purgecss ignore */
+  .react-transform-element.my-content-class {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
   /*  end components */
 }

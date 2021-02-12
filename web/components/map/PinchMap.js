@@ -128,18 +128,6 @@ class PinchMap extends Component {
             </React.Fragment>
           )}
         </TransformWrapper>
-        <style jsx>{`
-          /* purgecss ignore */
-          .react-transform-component.my-wrapper-class {
-            width: 100% !important;
-            height: 100% !important;
-          }
-          /* purgecss ignore */
-          .react-transform-element.my-content-class {
-            width: 100% !important;
-            height: 100% !important;
-          }
-        `}</style>
       </div>
     )
   }
