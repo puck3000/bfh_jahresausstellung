@@ -4,6 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
+import { useState } from 'react'
 
 // import { useState } from 'react'
 
@@ -38,22 +39,15 @@ const renderNextButton = ({ isDisabled }) => {
 }
 
 export default function Gallery({ gallery }) {
+  const [initReload, setinitReload] = useState(0)
+
+  const onInit = () => {
+    setTimeout(setinitReload(1), 500)
+  }
+
   const slides = gallery.slide.map((slide) => (
     <figure key={slide._key} className='mb-1'>
-      <img
-        src={urlFor(slide.pic).width(2000).height(1600).format('webp').url()}
-        srcSet={`${urlFor(slide.pic)
-          .width(1024)
-          .height(819)
-          .format('webp')
-          .url()} 1024w, ${urlFor(slide.pic)
-          .width(2000)
-          .height(1600)
-          .format('webp')
-          .url()} 2000w,`}
-        sizes='(max-width:1024px) 100vw, 50vw'
-        className='mb-1 lg:mb-2'
-      />
+      <img src={urlFor(slide.pic).url()} className='mb-1 lg:mb-2' />
       {slide.caption && (
         <figcaption>
           <BlockContent blocks={slide.caption} {...client.config()} />
@@ -62,7 +56,7 @@ export default function Gallery({ gallery }) {
     </figure>
   ))
   return (
-    <div className='lg:grid lg:grid-cols-4'>
+    <div className='grid grid-cols-1 lg:grid-cols-4'>
       <div className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '>
         <AliceCarousel
           mouseTracking
@@ -74,6 +68,7 @@ export default function Gallery({ gallery }) {
           renderPrevButton={renderPrevButton}
           renderNextButton={renderNextButton}
           items={slides}
+          onInitialized={onInit}
         />
       </div>
     </div>
