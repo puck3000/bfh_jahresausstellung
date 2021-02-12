@@ -188,15 +188,5 @@
 
   /* fix chrome issues */
 
-  .react-transform-component.my-wrapper-class {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .react-transform-element.my-content-class {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
   /*  end components */
 }
