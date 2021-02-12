@@ -46,12 +46,12 @@ const Atelier = (props) => {
       <div className='intro'>
         <h2 className='anker first mb-1'>Atelier</h2>
         <hr className='mb-1' />
-        <div className='lg:grid lg:grid-cols-2 gap-1'>
-          <div className=''>
+        <div className='lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8'>
+          <div className='lg:col-span-1 2xl:col-span-2'>
             <h1 className='mb-1'>{titel}</h1>
             <p className='mb-1'>{untertitel}</p>
           </div>
-          <figure className='mb-1'>
+          <figure className='mb-1 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'>
             <img
               src={urlFor(referencepic).width(2000).height(1600).url()}
               srcSet={`${urlFor(referencepic)
