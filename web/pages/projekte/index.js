@@ -24,7 +24,7 @@ const ProjektIndex = (props) => {
       {projekte && (
         <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
           {projekte.map((projekt) => (
-            <li>
+            <li key={projekt._id}>
               {projekt.gallery ? (
                 <ProjLightBox projekt={projekt} />
               ) : (
@@ -41,7 +41,7 @@ const ProjektIndex = (props) => {
   )
 }
 
-const query = groq`*[_type == 'projekteIndex'][0]{title, 'inhalt': content, 'projektlist': projlist[]->{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier, 'gallery': content.gallery, 'downloadURL': content.download.asset->url, 'downloadLABEL': content.download.label}}`
+const query = groq`*[_type == 'projekteIndex'][0]{title, 'inhalt': content, 'projektlist': projlist[]->{_id, 'slug': content.slug.current, 'people': content.people, 'titel': content.titel, 'referencepic': content.referencepic, 'atelier': content.atelier->content.titel, 'gallery': content.gallery, 'downloadURL': content.download.asset->url, 'downloadLABEL': content.download.label}}`
 
 export async function getStaticProps({ params }) {
   const projektIndex = await client.fetch(query)
