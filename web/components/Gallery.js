@@ -73,8 +73,4 @@ export default function Gallery({ gallery }) {
       </div>
     </div>
   )
-
-  {
-    /* <div>ItemCount: {state.itemsCount}</div> */
-  }
 }
