@@ -35,6 +35,10 @@ class PinchMap extends Component {
           defaultScale={1}
           defaultPositionX={200}
           defaultPositionY={100}
+          options={{
+            wrapperClass: 'my-wrapper-class',
+            contentClass: 'my-content-class',
+          }}
         >
           {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
             <React.Fragment>

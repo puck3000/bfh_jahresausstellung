@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/ateliers/[slug]": "pages/ateliers/[slug].js",
-  "/map": "pages/map.js",
-  "/": "pages/index.js"
+  "/map": "pages/map.js"
 }
