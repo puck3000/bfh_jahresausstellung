@@ -91,6 +91,19 @@ export default function MobileNav() {
               </a>
             </ActiveLink>
           </li>
+          <li>
+            <ActiveLink
+              activeClassName='active'
+              href='/veranstaltungen'
+              onClick={() => {
+                toggle()
+              }}
+            >
+              <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
+                Veranstaltungen
+              </a>
+            </ActiveLink>
+          </li>
         </ul>
       </nav>
     </>
