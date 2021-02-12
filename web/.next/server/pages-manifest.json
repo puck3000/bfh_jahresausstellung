@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/ateliers/[slug]": "pages/ateliers/[slug].js",
   "/map": "pages/map.js",
-  "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
+  "/": "pages/index.js"
 }

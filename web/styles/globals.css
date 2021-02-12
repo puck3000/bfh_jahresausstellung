@@ -188,12 +188,14 @@
 
   /* fix chrome issues */
 
-  .react-transform-component {
+  .react-transform-component,
+  .TransformComponent-module_container__3NwNd {
     width: 100% !important;
     height: 100% !important;
   }
 
-  .react-transform-element {
+  .react-transform-element,
+  .TransformComponent-module_content__TZU5O {
     width: 100% !important;
     height: 100% !important;
   }
