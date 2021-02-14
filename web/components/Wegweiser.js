@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { iconServer } from 'lib/helpers'
 import Link from 'next/link'
-import { MdArrowForward, MdDirectionsWalk } from 'react-icons/md'
 import Akkorderer, { AkkHeader, AkkContent } from './Akkorderer'
 
 export default function Wegweiser() {
@@ -13,6 +12,7 @@ export default function Wegweiser() {
   }
   const destinationToggler = {
     icon: 'MdDirectionsWalk',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
     label: 'Wählen Sie einen Themenpfad',
   }
 
@@ -68,9 +68,9 @@ export default function Wegweiser() {
             </AkkHeader>
             <AkkContent>
               <motion.ul>
-                {destinations.map((destination) => {
+                {destinations.map((destination, idx) => {
                   return (
-                    <Link href={destination.url}>
+                    <Link key={idx} href={destination.url}>
                       <li className='cursor-pointer flex flex-row items-center lg:w-full lg:grid lg:grid-cols-4'>
                         <div className='icon  mr-2 lg:justify-self-end'>
                           {iconServer(destination.icon)}

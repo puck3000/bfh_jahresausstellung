@@ -36,9 +36,7 @@ export default function Akkorderer({ children }) {
 
   return (
     <AkkordeonContext.Provider value={[isOpen, setIsOpen]}>
-      <motion.div className='mb-1 pr-2 lg:grid lg:grid-cols-4'>
-        {children}
-      </motion.div>
+      {children}
     </AkkordeonContext.Provider>
   )
 }
