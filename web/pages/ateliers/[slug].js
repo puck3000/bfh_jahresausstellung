@@ -9,6 +9,7 @@ import Link from 'next/link'
 import ProjekteIndex from 'components/ProjekteIndex'
 import Akkordeon from 'components/Akkordeon'
 import BottomNav from 'components/BottomNav'
+import Wegweiser from 'components/Wegweiser'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -25,18 +26,32 @@ const Atelier = (props) => {
     projekteIndex,
     referencepic,
     themenpfad,
+    next,
+    indexOfAteliers,
   } = props.atelier
 
   const persons = team?.map((person) => person.person)
 
-  const links = [{ title: 'home', url: '/' }]
-
-  if (themenpfad) {
-    links.unshift({
-      title: `themenpfad ${themenpfad?.title.toLowerCase()}`,
-      url: `../themenpfade/${themenpfad?.slug}`,
-    })
+  const nextlink = {
+    icon: 'MdDirectionsWalk',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
+    url: `/ateliers/${next.slug}`,
+    label: 'Folgen Sie dem Pfad',
   }
+  const destinationToggler = {
+    icon: 'MdFlag',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
+    label: 'Wählen Sie eine Destination',
+  }
+
+  const destinations = []
+  indexOfAteliers.forEach((atelier) => {
+    destinations.unshift({
+      icon: 'MdArrowForward',
+      url: `/ateliers/${atelier.slug}`,
+      label: atelier.titel,
+    })
+  })
 
   return (
     <Layout>
@@ -78,10 +93,14 @@ const Atelier = (props) => {
         )}
         {/* Vorgehen */}
         {vorgehen && <Inhalt inhalt={vorgehen} />}
-        {/* Bottom Nav */}
-        <BottomNav links={links} />
         {/* Projekte  */}
         {projekteIndex && <ProjekteIndex projekte={projekteIndex} />}
+        {/* Wegweiser */}
+        <Wegweiser
+          nextlink={nextlink}
+          destinationToggler={destinationToggler}
+          destinations={destinations}
+        />
       </div>
     </Layout>
   )
@@ -97,8 +116,9 @@ const query = groq`
     themen,
     vorgehen,
     'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
+    'next': nextAtelier->content{titel, 'slug': slug.current},
+    'indexOfAteliers': *[_type=='atelier' && references(^.themenpfad._ref)].content{titel, 'slug': slug.current},
     'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}}
-    
   }
 `
 
