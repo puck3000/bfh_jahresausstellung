@@ -31,13 +31,6 @@ const query = groq`
         }
 `
 
-// Hintergrund.getInitialProps = async function(context) {
-//     // It's important to default the slug so that it doesn't return "undefined"
-//     const { slug = "" } = context.query
-//     const data = await client.fetch(query, { slug })
-//     return data
-//   }
-
 export async function getStaticProps({ params }) {
   const hintergrund = await client.fetch(query, {
     slug: params.slug,

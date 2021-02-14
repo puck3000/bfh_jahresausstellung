@@ -4,8 +4,9 @@ import Lauftext from './Lauftext'
 import Linkedpic from './Linkedpic'
 import TextAndImage from './TextAndImage'
 import Horzline from './Horzline'
-import Slideshow from './Slideshow'
 import Youtube from './Youtube'
+import InhaltAkkordeon from './InhaltAkkordeon'
+import Metatext from './Metatext'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -26,13 +27,22 @@ export default function Inhalt({ inhalt }) {
         return <Gallery gallery={content} key={content._key} />
         break
       case 'metatext':
-        return <Lauftext lauftext={content} key={content._key} />
+        return <Metatext lauftext={content} key={content._key} />
         break
       case 'horzline':
         return <Horzline mb={content} key={content._key} />
         break
       case 'youtube':
         return <Youtube url={content} key={content._key} />
+        break
+      case 'akkordeon':
+        return (
+          <InhaltAkkordeon
+            inhalt={content.akkContent}
+            title={content.title}
+            key={content._key}
+          />
+        )
         break
       default:
         break
