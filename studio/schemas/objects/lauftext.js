@@ -1,4 +1,5 @@
 import { AiOutlineFileText } from 'react-icons/ai'
+
 export default {
   name: 'lauftext',
   title: 'Lauftext',
