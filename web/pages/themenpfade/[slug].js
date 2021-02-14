@@ -21,16 +21,17 @@ const Themenpfad = (props) => {
     referencepic,
     inhalt,
     indexOfAteliers,
+    next,
   } = props.themenpfad
 
   const nextlink = {
     icon: 'MdDirectionsWalk',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
-    url: './themenpfade/zentralitaet',
+    url: `/themenpfade/${next.slug}`,
     label: 'Folgen Sie dem Pfad',
   }
   const destinationToggler = {
-    icon: 'MdDirectionsWalk',
+    icon: 'MdFlag',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
     label: 'Wählen Sie eine Destination',
   }
@@ -90,6 +91,7 @@ const query = groq`
     title,
     referencepic,
     'inhalt': content,
+    'next': nextThemenpfad->content{title, 'slug': slug.current},
     'indexOfAteliers': ateliers[]->content{_id, 'slug': slug.current, titel, untertitel, referencepic}
   }
 `

@@ -92,6 +92,13 @@ export default {
           },
           fieldset: 'meta',
         },
+        {
+          title: 'nextThemenpfad',
+          name: 'nextThemenpfad',
+          type: 'reference',
+          to: [{ type: 'themenpfad' }],
+          fieldset: 'meta',
+        },
       ],
     },
   ],
