@@ -45,24 +45,6 @@ const Themenpfad = (props) => {
     })
   })
 
-  const destinationsOld = [
-    {
-      icon: 'MdArrowForward',
-      url: './themenpfade/zentralitaet',
-      label: 'Themenpfad Zenralität',
-    },
-    {
-      icon: 'MdArrowForward',
-      url: './themenpfade/ressourcen',
-      label: 'Themenpfad Ressourcen',
-    },
-    {
-      icon: 'MdArrowForward',
-      url: './themenpfade/wohnformen',
-      label: 'Themenpfad Wohnformen',
-    },
-  ]
-
   return (
     <Layout>
       <Head>
