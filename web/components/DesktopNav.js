@@ -14,7 +14,7 @@ export default function DesktopNav() {
         <li className='inline-block mr-4'>
           <ActiveLink activeClassName='active' href='/hintergrund/huttwil'>
             <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
-              Partnergemeinde
+              Huttwil
             </a>
           </ActiveLink>
         </li>
@@ -48,7 +48,9 @@ export default function DesktopNav() {
         </li>
       </ul>
       <Link href='../map'>
-        <MdMap size='1.5em' className='justify-self-end' />
+        <a className='flex justify-end'>
+          <MdMap size='1.5em' />
+        </a>
       </Link>
     </nav>
   )

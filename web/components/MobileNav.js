@@ -48,7 +48,7 @@ export default function MobileNav() {
               }}
             >
               <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
-                Partnergemeinde
+                Huttwil
               </a>
             </ActiveLink>
           </li>

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { urlFor } from 'lib/sanity'
 import BottomNav from 'components/BottomNav'
 import MapModal from 'components/map/MapModal'
+import Wegweiser from 'components/Wegweiser'
 
 const ThemenpfadIndex = (props) => {
   const {
@@ -14,8 +15,6 @@ const ThemenpfadIndex = (props) => {
     inhalt,
     tpflist: themenpfade,
   } = props.themenpfadIndex
-
-  const links = [{ title: 'home', url: '/' }]
 
   return (
     <Layout>
@@ -26,7 +25,7 @@ const ThemenpfadIndex = (props) => {
       <hr className='mb-1 lg:mb-2' />
       {inhalt && <Inhalt inhalt={inhalt} />}
 
-      <BottomNav links={links} />
+      <Wegweiser />
 
       {/* Themenpfade Index */}
       {themenpfade && (
