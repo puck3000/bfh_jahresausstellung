@@ -9,6 +9,7 @@ import Ateliers from 'components/Ateliers'
 import Link from 'next/link'
 import BottomNav from 'components/BottomNav'
 import { MdMap } from 'react-icons/md'
+import Wegweiser from 'components/Wegweiser'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -22,9 +23,43 @@ const Themenpfad = (props) => {
     indexOfAteliers,
   } = props.themenpfad
 
-  const links = [
-    { title: 'themenpfade übersicht', url: '/themenpfade' },
-    { title: 'home', url: '/' },
+  const nextlink = {
+    icon: 'MdDirectionsWalk',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
+    url: './themenpfade/zentralitaet',
+    label: 'Folgen Sie dem Pfad',
+  }
+  const destinationToggler = {
+    icon: 'MdDirectionsWalk',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
+    label: 'Wählen Sie eine Destination',
+  }
+
+  const destinations = []
+  indexOfAteliers.forEach((atelier) => {
+    destinations.push({
+      icon: 'MdArrowForward',
+      url: `/ateliers/${atelier.slug}`,
+      label: atelier.titel,
+    })
+  })
+
+  const destinationsOld = [
+    {
+      icon: 'MdArrowForward',
+      url: './themenpfade/zentralitaet',
+      label: 'Themenpfad Zenralität',
+    },
+    {
+      icon: 'MdArrowForward',
+      url: './themenpfade/ressourcen',
+      label: 'Themenpfad Ressourcen',
+    },
+    {
+      icon: 'MdArrowForward',
+      url: './themenpfade/wohnformen',
+      label: 'Themenpfad Wohnformen',
+    },
   ]
 
   return (
@@ -38,56 +73,13 @@ const Themenpfad = (props) => {
 
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
-        <BottomNav links={links} />
-        {/* ATELIERS */}
-        {/* {indexOfAteliers && <Ateliers ateliers={indexOfAteliers} />} */}
-        {indexOfAteliers && (
-          <>
-            <div className='flex flex-row justify-between mt-two lg:mt-big lg:grid lg:grid-cols-4'>
-              <div>
-                <h2 className='anker first mb-1 lg:mb-2 lg:inline-block'>
-                  Ateliers
-                </h2>
-              </div>
-            </div>
-            <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
-              {indexOfAteliers.map((atelier) => (
-                <li key={atelier.slug} className='lg:px-1'>
-                  <hr className='mb-1 lg:mb-2' />
-                  <Link
-                    href='/ateliers/[slug]'
-                    as={`/ateliers/${atelier.slug}`}
-                  >
-                    <a className={`link projekt ${atelier.slug} `}>
-                      <img
-                        src={urlFor(atelier.referencepic)
-                          .width(2000)
-                          .height(1600)
-                          .url()}
-                        srcSet={`${urlFor(atelier.referencepic)
-                          .width(1024)
-                          .height(819)
-                          .format('webp')
-                          .url()} 1024w, ${urlFor(atelier.referencepic)
-                          .width(2000)
-                          .height(1600)
-                          .format('webp')
-                          .url()} 2000w,`}
-                        sizes='(max-width:1024px) 100vw, 50vw'
-                        alt={`Referenzbild zu $ {atelier.title}`}
-                        className='mb-1 lg:mb-2'
-                      />
-                      <div className=' mb-1 lg:mb-2 text-small lg:text-small-dt'>
-                        <h2 className='mb-1 lg:mb-2'>{atelier.titel}</h2>
-                        <p className='mb-1 lg:mb-2'>{atelier.untertitel}</p>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+
+        {/* WEGWEISER */}
+        <Wegweiser
+          nextlink={nextlink}
+          destinationToggler={destinationToggler}
+          destinations={destinations}
+        />
       </div>
     </Layout>
   )
@@ -98,7 +90,6 @@ const query = groq`
     title,
     referencepic,
     'inhalt': content,
-    //'indexOfAteliers': ateliers[]->content{titel, untertitel, referencepic, standort, team, vorgehen, slideshow}
     'indexOfAteliers': ateliers[]->content{_id, 'slug': slug.current, titel, untertitel, referencepic}
   }
 `
