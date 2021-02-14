@@ -130,6 +130,13 @@ export default {
           type: 'coordinates',
           fieldset: 'meta',
         },
+        {
+          title: 'nextAtelier',
+          name: 'nextAtelier',
+          type: 'reference',
+          to: [{ type: 'atelier' }],
+          fieldset: 'meta',
+        },
       ],
     },
   ],
