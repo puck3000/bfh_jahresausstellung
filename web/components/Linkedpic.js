@@ -8,7 +8,7 @@ function urlFor(source) {
 
 export default function Linkedpic({ linkedpic }) {
   return (
-    <div className='linkedpic '>
+    <div className='linkedpic lg:'>
       <figure
         key={linkedpic._key}
         className='mb-1 lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8'
@@ -27,7 +27,7 @@ export default function Linkedpic({ linkedpic }) {
           className='mb-1 lg:mb-2 lg:col-span-3 lg:col-start-2 2xl:col-start-3 2xl:col-span-4'
         />
         {linkedpic.caption && (
-          <figcaption className='lg:col-span-2 lg:col-start-2 2xl:col-start-3 2xl:col-span-3'>
+          <figcaption className='text-small lg:text-small-dt lg:col-span-2 lg:col-start-2 2xl:col-start-3 2xl:col-span-3'>
             <BlockContent blocks={linkedpic.caption} {...client.config()} />
           </figcaption>
         )}
