@@ -1,41 +1,34 @@
 import groq from 'groq'
 import client from 'client'
+import Head from 'next/head'
 import Layout from 'components/Layout'
+import Inhalt from 'components/Inhalt'
 
-const Home = (props) => {
-  const { title = 'Missing Title' } = props.home
+const Veranstaltungen = (props) => {
+  const { title = 'Missing Title', inhalt } = props
+
   return (
     <Layout>
-      <h1 className='base mb-8'>
-        BFH Architektur
-        <br />
-        Jahresausstellung 2021
-        <hr className='my-1' />
-        Neue Räume.
-        <br />
-        Stadt und Land in Huttwil.
-      </h1>
-      <h2>Veranstaltungen</h2>
+      <Head>
+        <title>{title} | BFH</title>
+      </Head>
+      <div>
+        <h2 className='mb-2'>{title}</h2>
+        {/* INHALT */}
+        {inhalt && <Inhalt inhalt={inhalt} />}
+      </div>
     </Layout>
   )
 }
 
-const query = groq`*[_type == 'home'][0]{title}`
+const query = groq`
+    *[_type == 'veranstaltungen'][0]{'inhalt': content, title}
+`
 
-// Home.getInitialProps = async function(context) {
-//   // It's important to default the slug so that it doesn't return "undefined"
-//   const { slug = "" } = context.query
-//   return await client.fetch(query, { slug })
-// }
-
-export async function getStaticProps({ params }) {
-  const home = await client.fetch(query)
-  return {
-    props: {
-      home,
-    },
-    revalidate: 1,
-  }
+Veranstaltungen.getInitialProps = async function (context) {
+  // It's important to default the slug so that it doesn't return "undefined"
+  const { slug = '' } = context.query
+  return await client.fetch(query, { slug })
 }
 
-export default Home
+export default Veranstaltungen
