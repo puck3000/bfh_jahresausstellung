@@ -162,6 +162,11 @@
     @apply text-medium lg:text-medium-dt;
     padding: 0;
   }
+
+  .inhalt .alice-carousel__stage-item * {
+    line-height: 1.1;
+    @apply text-small lg:text-small-dt;
+  }
   /******************************************************
   /   Inhalte
   /******************************************************/

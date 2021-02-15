@@ -13,7 +13,7 @@ function urlFor(source) {
 }
 
 const renderSlideInfo = ({ item, itemsCount }) => {
-  return `${item}\ / ${itemsCount}`
+  return `${item}/${itemsCount}`
 }
 
 const renderPrevButton = ({ isDisabled }) => {
