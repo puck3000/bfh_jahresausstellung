@@ -83,14 +83,17 @@ const Atelier = (props) => {
           </figure>
         </div>
         <hr></hr>
-        {/* Team */}
-        {team?.length && <Akkordeon content={persons} title='Team' />}
-        {/* Themen */}
-        {themen?.length && <Akkordeon content={themen} title='Themen' />}
-        {/* Standort */}
-        {standorte?.length && (
-          <Akkordeon content={standorte} title='Standort' />
-        )}
+        <div className='baseInfos'>
+          {/* Team */}
+          {team?.length && <Akkordeon content={persons} title='Team' />}
+          {/* Themen */}
+          {themen?.length && <Akkordeon content={themen} title='Themen' />}
+          {/* Standort */}
+
+          {standorte?.length && (
+            <Akkordeon content={standorte} title='Standort' />
+          )}
+        </div>
         {/* Vorgehen */}
         {vorgehen && <Inhalt inhalt={vorgehen} />}
         {/* Projekte  */}

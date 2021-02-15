@@ -3,6 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/impressum": "pages/impressum.js",
-  "/kontakt": "pages/kontakt.js"
+  "/ateliers/[slug]": "pages/ateliers/[slug].js"
 }

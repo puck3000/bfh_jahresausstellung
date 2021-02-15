@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'personTitle',
+      title: 'Funtion/Titel',
+      type: 'string',
+    },
+    {
       name: 'avatar',
       title: 'Profilbild',
       type: 'image',
