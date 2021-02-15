@@ -7,6 +7,7 @@ import Horzline from './Horzline'
 import Youtube from './Youtube'
 import InhaltAkkordeon from './InhaltAkkordeon'
 import Metatext from './Metatext'
+import LazyGal from './LazyGal'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -24,7 +25,8 @@ export default function Inhalt({ inhalt }) {
         return <Linkedpic linkedpic={content} key={content._key} />
         break
       case 'gallery':
-        return <Gallery gallery={content} key={content._key} />
+        return <LazyGal gallery={content} key={content._key} />
+        // return <Gallery gallery={content} key={content._key} />
         break
       case 'metatext':
         return <Metatext lauftext={content} key={content._key} />
