@@ -3,6 +3,7 @@ module.exports = {
     // Use *.tsx if using TypeScript
     './pages/**/*.js',
     './components/**/*.js',
+    './node_modules/react-alice-carousel/*',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
