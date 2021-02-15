@@ -34,7 +34,7 @@ export default function MapSideBar({ mappoint, onSidebarToggle, layer }) {
     <aside className='p-1 mt-0 lg:p-4 lg:fixed bg-white lg:h-full lg:right-0 lg:top-0 lg:shadow-left lg:w-1/4 z-40'>
       <div className='flex justify-between mt-4 lg:mt-0'>
         <h2 className='text-small mb-4 lg:mb-0 lg:text-small-dt pt-1'>
-          {layer}
+          {layer.charAt(0).toUpperCase() + layer.slice(1)}
         </h2>
         <MdClose
           className='h-6 w-6 lg:h-12 lg:w-12'
@@ -44,8 +44,8 @@ export default function MapSideBar({ mappoint, onSidebarToggle, layer }) {
       <div>
         {icon(layer)}
         <p className='mt-2 lg:mt-0  text-small lg:text-small-dt'>
-          Kurzer Beschrieb Netur aut eiur, con culla consed quasper ionseri ut
-          volest verum volo- rep eritis dus.
+          Folgen Sie den themenpfaden und erleben Sie die online ausstellung
+          schritt für schritt...
         </p>
       </div>
       <h2 className='mt-two mb-2 lg:mb-0 lg:mt-big'>{mappoint.title}</h2>
