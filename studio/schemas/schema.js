@@ -33,6 +33,8 @@ import teammitglied from './objects/teammitglied'
 import coordinates from './objects/coordinates'
 import youtube from './objects/youtube'
 import akkordeon from './objects/akkordeon'
+import impressum from './documents/impressum'
+import kontakt from './documents/kontakt'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -71,5 +73,7 @@ export default createSchema({
     youtube,
     map,
     akkordeon,
+    impressum,
+    kontakt,
   ]),
 })
