@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js"
+  "/": "pages/index.js",
+  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

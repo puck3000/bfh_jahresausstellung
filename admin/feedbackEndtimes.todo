@@ -1,0 +1,43 @@
+Feedback BFH vom 16. Februar 2021
+
+Layout sehr übersichtlich
+Anteil Text/Bild besser als vorher (z.B. Dencity)
+Ordnung der Projekte muss System haben
+Man findet sich grundsätzlich gut zurecht
+Kein Link von den Projekten zu den Ateliers, 
+ev. Link zu Themenpfade
+Navigation in den Themenpfaden anspruchsvoll
+Vorschlag für Navigation unten, alle Ateliers schon ausgeklappt
+1. «Wählen Sie ein Atelier zum Thema»
+2. «Finden Sie ein Projekt auf der Karte»
+3. «Folgen Sie dem Themenpfad Zentralität»
+Bei Punkt 2 Karten-Symbol als eine Erklärung der Symbole
+«Folgen Sie dem Themenpfad Zentralität» 
+muss zum Atelier führen
+Ausnahmen wie Werkstatt Zukunft noch mit Bachelor-Thesis ergänzen
+Neuer Stand bis Freitag möglich?
+In den Projekten ev. Link «mehr zum Thema Zentralität»
+Doppelte Ateliers mit A und B ergänzen
+
+
+- Projekte alphabetish in der übersicht
+- PÜ Themenpfade und Ateliers verlinken?
+
+bottomNav tpDetail // Ateliers
+    1. wählen sie ein Atelier zum Thema
+     - 
+     - 
+     - 
+    2. finden Sie ein Projekt auf der Karte mit Button Link
+    3. folgen sie dem Pfad themenpfad zentralität
+        => Verlinking prüfen
+
+bottomNav tp
+    1. wählen sie einen Themenpfad
+     - 
+     - 
+     - 
+    2. finden Sie ein Atelier auf der Karte mit Button Link
+
+Zentralität => t fehlt
+

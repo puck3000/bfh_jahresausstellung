@@ -3,7 +3,6 @@ import client from 'client'
 import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
 import Head from 'next/head'
-import Box from 'components/Box'
 
 const Hintergrund = (props) => {
   const { title = 'Missing Title', inhalt } = props.hintergrund

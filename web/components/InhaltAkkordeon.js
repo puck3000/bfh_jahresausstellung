@@ -1,14 +1,12 @@
-import Akkorderer from './Akkorderer'
-import AkkContent from './AkkContent'
-import AkkHeader from './AkkHeader'
 import Inhalt from './Inhalt'
-import { iconServer } from 'lib/helpers'
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import { motion } from 'framer-motion'
-import Lauftext from './Lauftext'
+
+export const AkkordeonContext = createContext()
 
 const Akkordeon = ({ inhalt, title }) => {
   const [isOpen, setisOpen] = useState(false)
+  const store = { isOpen }
 
   const toggleVariants = {
     closed: {
@@ -58,10 +56,12 @@ const Akkordeon = ({ inhalt, title }) => {
   )
 
   const akkkordeon = (
-    <motion.div className='mb-1 pr-2 lg:grid lg:grid-cols-4'>
-      {akkHeader}
-      {akkContent}
-    </motion.div>
+    <AkkordeonContext.Provider value={isOpen}>
+      <motion.div className='mb-1 pr-2 lg:grid lg:grid-cols-4'>
+        {akkHeader}
+        {akkContent}
+      </motion.div>
+    </AkkordeonContext.Provider>
   )
 
   return akkkordeon

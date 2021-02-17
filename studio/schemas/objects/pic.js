@@ -13,7 +13,8 @@ export default {
       name: 'pic',
       type: 'image',
       options: {
-        hotspot: true, // <-- Defaults to false
+        hotspot: true,
+        metadata: ['lqip', 'dimensions'],
       },
     },
     {
