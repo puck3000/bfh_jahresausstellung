@@ -1,21 +1,16 @@
 import groq from 'groq'
 import client from 'client'
-import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
-import Layout from 'components/Layout'
-import Inhalt from 'components/Inhalt'
-import Ateliers from 'components/Ateliers'
 import PinchMap from 'components/map/PinchMap'
-import Map from 'components/map/Map'
-import BottomNav from 'components/BottomNav'
 import MainNavigation from 'components/MainNavigation'
+import { createContext, useState } from 'react'
 
-function urlFor(source) {
-  return imageUrlBuilder(client).image(source)
-}
+export const MapContext = createContext()
 
 const Karte = (props) => {
-  const { title = 'Missing Title', inhalt } = props
+  const { projekte } = props.kartenDaten
+
+  const [mapContext, setMapContext] = useState({ projekte: projekte })
 
   return (
     <>
@@ -38,16 +33,18 @@ const Karte = (props) => {
         <title>Neue Räume | BFH</title>
       </Head>
 
-      <div className=''>
-        <div className='m-1 lg:m-4 min-h-screen grid grid-rows-bottomFooter '>
-          <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
-            <MainNavigation />
-          </header>
-          <main className='pt-four 2xl:pt-tooBig'>
-            <PinchMap />
-          </main>
+      <MapContext.Provider value={[mapContext, setMapContext]}>
+        <div className=''>
+          <div className='m-1 lg:m-4 min-h-screen grid grid-rows-bottomFooter '>
+            <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
+              <MainNavigation />
+            </header>
+            <main className='pt-four 2xl:pt-tooBig'>
+              <PinchMap />
+            </main>
+          </div>
         </div>
-      </div>
+      </MapContext.Provider>
 
       <style jsx global>{`
         body {
@@ -59,13 +56,21 @@ const Karte = (props) => {
 }
 
 const query = groq`
-    *[_type == 'map'][0]{'inhalt': content, title}
+        *[_type == 'map'][0]{
+      'projekte': *[_type == 'projekt'][]{'title': content.titel, 'coordinates': content.coordinates}
+    }
 `
 
-Map.getInitialProps = async function (context) {
-  // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = '' } = context.query
-  return await client.fetch(query, { slug })
+export async function getStaticProps({ params }) {
+  const kartenDaten = await client.fetch(query)
+  // const themenpfade = await client.fetch(getAllThemenpfade)
+  return {
+    props: {
+      kartenDaten,
+      // themenpfade
+    },
+    revalidate: 1,
+  }
 }
 
 export default Karte

@@ -12,7 +12,7 @@ class PinchMap extends Component {
     themenpfade: themenpfade,
     ateliers: ateliers,
     projects: projects,
-    currentLayer: 'themenpfade',
+    currentLayer: 'projekte',
     currentMapPoint: {},
     sideBarVisible: false,
   }
