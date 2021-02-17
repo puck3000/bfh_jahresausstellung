@@ -24,26 +24,26 @@ const Themenpfad = (props) => {
     next,
   } = props.themenpfad
 
-  const nextlink = {
-    icon: 'MdDirectionsWalk',
-    iconClassNames: 'icon mr-2 lg:justify-self-end',
-    url: `/themenpfade/${next.slug}`,
-    label: 'Folgen Sie dem Pfad',
-  }
-  const destinationToggler = {
-    icon: 'MdFlag',
-    iconClassNames: 'icon mr-2 lg:justify-self-end',
-    label: 'Wählen Sie eine Destination',
-  }
-
   const destinations = []
   indexOfAteliers.forEach((atelier) => {
     destinations.push({
-      icon: 'MdArrowForward',
+      icon: 'MdFlag',
       url: `/ateliers/${atelier.slug}`,
       label: atelier.titel,
     })
   })
+
+  const nextlink = {
+    icon: 'MdDirectionsWalk',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
+    url: destinations[0].url,
+    label: `Folgen Sie dem Themenpfad ${title}`,
+  }
+  const destinationToggler = {
+    icon: 'MdFlag',
+    iconClassNames: 'icon mr-2 lg:justify-self-end',
+    label: 'Wählen Sie ein Atelier zum Thema:',
+  }
 
   return (
     <Layout>

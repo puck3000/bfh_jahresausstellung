@@ -16,27 +16,27 @@ const ThemenpfadIndex = (props) => {
     icon: 'MdArrowForward',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
     url: './themenpfade/zentralitaet',
-    label: 'Folgen Sie mir durch die virtuelle Ausstellung',
+    label: 'Folgen Sie dem Themenpfad Zentralität',
   }
   const destinationToggler = {
-    icon: 'MdDirectionsWalk',
+    icon: 'MdArrowForward',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
-    label: 'Wählen Sie einen Themenpfad',
+    label: 'Wählen Sie einen Themenpfad:',
   }
 
   const destinations = [
     {
-      icon: 'MdArrowForward',
+      icon: 'MdDirectionsWalk',
       url: './themenpfade/zentralitaet',
       label: 'Themenpfad Zenralität',
     },
     {
-      icon: 'MdArrowForward',
+      icon: 'MdDirectionsWalk',
       url: './themenpfade/ressourcen',
       label: 'Themenpfad Ressourcen',
     },
     {
-      icon: 'MdArrowForward',
+      icon: 'MdDirectionsWalk',
       url: './themenpfade/wohnformen',
       label: 'Themenpfad Wohnformen',
     },

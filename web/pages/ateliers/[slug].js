@@ -36,18 +36,18 @@ const Atelier = (props) => {
     icon: 'MdDirectionsWalk',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
     url: `/ateliers/${next.slug}`,
-    label: 'Folgen Sie dem Pfad',
+    label: `Folgen Sie dem Themenpfad ${themenpfad.title} `,
   }
   const destinationToggler = {
     icon: 'MdFlag',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
-    label: 'Wählen Sie eine Destination',
+    label: 'Wählen Sie ein Atelier zum Thema:',
   }
 
   const destinations = []
   indexOfAteliers.forEach((atelier) => {
     destinations.unshift({
-      icon: 'MdArrowForward',
+      icon: 'MdFlag',
       url: `/ateliers/${atelier.slug}`,
       label: atelier.titel,
     })

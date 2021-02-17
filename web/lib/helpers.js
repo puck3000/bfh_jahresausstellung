@@ -1,4 +1,10 @@
-import { MdArrowForward, MdDirectionsWalk, MdFlag, MdAdd } from 'react-icons/md'
+import {
+  MdArrowForward,
+  MdDirectionsWalk,
+  MdFlag,
+  MdAdd,
+  MdMap,
+} from 'react-icons/md'
 
 export const iconServer = (icon, classNames, iconSize) => {
   const classN = classNames || ''
@@ -16,6 +22,9 @@ export const iconServer = (icon, classNames, iconSize) => {
       break
     case 'MdAdd':
       return <MdAdd className={classN} size={size} />
+      break
+    case 'MdMap':
+      return <MdMap className={classN} size={size} />
       break
     default:
       return <MdAdd className={classN} size={size} />
