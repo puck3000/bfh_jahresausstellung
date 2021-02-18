@@ -153,6 +153,10 @@
     display: none;
   }
 
+  header.karte {
+    @apply 2xl:w-3/4;
+  }
+
   /******************************************************
 /   SlideShow
 /******************************************************/
@@ -240,6 +244,20 @@
 
   .projLightBox .projFilter {
     display: none;
+  }
+
+  /* coloring themenpfade in legende */
+
+  #legende.Zentralität li.zentralität {
+    @apply text-Zentralität;
+  }
+
+  #legende.Wohnformen li.wohnformen {
+    @apply text-Wohnformen;
+  }
+
+  #legende.Ressourcen li.ressourcen {
+    @apply text-Ressourcen;
   }
 
   /*  end components */

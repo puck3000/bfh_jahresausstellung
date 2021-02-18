@@ -12,6 +12,7 @@ const Karte = (props) => {
 
   const [mapContext, setMapContext] = useState({
     standorte: standorte,
+    filteredStandorte: standorte,
     selectedStandort: [],
     selectedThemenpfad: '',
     sideBarVisible: false,

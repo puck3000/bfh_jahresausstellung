@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export default function DesktopNav() {
   return (
-    <nav className='relative m-1 lg:m-4 grid grid-cols-6'>
-      <ul className='col-span-5'>
+    <nav className='deskNav relative m-1 lg:m-4 grid grid-cols-4'>
+      <ul className='col-span-3'>
         <li className='inline-block mr-4'>
           <ActiveLink activeClassName='active' href='/'>
             <a className='inline-block anker first mb-1 lg:mb-2 z-10'>Home</a>

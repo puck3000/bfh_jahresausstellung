@@ -42,9 +42,9 @@ export default function MapSideBar({ onSidebarToggle }) {
           return (
             <Akkorderer key={projekt._id}>
               <AkkHeader>
-                <div className='flex items-center mb-2'>
+                <div className='grid grid-cols-12 items-center mb-2'>
                   <MdAdd className='cursor-pointer mr-2 transform transition-transform' />
-                  <h3 className='cursor-pointer  text-small lg:text-small-dt'>
+                  <h3 className='col-span-11 lg:ml-2 cursor-pointer text-small lg:text-small-dt'>
                     {projekt.content.titel}
                   </h3>
                 </div>

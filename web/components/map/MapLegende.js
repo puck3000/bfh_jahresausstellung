@@ -7,33 +7,40 @@ export default function MapLegende() {
   const [mapContext, setMapContext] = useContext(MapContext)
   const [filter, setFilter] = useState('')
 
-  const filterByThemenpfad = (themenpfad) => {
-    return mapContext.standorte
-  }
-
   const clickHandler = (themenpfad) => {
-    console.log('filtered by themenpfad:', themenpfad)
-    setFilter(themenpfad)
+    if (filter == themenpfad) {
+      setFilter('')
+    } else {
+      setFilter(themenpfad)
+    }
   }
 
   useEffect(() => {
-    const filteredStandorte = mapContext.standorte.filter((standort) =>
-      standort.themenpfad.title.includes(filter)
-    )
+    const copyOfAllStandorte = JSON.parse(JSON.stringify(mapContext.standorte))
+    let filteredStandorte = []
+    if (filter) {
+      filteredStandorte = copyOfAllStandorte.filter((standort) =>
+        standort.themenpfad.title.includes(filter)
+      )
+    } else filteredStandorte = copyOfAllStandorte
+
     setMapContext((mapContext) => ({
       ...mapContext,
-      standorte: filteredStandorte,
+      filteredStandorte: filteredStandorte,
     }))
   }, [filter])
 
   return (
-    <ul className='text-white absolute bottom-0 left-0 right-0'>
-      <li className='flex pl-2 mb-2 py-2 border-t border-b border-white'>
+    <ul
+      id='legende'
+      className={`text-white absolute bottom-0 left-0 right-0 ${filter}`}
+    >
+      <li className='flex pl-2 mb-2 py-2 border-t-2 border-b-2 border-white'>
         <MdDirectionsWalk className='mr-2' />
         Themenpfade
       </li>
       <li
-        className={`cursor-pointer flex pl-2 mb-2 pb-2`}
+        className={`cursor-pointer flex pl-2 mb-2 pb-2 zentralität`}
         onClick={() => {
           clickHandler('Zentralität')
         }}
@@ -42,7 +49,7 @@ export default function MapLegende() {
         Zentralität
       </li>
       <li
-        className='cursor-pointer  flex pl-2 mb-2 pb-2'
+        className='cursor-pointer flex pl-2 mb-2 pb-2 wohnformen'
         onClick={() => {
           clickHandler('Wohnformen')
         }}
@@ -51,7 +58,7 @@ export default function MapLegende() {
         Wohnformen
       </li>
       <li
-        className='cursor-pointer  flex pl-2 mb-2 pb-2'
+        className='cursor-pointer flex pl-2 mb-2 pb-2 ressourcen'
         onClick={() => {
           clickHandler('Ressourcen')
         }}

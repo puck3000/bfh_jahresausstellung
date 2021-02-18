@@ -12,18 +12,18 @@ export default function Map() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
+        duration: 2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
+    hidden: { opacity: 0, scale: 1 },
+    show: { opacity: 1, scale: 2 },
   }
 
   const clickHandler = (id, themenpfad) => {
-    // things to do on click: 1. fetch relevant data 2. show sidebar with data
     getStandorteAndProjectsByStId(id)
       .then((res) =>
         setMapContext((mapContext) => ({
@@ -52,8 +52,12 @@ export default function Map() {
         <BaseMap></BaseMap>
         {/* Standorte */}
         <motion.g variants={containerVariants} initial='hidden' animate='show'>
-          {mapContext.standorte.map((standort) => (
-            <motion.g variants={itemVariants} key={standort._id}>
+          {mapContext.filteredStandorte.map((standort) => (
+            <motion.g
+              variants={itemVariants}
+              key={standort._id}
+              transition={{ type: 'spring', duration: 0.8 }}
+            >
               <circle
                 cx={standort.coordinates.xaxis}
                 cy={standort.coordinates.yaxis}
@@ -70,7 +74,7 @@ export default function Map() {
       </svg>
       <style jsx>{`
         circle.Zentralität {
-          stroke: #fac300;
+          stroke: #dba800;
           fill: #fac300;
         }
         circle.Ressourcen {
