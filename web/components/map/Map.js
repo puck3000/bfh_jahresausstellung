@@ -1,18 +1,10 @@
-import {
-  getAteliersInfosById,
-  getProjectInfosById,
-  getThemenpfadInfosById,
-} from 'lib/api'
+import { getStandorteAndProjectsByStId } from 'lib/api'
 import BaseMap from './BaseMap.js'
 import { MapContext } from 'pages/map'
 import { useContext } from 'react'
 import { motion } from 'framer-motion'
 
-export default function Map({
-  dataPoints,
-  onSidebarToggle,
-  onMapPointSelected,
-}) {
+export default function Map() {
   const [mapContext, setMapContext] = useContext(MapContext)
 
   const containerVariants = {
@@ -30,33 +22,40 @@ export default function Map({
     show: { opacity: 1 },
   }
 
-  const clickHandler = (pid) => {
+  const clickHandler = (id) => {
     // things to do on click: 1. fetch relevant data 2. show sidebar with data
-    getProjectInfosById(pid)
-      .then((res) => setMapContext({ ...mapContext, selectedProject: res[0] }))
-      .then(onSidebarToggle(true))
+    getStandorteAndProjectsByStId(id)
+      .then((res) =>
+        setMapContext((mapContext) => ({
+          ...mapContext,
+          selectedStandort: res[0],
+        }))
+      )
+      .then(
+        setMapContext((mapContext) => ({ ...mapContext, sideBarVisible: true }))
+      )
   }
 
   return (
-    <div className={`${dataPoints.currentLayer} h-screen w-screen `}>
+    <div className={` h-screen w-screen `}>
       <svg
         version='1.2'
         viewBox='0 0 3507 2480'
         className='bg-black w-full h-full'
       >
         <BaseMap></BaseMap>
-        {/* Projekte */}
+        {/* Standorte */}
         <motion.g variants={containerVariants} initial='hidden' animate='show'>
-          {mapContext.projekte.map((project) => (
-            <motion.g variants={itemVariants}>
+          {mapContext.standorte.map((standort) => (
+            <motion.g variants={itemVariants} key={standort._id}>
               <circle
-                cx={project.coordinates.xaxis}
-                cy={project.coordinates.yaxis}
+                cx={standort.coordinates.xaxis}
+                cy={standort.coordinates.yaxis}
                 r='20'
-                className={`opacity-70 hover:opacity-90 ${project.einordnung.themenpfadName} ${project.title}`}
-                key={project._id}
+                className={`opacity-70 hover:opacity-90 ${standort.themenpfad.title} ${standort.title}`}
+                key={standort._id}
                 onClick={() => {
-                  clickHandler(project._id)
+                  clickHandler(standort._id)
                 }}
               />
             </motion.g>

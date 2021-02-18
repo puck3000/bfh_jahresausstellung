@@ -8,11 +8,12 @@ import { createContext, useState } from 'react'
 export const MapContext = createContext()
 
 const Karte = (props) => {
-  const { projekte } = props.kartenDaten
+  const { standorte } = props.kartenDaten
 
   const [mapContext, setMapContext] = useState({
-    projekte: projekte,
-    selectedProject: null,
+    standorte: standorte,
+    selectedStandort: [],
+    sideBarVisible: false,
   })
 
   return (
@@ -39,9 +40,9 @@ const Karte = (props) => {
       <MapContext.Provider value={[mapContext, setMapContext]}>
         <div className=''>
           <div className='min-h-screen grid grid-rows-bottomFooter '>
-            {/* <header className='fixed left-0 top-4 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
+            <header className='fixed left-0 top-4 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
               <MainNavigation />
-            </header> */}
+            </header>
             <main className=''>
               <PinchMap />
             </main>
@@ -59,7 +60,10 @@ const Karte = (props) => {
 }
 
 const query = groq`
-     *[_type == 'standort'][]{_id, coordinates,'themenpfad': themenpfad->{_id, 'title': content.title}}
+      *[_type == 'map'][0]{
+        'standorte': *[_type == 'standort'][]{_id, coordinates,'themenpfad': themenpfad->{_id, 'title': content.title}}
+      }
+     //*[_type == 'standort'][]{_id, coordinates,'themenpfad': themenpfad->{_id, 'title': content.title}}
 
       
       // 'projekte': *[_type == 'projekt'][]{ 
