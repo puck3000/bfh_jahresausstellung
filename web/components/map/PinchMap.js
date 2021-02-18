@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import Map from './Map'
 import { AiOutlineFullscreenExit } from 'react-icons/ai'
-import { MdAdd, MdDirectionsWalk, MdRemove } from 'react-icons/md'
-import { FaCircle, FaRegCircle } from 'react-icons/fa'
+import { MdAdd, MdRemove } from 'react-icons/md'
 import MapSideBar from './MapSideBar.js'
-import MapSelectorItem from './MapSelectorItem'
 import MapLegende from './MapLegende'
 
 class PinchMap extends Component {
@@ -26,7 +24,6 @@ class PinchMap extends Component {
         >
           {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
             <React.Fragment>
-              {/* Map Component */}
               <TransformComponent>
                 <Map />
               </TransformComponent>
@@ -45,7 +42,6 @@ class PinchMap extends Component {
                   <MdRemove className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-0 lg:mb-2  border-2 border-t-0 border-white ' />
                 </button>
               </div>
-              {/* Legende / Filter */}
               <MapLegende />
 
               <MapSideBar />

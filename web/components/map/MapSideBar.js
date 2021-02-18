@@ -1,14 +1,7 @@
 import Link from 'next/link'
 import client from 'client'
 import imageUrlBuilder from '@sanity/image-url'
-import {
-  MdAdd,
-  MdClose,
-  MdArrowForward,
-  MdFlag,
-  MdDirectionsWalk,
-} from 'react-icons/md'
-import { IoMdPin } from 'react-icons/io'
+import { MdAdd, MdClose, MdArrowForward } from 'react-icons/md'
 import ProjLightBox from 'components/ProjLightBox'
 import { useContext } from 'react'
 import { MapContext } from 'pages/map'
@@ -18,7 +11,7 @@ function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
-export default function MapSideBar({ onSidebarToggle }) {
+export default function MapSideBar() {
   const [mapContext, setMapContext] = useContext(MapContext)
 
   if (mapContext.sideBarVisible) {
