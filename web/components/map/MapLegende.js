@@ -13,6 +13,10 @@ export default function MapLegende() {
     } else {
       setFilter(themenpfad)
     }
+    setMapContext((mapContext) => ({
+      ...mapContext,
+      sideBarVisible: false,
+    }))
   }
 
   useEffect(() => {

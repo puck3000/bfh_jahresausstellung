@@ -1,15 +1,9 @@
 import Link from 'next/link'
-import client from 'client'
-import imageUrlBuilder from '@sanity/image-url'
 import { MdAdd, MdClose, MdArrowForward } from 'react-icons/md'
 import ProjLightBox from 'components/ProjLightBox'
 import { useContext } from 'react'
 import { MapContext } from 'pages/map'
 import Akkorderer, { AkkHeader, AkkContent } from 'components/Akkorderer'
-
-function urlFor(source) {
-  return imageUrlBuilder(client).image(source)
-}
 
 export default function MapSideBar() {
   const [mapContext, setMapContext] = useContext(MapContext)
@@ -19,7 +13,14 @@ export default function MapSideBar() {
       <aside
         className={`overflow-auto z-50 p-1 mt-0  lg:p-4 fixed bottom-0 right-0 left-0 lg:left-auto lg:h-full bg-${mapContext.selectedThemenpfad} lg:top-0 lg:shadow-left lg:w-1/4`}
       >
-        <MdClose
+        <svg
+          stroke='currentColor'
+          fill='currentColor'
+          strokeWidth='0'
+          viewBox='4 2 24 24'
+          height='2em'
+          width='2em'
+          xmlns='http://www.w3.org/2000/svg'
           className='h-6 w-6 lg:h-12 lg:w-12 mb-4 cursor-pointer'
           onClick={() =>
             setMapContext((mapContext) => ({
@@ -27,7 +28,10 @@ export default function MapSideBar() {
               sideBarVisible: false,
             }))
           }
-        />
+        >
+          <path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'></path>
+        </svg>
+
         <h2 className='mb-2'>Projekte am Standort</h2>
         <hr className='mb-2'></hr>
         {/* Projektliste */}
