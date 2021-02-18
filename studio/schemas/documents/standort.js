@@ -13,5 +13,11 @@ export default {
       name: 'coordinates',
       type: 'coordinates',
     },
+    {
+      title: 'Themenpfad',
+      name: 'themenpfad',
+      type: 'reference',
+      to: [{ type: 'themenpfad' }],
+    },
   ],
 }
