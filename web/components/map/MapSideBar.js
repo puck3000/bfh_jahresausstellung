@@ -8,69 +8,34 @@ import {
   MdDirectionsWalk,
 } from 'react-icons/md'
 import { IoMdPin } from 'react-icons/io'
+import ProjLightBox from 'components/ProjLightBox'
+import { useContext } from 'react'
+import { MapContext } from 'pages/map'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
-export default function MapSideBar({ mappoint, onSidebarToggle, layer }) {
-  const icon = (layer) => {
-    switch (layer) {
-      case 'themenpfade':
-        return <MdDirectionsWalk className='lg:h-12' size='1.2em' />
-        break
-      case 'ateliers':
-        return <MdFlag />
-        break
-      case 'projekte':
-        return <IoMdPin />
-        break
-      default:
-        break
-    }
-  }
+export default function MapSideBar({ onSidebarToggle }) {
+  const [mapContext, setMapContext] = useContext(MapContext)
 
   return (
     <aside className='p-1 mt-0 lg:p-4 lg:fixed bg-white lg:h-full lg:right-0 lg:top-0 lg:shadow-left lg:w-1/4 z-40'>
-      <div className='flex justify-between mt-4 lg:mt-0'>
-        <h2 className='text-small mb-4 lg:mb-0 lg:text-small-dt pt-1'>
-          {layer.charAt(0).toUpperCase() + layer.slice(1)}
-        </h2>
-        <MdClose
-          className='h-6 w-6 lg:h-12 lg:w-12'
-          onClick={() => onSidebarToggle(false)}
-        />
-      </div>
-      <div>
-        {icon(layer)}
-        <p className='mt-2 lg:mt-0  text-small lg:text-small-dt'>
-          Folgen Sie den themenpfaden und erleben Sie die online ausstellung
-          schritt für schritt...
-        </p>
-      </div>
-      <h2 className='mt-two mb-2 lg:mb-0 lg:mt-big'>{mappoint.title}</h2>
-      <img
-        src={urlFor(mappoint.referencepic).width(2000).height(1600).url()}
-        srcSet={`${urlFor(mappoint.referencepic)
-          .width(1024)
-          .height(819)
-          .url()} 1024w, ${urlFor(mappoint.referencepic)
-          .width(2000)
-          .height(1600)
-          .format('webp')
-          .url()} 2000w,`}
-        sizes='(max-width:1024px) 100vw, 25vw'
-        className='mb-1 lg:mb-2 lg:col-span-3 lg:col-start-2 2xl:col-start-3 2xl:col-span-4'
-      />
-      <Link href={`../themenpfade/${mappoint.slug}`}>
-        <div className='flex items-center cursor-pointer'>
-          <MdArrowForward className='h-4 w-4 lg:h-6 lg:w-8' />
-          <p className='text-small lg:text-small-dt'>
-            zum Themenpfad {mappoint.title}
-          </p>
+      {mapContext.selectedProject && (
+        <div>
+          <MdClose
+            className='h-6 w-6 lg:h-12 lg:w-12 z-50'
+            onClick={() => onSidebarToggle(false)}
+          />
+          <h2 className='text-small mb-4 lg:mb-0 lg:text-small-dt pt-1'>
+            Projekte am Standort XY:
+          </h2>
+          <div className=''>
+            <ProjLightBox projekt={mapContext.selectedProject.inhalt} />
+            <p>folgen Sie dem Pfad zum nächsten Projekt</p>
+          </div>
         </div>
-      </Link>
-      <hr className='mt-2'></hr>
+      )}
     </aside>
   )
 }

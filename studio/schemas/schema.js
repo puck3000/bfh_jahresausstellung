@@ -35,6 +35,7 @@ import youtube from './objects/youtube'
 import akkordeon from './objects/akkordeon'
 import impressum from './documents/impressum'
 import kontakt from './documents/kontakt'
+import standort from './documents/standort'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -75,5 +76,6 @@ export default createSchema({
     akkordeon,
     impressum,
     kontakt,
+    standort,
   ]),
 })

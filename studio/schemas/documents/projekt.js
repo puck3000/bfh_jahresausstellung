@@ -104,6 +104,14 @@ export default {
           type: 'coordinates',
           fieldset: 'meta',
         },
+        {
+          title: 'Standort',
+          name: 'standort',
+          type: 'array',
+          of: [{ type: 'reference', to: [{ type: 'standort' }] }],
+
+          fieldset: 'meta',
+        },
       ],
     },
   ],

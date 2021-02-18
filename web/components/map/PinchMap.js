@@ -30,11 +30,9 @@ class PinchMap extends Component {
 
   render() {
     return (
-      <div className='w-full relative'>
+      <div className='fixed h-screen w-screen'>
         <TransformWrapper
           defaultScale={1}
-          defaultPositionX={200}
-          defaultPositionY={100}
           options={{
             wrapperClass: 'my-wrapper-class',
             contentClass: 'my-content-class',
@@ -53,22 +51,22 @@ class PinchMap extends Component {
               </TransformComponent>
               <div className='flex flex-row-reverse justify-between  lg:inline'>
                 {/* Tools */}
-                <div className='tools lg:absolute flex flex-col lg:top-0 lg:right-0 z-40'>
+                <div className='tools absolute flex flex-col bottom-4 left-4 z-40'>
                   <button onClick={resetTransform}>
-                    <AiOutlineFullscreenExit className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-2 lg:mb-4 ' />
+                    <AiOutlineFullscreenExit className='bg-white h-8 lg:h-12 w-8 lg:w-12 mb-2 lg:mb-4 ' />
                   </button>
                   <button onClick={zoomIn}>
                     <MdAdd
                       className='bg-white
-                     h-10 lg:h-12 w-10 lg:w-12 mb-1 lg:mb-0 lg:border-b-2 lg:border-black'
+                     h-8 lg:h-12 w-8 lg:w-12 mb-1 lg:mb-0 lg:border-b-2 lg:border-black'
                     />
                   </button>
                   <button onClick={zoomOut}>
-                    <MdRemove className='bg-white h-10 lg:h-12 w-10 lg:w-12 mb-0 lg:mb-2' />
+                    <MdRemove className='bg-white h-8 lg:h-12 w-8 lg:w-12 mb-0 lg:mb-2' />
                   </button>
                 </div>
                 {/* Selectors */}
-                <ul className='lg:absolute lg:top-0 '>
+                {/* <ul className='lg:absolute lg:top-4 lg:left-4 '>
                   <li className='mb-1 lg:mb-2'>
                     <button
                       onClick={() =>
@@ -116,7 +114,7 @@ class PinchMap extends Component {
                       />
                     </button>
                   </li>
-                </ul>
+                </ul> */}
               </div>
               {this.state.sideBarVisible && (
                 <MapSideBar

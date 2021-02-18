@@ -10,7 +10,10 @@ export const MapContext = createContext()
 const Karte = (props) => {
   const { projekte } = props.kartenDaten
 
-  const [mapContext, setMapContext] = useState({ projekte: projekte })
+  const [mapContext, setMapContext] = useState({
+    projekte: projekte,
+    selectedProject: null,
+  })
 
   return (
     <>
@@ -35,11 +38,11 @@ const Karte = (props) => {
 
       <MapContext.Provider value={[mapContext, setMapContext]}>
         <div className=''>
-          <div className='m-1 lg:m-4 min-h-screen grid grid-rows-bottomFooter '>
-            <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
+          <div className='min-h-screen grid grid-rows-bottomFooter '>
+            {/* <header className='fixed left-0 top-4 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
               <MainNavigation />
-            </header>
-            <main className='pt-four 2xl:pt-tooBig'>
+            </header> */}
+            <main className=''>
               <PinchMap />
             </main>
           </div>
@@ -56,9 +59,14 @@ const Karte = (props) => {
 }
 
 const query = groq`
-        *[_type == 'map'][0]{
-      'projekte': *[_type == 'projekt'][]{'title': content.titel, 'coordinates': content.coordinates}
-    }
+    *[_type == 'map'][0]{
+      'inhalt': content, title,
+      'projekte': *[_type == 'projekt'][]{ 
+        _id,
+      	'title': content.titel, 'coordinates': content.coordinates,
+    		'einordnung': content.atelier->{'atelierId': _id, 'atelierName': content.titel, 'themenpfadId': content.themenpfad._ref, 'themenpfadName': content.themenpfad->content.title }
+		}   
+}
 `
 
 export async function getStaticProps({ params }) {

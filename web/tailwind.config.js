@@ -4,6 +4,7 @@ module.exports = {
     './pages/**/*.js',
     './components/**/*.js',
     './node_modules/react-alice-carousel/*',
+    './node_modules/react-zoom-pan-pinch/*',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {

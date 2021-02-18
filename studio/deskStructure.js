@@ -93,6 +93,17 @@ export default () =>
         .title('Impressum')
         .icon(IoDocumentTextOutline)
         .child(S.document().schemaType('impressum').documentId('impressum')),
+      S.divider(),
+      S.listItem()
+        .title('Standorte')
+        .icon(BiMapPin)
+        .child(
+          S.documentList()
+            .schemaType('standort')
+            .title('Standorte')
+            .filter('_type == "standort"')
+            .defaultOrdering([{ field: 'titel', direction: 'desc' }])
+        ),
 
       // ...S.documentTypeListItems().filter(listItem => !['home', 'hintergrund','themenpfadeIndex', 'themenpfad', 'atelier', 'projekteIndex', 'projekt'].includes(listItem.getId()))
     ])
