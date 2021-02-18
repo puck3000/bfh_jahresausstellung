@@ -48,7 +48,7 @@ export default function DesktopNav() {
         </li>
       </ul>
       <Link href='../map'>
-        <a className='flex justify-end'>
+        <a className='flex mapIcon justify-end'>
           <MdMap size='1.5em' />
         </a>
       </Link>

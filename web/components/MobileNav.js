@@ -18,7 +18,7 @@ export default function MobileNav() {
           Menu
         </button>
         <Link href='/map'>
-          <a>
+          <a className='mapIcon'>
             <MdMap size='1.5em' />
           </a>
         </Link>

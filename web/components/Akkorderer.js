@@ -1,16 +1,26 @@
-import { cloneElement, createContext, useContext, useState } from 'react'
+import {
+  Children,
+  cloneElement,
+  createContext,
+  useContext,
+  useState,
+} from 'react'
 import { motion } from 'framer-motion'
 
 const AkkordeonContext = createContext()
 
 export const AkkHeader = ({ children }) => {
   const [isOpen, setIsOpen] = useContext(AkkordeonContext)
+  const child = Children.only(children)
+  const childClassName = child.props.className || ''
   return (
     <>
       {cloneElement(children, {
         onClick: () => {
           setIsOpen(!isOpen)
         },
+        className:
+          `${childClassName} ${isOpen ? 'isOpened' : 'isClosed'}` || null,
       })}
     </>
   )

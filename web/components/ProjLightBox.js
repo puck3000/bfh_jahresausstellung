@@ -24,7 +24,7 @@ export default class ProjLightBox extends Component {
 
     return (
       <div className='mb-4'>
-        <hr className='mb-1'></hr>
+        <hr className='mb-1 projFilter'></hr>
         <button
           className='relative'
           type='button'
@@ -58,7 +58,7 @@ export default class ProjLightBox extends Component {
           />
         </button>
         <div className='text-left'>
-          <h2 className='mb-2'>{projekt.titel}</h2>
+          <h2 className='projFilter mb-2'>{projekt.titel}</h2>
           {projekt.people && (
             <ul className=''>
               {projekt.people?.map((person, i) => (

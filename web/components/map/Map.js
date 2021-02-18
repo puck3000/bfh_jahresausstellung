@@ -51,8 +51,8 @@ export default function Map() {
               <circle
                 cx={standort.coordinates.xaxis}
                 cy={standort.coordinates.yaxis}
-                r='20'
-                className={`opacity-70 hover:opacity-90 ${standort.themenpfad.title} ${standort.title}`}
+                r='15'
+                className={`cursor-pointer ${standort.themenpfad.title} ${standort.title}`}
                 key={standort._id}
                 onClick={() => {
                   clickHandler(standort._id)

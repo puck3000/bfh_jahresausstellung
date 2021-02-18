@@ -145,6 +145,10 @@
     @apply text-white bg-black;
   }
 
+  .karte .mapIcon {
+    display: none;
+  }
+
   /******************************************************
 /   SlideShow
 /******************************************************/
@@ -220,6 +224,18 @@
   .react-transform-element.my-content-class {
     width: 100% !important;
     height: 100% !important;
+  }
+
+  /* Map Akkordeon Toggle */
+
+  .isOpened svg {
+    @apply rotate-45;
+  }
+
+  /* Map Akkordeon Filter ProjTitle from Lightbox */
+
+  .projLightBox .projFilter {
+    display: none;
   }
 
   /*  end components */
