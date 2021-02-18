@@ -24,7 +24,7 @@ export default function MapSideBar({ onSidebarToggle }) {
   if (mapContext.sideBarVisible) {
     return (
       <aside
-        className={`z-50 p-1 mt-0  lg:p-4 fixed bottom-0 right-0 left-0 lg:left-auto lg:h-full bg-${mapContext.selectedThemenpfad} lg:top-0 lg:shadow-left lg:w-1/4`}
+        className={`overflow-auto z-50 p-1 mt-0  lg:p-4 fixed bottom-0 right-0 left-0 lg:left-auto lg:h-full bg-${mapContext.selectedThemenpfad} lg:top-0 lg:shadow-left lg:w-1/4`}
       >
         <MdClose
           className='h-6 w-6 lg:h-12 lg:w-12 mb-4 cursor-pointer'

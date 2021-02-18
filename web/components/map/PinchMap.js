@@ -3,8 +3,10 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import Map from './Map'
 import { AiOutlineFullscreenExit } from 'react-icons/ai'
 import { MdAdd, MdDirectionsWalk, MdRemove } from 'react-icons/md'
+import { FaCircle, FaRegCircle } from 'react-icons/fa'
 import MapSideBar from './MapSideBar.js'
 import MapSelectorItem from './MapSelectorItem'
+import MapLegende from './MapLegende'
 
 class PinchMap extends Component {
   render() {
@@ -28,23 +30,23 @@ class PinchMap extends Component {
               <TransformComponent>
                 <Map />
               </TransformComponent>
-              <div className=''>
-                {/* Tools */}
-                <div className='tools absolute flex flex-col top-4 right-4 lg:top-auto lg:right-auto lg:bottom-4 lg:left-4 z-40'>
-                  <button onClick={resetTransform}>
-                    <AiOutlineFullscreenExit className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-2 lg:mb-4 ' />
-                  </button>
-                  <button onClick={zoomIn}>
-                    <MdAdd
-                      className='text-white
+              {/* Tools */}
+              <div className='tools absolute flex flex-col top-4 right-4 lg:top-auto lg:right-auto lg:bottom-4 lg:left-4 z-40'>
+                <button onClick={resetTransform}>
+                  <AiOutlineFullscreenExit className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-2 lg:mb-4 ' />
+                </button>
+                <button onClick={zoomIn}>
+                  <MdAdd
+                    className='text-white
                       h-8 lg:h-12 w-8 lg:w-12 mb-1 lg:mb-0 border-2 border-white'
-                    />
-                  </button>
-                  <button onClick={zoomOut}>
-                    <MdRemove className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-0 lg:mb-2 ' />
-                  </button>
-                </div>
+                  />
+                </button>
+                <button onClick={zoomOut}>
+                  <MdRemove className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-0 lg:mb-2 ' />
+                </button>
               </div>
+              {/* Legende / Filter */}
+              <MapLegende />
 
               <MapSideBar />
             </React.Fragment>
