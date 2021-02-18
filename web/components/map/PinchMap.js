@@ -51,7 +51,7 @@ class PinchMap extends Component {
               </TransformComponent>
               <div className='flex flex-row-reverse justify-between  lg:inline'>
                 {/* Tools */}
-                <div className='tools absolute flex flex-col bottom-4 left-4 z-40'>
+                <div className='tools absolute flex flex-col bottom-4 lg:bottom-48 left-4 z-40'>
                   <button onClick={resetTransform}>
                     <AiOutlineFullscreenExit className='bg-white h-8 lg:h-12 w-8 lg:w-12 mb-2 lg:mb-4 ' />
                   </button>
@@ -65,56 +65,6 @@ class PinchMap extends Component {
                     <MdRemove className='bg-white h-8 lg:h-12 w-8 lg:w-12 mb-0 lg:mb-2' />
                   </button>
                 </div>
-                {/* Selectors */}
-                {/* <ul className='lg:absolute lg:top-4 lg:left-4 '>
-                  <li className='mb-1 lg:mb-2'>
-                    <button
-                      onClick={() =>
-                        this.setState({ currentLayer: 'themenpfade' })
-                      }
-                      className='focus:outline-none'
-                    >
-                      <MapSelectorItem
-                        text='Themenpfade'
-                        active={
-                          this.state.currentLayer == 'themenpfade'
-                            ? true
-                            : false
-                        }
-                      />
-                    </button>
-                  </li>
-                  <li className='mb-1 lg:mb-2'>
-                    <button
-                      onClick={() =>
-                        this.setState({ currentLayer: 'ateliers' })
-                      }
-                      className='focus:outline-none'
-                    >
-                      <MapSelectorItem
-                        text='Ateliers'
-                        active={
-                          this.state.currentLayer == 'ateliers' ? true : false
-                        }
-                      />
-                    </button>
-                  </li>
-                  <li className='mb-1 lg:mb-2'>
-                    <button
-                      onClick={() =>
-                        this.setState({ currentLayer: 'projekte' })
-                      }
-                      className='focus:outline-none'
-                    >
-                      <MapSelectorItem
-                        text='Projekte'
-                        active={
-                          this.state.currentLayer == 'projekte' ? true : false
-                        }
-                      />
-                    </button>
-                  </li>
-                </ul> */}
               </div>
               {this.state.sideBarVisible && (
                 <MapSideBar
