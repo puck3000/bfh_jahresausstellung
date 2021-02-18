@@ -22,7 +22,7 @@ export default function Map() {
     show: { opacity: 1 },
   }
 
-  const clickHandler = (id) => {
+  const clickHandler = (id, themenpfad) => {
     // things to do on click: 1. fetch relevant data 2. show sidebar with data
     getStandorteAndProjectsByStId(id)
       .then((res) =>
@@ -32,12 +32,18 @@ export default function Map() {
         }))
       )
       .then(
+        setMapContext((mapContext) => ({
+          ...mapContext,
+          selectedThemenpfad: themenpfad,
+        }))
+      )
+      .then(
         setMapContext((mapContext) => ({ ...mapContext, sideBarVisible: true }))
       )
   }
 
   return (
-    <div className={` h-screen w-screen `}>
+    <div className={`w-screen h-screen ${mapContext.selectedThemenpfad}`}>
       <svg
         version='1.2'
         viewBox='0 0 3507 2480'
@@ -55,7 +61,7 @@ export default function Map() {
                 className={`cursor-pointer ${standort.themenpfad.title} ${standort.title}`}
                 key={standort._id}
                 onClick={() => {
-                  clickHandler(standort._id)
+                  clickHandler(standort._id, standort.themenpfad.title)
                 }}
               />
             </motion.g>
@@ -63,13 +69,6 @@ export default function Map() {
         </motion.g>
       </svg>
       <style jsx>{`
-        #karte {
-          max-height: 70vh;
-        }
-        rect {
-          stroke: #0000ff;
-          fill: #0000ff;
-        }
         circle.Zentralität {
           stroke: #fac300;
           fill: #fac300;
@@ -81,15 +80,6 @@ export default function Map() {
         circle.Wohnformen {
           stroke: #699bbe;
           fill: #699bbe;
-        }
-        .triangle {
-          margin: 0 auto;
-          width: 100px;
-          height: 100px;
-        }
-        polygon {
-          stroke: #660000;
-          fill: #cc3333;
         }
       `}</style>
     </div>

@@ -23,7 +23,9 @@ export default function MapSideBar({ onSidebarToggle }) {
 
   if (mapContext.sideBarVisible) {
     return (
-      <aside className='z-50 p-1 mt-0 lg:p-4 lg:fixed bg-white lg:h-full lg:right-0 lg:top-0 lg:shadow-left lg:w-1/4 '>
+      <aside
+        className={`z-50 p-1 mt-0  lg:p-4 fixed bottom-0 right-0 left-0 lg:left-auto lg:h-full bg-${mapContext.selectedThemenpfad} lg:top-0 lg:shadow-left lg:w-1/4`}
+      >
         <MdClose
           className='h-6 w-6 lg:h-12 lg:w-12 mb-4 cursor-pointer'
           onClick={() =>
@@ -51,10 +53,12 @@ export default function MapSideBar({ onSidebarToggle }) {
                 <div className='projLightBox'>
                   <ProjLightBox projekt={projekt.content} />
                 </div>
-                <div className='flex items-center justify-between mb-4'>
+                {/* <Link href={}>
+                <a className='flex items-center justify-between mb-4'>
                   <h2>Zum Projekt</h2>
                   <MdArrowForward className='h-8 w-8 lg:h-10 lg:w-10' />
-                </div>
+                </a>
+                </Link> */}
               </AkkContent>
               <hr className='mb-2'></hr>
             </Akkorderer>

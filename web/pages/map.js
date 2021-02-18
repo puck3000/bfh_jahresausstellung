@@ -13,6 +13,7 @@ const Karte = (props) => {
   const [mapContext, setMapContext] = useState({
     standorte: standorte,
     selectedStandort: [],
+    selectedThemenpfad: '',
     sideBarVisible: false,
   })
 
@@ -39,7 +40,7 @@ const Karte = (props) => {
 
       <MapContext.Provider value={[mapContext, setMapContext]}>
         <div className=''>
-          <div className='min-h-screen grid grid-rows-bottomFooter '>
+          <div className='grid grid-rows-bottomFooter '>
             <header className='fixed karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
               <MainNavigation />
             </header>

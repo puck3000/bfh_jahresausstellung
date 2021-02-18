@@ -40,6 +40,11 @@ module.exports = {
       boxShadow: {
         left: '0 0 50px 0 rgba(0, 0, 0, 0.5)',
       },
+      colors: {
+        Zentralität: '#fac300',
+        Ressourcen: '#699673',
+        Wohnformen: '#699bbe',
+      },
     },
   },
   variants: {
