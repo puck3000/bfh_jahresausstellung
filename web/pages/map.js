@@ -59,14 +59,15 @@ const Karte = (props) => {
 }
 
 const query = groq`
-    *[_type == 'map'][0]{
-      'inhalt': content, title,
-      'projekte': *[_type == 'projekt'][]{ 
-        _id,
-      	'title': content.titel, 'coordinates': content.coordinates,
-    		'einordnung': content.atelier->{'atelierId': _id, 'atelierName': content.titel, 'themenpfadId': content.themenpfad._ref, 'themenpfadName': content.themenpfad->content.title }
-		}   
-}
+     *[_type == 'standort'][]{_id, coordinates,'themenpfad': themenpfad->{_id, 'title': content.title}}
+
+      
+      // 'projekte': *[_type == 'projekt'][]{ 
+      //   _id,
+      // 	'title': content.titel, 'coordinates': content.coordinates,
+    	// 	'einordnung': content.atelier->{'atelierId': _id, 'atelierName': content.titel, 'themenpfadId': content.themenpfad._ref, 'themenpfadName': content.themenpfad->content.title }
+	   // 	}   
+    //}
 `
 
 export async function getStaticProps({ params }) {
