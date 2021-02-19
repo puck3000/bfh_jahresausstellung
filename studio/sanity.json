@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "tabs"
+    "tabs",
+    "mux-input"
   ],
   "env": {
     "development": {
@@ -31,6 +32,5 @@
       "name": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.js"
     }
-
   ]
 }
