@@ -4,7 +4,7 @@ import Layout from 'components/Layout'
 import SanityMuxPlayer from 'sanity-mux-player'
 import Head from 'next/head'
 import MainNavigation from 'components/MainNavigation'
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy'
 import {
   MdArrowForward,
   MdDirectionsWalk,
@@ -53,28 +53,32 @@ const Home = (props) => {
             </h1>
             <h2 className='mb-two'>Jahresausstellung BFH Architektur 2021</h2>
             {showNextButtons && (
-              <ul>
-                <li className='h-12 cursor-pointer border-white border-2 p-2 mb-2'>
+              <ul className='mt-20'>
+                <li className='text-left h-16 lg:h-20 cursor-pointer border-white border-2 p-2 mb-2 mr-1'>
                   <Link href='/themenpfade'>
                     <div className='flex'>
-                      <MdDirectionsWalk />
-                      <p className='ml-4'>Folgen Sie einem Themenpfad</p>
+                      <MdDirectionsWalk size='2em' />
+                      <p className='ml-4 text-left'>
+                        Folgen Sie einem Themenpfad
+                      </p>
                     </div>
                   </Link>
                 </li>
-                <li className='h-12 cursor-pointer border-white border-2 p-2  mb-2'>
+                <li className='text-left h-16 lg:h-20 cursor-pointer border-white border-2 p-2  mb-2 mr-1'>
                   <Link href='/map'>
                     <div className='flex'>
-                      <MdMap></MdMap>
-                      <p className='ml-4'>Navigieren Sie auf der Karte</p>
+                      <MdMap size='2em' />
+                      <p className='ml-4 text-left'>
+                        Navigieren Sie auf der Karte
+                      </p>
                     </div>
                   </Link>
                 </li>
-                <li className='h-12 cursor-pointer border-white border-2 p-2  mb-2'>
-                  <button>
+                <li className='text-left h-16 lg:h-20 cursor-pointer border-white border-2 p-2  mb-2 mr-1'>
+                  <button onClick={() => setShowNextButtons(false)}>
                     <div className='flex'>
-                      <MdReplay />{' '}
-                      <p className='ml-4'>
+                      <MdReplay size='2em' />
+                      <p className='ml-4 text-left'>
                         {' '}
                         Sehen Sie sich die Videobotschat noch einmal an
                       </p>
@@ -100,16 +104,19 @@ const Home = (props) => {
               />
             </div>
           )}
-
-          <Link href='/'>
-            <a className='fixed left-4 right-4 border-t-2 border-b-2 border-white text-white py-2 bottom-20 grid grid-cols-12'>
-              <MdArrowForward size='2rem' className='col-span-1' />
-              <article className='col-span-11 col-start-2'>
-                <h2 className='mb-2'>Vernissage</h2>
-                <blockquote>02.03.2021, 18:00-18:30 Uhr – Online</blockquote>
-              </article>
-            </a>
-          </Link>
+          <a
+            href='https://www.bfh.ch/ahb/de/aktuell/veranstaltungen/vernissage-jaa-2021/'
+            target='_blank'
+            className='fixed left-4 right-4 border-t-2 border-b-2 border-white text-white py-2 bottom-20 grid grid-cols-12'
+          >
+            <MdArrowForward size='2rem' className='col-span-1' />
+            <article className='col-span-11 col-start-2'>
+              <h2 className='mb-2'>Vernissage</h2>
+              <blockquote className='text-medium lg:text-medium-dt'>
+                02.03.2021, 18:00-18:30 Uhr – Online
+              </blockquote>
+            </article>
+          </a>
         </div>
       </div>
       <style jsx global>{`
