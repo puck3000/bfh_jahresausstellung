@@ -107,10 +107,11 @@ const Home = (props) => {
           <a
             href='https://www.bfh.ch/ahb/de/aktuell/veranstaltungen/vernissage-jaa-2021/'
             target='_blank'
-            className='fixed left-4 right-4 border-t-2 border-b-2 border-white text-white py-2 bottom-20 grid grid-cols-12'
+            id='vernissage'
+            className='fixed left-4 right-4 border-t-2 border-b-2 border-white text-white py-2 bottom-20 flex'
           >
-            <MdArrowForward size='2rem' className='col-span-1' />
-            <article className='col-span-11 col-start-2'>
+            <MdArrowForward size='2rem' className='' />
+            <article className='ml-4'>
               <h2 className='mb-2'>Vernissage</h2>
               <blockquote className='text-medium lg:text-medium-dt'>
                 02.03.2021, 18:00-18:30 Uhr – Online
@@ -123,6 +124,9 @@ const Home = (props) => {
         body {
           background-color: black;
         }
+        // #vernissage {
+        //   backdrop-filter: blur(5px);
+        // }
       `}</style>
     </>
   )
