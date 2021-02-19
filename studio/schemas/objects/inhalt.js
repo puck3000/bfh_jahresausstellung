@@ -15,6 +15,6 @@ export default {
     { type: 'horzline' },
     { type: 'youtube' },
     { type: 'akkordeon' },
-    //   { type: 'embeddedvideo' },
+    { type: 'muxvideo' },
   ],
 }

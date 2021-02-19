@@ -4,6 +4,9 @@ import Layout from 'components/Layout'
 import SanityMuxPlayer from 'sanity-mux-player'
 import Head from 'next/head'
 import MainNavigation from 'components/MainNavigation'
+import ReactPlayer from 'react-player'
+import { MdPlayArrow } from 'react-icons/md'
+import Link from 'next/link'
 
 const Home = (props) => {
   const { videodoc } = props.home
@@ -28,14 +31,11 @@ const Home = (props) => {
       </Head>
 
       <div className='home'>
-        <div
-          className='m-1 lg:m-4 grid grid-rows-bottomFooter '
-          id='baseWrapper'
-        >
+        <div className='m-1 lg:m-4' id='baseWrapper'>
           <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
-          <main className='pt-four 2xl:pt-tooBig z-20'>
+          <main className='fixed pt-four 2xl:pt-tooBig z-20'>
             <h1 className='base mb-8 text-white text-big lg:text-big-dt'>
               Neue Räume.
               <br />
@@ -44,17 +44,24 @@ const Home = (props) => {
           </main>
           {videodoc && (
             <div className='fullscreenVideo '>
-              {/* <SanityMuxPlayer
-                assetDocument={videodoc}
-                autoload={true}
-                autoplay={false}
-                showControls={true}
-              /> */}
               <ReactPlayer
-                url={`https://stream.mux.com/${videodoc.data.playback_ids.id}.m3u8`}
+                url={`https://stream.mux.com/${videodoc.playbackId}.m3u8`}
+                playing
+                controls={true}
+                playIcon={
+                  <button>
+                    <MdPlayArrow color='white' size='7rem' />
+                  </button>
+                }
+                light='../videoStills/Startseite_Daniel_Boermann.jpg'
               />
             </div>
           )}
+          <Link href='/'>
+            <a className='fixed w-full border-t-2 border-b-2 border-white text-white py-2 bottom-20'>
+              Vernissage
+            </a>
+          </Link>
         </div>
       </div>
       <style jsx global>{`
