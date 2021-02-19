@@ -1,9 +1,10 @@
 import groq from 'groq'
 import client from 'client'
 import Layout from 'components/Layout'
+import SanityMuxPlayer from 'sanity-mux-player'
 
 const Home = (props) => {
-  const { title = 'Missing Title' } = props.home
+  const { videodoc } = props.home
   return (
     <Layout>
       <h1 className='base mb-8'>
@@ -15,17 +16,21 @@ const Home = (props) => {
         <br />
         Stadt und Land in Huttwil.
       </h1>
+      {videodoc && (
+        <SanityMuxPlayer
+          assetDocument={videodoc}
+          autoload={true}
+          autoplay={false}
+          showControls={true}
+        />
+      )}
     </Layout>
   )
 }
 
-const query = groq`*[_type == 'home'][0]{title}`
-
-// Home.getInitialProps = async function(context) {
-//   // It's important to default the slug so that it doesn't return "undefined"
-//   const { slug = "" } = context.query
-//   return await client.fetch(query, { slug })
-// }
+const query = groq`*[_type == 'home' && _id == 'home'][0]{
+  'videodoc': muxvideo.video.asset->{...}
+}`
 
 export async function getStaticProps({ params }) {
   const home = await client.fetch(query)
