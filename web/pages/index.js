@@ -5,11 +5,21 @@ import SanityMuxPlayer from 'sanity-mux-player'
 import Head from 'next/head'
 import MainNavigation from 'components/MainNavigation'
 import ReactPlayer from 'react-player'
-import { MdPlayArrow } from 'react-icons/md'
+import {
+  MdArrowForward,
+  MdDirectionsWalk,
+  MdMap,
+  MdPlayArrow,
+  MdReplay,
+} from 'react-icons/md'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const Home = (props) => {
   const { videodoc } = props.home
+
+  const [showNextButtons, setShowNextButtons] = useState(false)
+
   return (
     <>
       <Head>
@@ -35,31 +45,69 @@ const Home = (props) => {
           <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
-          <main className='fixed pt-four 2xl:pt-tooBig z-20'>
+          <main className='fixed pt-four 2xl:pt-tooBig z-20 text-white'>
             <h1 className='base mb-8 text-white text-big lg:text-big-dt'>
               Neue Räume.
               <br />
               Stadt und Land in Huttwil.
             </h1>
+            <h2 className='mb-two'>Jahresausstellung BFH Architektur 2021</h2>
+            {showNextButtons && (
+              <ul>
+                <li className='h-12 cursor-pointer border-white border-2 p-2 mb-2'>
+                  <Link href='/themenpfade'>
+                    <div className='flex'>
+                      <MdDirectionsWalk />
+                      <p className='ml-4'>Folgen Sie einem Themenpfad</p>
+                    </div>
+                  </Link>
+                </li>
+                <li className='h-12 cursor-pointer border-white border-2 p-2  mb-2'>
+                  <Link href='/map'>
+                    <div className='flex'>
+                      <MdMap></MdMap>
+                      <p className='ml-4'>Navigieren Sie auf der Karte</p>
+                    </div>
+                  </Link>
+                </li>
+                <li className='h-12 cursor-pointer border-white border-2 p-2  mb-2'>
+                  <button>
+                    <div className='flex'>
+                      <MdReplay />{' '}
+                      <p className='ml-4'>
+                        {' '}
+                        Sehen Sie sich die Videobotschat noch einmal an
+                      </p>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+            )}
           </main>
-          {videodoc && (
+          {videodoc && !showNextButtons && (
             <div className='fullscreenVideo '>
               <ReactPlayer
                 url={`https://stream.mux.com/${videodoc.playbackId}.m3u8`}
                 playing
                 controls={true}
+                onEnded={() => setShowNextButtons(true)}
                 playIcon={
                   <button>
-                    <MdPlayArrow color='white' size='7rem' />
+                    <MdPlayArrow color='white' size='10rem' />
                   </button>
                 }
                 light='../videoStills/Startseite_Daniel_Boermann.jpg'
               />
             </div>
           )}
+
           <Link href='/'>
-            <a className='fixed w-full border-t-2 border-b-2 border-white text-white py-2 bottom-20'>
-              Vernissage
+            <a className='fixed left-4 right-4 border-t-2 border-b-2 border-white text-white py-2 bottom-20 grid grid-cols-12'>
+              <MdArrowForward size='2rem' className='col-span-1' />
+              <article className='col-span-11 col-start-2'>
+                <h2 className='mb-2'>Vernissage</h2>
+                <blockquote>02.03.2021, 18:00-18:30 Uhr – Online</blockquote>
+              </article>
             </a>
           </Link>
         </div>
