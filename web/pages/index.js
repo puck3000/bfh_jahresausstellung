@@ -89,10 +89,12 @@ const Home = (props) => {
             )}
           </main>
           {videodoc && !showNextButtons && (
-            <div className='fullscreenVideo '>
+            <div className='fullscreenVideo'>
               <ReactPlayer
                 url={`https://stream.mux.com/${videodoc.playbackId}.m3u8`}
                 playing
+                width='100%'
+                height='100%'
                 controls={true}
                 onEnded={() => setShowNextButtons(true)}
                 playIcon={
@@ -127,6 +129,15 @@ const Home = (props) => {
         // #vernissage {
         //   backdrop-filter: blur(5px);
         // }
+        .fullscreenVideo video,
+        .fullscreenVideo .react-player__preview {
+          object-fit: cover;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
       `}</style>
     </>
   )
