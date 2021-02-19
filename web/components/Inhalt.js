@@ -8,6 +8,7 @@ import Youtube from './Youtube'
 import InhaltAkkordeon from './InhaltAkkordeon'
 import Metatext from './Metatext'
 import LazyGal from './LazyGal'
+import MuxVideo from './MuxVideo'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -36,6 +37,9 @@ export default function Inhalt({ inhalt }) {
         break
       case 'youtube':
         return <Youtube url={content} key={content._key} />
+        break
+      case 'muxvideo':
+        return <MuxVideo video={content} key={content._key} />
         break
       case 'akkordeon':
         return (

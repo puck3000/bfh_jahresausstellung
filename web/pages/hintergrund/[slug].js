@@ -26,7 +26,11 @@ const query = groq`
     *[_type == "hintergrund" && slug.current == $slug][0]
         {
         title,
-        'inhalt' : content
+          'inhalt': content[]{
+          _type == 'muxvideo' => {
+          'videodoc': video.asset->
+        }, ...
+        }  
         }
 `
 

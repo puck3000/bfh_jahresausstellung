@@ -108,20 +108,6 @@
   article .lauftext span {
     @apply text-small lg:text-small-dt;
   }
-
-  /* @media screen and (min-width: 1024px) {
-    body {
-      @apply text-small-dt;
-    }
-    h1 {
-      @apply text-big-dt;
-    }
-    h2,
-    h3,
-    blockquote {
-      @apply text-medium-dt;
-    }
-  } */
 }
 
 @layer components {
@@ -147,7 +133,11 @@
 /******************************************************/
 
   .active.anker {
-    @apply text-white bg-black;
+    @apply text-white bg-black border-black;
+  }
+
+  .home .active.anker {
+    @apply text-black bg-white border-black;
   }
 
   .karte .mapIcon {
