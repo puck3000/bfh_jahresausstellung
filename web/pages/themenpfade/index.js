@@ -60,7 +60,14 @@ const ThemenpfadIndex = (props) => {
   )
 }
 
-const query = groq`*[_type == 'themenpfadeIndex'][1]{title, 'inhalt': content, 'tpflist': tpflist[]->{_id, 'slug': content.slug.current, 'inhalt': content }}`
+const query = groq`*[_type == 'themenpfadeIndex'][1]{
+  title, 
+  'inhalt': content[]{
+      _type == 'muxvideo' => {
+      'videodoc': video.asset->
+    }, ...
+  }, 
+  'tpflist': tpflist[]->{_id, 'slug': content.slug.current, 'inhalt': content }}`
 
 // const getAllThemenpfade = groq `*[_type == 'themenpfad' && !(_id in path('drafts.**'))][]|order(content.title){_id, 'slug': content.slug.current, 'inhalt': content }`
 
