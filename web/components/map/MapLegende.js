@@ -40,7 +40,7 @@ export default function MapLegende() {
       className={`text-white absolute bottom-0 left-0 right-0 ${filter}`}
     >
       <li className='flex pl-2 mb-2 py-2 border-t-2 border-b-2 border-white'>
-        <MdDirectionsWalk className='mr-2' />
+        <MdDirectionsWalk className='lg:ml-5 mr-2 lg:mr-4' />
         Themenpfade
       </li>
       <li
@@ -49,7 +49,7 @@ export default function MapLegende() {
           clickHandler('Zentralität')
         }}
       >
-        <FaRegCircle className='mr-2' />
+        <FaRegCircle className='lg:ml-5 mr-2 lg:mr-4' />
         Zentralität
       </li>
       <li
@@ -58,7 +58,7 @@ export default function MapLegende() {
           clickHandler('Wohnformen')
         }}
       >
-        <FaRegCircle className='mr-2' />
+        <FaRegCircle className='lg:ml-5 mr-2 lg:mr-4' />
         Wohnformen
       </li>
       <li
@@ -67,7 +67,7 @@ export default function MapLegende() {
           clickHandler('Ressourcen')
         }}
       >
-        <FaRegCircle className='mr-2' />
+        <FaRegCircle className='lg:ml-5 mr-2 lg:mr-4' />
         Ressourcen
       </li>
     </ul>
