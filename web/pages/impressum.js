@@ -13,7 +13,9 @@ const Impressum = (props) => {
         <title>{title} | BFH</title>
       </Head>
       <div>
-        <h2 className='mb-2'>{title}</h2>
+        <h2 className='anker first mb-1 lg:mb-2'>{title}</h2>
+        <hr className='mb-1 lg:mb-2' />
+
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
       </div>

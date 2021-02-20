@@ -35,13 +35,11 @@ const ProjektIndex = (props) => {
   return (
     <Layout>
       <Head>Projektübersicht</Head>
-      {/* Projektübersicht */}
-      <h1 className='mb-4'>{title}</h1>
-      {/* {inhalt && <Inhalt inhalt={inhalt} />} */}
+      <h1 className='anker first mb-1 lg:mb-2'>{title}</h1>
       {/* Projektindex */}
       {projekte && (
         <>
-          <div className='flex mb-two border-b-2 border-black h-10'>
+          <div className='flex h-10'>
             <MdSearch size='1.5em' />
             <input
               type='text'
@@ -51,6 +49,7 @@ const ProjektIndex = (props) => {
               className='w-full inline-block'
             />
           </div>
+          <hr className='mb-one lg:mb-two'></hr>
           <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
             {searchResults.map((projekt) => (
               <li key={projekt._id}>
