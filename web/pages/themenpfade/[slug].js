@@ -1,14 +1,9 @@
 import groq from 'groq'
 import client from 'client'
-// import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
 import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
-import Ateliers from 'components/Ateliers'
-import Link from 'next/link'
-import BottomNav from 'components/BottomNav'
-import { MdMap } from 'react-icons/md'
 import Wegweiser from 'components/Wegweiser'
 
 function urlFor(source) {
@@ -27,7 +22,7 @@ const Themenpfad = (props) => {
   const destinations = []
   indexOfAteliers.forEach((atelier) => {
     destinations.push({
-      icon: 'MdFlag',
+      icon: 'MdArrowForward',
       url: `/ateliers/${atelier.slug}`,
       label: atelier.titel,
     })
