@@ -17,5 +17,12 @@ export default {
     { type: 'youtube' },
     { type: 'akkordeon' },
     { type: 'muxvideo' },
+    {
+      name: 'download',
+      title: 'Download',
+      type: 'file',
+      fields: [{ name: 'label', type: 'string', title: 'label' }],
+      fieldset: 'main',
+    },
   ],
 }
