@@ -10,11 +10,14 @@ class PinchMap extends Component {
   render() {
     return (
       <div className='fixed h-screen w-screen'>
-        <h1 className='text-white fixed  z-40 mt-20 ml-2 lg:ml-4 mb-two'>
-          Neue Räume
-          <br />
-          Stadt und Land in Huttwil
-        </h1>
+        <div className='text-white fixed  z-40 mt-20 ml-2 lg:ml-4 mb-two'>
+          <h1 className='mb-2 text-big lg:text-big-dt'>
+            Neue Räume
+            <br />
+            Stadt und Land in Huttwil
+          </h1>
+          <h2 className=''>Jahresausstellung Architektur 2021</h2>
+        </div>
         <TransformWrapper
           defaultScale={1}
           // options={{
