@@ -61,7 +61,7 @@ export default function Map() {
               <circle
                 cx={standort.coordinates.xaxis}
                 cy={standort.coordinates.yaxis}
-                r='15'
+                r='10'
                 className={`cursor-pointer ${standort.themenpfad.title} ${standort.title}`}
                 key={standort._id}
                 onClick={() => {
@@ -74,7 +74,7 @@ export default function Map() {
       </svg>
       <style jsx>{`
         circle.Zentralität {
-          stroke: #dba800;
+          stroke: #fac300;
           fill: #fac300;
         }
         circle.Ressourcen {
