@@ -51,7 +51,7 @@ const Home = (props) => {
               <br />
               Stadt und Land in Huttwil.
             </h1>
-            <h2 className='mb-two'>Jahresausstellung BFH Architektur 2021</h2>
+            <h2 className='mb-two'>Jahresausstellung Architektur 2021</h2>
             {showNextButtons && (
               <ul className='mt-20'>
                 <li className='text-left h-16 lg:h-20 cursor-pointer border-white border-2 p-2 mb-2 mr-1'>
