@@ -45,11 +45,11 @@ const Home = (props) => {
           <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
-          <main className='fixed pt-four 2xl:pt-tooBig z-20 text-white'>
-            <h1 className='base mb-8 text-white text-big lg:text-big-dt'>
-              Neue Räume.
+          <main className='fixed mt-20 z-20 text-white'>
+            <h1 className='base mb-2 text-white text-big lg:text-big-dt'>
+              Neue Räume
               <br />
-              Stadt und Land in Huttwil.
+              Stadt und Land in Huttwil
             </h1>
             <h2 className='mb-two'>Jahresausstellung Architektur 2021</h2>
             {showNextButtons && (

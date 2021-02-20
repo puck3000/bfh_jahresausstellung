@@ -21,6 +21,7 @@ export default function Map() {
   const itemVariants = {
     hidden: { opacity: 0, scale: 1 },
     show: { opacity: 1, scale: 2 },
+    selected: { opacity: 1, scale: 4 },
   }
 
   const clickHandler = (id, themenpfad) => {
@@ -57,12 +58,17 @@ export default function Map() {
               variants={itemVariants}
               key={standort._id}
               transition={{ type: 'spring', duration: 0.8 }}
+              animate={
+                standort._id == mapContext.selectedStandort._id
+                  ? { opacity: 1, scale: 4 }
+                  : { opacity: 1, scale: 2 }
+              }
             >
               <circle
                 cx={standort.coordinates.xaxis}
                 cy={standort.coordinates.yaxis}
                 r='10'
-                className={`cursor-pointer ${standort.themenpfad.title} ${standort.title}`}
+                className={`cursor-pointer ${standort.themenpfad.title} `}
                 key={standort._id}
                 onClick={() => {
                   clickHandler(standort._id, standort.themenpfad.title)
