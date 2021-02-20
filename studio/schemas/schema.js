@@ -37,6 +37,7 @@ import impressum from './documents/impressum'
 import kontakt from './documents/kontakt'
 import standort from './documents/standort'
 import muxvideo from './objects/muxvideo'
+import abstand from './objects/abstand'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -79,5 +80,6 @@ export default createSchema({
     kontakt,
     standort,
     muxvideo,
+    abstand,
   ]),
 })

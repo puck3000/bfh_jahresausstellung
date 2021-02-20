@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/themenpfade": "pages/themenpfade.js"
+  "/ateliers/[slug]": "pages/ateliers/[slug].js",
+  "/themenpfade": "pages/themenpfade.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

@@ -259,5 +259,11 @@
 }
 
 /******************************************************
-  /   Fullscreen Video Component
+  /   Bottom Nav
   /******************************************************/
+
+@media screen and (min-width: 1024px) {
+  .destlist {
+    margin-left: 25%;
+  }
+}

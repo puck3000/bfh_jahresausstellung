@@ -47,7 +47,7 @@ const Atelier = (props) => {
   const destinations = []
   indexOfAteliers.forEach((atelier) => {
     destinations.unshift({
-      icon: 'MdFlag',
+      icon: 'MdArrowForward',
       url: `/ateliers/${atelier.slug}`,
       label: atelier.titel,
     })

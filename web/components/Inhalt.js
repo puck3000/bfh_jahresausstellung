@@ -9,6 +9,7 @@ import InhaltAkkordeon from './InhaltAkkordeon'
 import Metatext from './Metatext'
 import LazyGal from './LazyGal'
 import MuxVideo from './MuxVideo'
+import Abstand from './Abstand'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -34,6 +35,9 @@ export default function Inhalt({ inhalt }) {
         break
       case 'horzline':
         return <Horzline mb={content} key={content._key} />
+        break
+      case 'abstand':
+        return <Abstand mb={content} key={content._key} />
         break
       case 'youtube':
         return <Youtube url={content} key={content._key} />

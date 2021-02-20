@@ -13,30 +13,30 @@ const ThemenpfadIndex = (props) => {
   } = props.themenpfadIndex
 
   const nextlink = {
-    icon: 'MdArrowForward',
+    icon: 'MdDirectionsWalk',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
     url: './themenpfade/zentralitaet',
     label: 'Folgen Sie dem Themenpfad Zentralität',
   }
   const destinationToggler = {
-    icon: 'MdArrowForward',
+    icon: 'MdDirectionsWalk',
     iconClassNames: 'icon mr-2 lg:justify-self-end',
     label: 'Wählen Sie einen Themenpfad:',
   }
 
   const destinations = [
     {
-      icon: 'MdDirectionsWalk',
+      icon: 'MdArrowForward',
       url: './themenpfade/zentralitaet',
       label: 'Themenpfad Zenralität',
     },
     {
-      icon: 'MdDirectionsWalk',
+      icon: 'MdArrowForward',
       url: './themenpfade/ressourcen',
       label: 'Themenpfad Ressourcen',
     },
     {
-      icon: 'MdDirectionsWalk',
+      icon: 'MdArrowForward',
       url: './themenpfade/wohnformen',
       label: 'Themenpfad Wohnformen',
     },
