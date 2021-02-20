@@ -24,14 +24,19 @@ const Hintergrund = (props) => {
 
 const query = groq`
     *[_type == "hintergrund" && slug.current == $slug][0]
-        {
-        title,
-          'inhalt': content[]{
-          _type == 'muxvideo' => {
-          'videodoc': video.asset->
-        }, ...
-        }  
-        }
+      {
+      title,
+        'inhalt': content[]{
+        _type == 'muxvideo' => {
+        'videodoc': video.asset->
+        }, 
+        _type == 'download' => {
+          label,
+          'downloadUrl': asset->url
+        },
+        ...
+      }  
+    }
 `
 
 export async function getStaticProps({ params }) {

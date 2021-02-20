@@ -255,15 +255,25 @@
     @apply text-Ressourcen;
   }
 
-  /*  end components */
-}
-
-/******************************************************
+  /******************************************************
   /   Bottom Nav
   /******************************************************/
 
-@media screen and (min-width: 1024px) {
-  .destlist {
-    margin-left: 25%;
+  @media screen and (min-width: 1024px) {
+    .destlist {
+      margin-left: 25%;
+    }
   }
+
+  /******************************************************
+  /   Downloads in Inhalte
+  /******************************************************/
+
+  @media screen and (min-width: 1024px) {
+    .dl-inhalt {
+      margin-left: 25%;
+    }
+  }
+
+  /*  end components */
 }

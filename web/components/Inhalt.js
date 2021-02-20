@@ -10,6 +10,7 @@ import Metatext from './Metatext'
 import LazyGal from './LazyGal'
 import MuxVideo from './MuxVideo'
 import Abstand from './Abstand'
+import Download from './Download'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -44,6 +45,9 @@ export default function Inhalt({ inhalt }) {
         break
       case 'muxvideo':
         return <MuxVideo video={content} key={content._key} />
+        break
+      case 'download':
+        return <Download download={content} key={content._key} />
         break
       case 'akkordeon':
         return (
