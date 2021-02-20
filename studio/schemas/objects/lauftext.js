@@ -19,6 +19,27 @@ export default {
             { title: 'Untertitel', value: 'h2' },
             { title: 'Lead', value: 'blockquote' },
           ],
+          marks: {
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Externer link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                  {
+                    title: 'In neuem Tab öffnen',
+                    name: 'blank',
+                    type: 'boolean',
+                  },
+                ],
+              },
+            ],
+          },
         },
       ],
     },
