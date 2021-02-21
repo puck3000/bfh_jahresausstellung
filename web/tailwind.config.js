@@ -1,12 +1,17 @@
 module.exports = {
-  purge: [
-    // Use *.tsx if using TypeScript
-    './pages/**/*.js',
-    './components/map/**/*.js',
-    './components/**/*.js',
-    './node_modules/react-alice-carousel/*',
-    './node_modules/react-zoom-pan-pinch/*',
-  ],
+  purge: {
+    content: [
+      // Use *.tsx if using TypeScript
+      './pages/**/*.js',
+      './components/map/**/*.js',
+      './components/**/*.js',
+      './node_modules/react-alice-carousel/*',
+      './node_modules/react-zoom-pan-pinch/*',
+    ],
+    options: {
+      safelist: ['bg-Zentralität', 'bg-Wohnformen', 'bg-Ressourcen'],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
