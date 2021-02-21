@@ -7,7 +7,7 @@ import Horzline from './Horzline'
 import Youtube from './Youtube'
 import InhaltAkkordeon from './InhaltAkkordeon'
 import Metatext from './Metatext'
-import LazyGal from './LazyGal'
+import NewGallery from './NewGallery'
 import MuxVideo from './MuxVideo'
 import Abstand from './Abstand'
 import Download from './Download'
@@ -28,7 +28,7 @@ export default function Inhalt({ inhalt }) {
         return <Linkedpic linkedpic={content} key={content._key} />
         break
       case 'gallery':
-        return <LazyGal gallery={content} key={content._key} />
+        return <NewGallery gallery={content} key={content._key} />
         // return <Gallery gallery={content} key={content._key} />
         break
       case 'metatext':

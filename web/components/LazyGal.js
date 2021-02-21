@@ -37,62 +37,16 @@ const renderNextButton = ({ isDisabled }) => {
   )
 }
 
-function LazyLoader(props) {
-  let timerId
-  const { src = '', caption, metadata, onLoad } = props
-  const [isMounted, setMounted] = useState(false)
-  const [isLoading, setLoading] = useState(true)
-
-  function loadImage() {
-    const image = new Image()
-
-    image.src = src
-    image.onload = () => {
-      setLoading(false)
-      onLoad()
-    }
-  }
-
-  const figure = (
-    <figure
-      className='mb-1'
-      //   style={{
-      //     backgroundImage: `url(${metadata.lqip})`,
-      //     paddingTop: `calc(100% / ${metadata.dimensions.aspectRatio})`,
-      //   }}
-    >
-      <img src={src} className='mb-1 lg:mb-2' />
-      {caption && (
-        <figcaption>
-          <BlockContent blocks={caption} {...client.config()} />
-        </figcaption>
-      )}
-    </figure>
-  )
-
-  useEffect(() => {
-    if (!isMounted) {
-      setMounted(true)
-      loadImage()
-    }
-    return () => clearTimeout(timerId)
-  }, [])
-
-  return isLoading ? <div>Loading Gallery...</div> : figure
-}
-
 export default function LazyGal({ gallery }) {
-  const [, setTimestamp] = useState(0)
+  const [key, setKey] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const onLoad = () => setTimestamp(Date.now())
-  const onSlideChanged = ({ item }) => setActiveIndex(item)
-
-  const items = gallery.slide?.map((slide) => {
+  const slides = gallery.slide?.map((slide) => {
     return (
       <LazyLoader
         key={slide._key}
         onLoad={onLoad}
+        delay={2000}
         src={urlFor(slide.pic)
           .auto('format')
           .maxWidth(1000)
@@ -110,10 +64,15 @@ export default function LazyGal({ gallery }) {
           .url()} 2000w,`}
         sizes='(max-width:1024px) 100vw, 75vw'
         caption={slide.caption}
-        metadata={slide.metadata}
+        setActiveIndex={setActiveIndex}
       />
     )
   })
+  const [items] = useState(slides)
+  const onSlideChanged = ({ item }) => setActiveIndex(item)
+  function onLoad() {
+    setKey(Date.now())
+  }
 
   return (
     <div className='grid grid-cols-1 lg:grid-cols-4'>
@@ -123,15 +82,63 @@ export default function LazyGal({ gallery }) {
           disableDotsControls
           infinite
           autoHeight
-          disableSlideInfo={false}
+          renderKey={key}
+          items={items}
           renderSlideInfo={renderSlideInfo}
           renderPrevButton={renderPrevButton}
           renderNextButton={renderNextButton}
           onSlideChanged={onSlideChanged}
           activeIndex={activeIndex}
-          items={items}
         />
       </div>
     </div>
   )
+}
+
+function LazyLoader(props) {
+  let timerId
+  const {
+    src = '',
+    srcSet = '',
+    setActiveIndex,
+    delay = 0,
+    caption,
+    onLoad,
+  } = props
+  const [isMounted, setMounted] = useState(false)
+  const [isLoading, setLoading] = useState(true)
+
+  function loadImage() {
+    const image = new Image()
+
+    image.src = src
+    image.srcset = srcSet
+    image.onload = () => {
+      onLoad()
+      setLoading(false)
+      setTimeout(() => {
+        setActiveIndex(0)
+      }, 500)
+    }
+  }
+  const figure = (
+    <figure className='mb-1'>
+      <img src={src} className='mb-1 lg:mb-2' />
+      {caption && (
+        <figcaption>
+          <BlockContent blocks={caption} {...client.config()} />
+        </figcaption>
+      )}
+    </figure>
+  )
+
+  useEffect(() => {
+    if (!isMounted) {
+      setMounted(true)
+      delay ? (timerId = setTimeout(loadImage, delay)) : loadImage()
+    }
+    return () => clearTimeout(timerId)
+  }, [])
+
+  return isLoading ? <div>Loading...</div> : figure
 }

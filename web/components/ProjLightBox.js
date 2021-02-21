@@ -23,8 +23,8 @@ export default class ProjLightBox extends Component {
     )
 
     return (
-      <div className='mb-4'>
-        <hr className='mb-1 projFilter'></hr>
+      <div className=''>
+        <hr className='mb-1 lg:mb-2 projFilter'></hr>
         <button
           className='relative'
           type='button'
@@ -58,18 +58,21 @@ export default class ProjLightBox extends Component {
           />
         </button>
         <div className='text-left'>
-          <h2 className='projFilter mb-2'>{projekt.titel}</h2>
+          <h2 className='projFilter mb-1 lg:mb-2'>{projekt.titel}</h2>
           {projekt.people && (
             <ul className=''>
               {projekt.people?.map((person, i) => (
-                <li key={i} className='mb-2 text-small lg:text-small-dt'>
+                <li
+                  key={i}
+                  className='mb-1 lg:mb-2 text-small lg:text-small-dt'
+                >
                   {person}
                 </li>
               ))}
             </ul>
           )}
           {projekt.downloadURL && (
-            <div className='mb-2'>
+            <div className=''>
               <a
                 href={`${projekt.downloadURL}?dl=`}
                 className='anker first text-small lg:text-small-dt'

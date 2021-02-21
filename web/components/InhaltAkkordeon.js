@@ -57,7 +57,7 @@ const Akkordeon = ({ inhalt, title }) => {
 
   const akkkordeon = (
     <AkkordeonContext.Provider value={isOpen}>
-      <motion.div className='mb-1 pr-2 lg:grid lg:grid-cols-4'>
+      <motion.div className='pr-2 lg:grid lg:grid-cols-4'>
         {akkHeader}
         {akkContent}
       </motion.div>

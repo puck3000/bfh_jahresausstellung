@@ -59,14 +59,14 @@ const Atelier = (props) => {
         <title>Atelier | {titel}</title>
       </Head>
       <div className='intro'>
-        <h2 className='anker first mb-1'>Atelier</h2>
-        <hr className='mb-1' />
-        <div className='lg:mb-2 lg:grid lg:grid-cols-4 2xl:grid-cols-8'>
+        <h2 className='anker first mb-1 lg:mb-2'>Atelier</h2>
+        <hr className='mb-1 lg:mb-2' />
+        <div className='lg:grid lg:grid-cols-4 2xl:grid-cols-8'>
           <div className='lg:col-span-1 2xl:col-span-2'>
             <h1 className='mb-1'>{titel}</h1>
             <p className='mb-1 text-small lg:text-small-dt'>{untertitel}</p>
           </div>
-          <figure className='mb-1 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'>
+          <figure className='mb-1 lg:mb-2 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'>
             <img
               src={urlFor(referencepic).width(2000).height(1600).url()}
               srcSet={`${urlFor(referencepic)
@@ -78,11 +78,11 @@ const Atelier = (props) => {
                 .height(1600)
                 .format('webp')
                 .url()} 2000w,`}
-              sizes='(max-width:1024px) 100vw, 50vw'
+              sizes='(max-width:1024px) 100vw, 75vw'
             />
           </figure>
         </div>
-        <hr></hr>
+        <hr className='mb-1 lg:mb-2'></hr>
         <div className='baseInfos'>
           {/* Team */}
           {team?.length && <Akkordeon content={persons} title='Team' />}

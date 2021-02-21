@@ -18,7 +18,7 @@ const Akkordeon = ({ content, title }) => {
       onClick={() => {
         setisOpen(!isOpen)
       }}
-      className='w-full cursor-pointer  lg:col-span-2 focus:outline-none'
+      className='w-full cursor-pointer mb-1 lg:mb-2 lg:col-span-2 focus:outline-none'
     >
       <div className='w-full flex flex-row justify-between items-center  lg:grid lg:grid-cols-2'>
         <h3 className='inline-block lg:mr-one lg:order-2 lg:justify-self-start'>
@@ -56,7 +56,7 @@ const Akkordeon = ({ content, title }) => {
     </ul>
   )
   const akkkordeon = (
-    <motion.div className='mb-1 pr-2 lg:grid lg:grid-cols-4'>
+    <motion.div className='mb-1 lg:mb-2 pr-2 lg:grid lg:grid-cols-4'>
       {akkHeader}
       {akkContent}
       <hr className='lg:col-span-4'></hr>

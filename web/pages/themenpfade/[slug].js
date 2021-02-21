@@ -46,7 +46,7 @@ const Themenpfad = (props) => {
         <title>Themenpfad | {title}</title>
       </Head>
       <div>
-        <h2 className='anker first mb-1 lg:mb-2'>Themenpfad</h2>
+        <h2 className='anker first mb-1 lg:mb-2'>{title}</h2>
         <hr className='mb-1 lg:mb-2' />
 
         {/* INHALT */}

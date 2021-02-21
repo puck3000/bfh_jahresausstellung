@@ -50,7 +50,7 @@ const ProjektIndex = (props) => {
             />
           </div>
           <hr className='mb-one lg:mb-two'></hr>
-          <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1'>
+          <ul className='grid grid-cols-2 lg:grid-cols-4 gap-1 lg:gap-2'>
             {searchResults.map((projekt) => (
               <li key={projekt._id}>
                 {projekt.gallery ? (

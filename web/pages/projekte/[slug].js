@@ -5,45 +5,44 @@ import Head from 'next/head'
 import Gallery from 'components/Gallery'
 import Link from 'next/link'
 
-
 const Project = (props) => {
-  const { 
-    titel = 'Missing title', 
+  const {
+    titel = 'Missing title',
     people,
     gallery,
     downloadURL,
-    downloadLABEL
+    downloadLABEL,
   } = props.projekt
 
-    
   return (
     <Layout>
-        <Head>
-          <title>{titel} | BFH Projekte </title>
-        </Head>
-        <h2 className="mb-2">{titel}</h2>
-  {/* People */}
-        {people && (
-          <ul>
-            { people.map((person) => <li>{person}</li>) }
-          </ul>
-        )}
-  {/* GALLERY */}
-        { gallery && <Gallery gallery={gallery} /> }
-        {
-          downloadURL && (
-            <div className="mb-2">
-              <a href={`${downloadURL}?dl=`}>{downloadLABEL}</a>
-            </div>
-          )}
-        <Link href="/projekte" passHref>
-          <a >Zurück zur Projektübersicht</a>
-        </Link>
+      <Head>
+        <title>{titel} | BFH Projekte </title>
+      </Head>
+      <h2 className='mb-1 lg:mb-2'>{titel}</h2>
+      {/* People */}
+      {people && (
+        <ul>
+          {people.map((person) => (
+            <li>{person}</li>
+          ))}
+        </ul>
+      )}
+      {/* GALLERY */}
+      {gallery && <Gallery gallery={gallery} />}
+      {downloadURL && (
+        <div className='mb-1 lg:mb-2'>
+          <a href={`${downloadURL}?dl=`}>{downloadLABEL}</a>
+        </div>
+      )}
+      <Link href='/projekte' passHref>
+        <a>Zurück zur Projektübersicht</a>
+      </Link>
     </Layout>
   )
 }
 
-const query = groq `*[_type == "projekt" && content.slug.current == $slug][0].content
+const query = groq`*[_type == "projekt" && content.slug.current == $slug][0].content
     {
       titel, 
       people,
@@ -54,19 +53,18 @@ const query = groq `*[_type == "projekt" && content.slug.current == $slug][0].co
     }
   `
 
-export async function getStaticProps({params}) {
-    const projekt = await client.fetch(query, {
-      slug: params.slug,
-    })
-  
-    return {
-      props: {
-        projekt,
-      },
-      revalidate: 1
-    }
-  }
+export async function getStaticProps({ params }) {
+  const projekt = await client.fetch(query, {
+    slug: params.slug,
+  })
 
+  return {
+    props: {
+      projekt,
+    },
+    revalidate: 1,
+  }
+}
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
@@ -74,7 +72,7 @@ export async function getStaticPaths() {
   )
 
   return {
-    paths: paths.map((slug) => ({params: {'slug': slug}})),
+    paths: paths.map((slug) => ({ params: { slug: slug } })),
     fallback: false,
   }
 }
