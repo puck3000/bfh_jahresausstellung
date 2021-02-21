@@ -6,7 +6,6 @@ export default function Lauftext({ lauftext }) {
   const serializers = {
     marks: {
       link: ({ mark, children }) => {
-        // Read https://css-tricks.com/use-target_blank/
         const { blank, href } = mark
         return blank ? (
           <a href={href} target='_blank' rel='noopener'>
