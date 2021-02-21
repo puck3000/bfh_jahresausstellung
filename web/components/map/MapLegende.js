@@ -31,6 +31,7 @@ export default function MapLegende() {
     setMapContext((mapContext) => ({
       ...mapContext,
       filteredStandorte: filteredStandorte,
+      selectedStandort: '',
     }))
   }, [filter])
 
