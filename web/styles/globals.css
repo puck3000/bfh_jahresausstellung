@@ -255,6 +255,20 @@
     @apply text-Ressourcen;
   }
 
+  aside.bg-Zentralität {
+    --tw-bg-opacity: 1;
+    background-color: rgba(250, 195, 0, var(--tw-bg-opacity));
+  }
+  aside.bg-Wohnformen {
+    --tw-bg-opacity: 1;
+    background-color: rgba(105, 150, 115, var(--tw-bg-opacity));
+  }
+  aside.bg-Ressourcen {
+    --tw-bg-opacity: 1;
+    background-color: rgba(105, 155, 190, var(--tw-bg-opacity));
+  }
+  /* coloring legende in Map */
+
   /******************************************************
   /   Bottom Nav
   /******************************************************/
