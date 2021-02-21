@@ -2,6 +2,7 @@ module.exports = {
   purge: [
     // Use *.tsx if using TypeScript
     './pages/**/*.js',
+    './components/map/**/*.js',
     './components/**/*.js',
     './node_modules/react-alice-carousel/*',
     './node_modules/react-zoom-pan-pinch/*',
