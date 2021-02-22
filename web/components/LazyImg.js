@@ -123,49 +123,6 @@ const Image = (props) => {
         onLoad={() => setLoaded(true)}
         style={{ opacity: isLoaded ? 1 : 0 }}
       />
-      <style jsx global>
-        {`
-          .root {
-            display: block;
-            position: relative;
-          }
-
-          .lqip {
-            image-rendering: pixelated;
-            width: 100%;
-            opacity: 1;
-            transition: opacity 50ms 100ms ease-out;
-
-            @nest .root[data-has-aspect='true'] & {
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: 100%;
-              z-index: 0;
-              background-size: 100% 100%;
-            }
-
-            @nest &[data-is-loaded='true'] {
-              opacity: 0;
-            }
-          }
-
-          .img {
-            image-rendering: auto;
-            display: block;
-            width: 100%;
-
-            @nest .root[data-has-aspect='true'] & {
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: 100%;
-              z-index: 1;
-            }
-          }
-        `}
-      </style>
     </div>
   )
 }

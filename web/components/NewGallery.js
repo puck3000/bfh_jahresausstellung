@@ -5,6 +5,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
 import { useState } from 'react'
+import LazyImg from 'components/LazyImg'
 
 // import { useState } from 'react'
 
@@ -47,7 +48,8 @@ export default function Gallery({ gallery }) {
 
   const slides = gallery.slide.map((slide) => (
     <figure key={slide._key} className='mb-1'>
-      <img src={urlFor(slide.pic).url()} className='mb-1 lg:mb-2' />
+      <LazyImg image={slide} />
+      {/* <img src={urlFor(slide.pic).url()} className='mb-1 lg:mb-2' /> */}
       {slide.caption && (
         <figcaption>
           <BlockContent blocks={slide.caption} {...client.config()} />

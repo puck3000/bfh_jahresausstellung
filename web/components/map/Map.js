@@ -3,9 +3,12 @@ import BaseMap from './BaseMap.js'
 import { MapContext } from 'pages/map'
 import { useContext } from 'react'
 import { motion } from 'framer-motion'
+import { use100vh } from 'react-div-100vh'
 
 export default function Map() {
   const [mapContext, setMapContext] = useContext(MapContext)
+
+  const height = use100vh()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -44,7 +47,10 @@ export default function Map() {
   }
 
   return (
-    <div className={`w-screen h-screen ${mapContext.selectedThemenpfad}`}>
+    <div
+      className={`w-screen lg:h-screen ${mapContext.selectedThemenpfad}`}
+      style={{ height: height }}
+    >
       <svg
         version='1.2'
         viewBox='0 0 3507 2480'

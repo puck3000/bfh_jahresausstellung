@@ -45,12 +45,8 @@ const Akkordeon = ({ inhalt, title }) => {
       </div>
     </button>
   )
-  const akkContent = (
-    <div
-      className={`${
-        isOpen ? 'block' : 'hidden'
-      } lg:text-left lg:col-span-4 lg:col-start-1 `}
-    >
+  const akkContent = isOpen && (
+    <div className={`lg:text-left lg:col-span-4 lg:col-start-1 `}>
       <Inhalt inhalt={inhalt}></Inhalt>
     </div>
   )

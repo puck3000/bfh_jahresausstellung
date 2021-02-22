@@ -4,9 +4,8 @@ import imageUrlBuilder from '@sanity/image-url'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
-import { useState } from 'react'
-
-// import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import useIntersectionObserver from 'lib/useIntersectionObserver'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -39,15 +38,30 @@ const renderNextButton = ({ isDisabled }) => {
 }
 
 export default function Gallery({ gallery }) {
-  const [initReload, setinitReload] = useState(0)
+  const gallerySection = useRef(null)
+  const isGalleryVisible = useIntersectionObserver(gallerySection)
+  const [activeIndex, setactiveIndex] = useState()
+  const [adaptiveHeight, setAdaptiveHeight] = useState(false)
 
-  const onInit = () => {
-    setTimeout(setinitReload(1), 1000)
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setAdaptiveHeight(true)
+      setactiveIndex(0)
+    }, 1000)
+  }, [isGalleryVisible]) // <-- empty array means 'run once'
 
   const slides = gallery.slide.map((slide) => (
     <figure key={slide._key} className='mb-1'>
-      <img src={urlFor(slide.pic).url()} className='mb-1 lg:mb-2' />
+      <img
+        src={urlFor(slide.pic)
+          .auto('format')
+          .maxWidth(1000)
+          .fit('max')
+          .crop('focalpoint')
+          .quality(80)
+          .url()}
+        className='mb-1 lg:mb-2'
+      />
       {slide.caption && (
         <figcaption>
           <BlockContent blocks={slide.caption} {...client.config()} />
@@ -57,19 +71,24 @@ export default function Gallery({ gallery }) {
   ))
   return (
     <div className='grid grid-cols-1 lg:grid-cols-4'>
-      <div className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '>
-        <AliceCarousel
-          mouseTracking
-          disableDotsControls
-          infinite
-          autoHeight
-          disableSlideInfo={false}
-          renderSlideInfo={renderSlideInfo}
-          renderPrevButton={renderPrevButton}
-          renderNextButton={renderNextButton}
-          items={slides}
-          onInitialized={onInit}
-        />
+      <div
+        className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '
+        ref={gallerySection}
+      >
+        {isGalleryVisible && (
+          <AliceCarousel
+            mouseTracking
+            disableDotsControls
+            infinite
+            autoHeight={adaptiveHeight}
+            disableSlideInfo={false}
+            renderSlideInfo={renderSlideInfo}
+            renderPrevButton={renderPrevButton}
+            renderNextButton={renderNextButton}
+            items={slides}
+            activeIndex={activeIndex}
+          />
+        )}
       </div>
     </div>
   )

@@ -4,8 +4,9 @@ import imageUrlBuilder from '@sanity/image-url'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { AkkordeonContext } from './InhaltAkkordeon'
+import useIntersectionObserver from 'lib/useIntersectionObserver'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
@@ -40,6 +41,15 @@ const renderNextButton = ({ isDisabled }) => {
 export default function LazyGal({ gallery }) {
   const [key, setKey] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
+
+  const gallerySection = useRef(null)
+  const isGalleryVisible = useIntersectionObserver(gallerySection)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActiveIndex(0)
+    }, 2000)
+  }, []) // <-- empty array means 'run once'
 
   const slides = gallery.slide?.map((slide) => {
     return (
@@ -76,20 +86,24 @@ export default function LazyGal({ gallery }) {
 
   return (
     <div className='grid grid-cols-1 lg:grid-cols-4'>
-      <div className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '>
-        <AliceCarousel
-          mouseTracking
-          disableDotsControls
-          infinite
-          autoHeight
-          renderKey={key}
-          items={items}
-          renderSlideInfo={renderSlideInfo}
-          renderPrevButton={renderPrevButton}
-          renderNextButton={renderNextButton}
-          onSlideChanged={onSlideChanged}
-          activeIndex={activeIndex}
-        />
+      <div
+        ref={gallerySection}
+        className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '
+      >
+        {isGalleryVisible && (
+          <AliceCarousel
+            mouseTracking
+            disableDotsControls
+            infinite
+            autoHeight
+            disableSlideInfo={false}
+            renderSlideInfo={renderSlideInfo}
+            renderPrevButton={renderPrevButton}
+            renderNextButton={renderNextButton}
+            items={slides}
+            activeIndex={activeIndex}
+          />
+        )}
       </div>
     </div>
   )
