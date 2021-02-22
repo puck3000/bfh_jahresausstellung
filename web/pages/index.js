@@ -58,7 +58,7 @@ const Home = (props) => {
                   <Link href='/themenpfade'>
                     <div className='flex'>
                       <MdDirectionsWalk size='2em' />
-                      <p className='ml-4 text-left'>
+                      <p className='ml-4 text-left text-big lg:text-medium-dt 2xl:text-big-dt'>
                         Folgen Sie einem Themenpfad
                       </p>
                     </div>
@@ -68,7 +68,7 @@ const Home = (props) => {
                   <Link href='/map'>
                     <div className='flex'>
                       <MdMap size='2em' />
-                      <p className='ml-4 text-left'>
+                      <p className='ml-4 text-left text-big lg:text-medium-dt 2xl:text-big-dt'>
                         Navigieren Sie auf der Karte
                       </p>
                     </div>
@@ -78,9 +78,8 @@ const Home = (props) => {
                   <button onClick={() => setShowNextButtons(false)}>
                     <div className='flex'>
                       <MdReplay size='2em' />
-                      <p className='ml-4 text-left'>
-                        {' '}
-                        Sehen Sie sich die Videobotschat noch einmal an
+                      <p className='ml-4 text-left text-big lg:text-medium-dt 2xl:text-big-dt'>
+                        Videobotschat noch einmal ansehen
                       </p>
                     </div>
                   </button>
