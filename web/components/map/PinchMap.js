@@ -12,7 +12,7 @@ class PinchMap extends Component {
     return (
       <Div100vh>
         <div className='fixed h-full w-screen'>
-          <div className='text-white fixed  z-40 mt-20 ml-2 lg:ml-4 mb-two'>
+          <div className='text-white fixed  z-40 mt-20 ml-2 lg:ml-4 2xl:ml-6 2xl:mt-32 mb-two'>
             <h1 className='mb-2 text-big lg:text-big-dt'>
               Neue Räume
               <br />
@@ -33,7 +33,7 @@ class PinchMap extends Component {
                   <Map />
                 </TransformComponent>
                 {/* Tools */}
-                <div className='tools absolute flex flex-col top-4 right-4 lg:top-auto lg:right-auto lg:bottom-48 lg:left-4 z-40'>
+                <div className='hidden  tools absolute lg:flex flex-col top-4 right-4 lg:top-auto lg:right-auto lg:bottom-48 lg:left-4 z-40'>
                   <button onClick={resetTransform}>
                     <AiOutlineFullscreenExit className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-2 lg:mb-4 ' />
                   </button>

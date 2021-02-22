@@ -26,7 +26,7 @@ export default function Layout({ children }) {
 
       <div className=''>
         <div
-          className='m-1 lg:m-4 grid grid-rows-bottomFooter '
+          className='m-1 lg:m-4 2xl:m-6 grid grid-rows-bottomFooter '
           id='baseWrapper'
         >
           <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>

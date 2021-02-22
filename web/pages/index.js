@@ -41,7 +41,7 @@ const Home = (props) => {
       </Head>
 
       <div className='home'>
-        <div className='m-1 lg:m-4' id='baseWrapper'>
+        <div className='m-1 lg:m-4 2xl:m-8' id='baseWrapper'>
           <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
@@ -110,7 +110,7 @@ const Home = (props) => {
             href='https://www.bfh.ch/ahb/de/aktuell/veranstaltungen/vernissage-jaa-2021/'
             target='_blank'
             id='vernissage'
-            className='fixed left-4 right-4 border-t-2 border-b-2 border-white text-white py-2 bottom-20 flex'
+            className='fixed left-4 2xl:left-6 right-4 2xl:right-6 border-t-2 border-b-2 border-white text-white py-2 bottom-20 flex'
           >
             <MdArrowForward size='2rem' className='' />
             <article className='ml-4'>

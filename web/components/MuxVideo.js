@@ -12,7 +12,9 @@ export default function MuxVideo({ video }) {
           height='100%'
           controls={true}
         />
-        <p className='text-small lg:text-small-dt'>{video.title}</p>
+        <p className='text-small lg:text-small-dt mt-1 lg:mt-2'>
+          {video.title}
+        </p>
       </div>
     </div>
   )
