@@ -1,16 +1,19 @@
 import client from 'client'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
-import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
 import { useEffect, useRef, useState } from 'react'
 import useIntersectionObserver from 'lib/useIntersectionObserver'
+import dynamic from 'next/dynamic'
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
+const AliceCarousel = dynamic(() =>
+  import('../node_modules/react-alice-carousel')
+)
 const renderSlideInfo = ({ item, itemsCount }) => {
   return `${item}/${itemsCount}`
 }
@@ -18,10 +21,10 @@ const renderSlideInfo = ({ item, itemsCount }) => {
 const renderPrevButton = ({ isDisabled }) => {
   return (
     <span
-      className='absolute left-0 bottom-2'
+      className='absolute left-0 -bottom-4'
       style={{ opacity: isDisabled ? '0.5' : 1 }}
     >
-      <MdArrowBack />
+      <MdArrowBack size='2em' />
     </span>
   )
 }
@@ -29,10 +32,10 @@ const renderPrevButton = ({ isDisabled }) => {
 const renderNextButton = ({ isDisabled }) => {
   return (
     <span
-      className='absolute right-0 bottom-2'
+      className='absolute right-0 -bottom-4'
       style={{ opacity: isDisabled ? '0.5' : 1 }}
     >
-      <MdArrowForward />
+      <MdArrowForward size='2em' />
     </span>
   )
 }
@@ -46,7 +49,7 @@ export default function Gallery({ gallery }) {
   useEffect(() => {
     setTimeout(() => {
       setAdaptiveHeight(true)
-      setactiveIndex(0)
+      // setactiveIndex(0)
     }, 1000)
   }, [isGalleryVisible]) // <-- empty array means 'run once'
 
@@ -70,7 +73,7 @@ export default function Gallery({ gallery }) {
     </figure>
   ))
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-4'>
+    <div className='grid grid-cols-1 lg:grid-cols-4 mb-4'>
       <div
         className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '
         ref={gallerySection}
