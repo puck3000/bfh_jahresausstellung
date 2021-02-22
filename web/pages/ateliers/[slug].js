@@ -110,19 +110,26 @@ const Atelier = (props) => {
 }
 
 const query = groq`
-  *[_type == "atelier" && content.slug.current == $slug][0].content{
-    titel,
+  *[_type == "atelier" && content.slug.current == 'CAS-Areal-und-Immobilienentwicklung'][0].content{
+	titel,
     untertitel,
     referencepic,
     standorte,
     team, 
     themen,
-    vorgehen,
-    'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
+  'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
     'next': nextAtelier->content{titel, 'slug': slug.current},
     'indexOfAteliers': *[_type=='atelier' && references(^.themenpfad._ref)].content{titel, 'slug': slug.current},
-    'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}}
-  }
+    'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}},
+  
+  'vorgehen': vorgehen[]{
+  _type == 'download' => {
+          label,
+          'downloadUrl': asset->url
+        },
+  ...
+}
+}
 `
 
 export async function getStaticProps({ params }) {
