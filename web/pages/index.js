@@ -45,7 +45,7 @@ const Home = (props) => {
           <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
             <MainNavigation />
           </header>
-          <main className='fixed mt-20 z-20 text-white'>
+          <main className='fixed lg:left-4 2xl:left-6 lg:right-4 2xl:right-6 mt-20 z-20 text-white'>
             <h1 className='base mb-2 text-white text-big lg:text-big-dt'>
               Neue Räume
               <br />
@@ -53,7 +53,7 @@ const Home = (props) => {
             </h1>
             <h2 className='mb-two'>Jahresausstellung Architektur 2021</h2>
             {showNextButtons && (
-              <ul className='mt-20'>
+              <ul className='mt-20 lg:w-1/2' style={{ 'margin-left': '25%' }}>
                 <li className='text-left h-16 lg:h-20 cursor-pointer border-white border-2 p-2 mb-2 mr-1'>
                   <Link href='/themenpfade'>
                     <div className='flex'>

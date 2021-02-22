@@ -13,7 +13,7 @@
   }
 
   hr {
-    @apply border-black;
+    @apply border-black border-t-2;
   }
 
   #baseWrapper {
@@ -116,7 +116,7 @@
 /******************************************************/
 
   .anker {
-    @apply inline-block py-1 px-2 border border-current mt-two lg:mt-big bg-white text-medium lg:text-medium-dt;
+    @apply inline-block py-1 px-2 border-2 border-current mt-two lg:mt-big bg-white text-medium lg:text-medium-dt;
   }
 
   .anker.first {
