@@ -28,7 +28,7 @@ export default function SwiperGallery({ gallery }) {
           .crop('focalpoint')
           .quality(80)
           .url()}
-        className='mb-1 lg:mb-2'
+        className='mb-1 lg:mb-2 w-full'
       />
       {slide.caption && (
         <figcaption>
