@@ -4,11 +4,8 @@ import Head from 'next/head'
 import Layout from 'components/Layout'
 import imageUrlBuilder from '@sanity/image-url'
 import Inhalt from 'components/Inhalt'
-import Team from 'components/Team'
-import Link from 'next/link'
 import ProjekteIndex from 'components/ProjekteIndex'
 import Akkordeon from 'components/Akkordeon'
-import BottomNav from 'components/BottomNav'
 import Wegweiser from 'components/Wegweiser'
 
 function urlFor(source) {
@@ -111,25 +108,25 @@ const Atelier = (props) => {
 
 const query = groq`
   *[_type == "atelier" && content.slug.current == $slug][0].content{
-	titel,
-    untertitel,
-    referencepic,
-    standorte,
-    team, 
-    themen,
-  'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
-    'next': nextAtelier->content{titel, 'slug': slug.current},
-    'indexOfAteliers': *[_type=='atelier' && references(^.themenpfad._ref)].content{titel, 'slug': slug.current},
-    'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}},
-  
-  'vorgehen': vorgehen[]{
-  _type == 'download' => {
-          label,
-          'downloadUrl': asset->url
-        },
-  ...
-}
-}
+    titel,
+      untertitel,
+      referencepic,
+      standorte,
+      team, 
+      themen,
+    'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
+      'next': nextAtelier->content{titel, 'slug': slug.current},
+      'indexOfAteliers': *[_type=='atelier' && references(^.themenpfad._ref)].content{titel, 'slug': slug.current},
+      'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}},
+    
+    'vorgehen': vorgehen[]{
+      _type == 'download' => {
+        label,
+        'downloadUrl': asset->url
+      },
+      ...
+    }
+  }
 `
 
 export async function getStaticProps({ params }) {

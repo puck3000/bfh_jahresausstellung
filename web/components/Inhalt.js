@@ -10,6 +10,7 @@ import MuxVideo from './MuxVideo'
 import Abstand from './Abstand'
 import Download from './Download'
 import MotionSlider from 'components/MotionSlider'
+import SwiperGallery from 'components/SwiperGallery'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -27,8 +28,8 @@ export default function Inhalt({ inhalt }) {
         return <Linkedpic linkedpic={content} key={content._key} />
         break
       case 'gallery':
-        return <MotionSlider gallery={content} key={content._key} />
-        // return <Gallery gallery={content} key={content._key} />
+        // return <MotionSlider gallery={content} key={content._key} />
+        return <SwiperGallery gallery={content} key={content._key} />
         break
       case 'metatext':
         return <Metatext lauftext={content} key={content._key} />
