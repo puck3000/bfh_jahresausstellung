@@ -50,7 +50,6 @@ export default function Gallery({ gallery }) {
             swiper.navigation.init()
             swiper.navigation.update()
           }}
-          onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={(swiper) => setactiveIndex(swiper.activeIndex)}
         >
           {slides}
@@ -65,7 +64,7 @@ export default function Gallery({ gallery }) {
             </div>
           </div>
           <div className='absolute top-4 right-4 text-big lg:text-big-dt z-40'>
-            {activeIndex == slides.length
+            {activeIndex == slides.length || activeIndex == 0
               ? slides.length
               : activeIndex % slides.length}
             /{slides.length}
