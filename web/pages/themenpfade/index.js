@@ -28,7 +28,7 @@ const ThemenpfadIndex = (props) => {
     {
       icon: 'MdArrowForward',
       url: './themenpfade/zentralitaet',
-      label: 'Themenpfad Zenralität',
+      label: 'Themenpfad Zentralität',
     },
     {
       icon: 'MdArrowForward',
