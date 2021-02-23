@@ -1,5 +1,4 @@
 import Anchor from './Anchor'
-import Gallery from './Gallery'
 import Lauftext from './Lauftext'
 import Linkedpic from './Linkedpic'
 import TextAndImage from './TextAndImage'
@@ -7,11 +6,10 @@ import Horzline from './Horzline'
 import Youtube from './Youtube'
 import InhaltAkkordeon from './InhaltAkkordeon'
 import Metatext from './Metatext'
-import NewGallery from './NewGallery'
 import MuxVideo from './MuxVideo'
 import Abstand from './Abstand'
 import Download from './Download'
-import LazyGal from './LazyGal'
+import MotionSlider from 'components/MotionSlider'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
@@ -29,7 +27,7 @@ export default function Inhalt({ inhalt }) {
         return <Linkedpic linkedpic={content} key={content._key} />
         break
       case 'gallery':
-        return <Gallery gallery={content} key={content._key} />
+        return <MotionSlider gallery={content} key={content._key} />
         // return <Gallery gallery={content} key={content._key} />
         break
       case 'metatext':
