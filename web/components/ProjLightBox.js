@@ -26,7 +26,7 @@ export default class ProjLightBox extends Component {
       <div className=''>
         <hr className='mb-1 lg:mb-2 projFilter'></hr>
         <button
-          className='relative'
+          className='relative w-full'
           type='button'
           onClick={() => this.setState({ isOpen: true })}
         >
@@ -52,7 +52,7 @@ export default class ProjLightBox extends Component {
             //     .url()} 2000w,
             //   `}
             alt={`Referenzbild zu ${projekt.titel}`}
-            className='mb-2'
+            className='mb-2 w-full'
           />
           <BiExpand
             className='absolute top-2 right-2 bg-white'
