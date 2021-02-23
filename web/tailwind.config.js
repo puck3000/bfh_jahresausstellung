@@ -5,7 +5,6 @@ module.exports = {
       './pages/**/*.js',
       './components/map/**/*.js',
       './components/**/*.js',
-      './node_modules/react-alice-carousel/*',
       './node_modules/react-zoom-pan-pinch/*',
     ],
     options: {

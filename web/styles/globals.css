@@ -153,28 +153,6 @@
   } */
 
   /******************************************************
-/   SlideShow
-/******************************************************/
-
-  /* Counter: resetting the stiles */
-  .inhalt .alice-carousel__slide-info {
-    @apply text-medium lg:text-medium-dt;
-    color: inherit;
-    border-radius: initial;
-    background-color: initial;
-  }
-
-  .inhalt .alice-carousel__prev-btn,
-  .inhalt .alice-carousel__next-btn {
-    @apply text-medium lg:text-medium-dt;
-    padding: 0;
-  }
-
-  .inhalt .alice-carousel__stage-item * {
-    line-height: 1.1;
-    @apply text-small lg:text-small-dt;
-  }
-  /******************************************************
   /   Inhalte
   /******************************************************/
 
