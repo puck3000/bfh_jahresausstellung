@@ -31,7 +31,7 @@ export default function SwiperGallery({ gallery }) {
         className='mb-1 lg:mb-2 w-full'
       />
       {slide.caption && (
-        <figcaption>
+        <figcaption className='text-small lg:text-small-dt'>
           <BlockContent blocks={slide.caption} {...client.config()} />
         </figcaption>
       )}
