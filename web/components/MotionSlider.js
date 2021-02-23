@@ -16,7 +16,7 @@ const variants = {
     return {
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
-      height: 'auto ',
+      height: 'auto',
     }
   },
   center: {
@@ -97,12 +97,12 @@ export default function MotionSlider({ gallery }) {
               <img
                 src={urlFor(slides[slideIndex].url)
                   .auto('format')
-                  .maxWidth(1000)
+                  .width(1000)
                   .fit('max')
                   .crop('focalpoint')
                   .quality(80)
                   .url()}
-                className='mb-1 lg:mb-2'
+                className='mb-1 lg:mb-2 w-full'
               />
               {slides[slideIndex].caption && (
                 <figcaption>

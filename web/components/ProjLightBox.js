@@ -19,7 +19,7 @@ export default class ProjLightBox extends Component {
     const { photoIndex, isOpen, projekt } = this.state
 
     const slides = projekt?.gallery?.slide?.map((slide) =>
-      urlFor(slide.pic).format('webp').url()
+      urlFor(slide.pic).width(1920).fit('max').auto('format').quality(80).url()
     )
 
     return (
@@ -32,22 +32,25 @@ export default class ProjLightBox extends Component {
         >
           <img
             src={urlFor(projekt.referencepic)
-              .width(2000)
-              .height(1600)
-              .format('webp')
+              .width(500)
+              .height(400)
+              .auto('format')
+              .quality(80)
               .url()}
-            srcSet={`
-              ${urlFor(projekt.referencepic)
-                .width(1024)
-                .height(819)
-                .format('webp')
-                .url()} 1024w, 
-              ${urlFor(projekt.referencepic)
-                .width(2000)
-                .height(1600)
-                .format('webp')
-                .url()} 2000w,
-              `}
+            // srcSet={`
+            //   ${urlFor(projekt.referencepic)
+            //     .width(1024)
+            //     .height(819)
+            //     .auto('format')
+            //     .quality(80)
+            //     .url()} 1024w,
+            //   ${urlFor(projekt.referencepic)
+            //     .width(500)
+            //     .height(400)
+            //     .auto('format')
+            //     .quality(80)
+            //     .url()} 2000w,
+            //   `}
             alt={`Referenzbild zu ${projekt.titel}`}
             className='mb-2'
           />

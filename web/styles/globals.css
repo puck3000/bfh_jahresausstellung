@@ -267,7 +267,12 @@
     --tw-bg-opacity: 1;
     background-color: rgba(105, 150, 115, var(--tw-bg-opacity));
   }
-  /* coloring legende in Map */
+
+  @media screen and (max-width: 1024px) {
+    aside {
+      max-height: 70vh;
+    }
+  }
 
   /******************************************************
   /   Bottom Nav

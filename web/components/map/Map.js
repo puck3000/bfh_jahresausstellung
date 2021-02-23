@@ -73,7 +73,7 @@ export default function Map() {
               <circle
                 cx={standort.coordinates.xaxis}
                 cy={standort.coordinates.yaxis}
-                r='10'
+                r='15'
                 className={`cursor-pointer ${standort.themenpfad.title} `}
                 key={standort._id}
                 onClick={() => {

@@ -30,7 +30,7 @@ export default function MobileNav() {
         <ul className='mx-1 lg:mx-4'>
           <li>
             <ActiveLink
-              activeClassName='active'
+              activeClassName='false'
               href='/'
               onClick={() => {
                 toggle()

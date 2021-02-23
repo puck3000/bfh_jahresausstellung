@@ -7,7 +7,7 @@ export default function DesktopNav() {
     <nav className='deskNav relative m-4 2xl:m-6 flex justify-between'>
       <ul className=''>
         <li className='inline-block mr-4'>
-          <ActiveLink activeClassName='active' href='/'>
+          <ActiveLink activeClassName='false' href='/'>
             <a className='inline-block anker first mb-1 lg:mb-2 z-10'>Home</a>
           </ActiveLink>
         </li>
