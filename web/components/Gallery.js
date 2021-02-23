@@ -1,7 +1,6 @@
 import client from 'client'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
-import 'react-alice-carousel/lib/alice-carousel.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
 import { useEffect, useRef, useState } from 'react'
 import useIntersectionObserver from 'lib/useIntersectionObserver'
