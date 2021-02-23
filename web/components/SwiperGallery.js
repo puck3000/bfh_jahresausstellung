@@ -14,7 +14,7 @@ function urlFor(source) {
 
 SwiperCore.use([Navigation, Keyboard])
 
-export default function Gallery({ gallery }) {
+export default function SwiperGallery({ gallery }) {
   const prevRef = useRef(null)
   const nextRef = useRef(null)
   const [activeIndex, setactiveIndex] = useState(1)

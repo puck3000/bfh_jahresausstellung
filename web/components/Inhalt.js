@@ -9,7 +9,7 @@ import Metatext from './Metatext'
 import MuxVideo from './MuxVideo'
 import Abstand from './Abstand'
 import Download from './Download'
-import SwiperGallery from 'components/SwiperGallery'
+import SwiperGallery from './SwiperGallery'
 
 export default function Inhalt({ inhalt }) {
   const inhalte = inhalt.map((content) => {
