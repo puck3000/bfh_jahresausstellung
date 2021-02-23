@@ -101,7 +101,7 @@ const Home = (props) => {
                     <MdPlayArrow color='white' size='10rem' />
                   </button>
                 }
-                light='../videoStills/Startseite_Daniel_Boermann.jpg'
+                light='../videoStills/Startseite_TEST.gif'
               />
             </div>
           )}
