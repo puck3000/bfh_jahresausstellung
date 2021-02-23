@@ -20,7 +20,7 @@ export default function FooterComponent() {
         </li>
         <li className='mb-2 lg:col-span-4 lg:flex lg:flex-col lg:justify-between'>
           <p className='mb-4 mt-one lg:mt-0 text-small lg:text-small-dt  '>
-            Sponsoren
+            Partner
           </p>
           <ul className='lg:flex lg:flex-row '>
             <li className='cursor-pointer mb-4 lg:mb-0 lg:mr-4'>
