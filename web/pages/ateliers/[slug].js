@@ -110,7 +110,7 @@ const Atelier = (props) => {
 }
 
 const query = groq`
-  *[_type == "atelier" && content.slug.current == 'CAS-Areal-und-Immobilienentwicklung'][0].content{
+  *[_type == "atelier" && content.slug.current == $slug][0].content{
 	titel,
     untertitel,
     referencepic,
