@@ -23,7 +23,7 @@ export default function SwiperGallery({ gallery }) {
       <img
         src={urlFor(slide.pic)
           .auto('format')
-          .maxWidth(1000)
+          .width(1000)
           .fit('max')
           .crop('focalpoint')
           .quality(80)
