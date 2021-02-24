@@ -106,6 +106,14 @@ export default function MobileNav() {
           </li>
         </ul>
       </nav>
+      <style jsx global>{`
+        header {
+          transition: backdrop-filter 0.2s;
+          ${mainNavVisibility
+            ? 'height: 100vh; backdrop-filter: blur(4px) opacity(1);'
+            : 'backdrop-filter: blur(4px) opacity(0)'}
+        }
+      `}</style>
     </>
   )
 }

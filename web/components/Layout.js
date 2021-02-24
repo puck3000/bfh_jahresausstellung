@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           className='m-1 lg:m-4 2xl:m-6 grid grid-rows-bottomFooter '
           id='baseWrapper'
         >
-          <header className='fixed left-0 right-0 z-30 2xl:top-0 2xl:left-0 2xl:w-full'>
+          <header className='fixed left-0 right-0 top-0 pt-1 lg:pt-4 z-30 2xl:w-full'>
             <MainNavigation />
           </header>
           <main className='pt-four 2xl:pt-tooBig'>{children}</main>
