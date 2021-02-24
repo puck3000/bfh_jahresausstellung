@@ -2,9 +2,28 @@ import ActiveLink from './ActiveLink'
 import { useState } from 'react'
 import { MdMap } from 'react-icons/md'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function MobileNav() {
   const [mainNavVisibility, setMainNavVisibility] = useState(false)
+
+  const container = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const listItem = {
+    hidden: { opacity: 0, x: '-20px' },
+    show: { opacity: 1, x: '0' },
+  }
+
   const toggle = () => setMainNavVisibility(!mainNavVisibility)
   return (
     <>
@@ -27,88 +46,97 @@ export default function MobileNav() {
         className='relative'
         style={{ display: mainNavVisibility ? 'initial' : 'none' }}
       >
-        <ul className='mx-1 lg:mx-4'>
-          <li>
-            <ActiveLink
-              activeClassName='false'
-              href='/'
-              onClick={() => {
-                toggle()
-              }}
-            >
-              <a className='inline-block anker first mb-1 lg:mb-2 z-10'>Home</a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink
-              activeClassName='active'
-              href='/hintergrund/huttwil'
-              onClick={() => {
-                toggle()
-              }}
-            >
-              <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
-                Huttwil
-              </a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink
-              activeClassName='active'
-              href='/hintergrund/dencity'
-              onClick={() => {
-                toggle()
-              }}
-            >
-              <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
-                Dencity
-              </a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink
-              activeClassName='active'
-              href='/themenpfade'
-              onClick={() => {
-                toggle()
-              }}
-            >
-              <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
-                Themenpfade
-              </a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink
-              activeClassName='active'
-              href='/projekte'
-              onClick={() => {
-                toggle()
-              }}
-            >
-              <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
-                Projektübersicht
-              </a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink
-              activeClassName='active'
-              href='/veranstaltungen'
-              onClick={() => {
-                toggle()
-              }}
-            >
-              <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
-                Veranstaltungen
-              </a>
-            </ActiveLink>
-          </li>
-        </ul>
+        {mainNavVisibility && (
+          <motion.ul
+            variants={container}
+            initial='hidden'
+            animate='show'
+            className='mx-1 lg:mx-4'
+          >
+            <motion.li transition={{ type: 'tween' }} variants={listItem}>
+              <ActiveLink
+                activeClassName='false'
+                href='/'
+                onClick={() => {
+                  toggle()
+                }}
+              >
+                <a className='inline-block anker first mb-1 lg:mb-2 z-10'>
+                  Home
+                </a>
+              </ActiveLink>
+            </motion.li>
+            <motion.li transition={{ type: 'tween' }} variants={listItem}>
+              <ActiveLink
+                activeClassName='active'
+                href='/hintergrund/huttwil'
+                onClick={() => {
+                  toggle()
+                }}
+              >
+                <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
+                  Huttwil
+                </a>
+              </ActiveLink>
+            </motion.li>
+            <motion.li transition={{ type: 'tween' }} variants={listItem}>
+              <ActiveLink
+                activeClassName='active'
+                href='/hintergrund/dencity'
+                onClick={() => {
+                  toggle()
+                }}
+              >
+                <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
+                  Dencity
+                </a>
+              </ActiveLink>
+            </motion.li>
+            <motion.li transition={{ type: 'tween' }} variants={listItem}>
+              <ActiveLink
+                activeClassName='active'
+                href='/themenpfade'
+                onClick={() => {
+                  toggle()
+                }}
+              >
+                <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
+                  Themenpfade
+                </a>
+              </ActiveLink>
+            </motion.li>
+            <motion.li transition={{ type: 'tween' }} variants={listItem}>
+              <ActiveLink
+                activeClassName='active'
+                href='/projekte'
+                onClick={() => {
+                  toggle()
+                }}
+              >
+                <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
+                  Projektübersicht
+                </a>
+              </ActiveLink>
+            </motion.li>
+            <motion.li transition={{ type: 'tween' }} variants={listItem}>
+              <ActiveLink
+                activeClassName='active'
+                href='/veranstaltungen'
+                onClick={() => {
+                  toggle()
+                }}
+              >
+                <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
+                  Veranstaltungen
+                </a>
+              </ActiveLink>
+            </motion.li>
+          </motion.ul>
+        )}
       </nav>
       <style jsx global>{`
         header {
-          transition: backdrop-filter 0.2s;
+          transition: backdrop-filter 0.3s;
           ${mainNavVisibility
             ? 'height: 100vh; backdrop-filter: blur(4px) opacity(1);'
             : 'backdrop-filter: blur(4px) opacity(0)'}
