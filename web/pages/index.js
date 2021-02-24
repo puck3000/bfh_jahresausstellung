@@ -38,6 +38,9 @@ const Home = (props) => {
           content='Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021'
         />
         <meta name='twitter:card' content='summary_large_image' />
+        <title>
+          Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021
+        </title>
       </Head>
 
       <div className='home'>
@@ -97,7 +100,7 @@ const Home = (props) => {
                 controls={true}
                 onEnded={() => setShowNextButtons(true)}
                 playIcon={
-                  <button>
+                  <button aria-label='play video'>
                     <MdPlayArrow color='white' size='10rem' />
                   </button>
                 }
@@ -106,6 +109,7 @@ const Home = (props) => {
             </div>
           )}
           <a
+            rel='noopener'
             href='https://www.bfh.ch/ahb/de/aktuell/veranstaltungen/vernissage-jaa-2021/'
             target='_blank'
             id='vernissage'

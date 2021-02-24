@@ -1,12 +1,13 @@
 import groq from 'groq'
 import client from 'client'
 import Layout from 'components/Layout'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import ProjLightBox from 'components/ProjLightBox'
-import Link from 'next/link'
-import ProjIndexView from 'components/ProjIndexView'
 import { useEffect, useState } from 'react'
 import { MdSearch } from 'react-icons/md'
+
+const ProjLightBox = dynamic(() => import('components/ProjLightBox'))
+const ProjIndexView = dynamic(() => import('components/ProjIndexView'))
 
 const ProjektIndex = (props) => {
   const {

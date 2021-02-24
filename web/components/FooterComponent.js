@@ -24,49 +24,62 @@ export default function FooterComponent() {
           </p>
           <ul className='lg:flex lg:flex-row '>
             <li className='cursor-pointer mb-4 lg:mb-0 lg:mr-4'>
-              <a href=' https://www.herzogbau.ch/' target='_blank'>
+              <a
+                rel='noopener'
+                href=' https://www.herzogbau.ch/'
+                target='_blank'
+              >
                 <img
                   src='/logos/1_HERZOG_footer_65px.svg'
-                  alt='Logo Herzog'
+                  alt='Link zu Herzog'
                   className='h-14 mr-4'
                 />
               </a>
             </li>
             <li className='cursor-pointer  mb-4 lg:mb-0 lg:mr-4 '>
-              <a href='https://www.losinger-marazzi.ch/de/' target='_blank'>
+              <a
+                rel='noopener'
+                href='https://www.losinger-marazzi.ch/de/'
+                target='_blank'
+              >
                 <img
                   src='/logos/1_LoMarazzi_footer_65px.svg'
-                  alt='Logo Losinger Marazzi'
+                  alt='Link zu Losinger Marazzi'
                   className='h-14 mr-4'
                 />
               </a>
             </li>
             <li className='cursor-pointer  mb-4 lg:mb-0 lg:mr-4'>
-              <a href='http://www.huttwil.ch/' target='_blank'>
+              <a rel='noopener' href='http://www.huttwil.ch/' target='_blank'>
                 <img
                   src='/logos/1_Hutwil_footer_65px.png'
-                  alt='Logo Huttwil'
+                  alt='Link zu Huttwil'
                   className='h-14 mr-4'
                 />
               </a>
             </li>
             <li className='cursor-pointer  mb-4 lg:mb-0 lg:mr-4'>
               <a
+                rel='noopener'
                 href='https://www.sia.ch/de/der-sia/sektionen/'
                 target='_blank'
               >
                 <img
                   src='/logos/1_SIA_footer_65px.png'
-                  alt='Logo SIA'
+                  alt='Link zu SIA'
                   className='h-14 mr-4'
                 />
               </a>
             </li>
             <li className='cursor-pointer  mb-4 lg:mb-0 lg:mr-4'>
-              <a href='https://www.kornhausforum.ch/' target='_blank'>
+              <a
+                rel='noopener'
+                href='https://www.kornhausforum.ch/'
+                target='_blank'
+              >
                 <img
                   src='/logos/1_Kornhausforum_footer_65px.svg'
-                  alt='Logo Kornhausforum'
+                  alt='Lnik zu Kornhausforum'
                   className='h-14 mr-4'
                 />
               </a>

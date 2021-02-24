@@ -22,6 +22,9 @@ export default function Layout({ children }) {
           content='Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021'
         />
         <meta name='twitter:card' content='summary_large_image' />
+        <title>
+          Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021
+        </title>
       </Head>
 
       <div className=''>
