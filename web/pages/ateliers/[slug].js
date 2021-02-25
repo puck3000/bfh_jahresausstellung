@@ -27,7 +27,20 @@ const Atelier = (props) => {
     indexOfAteliers,
   } = props.atelier
 
-  const persons = team?.map((person) => person.person)
+  const persons = team?.map((person) => {
+    const peep = (
+      <>
+        {person.person}
+
+        <span className='block text-small lg:text-small-dt'>
+          {person.personTitle}
+        </span>
+        {/* <br />
+        <br /> */}
+      </>
+    )
+    return peep
+  })
 
   const nextlink = {
     icon: 'MdDirectionsWalk',

@@ -50,7 +50,7 @@ const Akkordeon = ({ content, title }) => {
       {content.length &&
         content.map((akkItem, idx) => (
           <li key={idx}>
-            <p>{akkItem}</p>
+            <p className='mb-1 lg:mb-2'>{akkItem}</p>
           </li>
         ))}
     </ul>
