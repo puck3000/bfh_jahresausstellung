@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/projekte": "pages/projekte.js",
   "/": "pages/index.js",
-  "/veranstaltungen": "pages/veranstaltungen.js",
-  "/projekte": "pages/projekte.js"
+  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
+  "/themenpfade": "pages/themenpfade.js"
 }
