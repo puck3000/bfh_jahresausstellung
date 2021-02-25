@@ -75,7 +75,7 @@ export default class ProjLightBox extends Component {
             </ul>
           )}
           {projekt.downloadURL && (
-            <div className=''>
+            <div className='text-right mr-2'>
               <a
                 href={`${projekt.downloadURL}?dl=`}
                 className='anker first text-small lg:text-small-dt'
