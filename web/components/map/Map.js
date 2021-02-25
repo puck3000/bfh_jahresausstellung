@@ -1,6 +1,6 @@
 import { getStandorteAndProjectsByStId } from 'lib/api'
 import BaseMap from './BaseMap.js'
-import { MapContext } from 'pages/map'
+import { MapContext } from 'pages/index'
 import { useContext } from 'react'
 import { motion } from 'framer-motion'
 import { use100vh } from 'react-div-100vh'

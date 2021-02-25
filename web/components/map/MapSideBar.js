@@ -1,7 +1,7 @@
 import { MdAdd, MdClose, MdArrowForward } from 'react-icons/md'
 import ProjLightBox from 'components/ProjLightBox'
 import { useContext } from 'react'
-import { MapContext } from 'pages/map'
+import { MapContext } from 'pages/index'
 import Akkorderer, { AkkHeader, AkkContent } from 'components/Akkorderer'
 
 export default function MapSideBar() {
