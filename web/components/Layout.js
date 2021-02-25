@@ -1,3 +1,4 @@
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import Head from 'next/head'
 import BackToTop from './BackToTop'
 import FooterComponent from './FooterComponent'
@@ -27,18 +28,28 @@ export default function Layout({ children }) {
         </title>
       </Head>
 
-      <div className=''>
-        <div
-          className='m-1 lg:m-4 2xl:m-6 grid grid-rows-bottomFooter '
-          id='baseWrapper'
-        >
-          <header className='fixed left-0 right-0 top-0 pt-1 lg:pt-4 z-30 2xl:w-full'>
+      <div
+        className='m-1 lg:m-4 2xl:m-6 grid grid-rows-bottomFooter '
+        id='baseWrapper'
+      >
+        <AnimateSharedLayout>
+          <motion.header
+            layout='header'
+            className='fixed left-0 right-0 pt-1 lg:pt-0 top-0 z-30 2xl:w-full'
+          >
             <MainNavigation />
-          </header>
-          <main className='pt-four 2xl:pt-tooBig'>{children}</main>
-          {/* <BackToTop /> */}
-          <FooterComponent />
-        </div>
+          </motion.header>
+        </AnimateSharedLayout>
+        <motion.main
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          className='pt-four 2xl:pt-tooBig'
+        >
+          {children}
+        </motion.main>
+        {/* <BackToTop /> */}
+        <FooterComponent />
       </div>
     </>
   )
