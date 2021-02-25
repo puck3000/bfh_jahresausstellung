@@ -25,6 +25,7 @@ export default function MapSideBar() {
             setMapContext((mapContext) => ({
               ...mapContext,
               sideBarVisible: false,
+              selectedStandort: [],
             }))
           }
         >

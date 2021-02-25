@@ -24,59 +24,68 @@ export default function MapLegende() {
     switch (filter) {
       case 'Ressourcen':
         return (
-          <p className='text-Ressourcen'>
-            Projekte, welche sich mit den vorhandenen Ressourcen
-            auseinandersetzten oder an bestehende Infrastrukturen anschliessen.{' '}
+          <>
+            <p className='text-Ressourcen col-span-2'>
+              Projekte, welche sich mit den vorhandenen Ressourcen
+              auseinandersetzten oder an bestehende Infrastrukturen
+              anschliessen.{' '}
+            </p>
             <Link href='/themenpfade/ressourcen'>
-              <a className='block text-right text-small-dt'>
+              <a className='text-Ressourcen block text-right text-small-dt self-end lg:mb-3 2xl:mb-5 '>
                 <MdDirectionsWalk size='1.5rem' className='inline' />
                 Zum Themenpfad
               </a>
             </Link>
-          </p>
+          </>
         )
         break
       case 'Zentralität':
         return (
-          <p className='text-Zentralität'>
-            Projekte, welche den Dorfkern von Huttwil aktivieren und das
-            Entwicklungspotential aufzuzeigen.
+          <>
+            <p className='text-Zentralität col-span-2'>
+              Projekte, welche den Dorfkern von Huttwil aktivieren und das
+              Entwicklungspotential aufzuzeigen.
+            </p>
             <Link href='/themenpfade/zentralitaet'>
-              <a className='block text-right text-small-dt'>
+              <a className='text-Zentralität block text-right text-small-dt self-end lg:mb-3 2xl:mb-5 '>
                 <MdDirectionsWalk size='1.5rem' className='inline' />
                 Zum Themenpfad
               </a>
             </Link>
-          </p>
+          </>
         )
         break
       case 'Wohnformen':
         return (
-          <p className='text-Wohnformen'>
-            Projekte, welche nach zukunftsträchtigen und anpassungsfähigen Wohn-
-            und Gebäudeformen suchen.
+          <>
+            <p className='text-Wohnformen col-span-2'>
+              Projekte, welche nach zukunftsträchtigen und anpassungsfähigen
+              Wohn- und Gebäudeformen suchen.
+            </p>
             <Link href='/themenpfade/wohnformen'>
-              <a className='block text-right text-small-dt'>
+              <a className='text-Wohnformen block text-right text-small-dt self-end lg:mb-3 2xl:mb-5 '>
                 <MdDirectionsWalk size='1.5rem' className='inline' />
                 Zum Themenpfad
               </a>
             </Link>
-          </p>
+          </>
         )
         break
 
       default:
         return (
-          <p>
-            In unserer Ausstellung zeigen wir eine Auswahl studentischer
-            Arbeiten, gegliedert in drei Themenpfade.
+          <>
+            <p className='col-span-2'>
+              In unserer Ausstellung zeigen wir eine Auswahl studentischer
+              Arbeiten, gegliedert in drei Themenpfade.
+            </p>
             <Link href='/themenpfade'>
-              <a className='block text-right text-small-dt'>
+              <a className='block text-right text-small-dt self-end lg:mb-3 2xl:mb-5 '>
                 <MdDirectionsWalk size='1.5rem' className='inline' />
                 Zu den Themenpfaden
               </a>
             </Link>
-          </p>
+          </>
         )
         break
     }
@@ -101,7 +110,7 @@ export default function MapLegende() {
   return (
     <ul
       id='legende'
-      className={`text-white absolute bottom-0 left-0 right-0 lg:left-4 lg:right-4 2xl:left-6 2xl:right-6 ${filter}`}
+      className={`text-white absolute bottom-0 left-0 right-0 lg:left-4 lg:right-4 2xl:left-6 2xl:right-6 mb-1 ${filter}`}
     >
       <li className='flex pl-2 mb-2 py-2 border-t-2 border-b-2 border-white'>
         <MdDirectionsWalk className='mr-2 lg:mr-4' />
@@ -137,7 +146,11 @@ export default function MapLegende() {
             Ressourcen
           </li>
         </ul>
-        <article className='lg:col-span-3'>{legendenText(filter)}</article>
+        <div className='hidden lg:block lg:col-span-3'>
+          <article className='grid grid-cols-3 h-full'>
+            {legendenText(filter)}
+          </article>
+        </div>
       </li>
     </ul>
   )

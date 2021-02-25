@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import Map from './Map'
 import { AiOutlineFullscreenExit } from 'react-icons/ai'
-import { MdAdd, MdRemove } from 'react-icons/md'
+import { MdAdd, MdRemove, MdArrowForward } from 'react-icons/md'
 import MapSideBar from './MapSideBar.js'
 import Div100vh from 'react-div-100vh'
 import MapLegende from './MapLegende'
+import Link from 'next/link'
 
 class PinchMap extends Component {
   render() {
@@ -19,6 +20,12 @@ class PinchMap extends Component {
               Stadt und Land in Huttwil
             </h1>
             <h2 className=''>Jahresausstellung Architektur 2021</h2>
+            <Link href='/veranstaltungen'>
+              <a className='text-small lg:text-small-dt'>
+                <MdArrowForward className='inline mr-2' />
+                Zum Begrüssungsvideo von Daniel Boermann
+              </a>
+            </Link>
           </div>
           <TransformWrapper defaultScale={1}>
             {({ zoomIn, zoomOut, resetTransform, ...rest }) => (

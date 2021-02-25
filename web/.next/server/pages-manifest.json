@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/themenpfade": "pages/themenpfade.js",
   "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
   "/veranstaltungen": "pages/veranstaltungen.js",
-  "/themenpfade/[slug]": "pages/themenpfade/[slug].js"
+  "/projekte": "pages/projekte.js"
 }
