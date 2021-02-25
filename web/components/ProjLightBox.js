@@ -103,6 +103,10 @@ export default class ProjLightBox extends Component {
               })
             }
             imageTitle={projekt.titel}
+            imageCaption={projekt.people?.map(
+              (person, idx) =>
+                `${person} ${idx == 0 && projekt.people.length > 1 ? `/` : ''} `
+            )}
           />
         )}
       </div>

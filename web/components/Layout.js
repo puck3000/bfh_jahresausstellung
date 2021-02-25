@@ -32,22 +32,10 @@ export default function Layout({ children }) {
         className='m-1 lg:m-4 2xl:m-6 grid grid-rows-bottomFooter '
         id='baseWrapper'
       >
-        <AnimateSharedLayout>
-          <motion.header
-            layout='header'
-            className='fixed left-0 right-0 pt-1 lg:pt-0 top-0 z-30 2xl:w-full'
-          >
-            <MainNavigation />
-          </motion.header>
-        </AnimateSharedLayout>
-        <motion.main
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          className='pt-four 2xl:pt-tooBig'
-        >
-          {children}
-        </motion.main>
+        <header className='fixed left-0 right-0 pt-1 lg:pt-0 top-0 z-30 2xl:w-full'>
+          <MainNavigation />
+        </header>
+        <main className='pt-four 2xl:pt-tooBig'>{children}</main>
         {/* <BackToTop /> */}
         <FooterComponent />
       </div>
