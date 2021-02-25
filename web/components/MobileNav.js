@@ -14,7 +14,7 @@ export default function MobileNav() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   }
@@ -136,10 +136,12 @@ export default function MobileNav() {
       </nav>
       <style jsx global>{`
         header {
-          transition: backdrop-filter 0.3s;
-          ${mainNavVisibility
-            ? 'height: 100vh; backdrop-filter: blur(4px) opacity(1);'
-            : 'backdrop-filter: blur(4px) opacity(0)'}
+          transition: backdrop-filter 0.3s; -webkit-backdrop-filter 0.3s;
+          ${
+            mainNavVisibility
+              ? 'height: 100vh; backdrop-filter: blur(4px) opacity(1); -webkit-backdrop-filter: blur(4px) opacity(1);'
+              : 'backdrop-filter: blur(4px) opacity(0); -webkit-backdrop-filter: blur(4px) opacity(0)'
+          }
         }
       `}</style>
     </>
