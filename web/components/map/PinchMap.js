@@ -20,20 +20,14 @@ class PinchMap extends Component {
             </h1>
             <h2 className=''>Jahresausstellung Architektur 2021</h2>
           </div>
-          <TransformWrapper
-            defaultScale={1}
-            // options={{
-            //   wrapperClass: 'my-wrapper-class',
-            //   contentClass: 'my-content-class',
-            // }}
-          >
+          <TransformWrapper defaultScale={1}>
             {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
               <React.Fragment>
                 <TransformComponent>
                   <Map />
                 </TransformComponent>
                 {/* Tools */}
-                <div className='hidden  tools absolute lg:flex flex-col top-4 right-4 lg:top-auto lg:right-auto lg:bottom-48 lg:left-4 z-40'>
+                <div className='hidden tools absolute lg:flex flex-col lg:bottom-48 lg:left-4 2xl:left-6 z-40'>
                   <button onClick={resetTransform}>
                     <AiOutlineFullscreenExit className='text-white h-8 lg:h-12 w-8 lg:w-12 mb-2 lg:mb-4 ' />
                   </button>

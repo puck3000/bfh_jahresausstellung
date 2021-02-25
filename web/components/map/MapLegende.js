@@ -38,37 +38,37 @@ export default function MapLegende() {
   return (
     <ul
       id='legende'
-      className={`text-white absolute bottom-0 left-0 right-0 ${filter}`}
+      className={`text-white absolute bottom-0 left-0 right-0 lg:left-4 lg:right-4 2xl:left-6 2xl:right-6 ${filter}`}
     >
       <li className='flex pl-2 mb-2 py-2 border-t-2 border-b-2 border-white'>
-        <MdDirectionsWalk className='lg:ml-5 mr-2 lg:mr-4' />
+        <MdDirectionsWalk className='mr-2 lg:mr-4' />
         Themenpfade
       </li>
       <li
-        className={`cursor-pointer flex pl-2 mb-2 pb-2 zentralität`}
+        className={`cursor-pointer flex pl-2 pb-2 zentralität`}
         onClick={() => {
           clickHandler('Zentralität')
         }}
       >
-        <FaRegCircle className='lg:ml-5 mr-2 lg:mr-4' />
+        <FaRegCircle className='mr-2 lg:mr-4' />
         Zentralität
       </li>
       <li
-        className='cursor-pointer flex pl-2 mb-2 pb-2 wohnformen'
+        className='cursor-pointer flex pl-2 pb-2 wohnformen'
         onClick={() => {
           clickHandler('Wohnformen')
         }}
       >
-        <FaRegCircle className='lg:ml-5 mr-2 lg:mr-4' />
+        <FaRegCircle className='mr-2 lg:mr-4' />
         Wohnformen
       </li>
       <li
-        className='cursor-pointer flex pl-2 mb-2 pb-2 ressourcen'
+        className='cursor-pointer flex pl-2 pb-2 ressourcen'
         onClick={() => {
           clickHandler('Ressourcen')
         }}
       >
-        <FaRegCircle className='lg:ml-5 mr-2 lg:mr-4' />
+        <FaRegCircle className='mr-2 lg:mr-4' />
         Ressourcen
       </li>
     </ul>

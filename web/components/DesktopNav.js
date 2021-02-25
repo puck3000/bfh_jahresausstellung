@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function DesktopNav() {
   return (
-    <nav className='deskNav relative m-4 2xl:m-6 flex justify-between'>
+    <nav className='deskNav relative m-4 2xl:m-6 2xl:mr-0  flex justify-between'>
       <ul className=''>
         <li className='inline-block mr-4'>
           <ActiveLink activeClassName='false' href='/'>
