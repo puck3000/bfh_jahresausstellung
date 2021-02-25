@@ -45,6 +45,11 @@
     @apply tracking-wider;
   }
 
+  /* add spacing to buttons too */
+  button {
+    @apply tracking-wider;
+  }
+
   body {
     @apply text-medium lg:text-medium-dt;
   }
