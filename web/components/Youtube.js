@@ -10,7 +10,7 @@ export default function Youtube({ url }) {
       <div className='lg:col-start-2 lg:col-span-3 2xl:col-start-2 2xl:col-span-2 '>
         <YouTube
           videoId={id}
-          containerClassName={`lg:col-span-3 lg:col-start-2 2xl:col-span-4 2xl:col-start-3 mb-1 lg:mb-2 youtubeContainer`}
+          containerClassName={`lg:col-span-3 lg:col-start-2 2xl:col-span-4 2xl:col-start-3 mb-1 lg:mb-2 lg:mt-4 youtubeContainer`}
         />
       </div>
     </div>

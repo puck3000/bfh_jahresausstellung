@@ -10,7 +10,7 @@ export default function MapSideBar() {
   if (mapContext.sideBarVisible) {
     return (
       <aside
-        className={`overflow-auto z-50 p-1 mt-0  lg:p-4 fixed bottom-0 right-0 left-0 lg:left-auto lg:h-full bg-${mapContext.selectedThemenpfad} lg:top-0 lg:shadow-left lg:w-1/4`}
+        className={`overflow-auto z-50 p-1 mt-0  lg:p-4 2xl:p-6 fixed bottom-0 right-0 left-0 lg:left-auto lg:h-full bg-${mapContext.selectedThemenpfad} lg:top-0 lg:shadow-left lg:w-1/4`}
       >
         <svg
           stroke='currentColor'
@@ -38,9 +38,9 @@ export default function MapSideBar() {
           return (
             <Akkorderer key={projekt._id}>
               <AkkHeader>
-                <div className='grid grid-cols-12 items-center mb-2'>
-                  <MdAdd className='cursor-pointer mr-2 transform transition-transform' />
-                  <h3 className='col-span-11 lg:ml-2 cursor-pointer text-small lg:text-small-dt'>
+                <div className='mb-2'>
+                  <MdAdd className='inline cursor-pointer mr-1 transform transition-transform' />
+                  <h3 className='inline cursor-pointer text-small lg:text-small-dt'>
                     {projekt.content.titel}
                   </h3>
                 </div>
