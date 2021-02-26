@@ -3,7 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/projekte": "pages/projekte.js",
-  "/": "pages/index.js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/themenpfade": "pages/themenpfade.js"
+  "/": "pages/index.js"
 }

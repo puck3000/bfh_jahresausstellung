@@ -46,7 +46,7 @@ export default function Wegweiser({
           {/* Map Hinweis */}
           <li className='mb-1 lg:mb-2'>
             <hr className='mb-1 lg:mb-2'></hr>
-            <Link href='/map'>
+            <Link href='/'>
               <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
                 {iconServer('MdMap', nextlink.iconClassNames)}
                 <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>

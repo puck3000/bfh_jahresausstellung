@@ -47,7 +47,7 @@ export default function DesktopNav() {
           </ActiveLink>
         </li>
       </ul>
-      <Link href='../map'>
+      <Link href='/'>
         <a className='flex mapIcon justify-end' aria-label='open map view'>
           <MdMap size='1.5em' />
         </a>
