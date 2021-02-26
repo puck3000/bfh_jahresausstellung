@@ -25,7 +25,7 @@ export default class ProjLightBox extends Component {
     )
 
     return (
-      <div className=''>
+      <div className='h-full flex flex-col'>
         <hr className='mb-1 lg:mb-2 projFilter'></hr>
         <button
           className='relative w-full'
@@ -62,10 +62,10 @@ export default class ProjLightBox extends Component {
             title='open project gallery'
           />
         </button>
-        <div className='text-left'>
+        <div className='text-left flex-1 flex flex-col'>
           <h2 className='projFilter mb-1 lg:mb-2'>{projekt.titel}</h2>
           {projekt.people && (
-            <ul className=''>
+            <ul className='flex-1'>
               {projekt.people?.map((person, i) => (
                 <li
                   key={i}
