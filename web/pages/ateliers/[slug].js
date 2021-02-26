@@ -68,7 +68,7 @@ const Atelier = (props) => {
       <Head>
         <title>Atelier | {titel}</title>
       </Head>
-      <div className='intro'>
+      <div className='intro atelier'>
         <h2 className='anker first mb-1 lg:mb-2'>Atelier</h2>
         <hr className='mb-1 lg:mb-2' />
         <div className='lg:grid lg:grid-cols-4 2xl:grid-cols-8'>

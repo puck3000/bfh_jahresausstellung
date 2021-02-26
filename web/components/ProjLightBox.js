@@ -77,9 +77,9 @@ export default class ProjLightBox extends Component {
             </ul>
           )}
 
-          <div className='flex justify-between items-center mr-2'>
+          <div className='flex justify-between items-center mr-2 furtherLinks'>
             <Link href={`/ateliers/${projekt.atelier}`}>
-              <a className='text-small lg:text-small-dt'>
+              <a className='text-small lg:text-small-dt atelierLink'>
                 <MdArrowForward className='inline' /> zum Atelier
               </a>
             </Link>
@@ -91,6 +91,14 @@ export default class ProjLightBox extends Component {
             </a>
           </div>
         </div>
+        <style jsx global>{`
+          .atelier .atelierLink {
+            display: none;
+          }
+          .atelier .furtherLinks {
+            justify-content: end;
+          }
+        `}</style>
 
         {isOpen && (
           <Lightbox
