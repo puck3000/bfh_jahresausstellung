@@ -26,7 +26,7 @@ export default function Layout({ children }) {
         <title>
           Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021
         </title>
-        <script
+        {/* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-CNEDF7Z720'
         ></script>
@@ -37,9 +37,9 @@ export default function Layout({ children }) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
             
-              gtag('config', G-CNEDF7Z720);`,
+              gtag('config', 'G-CNEDF7Z720');`,
           }}
-        />
+        /> */}
       </Head>
 
       <div
