@@ -3,6 +3,8 @@ import { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css' // This only needs to be imported once in your app
 import { BiExpand } from 'react-icons/bi'
+import { MdArrowForward } from 'react-icons/md'
+import Link from 'next/link'
 
 export default class ProjLightBox extends Component {
   constructor(props) {
@@ -74,16 +76,20 @@ export default class ProjLightBox extends Component {
               ))}
             </ul>
           )}
-          {projekt.downloadURL && (
-            <div className='text-right mr-2'>
-              <a
-                href={`${projekt.downloadURL}?dl=`}
-                className='anker first text-small lg:text-small-dt'
-              >
-                {projekt.downloadLABEL || 'Download'}
+
+          <div className='flex justify-between items-center mr-2'>
+            <Link href={`/ateliers/${projekt.atelier}`}>
+              <a className='text-small lg:text-small-dt'>
+                <MdArrowForward className='inline' /> zum Atelier
               </a>
-            </div>
-          )}
+            </Link>
+            <a
+              href={`${projekt.downloadURL}?dl=`}
+              className='anker first text-small lg:text-small-dt'
+            >
+              {projekt.downloadLABEL || 'Download'}
+            </a>
+          </div>
         </div>
 
         {isOpen && (
