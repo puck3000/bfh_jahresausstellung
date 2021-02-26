@@ -139,7 +139,7 @@ export default function MobileNav() {
           transition: backdrop-filter 0.3s; -webkit-backdrop-filter 0.3s;
           ${
             mainNavVisibility
-              ? 'height: 100vh; backdrop-filter: blur(4px) opacity(1); -webkit-backdrop-filter: blur(4px) opacity(1);'
+              ? 'height: 100vh; width: 100vw; backdrop-filter: blur(4px) opacity(1); -webkit-backdrop-filter: blur(4px) opacity(1);'
               : 'backdrop-filter: blur(4px) opacity(0); -webkit-backdrop-filter: blur(4px) opacity(0)'
           }
         }
