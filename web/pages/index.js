@@ -37,6 +37,20 @@ const Karte = (props) => {
         />
         <meta name='twitter:card' content='summary_large_image' />
         <title>Neue Räume | BFH</title>
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-CNEDF7Z720'
+        ></script>
+        <script
+          async
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', G-CNEDF7Z720);`,
+          }}
+        />
       </Head>
 
       <MapContext.Provider value={[mapContext, setMapContext]}>
