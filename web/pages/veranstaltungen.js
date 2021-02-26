@@ -5,7 +5,7 @@ import Layout from 'components/Layout'
 import Inhalt from 'components/Inhalt'
 
 const Veranstaltungen = (props) => {
-  const { title = 'Missing Title', inhalt } = props
+  const { title = 'Missing Title', inhalt } = props.veranstaltungen
 
   return (
     <Layout>
@@ -37,10 +37,20 @@ const query = groq`
     }
 `
 
-Veranstaltungen.getInitialProps = async function (context) {
-  // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = '' } = context.query
-  return await client.fetch(query, { slug })
+// Veranstaltungen.getInitialProps = async function (context) {
+//   // It's important to default the slug so that it doesn't return "undefined"
+//   const { slug = '' } = context.query
+//   return await client.fetch(query, { slug })
+// }
+
+export async function getStaticProps({ params }) {
+  const veranstaltungen = await client.fetch(query)
+  return {
+    props: {
+      veranstaltungen,
+    },
+    revalidate: 1,
+  }
 }
 
 export default Veranstaltungen
