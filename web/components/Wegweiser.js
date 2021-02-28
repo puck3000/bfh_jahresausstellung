@@ -60,12 +60,14 @@ export default function Wegweiser({
               <hr className='mb-1 lg:mb-2'></hr>
             </li>
           )}
-
           {/* Map Hinweis */}
           <li className='mb-1 lg:mb-2'>
             <Link href='/'>
               <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
-                {iconServer('MdMap', nextlink?.iconClassNames)}
+                {iconServer(
+                  'MdMap',
+                  nextlink?.iconClassNames || 'icon mr-2 lg:justify-self-end'
+                )}
                 <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
                   Finden Sie ein Projekt auf der Karte
                 </h3>
