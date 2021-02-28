@@ -65,7 +65,7 @@ const Atelier = (props) => {
   return (
     <Layout>
       <Head>
-        <title>Atelier | {titel}</title>
+        <title>{titel} | Atelier | BFH Jahresausstellung 2021</title>
       </Head>
       <div className='intro atelier'>
         <h2 className='anker first mb-1 lg:mb-2'>Atelier</h2>

@@ -35,7 +35,9 @@ const ProjektIndex = (props) => {
 
   return (
     <Layout>
-      <Head>Projektübersicht</Head>
+      <Head>
+        <title>{title} | BFH Jahresausstellung 2021</title>
+      </Head>
       <div className='anker first mb-1 lg:mb-2'>{title}</div>
       {/* Projektindex */}
       {projekte && (

@@ -44,7 +44,9 @@ const ThemenpfadIndex = (props) => {
 
   return (
     <Layout>
-      <Head>Themenpfade</Head>
+      <Head>
+        <title>Themenpfade | BFH Jahresausstellung 2021</title>
+      </Head>
       {/* Themenpfad Übersicht */}
       <div className='anker first mb-1 lg:mb-2'>{title}</div>
 

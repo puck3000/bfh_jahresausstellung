@@ -17,7 +17,7 @@ const Hintergrund = (props) => {
   return (
     <Layout>
       <Head>
-        <title>{title} | Hintergrund</title>
+        <title>{title} | BFH Jahresausstellung 2021</title>
       </Head>
       <div>
         <h1 className='anker first mb-1 lg:mb-2'>{title}</h1>

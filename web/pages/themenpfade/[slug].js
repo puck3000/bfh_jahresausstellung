@@ -43,7 +43,7 @@ const Themenpfad = (props) => {
   return (
     <Layout>
       <Head>
-        <title>Themenpfad | {title}</title>
+        <title>{title} | Themenpfad | BFH Jahresausstellung 2021</title>
       </Head>
       <div>
         <h2 className='anker first mb-1 lg:mb-2'>{title}</h2>
