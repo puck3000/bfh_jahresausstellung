@@ -14,12 +14,12 @@ export default function Wegweiser({
         <p className='mb-1 lg:mb-2 lg:absolute lg:mt-3 '>
           Wohin geht die Reise?
         </p>
+        <hr className='mb-1 lg:mb-2'></hr>
 
         <ul>
           {/* NEXTLINK */}
           {nextlink && (
             <li className='mb-1 lg:mb-2'>
-              <hr className='mb-1 lg:mb-2'></hr>
               <Link href={nextlink?.url}>
                 <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
                   {iconServer(nextlink?.icon, nextlink?.iconClassNames)}
@@ -28,38 +28,41 @@ export default function Wegweiser({
                   </h3>
                 </button>
               </Link>
+              <hr className='mb-1 lg:mb-2'></hr>
             </li>
           )}
-          <hr className='mb-1 lg:mb-2'></hr>
           {/* DESTINATIONS */}
-          <li className='mb-1 lg:mb-2'>
-            <div className=' focus:outline-none w-full flex mb-1 lg:mb-2 lg:items-center lg:grid lg:grid-cols-4'>
-              {iconServer(
-                destinationToggler.icon,
-                destinationToggler.iconClassNames
-              )}
-              <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
-                {destinationToggler.label}
-              </h3>
-            </div>
-            <motion.ul className='destlist'>
-              {destinations.map((destination, idx) => {
-                return (
-                  <Link key={idx} href={destination.url}>
-                    <li className='cursor-pointer flex flex-row mb-1 lg:mb-2'>
-                      <div className='icon  mr-2 '>
-                        {iconServer(destination.icon)}
-                      </div>
-                      <h3 className=''>{destination.label}</h3>
-                    </li>
-                  </Link>
-                )
-              })}
-            </motion.ul>
-          </li>
+          {destinationToggler && (
+            <li className='mb-1 lg:mb-2'>
+              <div className=' focus:outline-none w-full flex mb-1 lg:mb-2 lg:items-center lg:grid lg:grid-cols-4'>
+                {iconServer(
+                  destinationToggler?.icon,
+                  destinationToggler?.iconClassNames
+                )}
+                <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
+                  {destinationToggler?.label}
+                </h3>
+              </div>
+              <motion.ul className='destlist'>
+                {destinations?.map((destination, idx) => {
+                  return (
+                    <Link key={idx} href={destination?.url}>
+                      <li className='cursor-pointer flex flex-row mb-1 lg:mb-2'>
+                        <div className='icon  mr-2 '>
+                          {iconServer(destination?.icon)}
+                        </div>
+                        <h3 className=''>{destination?.label}</h3>
+                      </li>
+                    </Link>
+                  )
+                })}
+              </motion.ul>
+              <hr className='mb-1 lg:mb-2'></hr>
+            </li>
+          )}
+
           {/* Map Hinweis */}
           <li className='mb-1 lg:mb-2'>
-            <hr className='mb-1 lg:mb-2'></hr>
             <Link href='/'>
               <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
                 {iconServer('MdMap', nextlink?.iconClassNames)}

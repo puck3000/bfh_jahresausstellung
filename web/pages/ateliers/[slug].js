@@ -94,7 +94,7 @@ const Atelier = (props) => {
         <hr className='mb-1 lg:mb-2'></hr>
         <div className='baseInfos'>
           {/* Team */}
-          {team?.length && <Akkordeon content={persons} title='Team' />}
+          {team.length > 0 && <Akkordeon content={persons} title='Team' />}
           {/* Themen */}
           {themen?.length && <Akkordeon content={themen} title='Themen' />}
           {/* Standort */}
