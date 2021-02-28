@@ -24,7 +24,6 @@ const Atelier = (props) => {
     referencepic,
     themenpfad,
     next,
-    indexOfAteliers,
   } = props.atelier
 
   const persons = team?.map((person) => {
@@ -55,8 +54,8 @@ const Atelier = (props) => {
   }
 
   const destinations = []
-  indexOfAteliers.forEach((atelier) => {
-    destinations.unshift({
+  themenpfad?.ateliers?.forEach((atelier) => {
+    destinations.push({
       icon: 'MdArrowForward',
       url: `/ateliers/${atelier.slug}`,
       label: atelier.titel,
@@ -127,10 +126,10 @@ const query = groq`
       standorte,
       team, 
       themen,
-    'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current},
-      'next': nextAtelier->content{titel, 'slug': slug.current},
-      'indexOfAteliers': *[_type=='atelier' && references(^.themenpfad._ref)].content{titel, 'slug': slug.current},
-      'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}},
+    'themenpfad': themenpfad->{_id, 'title': content.title, 'slug': content.slug.current, 'ateliers': content.ateliers[]->{'titel': content.titel, 'slug': content.slug.current}},
+    'next': nextAtelier->content{titel, 'slug': slug.current},
+    // 'indexOfAteliers': *[_type=='atelier' && references(^.themenpfad._ref)].content{titel, 'slug': slug.current},
+    'projekteIndex': projekte[]->{_id,content{titel,'slug': slug.current, people, referencepic, gallery,'downloadURL': download.asset->url, 'downloadLABEL': download.label}},
     
     'vorgehen': vorgehen[]{
       _type == 'download' => {

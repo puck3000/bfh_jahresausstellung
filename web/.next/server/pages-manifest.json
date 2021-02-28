@@ -2,10 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/hintergrund/[slug]": "pages/hintergrund/[slug].js",
-  "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/veranstaltungen": "pages/veranstaltungen.js",
-  "/projekte": "pages/projekte.js",
-  "/themenpfade": "pages/themenpfade.js"
+  "/ateliers/[slug]": "pages/ateliers/[slug].js",
+  "/projekte": "pages/projekte.js"
 }

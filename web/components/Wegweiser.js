@@ -16,9 +16,23 @@ export default function Wegweiser({
         </p>
 
         <ul>
+          {/* NEXTLINK */}
+          {nextlink && (
+            <li className='mb-1 lg:mb-2'>
+              <hr className='mb-1 lg:mb-2'></hr>
+              <Link href={nextlink?.url}>
+                <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
+                  {iconServer(nextlink?.icon, nextlink?.iconClassNames)}
+                  <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
+                    {nextlink?.label}
+                  </h3>
+                </button>
+              </Link>
+            </li>
+          )}
+          <hr className='mb-1 lg:mb-2'></hr>
           {/* DESTINATIONS */}
           <li className='mb-1 lg:mb-2'>
-            <hr className='mb-1 lg:mb-2'></hr>
             <div className=' focus:outline-none w-full flex mb-1 lg:mb-2 lg:items-center lg:grid lg:grid-cols-4'>
               {iconServer(
                 destinationToggler.icon,
@@ -48,21 +62,9 @@ export default function Wegweiser({
             <hr className='mb-1 lg:mb-2'></hr>
             <Link href='/'>
               <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
-                {iconServer('MdMap', nextlink.iconClassNames)}
+                {iconServer('MdMap', nextlink?.iconClassNames)}
                 <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
                   Finden Sie ein Projekt auf der Karte
-                </h3>
-              </button>
-            </Link>
-          </li>
-          {/* NEXTLINK */}
-          <li className='mb-1 lg:mb-2'>
-            <hr className='mb-1 lg:mb-2'></hr>
-            <Link href={nextlink.url}>
-              <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
-                {iconServer(nextlink.icon, nextlink.iconClassNames)}
-                <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
-                  {nextlink.label}
                 </h3>
               </button>
             </Link>

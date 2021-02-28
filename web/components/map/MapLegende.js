@@ -27,8 +27,7 @@ export default function MapLegende() {
           <>
             <p className='text-Ressourcen col-span-2'>
               Projekte, welche sich mit den vorhandenen Ressourcen
-              auseinandersetzten oder an bestehende Infrastrukturen
-              anschliessen.{' '}
+              auseinandersetzen oder an bestehende Infrastrukturen anschliessen.
             </p>
             <Link href='/themenpfade/ressourcen'>
               <a className='text-Ressourcen block text-right text-small-dt self-end lg:mb-3 2xl:mb-5 '>
@@ -44,7 +43,7 @@ export default function MapLegende() {
           <>
             <p className='text-Zentralität col-span-2'>
               Projekte, welche den Dorfkern von Huttwil aktivieren und das
-              Entwicklungspotential aufzuzeigen.
+              Entwicklungspotential aufzeigen.
             </p>
             <Link href='/themenpfade/zentralitaet'>
               <a className='text-Zentralität block text-right text-small-dt self-end lg:mb-3 2xl:mb-5 '>

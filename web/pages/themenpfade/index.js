@@ -52,7 +52,7 @@ const ThemenpfadIndex = (props) => {
       {inhalt && <Inhalt inhalt={inhalt} />}
 
       <Wegweiser
-        nextlink={nextlink}
+        // nextlink={nextlink}
         destinationToggler={destinationToggler}
         destinations={destinations}
       />
