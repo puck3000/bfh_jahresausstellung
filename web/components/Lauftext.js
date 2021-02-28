@@ -47,7 +47,7 @@ export default function Lauftext({ lauftext }) {
               },
             },
           }}
-          className={`${laufweite} lg:col-start-2 2xl:col-start-3 2xl:col-span-4  `}
+          className={`${laufweite} lg:col-start-2 2xl:col-start-3 2xl:col-span-4 text `}
         >
           <BlockContent
             blocks={lauftext.inhalt}

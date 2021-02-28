@@ -81,11 +81,13 @@
 
   .text ol {
     list-style-type: decimal;
-    list-style-position: inside;
+    list-style-position: outside;
+    padding-left: 3rem;
   }
 
   .text ul {
     list-style-type: none;
+    padding-left: 1rem;
   }
 
   .text ul > li {
