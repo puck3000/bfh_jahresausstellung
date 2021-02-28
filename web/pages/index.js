@@ -45,7 +45,7 @@ const Karte = (props) => {
             <header className='fixed karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-3/4'>
               <MainNavigation />
             </header>
-            <main className=''>
+            <main className='kartenansicht'>
               <PinchMap />
             </main>
           </div>
@@ -55,6 +55,9 @@ const Karte = (props) => {
       <style jsx global>{`
         body {
           background-color: black;
+        }
+        .kartenansicht .furtherLinks {
+          display: none;
         }
       `}</style>
     </>
