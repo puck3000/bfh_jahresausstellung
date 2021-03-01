@@ -17,7 +17,11 @@ export default function TextAndImage({ textandimage }) {
       </div>
       <img
         className='mb-1 lg:mb-2 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'
-        src={urlFor(textandimage.image).width(2000).height(1600).url()}
+        src={urlFor(textandimage.image)
+          .width(2000)
+          .height(1600)
+          .auto('format')
+          .url()}
         srcSet={`${urlFor(textandimage.image)
           .width(1024)
           .height(819)
@@ -25,7 +29,7 @@ export default function TextAndImage({ textandimage }) {
           .url()} 1024w, ${urlFor(textandimage.image)
           .width(2000)
           .height(1600)
-          .format('webp')
+          .auto('format')
           .url()} 2000w,`}
         sizes='(max-width:1024px) 100vw, 75vw'
       />
