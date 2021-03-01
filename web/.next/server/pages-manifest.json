@@ -5,5 +5,9 @@
   "/": "pages/index.js",
   "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
   "/huttwil": "pages/huttwil.js",
-  "/themenpfade": "pages/themenpfade.js"
+  "/themenpfade": "pages/themenpfade.js",
+  "/veranstaltungen": "pages/veranstaltungen.js",
+  "/dencity": "pages/dencity.js",
+  "/ateliers/[slug]": "pages/ateliers/[slug].js",
+  "/projekte": "pages/projekte.js"
 }
