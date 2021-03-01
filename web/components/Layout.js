@@ -1,10 +1,15 @@
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Head from 'next/head'
 import BackToTop from './BackToTop'
 import FooterComponent from './FooterComponent'
 import MainNavigation from './MainNavigation'
 
 export default function Layout({ children }) {
+  const pageTransVariants = {
+    initial: { opacity: 0 },
+    enter: { opacity: 1 },
+    exit: { opacity: 0 },
+  }
   return (
     <>
       <Head>
@@ -42,9 +47,14 @@ export default function Layout({ children }) {
         /> */}
       </Head>
 
-      <div
+      <motion.div
         className='m-1 lg:m-4 2xl:m-6 grid grid-rows-bottomFooter '
         id='baseWrapper'
+        initial='initial'
+        animate='enter'
+        exit='exit'
+        variants={pageTransVariants}
+        transition={{ duration: 0.5, type: 'tween' }}
       >
         <header className='fixed left-0 right-0 pt-1 lg:pt-4  2xl:pt-0 top-0 z-30 2xl:w-full'>
           <MainNavigation />
@@ -52,7 +62,7 @@ export default function Layout({ children }) {
         <main className='pt-four 2xl:pt-tooBig'>{children}</main>
         {/* <BackToTop /> */}
         <FooterComponent />
-      </div>
+      </motion.div>
     </>
   )
 }

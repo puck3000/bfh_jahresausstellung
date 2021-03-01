@@ -69,7 +69,7 @@ export default function MobileNav() {
             <motion.li transition={{ type: 'tween' }} variants={listItem}>
               <ActiveLink
                 activeClassName='active'
-                href='/hintergrund/huttwil'
+                href='/huttwil'
                 onClick={() => {
                   toggle()
                 }}
@@ -82,7 +82,7 @@ export default function MobileNav() {
             <motion.li transition={{ type: 'tween' }} variants={listItem}>
               <ActiveLink
                 activeClassName='active'
-                href='/hintergrund/dencity'
+                href='/dencity'
                 onClick={() => {
                   toggle()
                 }}

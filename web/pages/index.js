@@ -4,6 +4,7 @@ import Head from 'next/head'
 import PinchMap from 'components/map/PinchMap'
 import MainNavigation from 'components/MainNavigation'
 import { createContext, useState } from 'react'
+import { motion } from 'framer-motion'
 
 export const MapContext = createContext()
 
@@ -17,6 +18,12 @@ const Karte = (props) => {
     selectedThemenpfad: '',
     sideBarVisible: false,
   })
+
+  const pageTransVariants = {
+    initial: { opacity: 0 },
+    enter: { opacity: 1 },
+    exit: { opacity: 0 },
+  }
 
   return (
     <>
@@ -40,7 +47,14 @@ const Karte = (props) => {
       </Head>
 
       <MapContext.Provider value={[mapContext, setMapContext]}>
-        <div className=''>
+        <motion.div
+          className=''
+          initial='initial'
+          animate='enter'
+          exit='exit'
+          variants={pageTransVariants}
+          transition={{ duration: 0.5, type: 'tween' }}
+        >
           <div className='grid grid-rows-bottomFooter '>
             <header className='fixed karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-3/4'>
               <MainNavigation />
@@ -49,7 +63,7 @@ const Karte = (props) => {
               <PinchMap />
             </main>
           </div>
-        </div>
+        </motion.div>
       </MapContext.Provider>
 
       <style jsx global>{`

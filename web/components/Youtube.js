@@ -1,5 +1,4 @@
 import getYouTubeID from 'get-youtube-id'
-import Hintergrund from 'pages/hintergrund/[slug]'
 import YouTube from 'react-youtube'
 
 export default function Youtube({ url }) {

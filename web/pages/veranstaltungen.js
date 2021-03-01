@@ -37,12 +37,6 @@ const query = groq`
     }
 `
 
-// Veranstaltungen.getInitialProps = async function (context) {
-//   // It's important to default the slug so that it doesn't return "undefined"
-//   const { slug = '' } = context.query
-//   return await client.fetch(query, { slug })
-// }
-
 export async function getStaticProps({ params }) {
   const veranstaltungen = await client.fetch(query)
   return {

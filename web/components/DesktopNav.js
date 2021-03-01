@@ -12,14 +12,14 @@ export default function DesktopNav() {
           </ActiveLink>
         </li>
         <li className='inline-block mr-4'>
-          <ActiveLink activeClassName='active' href='/hintergrund/huttwil'>
+          <ActiveLink activeClassName='active' href='/huttwil'>
             <a className='inline-block  anker first mb-1 lg:mb-2 z-10'>
               Huttwil
             </a>
           </ActiveLink>
         </li>
         <li className='inline-block mr-4'>
-          <ActiveLink activeClassName='active' href='/hintergrund/dencity'>
+          <ActiveLink activeClassName='active' href='/dencity'>
             <a className='inline-block  anker first mb-1 lg:mb-2  z-10'>
               Dencity
             </a>

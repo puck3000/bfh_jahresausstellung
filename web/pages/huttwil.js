@@ -5,8 +5,8 @@ import Inhalt from 'components/Inhalt'
 import Head from 'next/head'
 import Wegweiser from 'components/Wegweiser'
 
-const Hintergrund = (props) => {
-  const { title = 'Missing Title', inhalt } = props.hintergrund
+const Huttwil = (props) => {
+  const { title = 'Missing Title', inhalt } = props.huttwil
 
   const nextlink = {
     icon: 'MdDirectionsWalk',
@@ -26,18 +26,14 @@ const Hintergrund = (props) => {
         {/* INHALT */}
         {inhalt && <Inhalt inhalt={inhalt} />}
 
-        <Wegweiser
-          nextlink={nextlink}
-          // destinationToggler={destinationToggler}
-          // destinations={destinations}
-        />
+        <Wegweiser nextlink={nextlink} />
       </div>
     </Layout>
   )
 }
 
 const query = groq`
-    *[_type == "hintergrund" && slug.current == $slug][0]
+    *[_type == "hintergrund" && slug.current == 'huttwil'][0]
       {
       title,
       'inhalt': content[]{
@@ -54,26 +50,14 @@ const query = groq`
 `
 
 export async function getStaticProps({ params }) {
-  const hintergrund = await client.fetch(query, {
-    slug: params.slug,
-  })
+  const huttwil = await client.fetch(query)
 
   return {
     props: {
-      hintergrund,
+      huttwil,
     },
     revalidate: 1,
   }
 }
 
-export async function getStaticPaths() {
-  const paths = await client.fetch(
-    groq`*[_type == "hintergrund" && defined(slug.current)][].slug.current`
-  )
-  return {
-    paths: paths.map((slug) => ({ params: { slug: slug } })),
-    fallback: false,
-  }
-}
-
-export default Hintergrund
+export default Huttwil
