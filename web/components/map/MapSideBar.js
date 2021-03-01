@@ -20,7 +20,7 @@ export default function MapSideBar() {
           height='2em'
           width='2em'
           xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6 lg:h-12 lg:w-12 mb-4 cursor-pointer'
+          className='h-10 w-10 lg:h-12 lg:w-12 mb-4 cursor-pointer'
           onClick={() =>
             setMapContext((mapContext) => ({
               ...mapContext,
