@@ -54,7 +54,7 @@ export default function Layout({ children }) {
         animate='enter'
         exit='exit'
         variants={pageTransVariants}
-        transition={{ duration: 0.5, type: 'tween' }}
+        transition={{ duration: 0.3, type: 'tween' }}
       >
         <header className='fixed left-0 right-0 pt-1 lg:pt-4  2xl:pt-0 top-0 z-30 2xl:w-full'>
           <MainNavigation />
