@@ -38,7 +38,15 @@ export default function MapSideBar() {
   const mobildeAsideVariants = {
     initial: {
       opacity: 0,
-      x: '100%',
+      y: '100%',
+      transition: {
+        when: 'beforeChildren',
+        bounce: 0.1,
+      },
+    },
+    enter: {
+      opacity: 1,
+      y: 0,
       transition: {
         delayChildren: 0.3,
         bounce: 0.1,
@@ -48,15 +56,6 @@ export default function MapSideBar() {
       opacity: 0,
       y: '100%',
       transition: {
-        delayChildren: 0.3,
-        bounce: 0.1,
-      },
-    },
-    enter: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 0.3,
         bounce: 0.1,
       },
     },

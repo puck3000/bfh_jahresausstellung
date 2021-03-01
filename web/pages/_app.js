@@ -2,6 +2,7 @@ import 'styles/globals.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
+import { AnimatePresence } from 'framer-motion'
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter()
@@ -15,7 +16,11 @@ const App = ({ Component, pageProps }) => {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <Component {...pageProps} key={router.route} />
+    </AnimatePresence>
+  )
 }
 
 export default App
