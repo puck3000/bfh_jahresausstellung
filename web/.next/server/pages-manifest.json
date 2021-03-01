@@ -3,7 +3,5 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/": "pages/index.js",
-  "/projekte": "pages/projekte.js",
-  "/veranstaltungen": "pages/veranstaltungen.js",
-  "/ateliers/[slug]": "pages/ateliers/[slug].js"
+  "/huttwil": "pages/huttwil.js"
 }

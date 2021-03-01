@@ -61,7 +61,7 @@ const Karte = (props) => {
           <div className='grid grid-rows-bottomFooter '>
             <NavContext.Provider value={[navContext, setNavContext]}>
               <header
-                className='fixed karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-3/4'
+                className='fixed w-full karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-3/4'
                 onClick={() => {
                   navContext && setNavContext(false)
                 }}
