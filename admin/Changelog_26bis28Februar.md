@@ -53,9 +53,8 @@ Nach Video: direkt zur Karte
 
 ### Veranstaltungen
 
-    - ✔ Die Links auf unsere Webseite stimmen, aber der Text zum Link ist falsch (immer Vernissage) @done
-    - ✔ Die Podium-Links sollten in einem neuen Fester aufgehen (so wie alle externen Links auf der Seite!). @done
-
+- ✔ Die Links auf unsere Webseite stimmen, aber der Text zum Link ist falsch (immer Vernissage) @done
+- ✔ Die Podium-Links sollten in einem neuen Fester aufgehen (so wie alle externen Links auf der Seite!). @done
 
 ### Kontakt
 
@@ -106,10 +105,12 @@ Zudem ist mir noch aufgefallen, dass bei den Themenpfaden die Bild-Beschreibung 
 
 ### Neue/Korrigierte Links in Navigationsbalken Seiten-weit
 
-- ✔ Alle Inputs übernommen @done
-- AUSSER: Themenpfade bleiben vorerst zirkulär (letztes Atelier führt nicht zum nächten TP, sondern wieder an den Anfang des gewählten TPs)  
-  Grund:  
-   - Man weiss nicht, wo die User einsteigen, die ersten Ateliers eines Pfades könnten beim Einstieg über Direktlink oder neu über die Erweiterte Projektübersicht verloren gehen - Zeit hat nicht gereicht, um diese Änderung umzusetzen (ist leider aufwändiger, als man meinen könnte...)
+- ✔ Alle Inputs übernommen  
+  AUSSER:  
+  Themenpfade bleiben vorerst zirkulär (letztes Atelier führt nicht zum nächten TP, sondern wieder an den Anfang des gewählten TPs)  
+  GRUND:  
+  Man weiss nicht, wo die User einsteigen, die ersten Ateliers eines Pfades könnten beim Einstieg über Direktlink oder neu über die Erweiterte Projektübersicht verloren gehen  
+  Zudem hat die Zeit schlicht nicht gereicht, um diese Änderung umzusetzen (ist leider aufwändiger, als man meinen könnte...)
 
 ### Zoom Button
 
@@ -117,7 +118,7 @@ Noch wegen dem Zoom-Button auf der Karte.
 Mich würde nicht stören, wenn dieser oben rechts hinter dem Seiteneinzug verschwindet.
 Man kann ja mit der Maus zoomen.
 
-☐ zu besprechen: wenn wir uns so auf die Maus-Zoom geschichte verlassen (was ich nicht tun würde), könnte man die Buttons auch ganz weg lassen.
+ZU BESPRECHEN: wenn wir uns so auf die Maus-Zoom geschichte verlassen (was ich nicht tun würde), könnte man die Buttons auch ganz weg lassen.
 
 ## Rückmeldungen von Jonas Mail vom 28. Februar:
 
@@ -126,3 +127,11 @@ Man kann ja mit der Maus zoomen.
 - ✔ Es braucht unbedingt die Bullet-Points, welche auch im CMS sind. @done
 - ✔ Nach einem Absatz im Lauftext wäre ein Abstand schön. @done(kann im CMS erfasst werden)
 - ✔ Ebenso braucht es einen Abstand vor dem «Lead» @done(kann im CMS erfasst werden)
+
+## von daniels backlog
+
+- ✔ seitenAnimationen hinzufügen @done
+- ✔ elementAnimationen hinzufügen @done(teilweise)
+- ✔ Google Analytics eingerichtet @done(mit P.Brisset besprechen)
+- ✔ Performance Bilder und Startseite optimieren @done
+- ✔ bugfixes ...
