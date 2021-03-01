@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import BackToTop from './BackToTop'
 import FooterComponent from './FooterComponent'
 import MainNavigation from './MainNavigation'
+import { NavContext } from 'lib/navContext'
+import { useState } from 'react'
+import { NavContext } from 'lib/navContext'
 
 export default function Layout({ children }) {
+  const [navContext, setNavContext] = useState(false)
+
   const pageTransVariants = {
     initial: { opacity: 0 },
     enter: { opacity: 1, transition: { when: 'beforeChildren' } },
@@ -14,7 +18,6 @@ export default function Layout({ children }) {
     <>
       <Head>
         <link rel='icon' href='/favicon.ico' />
-        {/* Todo: pull SEO meta content from CMS */}
         <meta
           name='description'
           content='Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021'
@@ -31,20 +34,6 @@ export default function Layout({ children }) {
         <title>
           Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021
         </title>
-        {/* <script
-          async
-          src='https://www.googletagmanager.com/gtag/js?id=G-CNEDF7Z720'
-        ></script>
-        <script
-          async
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', 'G-CNEDF7Z720');`,
-          }}
-        /> */}
       </Head>
 
       <motion.div
@@ -56,9 +45,16 @@ export default function Layout({ children }) {
         variants={pageTransVariants}
         transition={{ duration: 0.3, type: 'tween' }}
       >
-        <header className='fixed left-0 right-0 pt-1 lg:pt-4  2xl:pt-0 top-0 z-30 2xl:w-full'>
-          <MainNavigation />
-        </header>
+        <NavContext.Provider value={[navContext, setNavContext]}>
+          <header
+            className='fixed left-0 right-0 pt-1 lg:pt-4  2xl:pt-0 top-0 z-30 2xl:w-full'
+            onClick={() => {
+              navContext && setNavContext(false)
+            }}
+          >
+            <MainNavigation />
+          </header>
+        </NavContext.Provider>
         <main className='pt-four 2xl:pt-tooBig'>{children}</main>
         {/* <BackToTop /> */}
         <FooterComponent />
