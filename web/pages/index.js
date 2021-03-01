@@ -5,10 +5,13 @@ import PinchMap from 'components/map/PinchMap'
 import MainNavigation from 'components/MainNavigation'
 import { createContext, useState } from 'react'
 import { motion } from 'framer-motion'
+import { NavContext } from 'lib/navContext'
 
 export const MapContext = createContext()
 
 const Karte = (props) => {
+  const [navContext, setNavContext] = useState(false)
+
   const { standorte } = props.kartenDaten
 
   const [mapContext, setMapContext] = useState({
@@ -56,9 +59,17 @@ const Karte = (props) => {
           transition={{ duration: 0.5, type: 'tween' }}
         >
           <div className='grid grid-rows-bottomFooter '>
-            <header className='fixed karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-3/4'>
-              <MainNavigation />
-            </header>
+            <NavContext.Provider value={[navContext, setNavContext]}>
+              <header
+                className='fixed karte left-0 top-4 z-30 2xl:top-0 2xl:left-0 2xl:w-3/4'
+                onClick={() => {
+                  navContext && setNavContext(false)
+                }}
+              >
+                <MainNavigation />
+              </header>
+            </NavContext.Provider>
+
             <main className='kartenansicht'>
               <PinchMap />
             </main>

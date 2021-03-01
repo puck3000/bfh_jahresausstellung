@@ -1,11 +1,13 @@
 import ActiveLink from './ActiveLink'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { MdMap } from 'react-icons/md'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { NavContext } from 'lib/navContext'
 
 export default function MobileNav() {
   const [mainNavVisibility, setMainNavVisibility] = useState(false)
+  const [navContext, setNavContext] = useContext(NavContext)
 
   const container = {
     hidden: {
@@ -24,7 +26,8 @@ export default function MobileNav() {
     show: { opacity: 1, x: '0' },
   }
 
-  const toggle = () => setMainNavVisibility(!mainNavVisibility)
+  const toggle = () => setNavContext(!navContext)
+
   return (
     <>
       <div className='mx-1 lg:mx-4 flex justify-between '>
@@ -32,6 +35,7 @@ export default function MobileNav() {
           className='anker first mb-two focus:outline-none'
           onClick={() => {
             toggle()
+            console.log('context', navContext)
           }}
         >
           Menu
@@ -44,9 +48,9 @@ export default function MobileNav() {
       </div>
       <nav
         className='relative'
-        style={{ display: mainNavVisibility ? 'initial' : 'none' }}
+        style={{ display: navContext ? 'initial' : 'none' }}
       >
-        {mainNavVisibility && (
+        {navContext && (
           <motion.ul
             variants={container}
             initial='hidden'
@@ -138,8 +142,8 @@ export default function MobileNav() {
         header {
           transition: backdrop-filter 0.3s; -webkit-backdrop-filter 0.3s;
           ${
-            mainNavVisibility
-              ? 'height: 100vh; width: 100vw; backdrop-filter: blur(4px) opacity(1); -webkit-backdrop-filter: blur(4px) opacity(1);'
+            navContext
+              ? 'height: 100vh;  backdrop-filter: blur(4px) opacity(1); -webkit-backdrop-filter: blur(4px) opacity(1);'
               : 'backdrop-filter: blur(4px) opacity(0); -webkit-backdrop-filter: blur(4px) opacity(0)'
           }
         }

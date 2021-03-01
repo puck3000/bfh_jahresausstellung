@@ -4,7 +4,6 @@ import FooterComponent from './FooterComponent'
 import MainNavigation from './MainNavigation'
 import { NavContext } from 'lib/navContext'
 import { useState } from 'react'
-import { NavContext } from 'lib/navContext'
 
 export default function Layout({ children }) {
   const [navContext, setNavContext] = useState(false)
