@@ -7,7 +7,7 @@ import MainNavigation from './MainNavigation'
 export default function Layout({ children }) {
   const pageTransVariants = {
     initial: { opacity: 0 },
-    enter: { opacity: 1 },
+    enter: { opacity: 1, transition: { when: 'beforeChildren' } },
     exit: { opacity: 0 },
   }
   return (
