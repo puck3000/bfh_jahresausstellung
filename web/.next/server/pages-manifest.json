@@ -3,5 +3,7 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/": "pages/index.js",
-  "/themenpfade/[slug]": "pages/themenpfade/[slug].js"
+  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
+  "/huttwil": "pages/huttwil.js",
+  "/themenpfade": "pages/themenpfade.js"
 }
