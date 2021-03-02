@@ -25,7 +25,7 @@ export default function TextAndImage({ textandimage }) {
         srcSet={`${urlFor(textandimage.image)
           .width(1024)
           .height(819)
-          .format('webp')
+          .auto('format')
           .url()} 1024w, ${urlFor(textandimage.image)
           .width(2000)
           .height(1600)

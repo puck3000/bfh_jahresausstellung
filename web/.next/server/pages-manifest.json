@@ -2,8 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/themenpfade": "pages/themenpfade.js",
-  "/dencity": "pages/dencity.js",
   "/huttwil": "pages/huttwil.js",
   "/themenpfade/[slug]": "pages/themenpfade/[slug].js"
 }

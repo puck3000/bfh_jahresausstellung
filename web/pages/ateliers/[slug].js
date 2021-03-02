@@ -77,15 +77,19 @@ const Atelier = (props) => {
           </div>
           <figure className='mb-1 lg:mb-2 lg:col-start-2 lg:col-span-3 2xl:col-start-3 2xl:col-span-4'>
             <img
-              src={urlFor(referencepic).width(2000).height(1600).url()}
+              src={urlFor(referencepic)
+                .width(2000)
+                .height(1600)
+                .auto('format')
+                .url()}
               srcSet={`${urlFor(referencepic)
                 .width(1024)
                 .height(819)
-                .format('webp')
+                .auto('format')
                 .url()} 1024w, ${urlFor(referencepic)
                 .width(2000)
                 .height(1600)
-                .format('webp')
+                .auto('format')
                 .url()} 2000w,`}
               sizes='(max-width:1024px) 100vw, 75vw'
             />

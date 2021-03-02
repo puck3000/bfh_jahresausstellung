@@ -20,16 +20,16 @@ export default function Projects({ projects }) {
           src={urlFor(project.referencepic)
             .width(2000)
             .height(1600)
-            .format('webp')
+            .auto('format')
             .url()}
           srcSet={`${urlFor(project.referencepic)
             .width(1024)
             .height(819)
-            .format('webp')
+            .auto('format')
             .url()} 1024w, ${urlFor(project.referencepic)
             .width(2000)
             .height(1600)
-            .format('webp')
+            .auto('format')
             .url()} 2000w,`}
           sizes='(max-width:1024px) 100vw, 50vw'
         />
