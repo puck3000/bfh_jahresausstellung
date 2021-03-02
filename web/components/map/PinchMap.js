@@ -7,6 +7,7 @@ import MapSideBar from './MapSideBar.js'
 import Div100vh from 'react-div-100vh'
 import MapLegende from './MapLegende'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 class PinchMap extends Component {
   render() {
@@ -21,10 +22,18 @@ class PinchMap extends Component {
             </h1>
             <h2 className=''>Jahresausstellung Architektur 2021</h2>
             <Link href='/veranstaltungen'>
-              <a className='text-small lg:text-small-dt'>
+              <motion.a
+                initial={{ opacity: 0, color: '#fac300' }}
+                animate={{
+                  opacity: [0, 1, 1, 1, 1, 1],
+                  color: ['#fac300', '#699673', '#699bbe', '#ffffff'],
+                }}
+                transition={{ delay: 1, duration: 1.5 }}
+                className=''
+              >
                 <MdArrowForward className='inline mr-2' />
-                Zum Begrüssungsvideo von Daniel Boermann
-              </a>
+                Begrüssungswort
+              </motion.a>
             </Link>
           </div>
           <TransformWrapper defaultScale={1}>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import 'intersection-observer'
 
 const useIntersectionObserver = (reference) => {
   const [isVisible, setIsVisible] = useState(false)

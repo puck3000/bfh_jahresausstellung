@@ -19,6 +19,7 @@
     "framer-motion": "^3.3.0",
     "get-youtube-id": "^1.0.1",
     "groq": "^2.0.9",
+    "intersection-observer": "^0.12.0",
     "next": "^10.0.4",
     "next-images": "^1.7.0",
     "next-sanity": "^0.1.8",

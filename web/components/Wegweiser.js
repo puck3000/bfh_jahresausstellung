@@ -11,7 +11,7 @@ export default function Wegweiser({
   return (
     <>
       <nav className='mt-two lg:mt-big lg:relative'>
-        <p className='mb-1 lg:mb-2 lg:absolute lg:mt-3 '>
+        <p className='mb-1 2xl:mb-2 2xl:absolute 2xl:mt-3 '>
           Wohin geht die Reise?
         </p>
         <hr className='mb-1 lg:mb-2'></hr>
