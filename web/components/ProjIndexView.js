@@ -21,11 +21,13 @@ export default function ProjIndexView({ projekt }) {
                     .width(1024)
                     .height(819)
                     .auto('format')
+                    .quality(80)
                     .url()} 1024w, 
                   ${urlFor(projekt.referencepic)
                     .width(2000)
                     .height(1600)
                     .auto('format')
+                    .quality(80)
                     .url()} 2000w,
                   `}
         alt={`Referenzbild zu ${projekt.titel}`}

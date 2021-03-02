@@ -2,8 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/ateliers/[slug]": "pages/ateliers/[slug].js",
   "/": "pages/index.js",
-  "/themenpfade": "pages/themenpfade.js",
   "/veranstaltungen": "pages/veranstaltungen.js"
 }

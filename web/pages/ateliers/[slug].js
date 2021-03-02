@@ -81,15 +81,18 @@ const Atelier = (props) => {
                 .width(2000)
                 .height(1600)
                 .auto('format')
+                .quality(80)
                 .url()}
               srcSet={`${urlFor(referencepic)
                 .width(1024)
                 .height(819)
                 .auto('format')
+                .quality(80)
                 .url()} 1024w, ${urlFor(referencepic)
                 .width(2000)
                 .height(1600)
                 .auto('format')
+                .quality(80)
                 .url()} 2000w,`}
               sizes='(max-width:1024px) 100vw, 75vw'
             />
