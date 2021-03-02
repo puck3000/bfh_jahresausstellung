@@ -23,15 +23,26 @@ class PinchMap extends Component {
             <h2 className=''>Jahresausstellung Architektur 2021</h2>
             <Link href='/veranstaltungen'>
               <motion.a
-                initial={{ opacity: 0, color: '#fac300' }}
+                initial={{ opacity: 0 }}
                 animate={{
-                  opacity: [0, 1, 1, 1, 1, 1],
-                  color: ['#fac300', '#699673', '#699bbe', '#ffffff'],
+                  opacity: 1,
                 }}
-                transition={{ delay: 1, duration: 1.5 }}
-                className=''
+                transition={{ delay: 1, duration: 0.5 }}
+                className='mt-1 lg:mt-2 flex items-center cursor-pointer'
               >
-                <MdArrowForward className='inline mr-2' />
+                <motion.div
+                  className='inline '
+                  initial={{ x: '-15px' }}
+                  animate={{ x: 0 }}
+                  transition={{
+                    delay: 1.2,
+                    duration: 0.4,
+                    repeat: 2,
+                    repeatType: 'reverse',
+                  }}
+                >
+                  <MdArrowForward className='inline mr-2' />
+                </motion.div>
                 Begrüssungswort
               </motion.a>
             </Link>
