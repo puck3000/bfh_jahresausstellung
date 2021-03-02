@@ -38,7 +38,7 @@ const Karte = (props) => {
         />
         <meta
           property='og:image'
-          content={`/public/JahresausstellungArchitektur2021.png`}
+          content={`/JahresausstellungArchitektur2021.png`}
         />
         <meta
           name='og:title'

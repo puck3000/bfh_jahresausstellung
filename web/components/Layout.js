@@ -23,7 +23,7 @@ export default function Layout({ children }) {
         />
         <meta
           property='og:image'
-          content={`/public/JahresausstellungArchitektur2021.png`}
+          content={`/JahresausstellungArchitektur2021.png`}
         />
         <meta
           name='og:title'
