@@ -32,21 +32,22 @@ const Karte = (props) => {
     <>
       <Head>
         <link rel='icon' href='/favicon.ico' />
-        {/* Todo: pull SEO meta content from CMS */}
         <meta
           name='description'
           content='Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021'
         />
         <meta
           property='og:image'
-          content={`https://og-image.now.sh/BFH.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          content={`/public/JahresausstellungArchitektur2021.png`}
         />
         <meta
           name='og:title'
           content='Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021'
         />
         <meta name='twitter:card' content='summary_large_image' />
-        <title>Neue Räume | BFH</title>
+        <title>
+          Neue Räume. Stadt und Land in Huttwil. BFH Jahresausstellung 2021
+        </title>
       </Head>
 
       <MapContext.Provider value={[mapContext, setMapContext]}>
