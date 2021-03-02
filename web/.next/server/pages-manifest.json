@@ -3,5 +3,8 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/huttwil": "pages/huttwil.js",
-  "/themenpfade/[slug]": "pages/themenpfade/[slug].js"
+  "/themenpfade/[slug]": "pages/themenpfade/[slug].js",
+  "/dencity": "pages/dencity.js",
+  "/themenpfade": "pages/themenpfade.js",
+  "/ateliers/[slug]": "pages/ateliers/[slug].js"
 }
