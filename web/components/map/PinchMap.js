@@ -27,18 +27,18 @@ class PinchMap extends Component {
                 animate={{
                   opacity: 1,
                 }}
-                transition={{ delay: 1, duration: 0.5 }}
+                transition={{ delay: 2, duration: 0.5 }}
                 className='mt-1 lg:mt-2 flex items-center cursor-pointer'
               >
                 <motion.div
                   className='inline '
-                  initial={{ x: '-15px' }}
-                  animate={{ x: 0 }}
+                  initial={{ x: '-15px', opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
                   transition={{
-                    delay: 1.2,
+                    delay: 2.3,
                     duration: 0.4,
-                    repeat: 2,
-                    repeatType: 'reverse',
+                    // repeat: 2,
+                    // repeatType: 'reverse',
                   }}
                 >
                   <MdArrowForward className='inline mr-2' />
