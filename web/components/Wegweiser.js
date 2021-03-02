@@ -21,12 +21,12 @@ export default function Wegweiser({
           {nextlink && (
             <li className='mb-1 lg:mb-2'>
               <Link href={nextlink?.url}>
-                <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
+                <div className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
                   {iconServer(nextlink?.icon, nextlink?.iconClassNames)}
                   <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
                     {nextlink?.label}
                   </h3>
-                </button>
+                </div>
               </Link>
               <hr className='mb-1 lg:mb-2'></hr>
             </li>
@@ -63,7 +63,7 @@ export default function Wegweiser({
           {/* Map Hinweis */}
           <li className='mb-1 lg:mb-2'>
             <Link href='/'>
-              <button className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
+              <div className='cursor-pointer focus:outline-none w-full flex items-center lg:grid lg:grid-cols-4 mb-1 lg:mb-2'>
                 {iconServer(
                   'MdMap',
                   nextlink?.iconClassNames || 'icon mr-2 lg:justify-self-end'
@@ -71,7 +71,7 @@ export default function Wegweiser({
                 <h3 className='text-left lg:col-start-2 lg:col-span-2 lg:justify-self-start'>
                   Finden Sie ein Projekt auf der Karte
                 </h3>
-              </button>
+              </div>
             </Link>
             <hr className='mb-1 lg:mb-2'></hr>
           </li>
