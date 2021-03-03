@@ -82,7 +82,7 @@ export async function getStaticProps({ params }) {
     props: {
       themenpfad,
     },
-    revalidate: 1,
+    revalidate: 100,
   }
 }
 

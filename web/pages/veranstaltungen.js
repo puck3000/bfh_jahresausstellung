@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
     props: {
       veranstaltungen,
     },
-    revalidate: 1,
+    revalidate: 100,
   }
 }
 

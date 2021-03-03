@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
     props: {
       huttwil,
     },
-    revalidate: 1,
+    revalidate: 100,
   }
 }
 

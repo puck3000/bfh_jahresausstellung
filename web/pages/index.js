@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
     props: {
       kartenDaten,
     },
-    revalidate: 1,
+    revalidate: 100,
   }
 }
 

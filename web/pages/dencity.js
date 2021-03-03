@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
     props: {
       dencity,
     },
-    revalidate: 1,
+    revalidate: 100,
   }
 }
 

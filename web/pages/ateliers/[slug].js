@@ -157,7 +157,7 @@ export async function getStaticProps({ params }) {
     props: {
       atelier,
     },
-    revalidate: 1,
+    revalidate: 100,
   }
 }
 
